@@ -1,0 +1,18 @@
+#wrapper{
+    width: auto;
+} 
+#content{
+    width: 100%;
+    float: none;
+}
+#sidebar{
+    width: 100%;
+    float: none;
+}
+#picbox{
+    display: block;
+}
+h1{
+    padding: 30px 0px 0px 20px;
+    text-align: center;
+}

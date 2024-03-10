@@ -1,0 +1,139 @@
+@import "media-510.css" screen and (max-width:510px);
+
+
+
+
+
+
+
+
+
+:root{
+    --main-color: rgb(255, 0, 0);
+}
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:rgb(0, 0, 0);
+        margin: 0;
+        padding: 0;
+    }
+    #wrapper{
+        /* border: 2px solid red; */
+        width: 1000px;
+        background-color:white;
+        margin: 0 auto;
+        /* display: flow-root; */
+    }
+    #header{
+        background-color: var(--main-color);
+        height: 100px;
+        color: white; 
+    }
+    h1{
+        padding: 30px 0px 0px 20px;
+    }
+    #menu{
+        background-color: rgb(0, 233, 205);
+        /* padding: 5px; */
+    }
+    #menu ul{
+        margin: 0;
+        padding: 0;
+    }
+    #menu li{
+        display: inline-block;
+    }
+    #menu li a{
+        display: block;
+        border-radius: 3px;
+        padding: 10px 15px;
+        margin-left: 0;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    #menu li a:hover{
+        background-color: var(--main-color);
+        color: rgb(0, 0, 0);
+        color: white;
+    }
+    #content{
+        /* border: 2px solid red; */
+        width: 800px;
+        float: left;
+        min-height: 500px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #picbox{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 2px solid black;
+        /* height: 100px; */
+        /* background-color: pink; */
+    }
+    .pic{
+        border: 2px solid black;
+        /* height: 100px; */
+        /* background-color: pink;  */
+        padding: 5px;
+    }
+    #sidebar{
+        background-color: rgb(202, 207, 202);
+        width: 200px;
+        min-height: 500px;
+        float: right;
+    }
+    #sidebar li a{
+        text-decoration: none;
+        color: rgb(18, 18, 18);
+        line-height: 30px;
+    }
+    #footer{
+        background-color: var(--main-color);
+        clear: both;
+        padding: 5px 10px;
+        text-align: right;
+    }
+    img{
+        width: 100%;
+    }
+
+
+
+
+
+
+
+    
+    @media screen and (max-width:1020px){
+        #wrapper{
+        width: auto;
+    }
+    #content{
+        width: 80%;
+    }
+    #sidebar{
+        width: 20%;
+    }
+    }
+    @media screen and (max-width:810px){
+        #wrapper{
+         width: auto;
+    } 
+
+    #content{
+        width: 70%;
+    }
+    #sidebar{
+        width: 28%;
+    }
+
+    #picbox{
+        display: block;
+    }
+    }
+
+    @media screen and (max-width:510px){
+ 
+    }

@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Basic layout</title>
+
+    <style>
+        :root{
+    --main-color: rgb(0, 175, 128);
+}
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:rgb(0, 0, 0);
+        margin: 0;
+        padding: 0;
+    }
+    #wrapper{
+        /* border: 2px solid red; */
+        width: 1000px;
+        background-color:white;
+        margin: 0 auto;
+        /* display: flow-root; */
+    }
+    #header{
+        background-color: var(--main-color);
+        height: 100px;
+        color: white; 
+    }
+    h1{
+        padding: 30px 0px 0px 20px;
+    }
+    #menu{
+        background-color: rgb(250, 177, 59);
+        /* padding: 5px; */
+    }
+    #menu ul{
+        margin: 0;
+        padding: 0;
+    }
+    #menu li{
+        display: inline-block;
+    }
+    #menu li a{
+        display: block;
+        border-radius: 3px;
+        padding: 10px 15px;
+        margin-left: 0;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    #menu li a:hover{
+        background-color: var(--main-color);
+        color: rgb(0, 0, 0);
+        color: white;
+    }
+    #content{
+        /* border: 2px solid red; */
+        width: 800px;
+        float: left;
+        min-height: 500px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #picbox{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* border: 2px solid black; */
+        /* height: 100px; */
+        /* background-color: pink; */
+    }
+    .pic{
+        /* border: 2px solid black; */
+        /* height: 100px; */
+        /* background-color: pink;  */
+        padding: 5px;
+    }
+    #sidebar{
+        background-color: rgb(202, 207, 202);
+        width: 200px;
+        min-height: 500px;
+        float: right;
+    }
+    #sidebar li a{
+        text-decoration: none;
+        color: rgb(18, 18, 18);
+        line-height: 30px;
+    }
+    #footer{
+        background-color: var(--main-color);
+        clear: both;
+        padding: 5px 10px;
+        text-align: right;
+    }
+    img{
+        width: 100%;
+    }
+
+
+
+
+
+
+
+    
+    @media screen and (max-width:1020px){
+        #wrapper{
+        width: auto;
+    }
+    #content{
+        width: 80%;
+    }
+    #sidebar{
+        width: 20%;
+    }
+    }
+    @media screen and (max-width:810px){
+        #wrapper{
+         width: auto;
+    } 
+
+    #content{
+        width: 70%;
+    }
+    #sidebar{
+        width: 28%;
+    }
+
+    #picbox{
+        display: block;
+    }
+    }
+
+    @media screen and (max-width:510px){
+        #wrapper{
+        width: auto;
+    } 
+    #content{
+        width: 100%;
+        float: none;
+    }
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+    #picbox{
+        display: block;
+    }
+    h1{
+        padding: 30px 0px 0px 20px;
+        text-align: center;
+    }
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>Header Name</h1>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact us</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Design Basic Layout</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sequi nulla porro aut iusto ullam voluptatem? Temporibus expedita voluptate incidunt et distinctio laborum nulla ut non, ratione dicta, illo quaerat?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci aliquid labore, architecto impedit molestias ipsum optio cumque minima repellat repudiandae enim provident sequi necessitatibus fugiat sint ducimus laboriosam doloremque soluta.</p>
+<div id="picbox">
+            <div class="pic"><img src="/Media Queries/images/mediascreen1020.png" alt=""></div>
+            <div class="pic"><img src="/Media Queries/images/mediascreen810.png" alt=""></div>
+            <div class="pic"><img src="/Media Queries/images/mediascreen510.png" alt=""></div>
+        </div>
+    </div>
+
+
+        <div id="sidebar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact us</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+            abc@copywrite 2023
+        </div>        
+    </div>
+    </div>
+</body>
+</html>
