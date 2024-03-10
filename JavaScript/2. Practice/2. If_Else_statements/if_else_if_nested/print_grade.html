@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2"> Find the grade for input marks</h4>
+    </div>
+
+    <div class="container border mb-2">
+        <ul>
+            <li>Print “S grade” if marks is between 90 and 100.</li>
+            <li>Print “A grade” if marks is between 80 and 90.
+            </li>
+            <li>Print “B grade” if marks is between 70 and 80.
+            </li>
+            <li>Print “C grade” if marks is between 60 and 70.
+            </li>
+            <li>Print “D grade” if marks is between 50 and 60.
+            </li>
+            <li>Print “E grade” if marks is between 40 and 50.
+            </li>
+            <li>Print “Student has failed” if marks is between 0 and 40.
+            </li>
+            <li>Else print “Marks can't be more than 100;”.
+            </li>
+        </ul>
+    </div>
+    
+    <div class="container border mb-3">
+<script>
+            let name = prompt("Enter Student name.");
+        let marks = parseFloat(prompt("Enter marks obtained."));
+
+        if (marks >= 90 && marks <= 100){
+                document.write(`${name}, Grade: S.`);
+            }
+            else if (marks >= 80 && marks < 90){
+                document.write(`${name}, Grade: A.`); 
+            }
+            else if (marks >= 70 && marks < 80){
+                document.write(`${name}, Grade: B.`); 
+            }
+            else if (marks >= 60 && marks < 70){
+                document.write(`${name}, Grade: C.`); 
+            }
+            else if (marks >= 50 && marks <60){
+                document.write(`${name}, Grade: D.`); 
+            }
+            else if (marks >= 40 && marks <50){
+                document.write(`${name}, Grade: E.`); 
+            }
+            else if (marks >= 0 && marks <40){
+                document.write(`${name} has Failed.`); 
+            }
+            else{
+                document.write(`Marks can't be more than 100;`); 
+            }
+</script>
+</div>
+
+<div class="container border">
+    <pre style="height:415px;"><code>&lt;script&gt;
+        let name = prompt(&quot;Enter Student name.&quot;);
+    let marks = parseFloat(prompt(&quot;Enter marks obtained.&quot;));
+
+    if (marks &gt;= 90 &amp;&amp; marks &lt;= 100){
+            document.write(`${name}, Grade: S.`);
+        }
+        else if (marks &gt;= 80 &amp;&amp; marks &lt; 90){
+            document.write(`${name}, Grade: A.`); 
+        }
+        else if (marks &gt;= 70 &amp;&amp; marks &lt; 80){
+            document.write(`${name}, Grade: B.`); 
+        }
+        else if (marks &gt;= 60 &amp;&amp; marks &lt; 70){
+            document.write(`${name}, Grade: C.`); 
+        }
+        else if (marks &gt;= 50 &amp;&amp; marks &lt;60){
+            document.write(`${name}, Grade: D.`); 
+        }
+        else if (marks &gt;= 40 &amp;&amp; marks &lt;50){
+            document.write(`${name}, Grade: E.`); 
+        }
+        else if (marks &gt;= 0 &amp;&amp; marks &lt;40){
+            document.write(`${name} has Failed.`); 
+        }
+        else{
+            document.write(`Marks can't be more than 100;`); 
+        }
+&lt;/script&gt;</code></pre>
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html> 

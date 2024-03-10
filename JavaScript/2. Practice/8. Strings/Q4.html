@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Exercise</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Navbar/ Heading</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Q. Write a function that counts the occurrences of a specific character in a
+                string.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Function to count occurrences of a specific character in a string
+    function countOccurrences(str, char) {
+        let count = 0;
+        for (let i = 0; i &lt; str.length; i++) {
+            if (str[i] === char) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // Input sentence and character to count
+    let sentence = &quot;The energetic engineer eagerly explored the eerie cave.&quot;
+    let chatToCount = &quot;e&quot;;
+
+    // Counting occurrences of the specified character in the sentence
+    let occurrences = countOccurrences(sentence, chatToCount);
+
+    // Displaying the count of occurrences in an HTML element
+    document.getElementById(&quot;output-1&quot;).innerHTML = `The character '${chatToCount}' occurs ${occurrences} times.`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="runcode()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="output-1"></p>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+    <footer>
+        <script>
+            function runcode() {
+                // Function to count occurrences of a specific character in a string
+                function countOccurrences(str, char) {
+                    let count = 0;
+                    for (let i = 0; i < str.length; i++) {
+                        if (str[i] === char) {
+                            count++;
+                        }
+                    }
+                    return count;
+                }
+
+                // Input sentence and character to count
+                let sentence = "The energetic engineer eagerly explored the eerie cave."
+                let chatToCount = "e";
+
+                // Counting occurrences of the specified character in the sentence
+                let occurrences = countOccurrences(sentence, chatToCount);
+
+                // Displaying the count of occurrences in an HTML element
+                document.getElementById("output-1").innerHTML = `The character '${chatToCount}' occurs ${occurrences} times.`;
+            }
+        </script>
+
+
+
+
+
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

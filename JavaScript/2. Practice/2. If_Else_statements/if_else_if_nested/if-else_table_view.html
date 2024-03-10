@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <style>
+table, th, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    width: 100%;
+    margin: auto;
+}
+th{
+    padding: 5px;
+    background-color: turquoise;
+}
+
+td{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2">IF-Else tabular view</h4>
+    </div>
+
+    <div class="container border">
+        <p>1. Input Name of student and marks in 3 subjects and calculate Total ,percentage and grade in a table<br>
+
+            Grade- >=80 A<br>
+            60-80 B<br>
+            40-60 c<br>
+            otherwise fail</p>
+    </div>
+
+    <div class="container border">
+        <h3>Tabular Data</h3>
+        <table>
+            <tr>
+
+                <th>Student Name</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>Computer</th>
+                <th>Total</th>
+                <th>Percantage</th>
+                <th>Grade</th>
+            </tr>
+
+            <tr>
+                <td id="name"></td>
+                <td id="sub1"></td>
+                <td id="sub2"></td>
+                <td id="sub3"></td>
+                <td id="total"></td>
+                <td id="percent"></td>
+                <td id="grade"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container">
+        <pre>
+            <code>
+&lt;script&gt;
+    const na = prompt(&quot;Enter student name&quot;);
+    const marks1 = parseFloat(prompt(&quot;Enter marks in Maths&quot;));
+    const marks2 = parseFloat(prompt(&quot;Enter marks in English&quot;));
+    const marks3 = parseFloat(prompt(&quot;Enter marks in Computer&quot;));
+
+    total = marks1 + marks2 + marks3;
+    percent = (total / 300) * 100;
+
+    document.getElementById(&quot;name&quot;).innerHTML = na;
+    document.getElementById(&quot;sub1&quot;).innerHTML = marks1;
+    document.getElementById(&quot;sub2&quot;).innerHTML = marks2;
+    document.getElementById(&quot;sub3&quot;).innerHTML = marks3;
+    document.getElementById(&quot;total&quot;).innerHTML = total;
+    document.getElementById(&quot;percent&quot;).innerHTML = percent;
+    // document.getElementById(&quot;grade&quot;).innerHTML = grade;
+
+    if (percent &gt;= 80) {
+        document.getElementById(&quot;grade&quot;).innerHTML = (&quot;A&quot;);
+    }
+
+    else if (percent &lt;= 79 &amp;&amp; percent &gt;= 60) {
+        document.getElementById(&quot;grade&quot;).innerHTML = (&quot;B&quot;);
+    }
+
+    else if (percent &lt;= 59 &amp;&amp; percent &gt;= 40) {
+        document.getElementById(&quot;grade&quot;).innerHTML = (&quot;C&quot;);
+    }
+
+    else if (percent &lt;= 39) {
+        document.getElementById(&quot;grade&quot;).innerHTML = (&quot;Re-appear&quot;);
+    }
+&lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+
+
+    <script>
+        const na = prompt("Enter student name");
+        const marks1 = parseFloat(prompt("Enter marks in Maths"));
+        const marks2 = parseFloat(prompt("Enter marks in English"));
+        const marks3 = parseFloat(prompt("Enter marks in Computer"));
+
+        total = marks1 + marks2 + marks3;
+        percent = (total / 300) * 100;
+
+        document.getElementById("name").innerHTML = na;
+        document.getElementById("sub1").innerHTML = marks1;
+        document.getElementById("sub2").innerHTML = marks2;
+        document.getElementById("sub3").innerHTML = marks3;
+        document.getElementById("total").innerHTML = total;
+        document.getElementById("percent").innerHTML = percent.toFixed(2);
+        // document.getElementById("grade").innerHTML = grade;
+
+        if (percent >= 80) {
+            document.getElementById("grade").innerHTML = ("A");
+        }
+
+        else if (percent <= 79 && percent >= 60) {
+            document.getElementById("grade").innerHTML = ("B");
+        }
+
+        else if (percent <= 59 && percent >= 40) {
+            document.getElementById("grade").innerHTML = ("C");
+        }
+
+        else if (percent <= 39) {
+            document.getElementById("grade").innerHTML = ("Re-appear");
+        }
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

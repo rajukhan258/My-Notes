@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid bg-dark text-center">
+      <h4 class="text-white p-2">JS code to print a 2D array</h4>
+    </div>
+
+    <div class="container border">
+        <script>
+            function printArray(X){
+                for (let i = 0; i < X.length; i++){
+                    for (j = 0; j < X[0].length; j++){
+                        document.write(X[i] [j]);
+                    }
+                }
+            }
+
+            let arr = [[1, 2],[3, 4],[5, 6]];
+            printArray(arr)
+        </script>
+
+        <br><br>
+        <pre><code>&lt;script&gt;
+  function printArray(X){
+      for (let i = 0; i &lt; X.length; i++){
+          for (j = 0; j &lt; X[0].length; j++){
+              document.write(X[i] [j]);
+          }
+      }
+  }
+
+  let arr = [[1, 2],[3, 4],[5, 6]];
+  printArray(arr)
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

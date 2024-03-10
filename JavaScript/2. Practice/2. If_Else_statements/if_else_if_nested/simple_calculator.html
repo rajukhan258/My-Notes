@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark  text-center">
+        <h3 class="text-white p-2">Simple Calculator with if..else if...else</h3>
+    </div>
+    
+    <div class="container border">
+        <p id="num1"></p>
+        <p id="num2"></p>
+        <p id="result"></p>
+    </div>
+
+    <div class="container">
+        <pre>
+            <code>
+&lt;script&gt;
+    const num1 = parseFloat(prompt(&quot;Enter First Number&quot;));
+    const num2 = parseFloat(prompt(&quot;Enter second Number&quot;));
+    const operator = prompt(&quot;Enter Operator `+`, `-`, `*`, `/`&quot;);
+    let result;
+
+    if(operator  == `+`){
+        result = num1 + num2;
+    }
+    else if (operator == '-') {
+        result = num1 - num2;
+    }  
+    else if (operator == '*') {
+        result = num1 * num2;
+    }   
+    else{
+        result = num1 / num2;
+    }
+    document.getElementById(&quot;result&quot;).innerHTML = (`Output: ${result}`);
+&lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+
+
+<script>
+    const num1 = parseFloat(prompt("Enter First Number"));
+    document.getElementById("num1").innerHTML = (`First Number: ${num1}`);
+    const num2 = parseFloat(prompt("Enter second Number"));
+    document.getElementById("num2").innerHTML = (`Second Number: ${num2}`);
+    const operator = prompt("Enter Operator `+`, `-`, `*`, `/`");
+    let result;
+
+    if(operator  == `+`){
+        result = num1 + num2;
+    }
+    else if (operator == '-') {
+        result = num1 - num2;
+    }  
+    else if (operator == '*') {
+        result = num1 * num2;
+    }   
+    else{
+        result = num1 / num2;
+    }
+    document.getElementById("result").innerHTML = (`Output: ${result}`);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

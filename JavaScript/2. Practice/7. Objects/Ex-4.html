@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Exercise</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Object Methods</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Exercises: Level 4</p>
+            <p>1. Imagine you are getting users collection from a MongoDB database.
+            <ol type="a">
+                <li>Create a function called signUp which allows user to add to the collection. If user exists, inform
+                    the user that he has already an account.</li>
+                <li>Create a function called signIn which allows user to sign in to the application</li>
+            </ol>
+
+            <p>2. The products array has three elements and each of them has six properties.
+            <ol type="a">
+                <li>Create a function called
+                    rateProduct which rates the product</li>
+                <li>Create a function called averageRating which calculate the
+                    average rating of a product</li>
+            </ol>
+
+            <p>3. Create a function called likeProduct. This function will helps to like to the product if it is not
+                liked and remove like if it was liked.</p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Array of users
+    const users = [
+        // ... (user objects)
+        {
+            _id: 'ab12ex',
+            username: 'Alex',
+            email: 'alex@alex.com',
+            password: '123123',
+            createdAt: '08/01/2020 9:00 AM',
+            isLoggedIn: false
+        },
+        {
+            _id: 'fg12cy',
+            username: 'Asab',
+            email: 'asab@asab.com',
+            password: '123456',
+            createdAt: '08/01/2020 9:30 AM',
+            isLoggedIn: true
+        },
+        {
+            _id: 'zwf8md',
+            username: 'Brook',
+            email: 'brook@brook.com',
+            password: '123111',
+            createdAt: '08/01/2020 9:45 AM',
+            isLoggedIn: true
+        },
+        {
+            _id: 'eefamr',
+            username: 'Martha',
+            email: 'martha@martha.com',
+            password: '123222',
+            createdAt: '08/01/2020 9:50 AM',
+            isLoggedIn: false
+        },
+        {
+            _id: 'ghderc',
+            username: 'Thomas',
+            email: 'thomas@thomas.com',
+            password: '123333',
+            createdAt: '08/01/2020 10:00 AM',
+            isLoggedIn: false
+        }
+    ];
+
+    //// Array of products
+    const products = [
+        // ... (product objects)
+        {
+            _id: 'eedfcf',
+            name: 'mobile phone',
+            description: 'Huawei Honor',
+            price: 200,
+            ratings: [
+                { userId: 'fg12cy', rate: 5 },
+                { userId: 'zwf8md', rate: 4.5 }
+            ],
+            likes: []
+        },
+        {
+            _id: 'aegfal',
+            name: 'Laptop',
+            description: 'MacPro: System Darwin',
+            price: 2500,
+            ratings: [],
+            likes: ['fg12cy']
+        },
+        {
+            _id: 'hedfcg',
+            name: 'TV',
+            description: 'Smart TV:Procaster',
+            price: 400,
+            ratings: [{ userId: 'fg12cy', rate: 5 }],
+            likes: ['fg12cy']
+        }
+    ];
+
+    // Function to register a user
+    function signUp(username, email, password) {
+        // Checking if the user already exists based on their email
+        const userExists = users.find(function (users) {
+            return users.email === email;
+        });
+        if (userExists) {
+            return &quot;User already registered!&quot;;
+        } else {
+            // Creating a new user object and adding it to the users array
+            const newUser = {
+                _id: Math.random().toString(36).substr(2, 9),
+                usename: username,
+                email: email,
+                password: password,
+                createdAt: new Date().toLocaleString(),
+                isLoggedIn: false
+            };
+            users.push(newUser);
+            return &quot;User sucessfully created!&quot;;
+        }
+    }
+
+    // Function to log in a user
+    function signIn(email, password) {
+        // Finding the user by email and password match
+        const user = users.find(function (user) {
+            return user.email === email &amp;&amp; user.password === password;
+        })
+        if (user) {
+            return &quot;User successfully loggedIn&quot;;
+        } else {
+            return &quot;Invalid credentials&quot;;
+        }
+    }
+
+    // Displaying the outputs of signUp and signIn functions
+    document.getElementById(&quot;output-1&quot;).innerHTML = `${signUp('Martha', 'martha@martha.com', '123222')} &lt;br&gt;${signUp('Joseph', 'Joseph@Joseph.com', '123555')} &lt;br&gt;
+        ${signIn('asab@asab.com', '123456')} &lt;br&gt;
+            ${signIn('thomas@thomas.com', '123')}`;
+
+    // Function to rate a product
+    function rateProduct(productId, userId, rating) {
+        // Finding the product by its ID
+        const product = products.find(function (Arg_product) {
+            return Arg_product._id === productId;
+        });
+        if (product) {
+            // Adding the user's rating to the product
+            product.ratings.push({ userId, rate: rating });
+            return &quot;Product rated succesfully!&quot;;
+        } else {
+            return &quot;Product not found!&quot;;
+        }
+    }
+    // Function to calculate the average rating of a product
+    function averageRating(productId) {
+        const product = products.find(function (product) {
+            return product._id === productId;
+        });
+        if (product) {
+            // Calculating the average rating
+            const totalRatings = product.ratings.reduce(function (sum, rating) {
+                return sum + rating.rate;
+            }, 0);
+            const average = totalRatings / product.ratings.length || 0;
+            return `Average rating for '${product.name}' is ${average.toFixed(2)}`;
+        } else {
+            return &quot;Product not found!&quot;;
+        }
+    }
+
+    // Displaying the outputs of rateProduct and averageRating functions
+    document.getElementById(&quot;output-2&quot;).innerHTML = `${rateProduct('aegfal', 'thomas123', 4)}&lt;br&gt;
+                ${averageRating('aegfal')}`;
+
+
+    // Function to like/unlike a product
+    function likeProduct(productId, userId) {
+        // Finding the product by its ID
+        const product = products.find(function (prod) {
+            return prod._id === productId;
+        });
+
+        if (product) {
+            // Check if the user has already liked the product
+            const likedIndex = product.likes.indexOf(userId);
+
+            if (likedIndex === -1) {
+                // If the user hasn't liked the product, add the userId to likes array
+                product.likes.push(userId);
+                return 'Product liked successfully!';
+            } else {
+                // If the user has already liked the product, remove the like
+                product.likes.splice(likedIndex, 1);
+                return 'Product unliked successfully!';
+            }
+        } else {
+            // If the product is not found
+            return 'Product not found!';
+        }
+    }
+
+    // Displaying the outputs of likeProduct function
+    document.getElementById(&quot;output-3&quot;).innerHTML = `${likeProduct('aegfal', 'ghderc')}&lt;br&gt; ${likeProduct('aegfal', 'ghderc')}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="runcode()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="output-1"></p>
+                    <p id="output-2"></p>
+                    <p id="output-3"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <script>
+            function runcode() {
+                // Array of users
+                const users = [
+                    // ... (user objects)
+                    {
+                        _id: 'ab12ex',
+                        username: 'Alex',
+                        email: 'alex@alex.com',
+                        password: '123123',
+                        createdAt: '08/01/2020 9:00 AM',
+                        isLoggedIn: false
+                    },
+                    {
+                        _id: 'fg12cy',
+                        username: 'Asab',
+                        email: 'asab@asab.com',
+                        password: '123456',
+                        createdAt: '08/01/2020 9:30 AM',
+                        isLoggedIn: true
+                    },
+                    {
+                        _id: 'zwf8md',
+                        username: 'Brook',
+                        email: 'brook@brook.com',
+                        password: '123111',
+                        createdAt: '08/01/2020 9:45 AM',
+                        isLoggedIn: true
+                    },
+                    {
+                        _id: 'eefamr',
+                        username: 'Martha',
+                        email: 'martha@martha.com',
+                        password: '123222',
+                        createdAt: '08/01/2020 9:50 AM',
+                        isLoggedIn: false
+                    },
+                    {
+                        _id: 'ghderc',
+                        username: 'Thomas',
+                        email: 'thomas@thomas.com',
+                        password: '123333',
+                        createdAt: '08/01/2020 10:00 AM',
+                        isLoggedIn: false
+                    }
+                ];
+
+                //// Array of products
+                const products = [
+                    // ... (product objects)
+                    {
+                        _id: 'eedfcf',
+                        name: 'mobile phone',
+                        description: 'Huawei Honor',
+                        price: 200,
+                        ratings: [
+                            { userId: 'fg12cy', rate: 5 },
+                            { userId: 'zwf8md', rate: 4.5 }
+                        ],
+                        likes: []
+                    },
+                    {
+                        _id: 'aegfal',
+                        name: 'Laptop',
+                        description: 'MacPro: System Darwin',
+                        price: 2500,
+                        ratings: [],
+                        likes: ['fg12cy']
+                    },
+                    {
+                        _id: 'hedfcg',
+                        name: 'TV',
+                        description: 'Smart TV:Procaster',
+                        price: 400,
+                        ratings: [{ userId: 'fg12cy', rate: 5 }],
+                        likes: ['fg12cy']
+                    }
+                ];
+
+                // Function to register a user
+                function signUp(username, email, password) {
+                    // Checking if the user already exists based on their email
+                    const userExists = users.find(function (users) {
+                        return users.email === email;
+                    });
+                    if (userExists) {
+                        return "User already registered!";
+                    } else {
+                        // Creating a new user object and adding it to the users array
+                        const newUser = {
+                            _id: Math.random().toString(36).substr(2, 9),
+                            usename: username,
+                            email: email,
+                            password: password,
+                            createdAt: new Date().toLocaleString(),
+                            isLoggedIn: false
+                        };
+                        users.push(newUser);
+                        return "User sucessfully created!";
+                    }
+                }
+
+                // Function to log in a user
+                function signIn(email, password) {
+                    // Finding the user by email and password match
+                    const user = users.find(function (user) {
+                        return user.email === email && user.password === password;
+                    })
+                    if (user) {
+                        return "User successfully loggedIn";
+                    } else {
+                        return "Invalid credentials";
+                    }
+                }
+
+                // Displaying the outputs of signUp and signIn functions
+                document.getElementById("output-1").innerHTML = `${signUp('Martha', 'martha@martha.com', '123222')} <br>${signUp('Joseph', 'Joseph@Joseph.com', '123555')} <br>
+                    ${signIn('asab@asab.com', '123456')} <br>
+                        ${signIn('thomas@thomas.com', '123')}`;
+
+                // Function to rate a product
+                function rateProduct(productId, userId, rating) {
+                    // Finding the product by its ID
+                    const product = products.find(function (Arg_product) {
+                        return Arg_product._id === productId;
+                    });
+                    if (product) {
+                        // Adding the user's rating to the product
+                        product.ratings.push({ userId, rate: rating });
+                        return "Product rated succesfully!";
+                    } else {
+                        return "Product not found!";
+                    }
+                }
+                // Function to calculate the average rating of a product
+                function averageRating(productId) {
+                    const product = products.find(function (product) {
+                        return product._id === productId;
+                    });
+                    if (product) {
+                        // Calculating the average rating
+                        const totalRatings = product.ratings.reduce(function (sum, rating) {
+                            return sum + rating.rate;
+                        }, 0);
+                        const average = totalRatings / product.ratings.length || 0;
+                        return `Average rating for '${product.name}' is ${average.toFixed(2)}`;
+                    } else {
+                        return "Product not found!";
+                    }
+                }
+
+                // Displaying the outputs of rateProduct and averageRating functions
+                document.getElementById("output-2").innerHTML = `${rateProduct('aegfal', 'thomas123', 4)}<br>
+                            ${averageRating('aegfal')}`;
+
+
+                // Function to like/unlike a product
+                function likeProduct(productId, userId) {
+                    // Finding the product by its ID
+                    const product = products.find(function (prod) {
+                        return prod._id === productId;
+                    });
+
+                    if (product) {
+                        // Check if the user has already liked the product
+                        const likedIndex = product.likes.indexOf(userId);
+
+                        if (likedIndex === -1) {
+                            // If the user hasn't liked the product, add the userId to likes array
+                            product.likes.push(userId);
+                            return 'Product liked successfully!';
+                        } else {
+                            // If the user has already liked the product, remove the like
+                            product.likes.splice(likedIndex, 1);
+                            return 'Product unliked successfully!';
+                        }
+                    } else {
+                        // If the product is not found
+                        return 'Product not found!';
+                    }
+                }
+
+                // Displaying the outputs of likeProduct function
+                document.getElementById("output-3").innerHTML = `${likeProduct('aegfal', 'ghderc')}<br> ${likeProduct('aegfal', 'ghderc')}`;
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

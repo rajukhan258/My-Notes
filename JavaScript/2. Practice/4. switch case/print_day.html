@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid bg-dark text-center">
+      <h4 class="text-white p-2">Program to get the day of the week</h4>
+    </div>
+
+    <div class="container border">
+      <script>
+        const day_num = parseInt(prompt("Enter the day Number from 1 to 7: "));
+        let dayName;
+
+        switch (day_num) {
+          case 1:
+            dayName = "Monday";
+            break;
+          case 2:
+            dayName = "Tuesday";
+            break;
+          case 3:
+            dayName = "Wednesday";
+            break;
+          case 4:
+            dayName = "Thrusday";
+            break;
+          case 5:
+            dayName = "Friday";
+            break;
+          case 6:
+            dayName = "Saturday";
+            break;
+          case 7:
+            dayName = "Sunday";
+            break;
+
+          default:
+            dayName = "Invalid Number";
+        }
+        document.write(`It's ${dayName}.`);
+      </script>
+<br><br>
+<pre style="height:415px"><code>&lt;script&gt;
+    const day_num = parseInt(prompt(&quot;Enter the day Number from 1 to 7: &quot;));
+    let dayName;
+
+    switch (day_num) {
+      case 1:
+        dayName = &quot;Monday&quot;;
+        break;
+      case 2:
+        dayName = &quot;Tuesday&quot;;
+        break;
+      case 3:
+        dayName = &quot;Wednesday&quot;;
+        break;
+      case 4:
+        dayName = &quot;Thrusday&quot;;
+        break;
+      case 5:
+        dayName = &quot;Friday&quot;;
+        break;
+      case 6:
+        dayName = &quot;Saturday&quot;;
+        break;
+      case 7:
+        dayName = &quot;Sunday&quot;;
+        break;
+
+      default:
+        dayName = &quot;Invalid Day&quot;;
+    }
+    document.write(`It's ${dayName}.`);
+  &lt;/script&gt;</code></pre>      
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

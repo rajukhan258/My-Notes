@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2">Program to Check Armstrong Number Between Two Intervals</h4>
+    </div>
+
+    <div class="container border mb-3">
+        <p>A positive integer is called an Armstrong number (of order n) if</p>
+        <pre><code>abcd... = an + bn + cn + dn + ...</code></pre>
+        <p>In the case of an Armstrong number of 3 digits, the sum of cubes of each digit is equal to the number itself.
+            For example, <b>153</b> is an Armstrong number because</p>
+        <pre><code>153 = 1*1*1+ 5*5*5 + 3*3*3</code></pre>
+        <p>Similarly, 1634 is an Armstrong number because:</p>
+        <pre><code>1634 = 1*1*1*1 + 6*6*6*6* + 3*3*3*3 + 4*4*4*4</code></pre>
+    </div>
+
+    <div class="container border">
+        <script>
+            const lowernum = parseInt(prompt("Enter a digit lower number"));
+            const uppernum = parseInt(prompt("Enter a digit Upper number"));
+            document.write(`Given lower number: ${lowernum} <br>`);
+            document.write(`Given Upper number: ${uppernum} <br>`);
+            document.write(`ArmStrong numbers between ${lowernum} and ${uppernum}:  `)
+            // looping through lowNumber to highNumber
+            for (i = lowernum; i <= uppernum; i++) {
+                const numberOfDigits = i.toString().length;
+                let Sum = 0;
+                // create a temporary variable
+                let Temp = i;
+
+                /* loop through a number to find if 
+           a number is an Armstrong number */
+                while (Temp > 0) {
+
+                    // finding the one's digit
+                    let Remain = Temp % 10;
+                    Sum += Remain ** numberOfDigits;
+
+                    // removing last digit from the number
+                    Temp = parseInt(Temp / 10);  // convert float into integer
+                }
+                // check the condition
+                if (Sum == i) {
+                    document.write(`${i}, `)
+                }
+            }
+        </script>
+<br><br>
+        <pre><code>&lt;script&gt;  
+    const lowernum = parseInt(prompt(&quot;Enter a digit lower number&quot;));
+    const uppernum = parseInt(prompt(&quot;Enter a digit Upper number&quot;));
+    
+    document.write(`ArmStrong numbers between ${lowernum} and ${uppernum}:  `)
+
+    // looping through lowNumber to highNumber
+    for (i = lowernum; i &lt;= uppernum; i++) {
+        const numberOfDigits = i.toString().length;
+        let Sum = 0;
+
+        // create a temporary variable
+        let Temp = i;
+
+        /* loop through a number to find if 
+    a number is an Armstrong number */
+        while (Temp &gt; 0) {
+
+            // finding the one's digit
+            let Remain = Temp % 10;
+            Sum += Remain ** numberOfDigits;
+
+            // removing last digit from the number
+            Temp = parseInt(Temp / 10);  // convert float into integer
+        }
+        // check the condition
+        if (Sum == i) {
+            document.write(`${i}, `)
+        }
+    }
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

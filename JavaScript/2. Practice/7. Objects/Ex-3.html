@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Exercise</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Object Exercise:</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Exercises: Level 3</p>
+            <p>Create an object literal called <em>personAccount</em>. It has <em>firstName, lastName, incomes,
+                    expenses</em> properties and it has <em>totalIncome, totalExpense, accountInfo,addIncome, addExpense
+                    and accountBalance</em> methods. </p>
+            <p>Incomes is a set of incomes and its description and expenses is a set of incomes and its description.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Creating a personAccount object
+    const personAccount = {
+        firstName: &quot;John&quot;,
+        lastName: &quot;Smith&quot;,
+        incomes: [],
+        expenses: [],
+
+        // Method to calculate total income
+        totalIncome: function () {
+            return this.incomes.reduce(function (totalincome, income) {
+                return totalincome + income.amount;
+            }, 0);
+        },
+
+        // Method to add income
+        addIncome: function (description, amount) {
+            this.incomes.push({ description, amount });
+        },
+
+        // Method to calculate total expense
+        totalExpense: function () {
+            return this.expenses.reduce(function (totalexpense, expense) {
+                return totalexpense + expense.amount;
+            }, 0);
+        },
+
+        // Method to add expense
+        addExpense: function (description, amount) {
+            this.expenses.push({ description, amount });
+        },
+
+        // Method to calculate account balance
+        accountBalance: function () {
+            return this.totalIncome() - this.totalExpense();
+        },
+
+        // Method to display account information
+        accountInfo: function () {
+            return `&lt;b&gt;Account Information:&lt;/b&gt;&lt;br&gt;
+Name: ${this.firstName} ${this.lastName}&lt;br&gt;
+Total Income: ₹${this.totalIncome()}&lt;br&gt;
+Total Expense: ₹${this.totalExpense()}&lt;br&gt;
+Balance: ₹${this.accountBalance()}`;
+        },
+    };
+
+    // Adding income and expense details
+    personAccount.addIncome(&quot;Salary&quot;, 3000);
+    personAccount.addIncome(&quot;Freelancing&quot;, 500);
+    personAccount.addExpense(&quot;Rent&quot;, 1000);
+    personAccount.addExpense(&quot;Groceries&quot;, 300);
+
+    // Displaying account information on the HTML element with id &quot;output-1&quot;
+    document.getElementById(&quot;output-1&quot;).innerHTML = `${personAccount.accountInfo()}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="runcode()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="output-1"></p>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <script>
+            function runcode() {
+                // Creating a personAccount object
+                const personAccount = {
+                    firstName: "John",
+                    lastName: "Smith",
+                    incomes: [],
+                    expenses: [],
+
+                    // Method to calculate total income
+                    totalIncome: function () {
+                        return this.incomes.reduce(function (totalincome, income) {
+                            return totalincome + income.amount;
+                        }, 0);
+                    },
+
+                    // Method to add income
+                    addIncome: function (description, amount) {
+                        this.incomes.push({ description, amount });
+                    },
+
+                    // Method to calculate total expense
+                    totalExpense: function () {
+                        return this.expenses.reduce(function (totalexpense, expense) {
+                            return totalexpense + expense.amount;
+                        }, 0);
+                    },
+
+                    // Method to add expense
+                    addExpense: function (description, amount) {
+                        this.expenses.push({ description, amount });
+                    },
+
+                    // Method to calculate account balance
+                    accountBalance: function () {
+                        return this.totalIncome() - this.totalExpense();
+                    },
+
+                    // Method to display account information
+                    accountInfo: function () {
+                        return `<b>Account Information:</b><br>
+    Name: ${this.firstName} ${this.lastName}<br>
+    Total Income: ₹${this.totalIncome()}<br>
+    Total Expense: ₹${this.totalExpense()}<br>
+    Balance: ₹${this.accountBalance()}`;
+                    },
+                };
+
+                // Adding income and expense details
+                personAccount.addIncome("Salary", 3000);
+                personAccount.addIncome("Freelancing", 500);
+                personAccount.addExpense("Rent", 1000);
+                personAccount.addExpense("Groceries", 300);
+
+                // Displaying account information on the HTML element with id "output-1"
+                document.getElementById("output-1").innerHTML = `${personAccount.accountInfo()}`;
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2">Perform arithmetic operations on two numbers</h4>
+    </div>
+
+    <div class="container border">
+        <ol>
+            <li>If year is divisble by 4 and not divisble by 100 then print “leap year”</li>
+            <li>Or if year is divisible by 400 then print “leap year”.</li>
+            <li>Else print “not a leap year</li>
+        </ol>  
+    </div>
+
+    <div class="container border">
+        <script>
+            function checkLeapYear (year){
+                if (year % 4 == 0 && year % 100 !== 0){
+                    document.write(`${year} is a leap year.`)
+                }
+                else if (year % 400 == 0){
+                    document.write(` ${year} is a leap year.`);
+                }
+                else{
+                    document.write (`${year} isn't a leap year.`);
+                }
+            }
+            let year = parseInt(prompt("Enter a year."));
+
+            checkLeapYear(year);
+        </script>
+
+        <br><br>
+        <pre><code>&lt;script&gt;
+    function checkLeapYear (year){
+        if (year % 4 == 0 &amp;&amp; year % 100 !== 0){
+            document.write(`${year} is a leap year.`)
+        }
+        else if (year % 400 == 0){
+            document.write(` ${year} is a leap year.`);
+        }
+        else{
+            document.write (`${year} isn't a leap year.`);
+        }
+    }
+    let year = parseInt(prompt(&quot;Enter a year.&quot;));
+
+    checkLeapYear(year); 
+&lt;/script&gt;
+        </code></pre>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>     

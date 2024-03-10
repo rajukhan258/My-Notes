@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center mb-3">
+        <h4 class="text-white p-2"> Program to find largest Number</h4>
+    </div>
+    <div class="container border mb-3">
+        <p>Given Numbers:</p>
+        <p id="n1"></p>
+        <p id="n2"></p>
+        <p id="n3"></p>
+        <p id="result"></p>
+    </div>
+
+    <div class="container">
+        <pre>
+<code>
+&lt;script&gt;
+    const num1 = parseInt(prompt(`Enter num-1`));
+    document.getElementById(&quot;n1&quot;).innerHTML = `${num1}`;
+    const num2 = parseInt(prompt(`Enter num-2`));
+    document.getElementById(&quot;n2&quot;).innerHTML = `${num2}`;
+    const num3 = parseInt(prompt(`Enter num-3`));
+    document.getElementById(&quot;n3&quot;).innerHTML = `${num3}`;
+
+    //check the condition
+    if(num1 &gt;= num2 &amp;&amp; num1 &gt;= num3){
+    document.getElementById(&quot;result&quot;).innerHTML=`The Largest number is ${num1}.`;
+    }
+    else if(num2 &gt;= num1 &amp;&amp; num2 &gt;= num3){
+    document.getElementById(&quot;result&quot;).innerHTML=`The Largest number is ${num2}.`;
+    }
+    else{
+    document.getElementById(&quot;result&quot;).innerHTML=`The Largest number is ${num3}.`;
+    }
+&lt;/script&gt;
+</code>
+    </pre>
+    </div>
+
+    <div class="container">
+        <h3>Method - 2</h3>
+        <p>JavaScript built-in <b>Math.max() </b>function to find the largest among the numbers.</p>
+    </div>
+
+    <div class="container">
+        <pre>
+        <code>
+&lt;script&gt;
+    const num1 = parseInt(prompt(`Enter num-1`));
+    document.getElementById(&quot;n1&quot;).innerHTML = `${num1}`;
+    const num2 = parseInt(prompt(`Enter num-2`));
+    document.getElementById(&quot;n2&quot;).innerHTML = `${num2}`;
+    const num3 = parseInt(prompt(`Enter num-3`));
+    document.getElementById(&quot;n3&quot;).innerHTML = `${num3}`;
+
+    const largest = Math.max(num1, num2, num3);
+
+    console.log('Largest Number:',largest);
+&lt;/script&gt;
+        </code>
+    </pre>
+    </div>
+
+
+    <script>
+        const num1 = parseInt(prompt(`Enter num-1`));
+        document.getElementById("n1").innerHTML = `${num1}`;
+        const num2 = parseInt(prompt(`Enter num-2`));
+        document.getElementById("n2").innerHTML = `${num2}`;
+        const num3 = parseInt(prompt(`Enter num-3`));
+        document.getElementById("n3").innerHTML = `${num3}`;
+
+        // const largest = Math.max(num1, num2, num3);
+        // console.log('Largest Number:',largest);
+
+
+        //check the condition
+        if (num1 >= num2 && num1 >= num3) {
+            document.getElementById("result").innerHTML = `The Largest number is ${num1}.`;
+        }
+        else if (num2 >= num1 && num2 >= num3) {
+            document.getElementById("result").innerHTML = `The Largest number is ${num2}.`;
+        }
+        else {
+            document.getElementById("result").innerHTML = `The Largest number is ${num3}.`;
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

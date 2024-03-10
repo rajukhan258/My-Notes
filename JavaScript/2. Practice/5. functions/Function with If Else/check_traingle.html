@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2">Check if a triangle is equilateral, scalene, or isosceles</h4>
+    </div>
+
+    <div class="container border mb-3">
+        <pre style="text-wrap: wrap;">According to the lengths of their sides, triangles can be classified into three types which are:
+
+          1.  Scalene
+          2.  Isosceles
+          3.  Equilateral</pre>
+        <hr>
+        <P class="h4">Scalene Triangle</P>
+        <p>A scalene triangle has all side lengths of different measures. No side will be equal in length to any of the
+            other sides in such a triangle. </p>
+        <P class="h4">Isosceles Triangle</P>
+        <p>In an isosceles triangle, the lengths of two of the three sides are equal. So, the angles opposite the equal
+            sides are equal to each other. </p>
+        <P class="h4">Equilateral Triangle</P>
+        <p>In an equilateral triangle, all the lengths of the sides are equal. In such a case, each of the interior
+            angles will have a measure of 60 degrees. </p>
+    </div>
+
+    <div class="container border mb-3">
+        <script>
+            function checkTraingle(side1, side2, side3) {
+                if ((side1 == side2) && (side1 == side3)) {
+                    document.write(`Equilateral Triangle`);
+                }
+                else if ((side1 == side2) || (side2 == side3) || (side1 == side3)) {
+                    document.write(`Isosceles Triangle`);
+                }
+                else {
+                    document.write(`Scalene Triangle`);
+                }
+            }
+            let sideA = parseInt(prompt("Enter the first side of the triangle."));
+            let sideB = parseInt(prompt("Enter the second side of the triangle."));
+            let sideC = parseInt(prompt("Enter the third side of the triangle."));
+
+            checkTraingle(sideA, sideB, sideC);
+        </script>
+        <br><br>
+
+        <pre><code>&lt;script&gt;
+    function checkTraingle(side1, side2, side3){
+        if((side1 == side2) &amp;&amp; (side1 == side3)){
+            document.write(`Equilateral Triangle`);
+        }
+        else if((side1 == side2) || (side2 == side3) || (side1 == side3)){
+            document.write(`Isosceles Triangle`)
+        }
+        else{
+            document.write(`Scalene Triangle`)
+        }
+    }
+    let sideA = parseInt(prompt(&quot;Enter the first side of the triangle.&quot;));
+    let sideB = parseInt(prompt(&quot;Enter the second side of the triangle.&quot;));
+    let sideC = parseInt(prompt(&quot;Enter the third side of the triangle.&quot;))
+
+    checkTraingle(sideA, sideB, sideC);
+&lt;/script&gt;</code></pre>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

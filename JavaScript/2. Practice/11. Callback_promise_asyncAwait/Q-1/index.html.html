@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Callback Practice</title>
+
+	<!-- External CSS Libraries -->
+    <!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons Library (Version 1.11.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+    <!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+    <!-- Local CSS File (style.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">CallBacks Practice</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<div class="container mb-3 border rounded">
+			<pre>We need to execute in the given scequence:
+	Register end
+	Email end
+	logIn end
+	Got User Data
+	User data Displayed</pre>
+		</div>
+
+
+
+
+		<!-- ========== Start sync Function Example ========== -->
+		<div class="container border rounded mb-3" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Normal/Synchronous Function Example:</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+	// Function to register the user
+	function register() {
+		document.getElementById('sync-output-1').innerHTML += ('Register end &lt;br&gt;');
+	}
+	// Function to send a confirmation email
+	function sendEmail() {
+		document.getElementById('sync-output-1').innerHTML += ('Email end &lt;br&gt;');
+	}
+	// Function to log the user in
+	function login() {
+		document.getElementById('sync-output-1').innerHTML += ('logIn end &lt;br&gt;');
+	}
+	// Function to get user data after login
+	function getUserDate() {
+		document.getElementById('sync-output-1').innerHTML += ('Got User Data &lt;br&gt;');
+	}
+	// Function to display user data
+	function displayData() {
+		document.getElementById('sync-output-1').innerHTML += ('User data Displayed &lt;br&gt;');
+	}
+
+	// Call functions in a sequence to simulate a synchronous flow
+	register();       // Registers the user
+	sendEmail();      // Sends a confirmation email
+	login();          // Logs the user in
+	getUserDate();    // Retrieves user data
+	displayData();    // Displays user data
+
+	// Performs other application work
+	document.getElementById('sync-output-1').innerHTML += ('Other Application Work!');
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="syncFunc()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="sync-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<p>This sequence of function calls appears synchronous, but note that in a real-world scenario, tasks like
+				sending emails or retrieving user data might involve asynchronous operations (like network requests),
+				which would be handled differently to ensure proper execution.</p>
+
+		</div>
+		<!-- ========== End sync Function Example ========== -->
+
+
+
+
+
+		<!-- ========== Start Asynchronous Function Example ========== -->
+		<div class="container border rounded mb-3" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Asynchronous Function Example:</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code class="language-javascript">&lt;script&gt;
+// Function to register the user (takes 2 seconds)
+function register() {
+	setTimeout(() =&gt; {
+		document.getElementById('async-output-1').innerHTML += ('Register end &lt;br&gt;');
+	}, 3000);
+}
+
+// Function to send a confirmation email (takes 1 second)
+function sendEmail() {
+	setTimeout(() =&gt; {
+		document.getElementById('async-output-1').innerHTML += ('Email end &lt;br&gt;');
+	}, 1000);
+}
+
+// Function to log the user in (takes 1 second)
+function login() {
+	setTimeout(() =&gt; {
+		document.getElementById('async-output-1').innerHTML += ('logIn end &lt;br&gt;');
+	}, 2000);
+}
+
+// Function to get user data after login (takes 1 second)
+function getUserDate() {
+	setTimeout(() =&gt; {
+		document.getElementById('async-output-1').innerHTML += ('Got User Data &lt;br&gt;');
+	}, 1000);
+}
+
+// Function to display user data (takes 1 second)
+function displayData() {
+	setTimeout(() =&gt; {
+		document.getElementById('async-output-1').innerHTML += ('User data Displayed &lt;br&gt;');
+	}, 2000);
+}
+
+// Calling asynchronous functions
+register();        // Registers the user (takes 2 seconds)
+sendEmail();       // Sends a confirmation email (takes 1 second)
+login();           // Logs the user in (takes 1 second)
+getUserDate();     // Retrieves user data (takes 1 second)
+displayData();     // Displays user data (takes 1 second)
+
+// Other application work
+document.getElementById('async-output-1').innerHTML += ('Other Application Work!&lt;br&gt;');
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="asycfunc()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="async-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<p>The code demonstrates asynchronous behavior, where the functions are called one after another, but their
+				execution occurs asynchronously due to the timeouts. The "Other Application Work" message appears
+				immediately as the code continues without waiting for the asynchronous tasks to complete.</p>
+
+			<p>To ensure that the "Other Application Work" message appears after all the asynchronous tasks complete, we
+				use a callback mechanism or utilize promises to manage the asynchronous flow.</p>
+		</div>
+		<!-- ========== End sync Asynchronous Function Example ========== -->
+
+
+
+
+
+		<!-- ========== Start Async Callbacks Example ========== -->
+		<div class="container border rounded border-warning mb-3" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5"> Async Callbacks Example</p>
+				<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(3)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-3"><code class="language-javascript">&lt;script&gt;
+	// Function to register the user with a callback
+	function register(callback) {
+		setTimeout(() =&gt; {
+			document.getElementById('async-callback-output-1').innerHTML +=('Register end &lt;br&gt;');
+			callback(); // Calls the provided callback after registering
+		}, 1000);
+	}
+
+	// Function to send an email with a callback
+	function sendEmail(callback) {
+		setTimeout(() =&gt; {
+			document.getElementById('async-callback-output-1').innerHTML +=('Email end &lt;br&gt;');
+			callback(); // Calls the provided callback after sending the email
+		}, 3000);
+	}
+
+	// Function to log the user in with a callback
+	function login(callback) {
+		setTimeout(() =&gt; {
+			document.getElementById('async-callback-output-1').innerHTML +=('logIn end &lt;br&gt;');
+			callback(); // Calls the provided callback after logging in
+		}, 1000);
+	}
+
+	// Function to get user data with a callback
+	function getUserDate(callback) {
+		setTimeout(() =&gt; {
+			document.getElementById('async-callback-output-1').innerHTML +=('Got User Data &lt;br&gt;');
+			callback(); // Calls the provided callback after getting user data
+		}, 2000);
+	}
+
+	// Function to display user data (no callback provided)
+	function displayData() {
+		setTimeout(() =&gt; {
+			document.getElementById('async-callback-output-1').innerHTML +=('User data Displayed &lt;br&gt;');
+		}, 1000);
+	}
+
+	// Using callbacks to ensure the sequence of execution
+	register(() =&gt; {
+		sendEmail(() =&gt; {
+			login(() =&gt; {
+				getUserDate(() =&gt; {
+					displayData(); // Display user data after getting it
+				});
+			});
+		});
+	});
+
+	document.getElementById('async-callback-output-1').innerHTML +=('Other Application Work!&lt;br&gt;'); // Executed immediately
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="asyncCallback()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="async-callback-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<p> callbacks are used to maintain the sequence of asynchronous operations. However, note that the last
+				console.log('Other Application Work!'); statement will execute immediately without waiting for the asynchronous
+				tasks to finish, as it's outside the callback chain.</p>
+
+			<p>Multiple nested callbacks in asynchronous code leads to Callback Hell which leads to complex and
+				hard-to-maintain structures. Promises offer a more beautiful and manageable way to handle asynchronous
+				operations, helping to reduce callback hell by providing a cleaner, more readable syntax.</p>
+		</div>
+		<!-- ========== End  Async Callbacks Example ========== -->
+
+
+
+
+
+		<!-- ========== Start Using promises Example ========== -->
+		<div class="container border rounded border-warning mb-3" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">promises Example</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-4"><code class="language-javascript">&lt;script&gt;
+	// Function to register the user using a Promise
+	function register() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated registration process completed
+				document.getElementById('promise-output-1').innerHTML += ('Register end &lt;br&gt;');
+				resolve(); // Resolves the promise after successful registration
+			}, 1000);
+		});
+	}
+
+	// Function to send an email using a Promise
+	function sendEmail() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated email sending completed
+				document.getElementById('promise-output-1').innerHTML += ('Email end &lt;br&gt;');
+				resolve(); // Resolves the promise after email is sent
+			}, 3000);
+		});
+	}
+
+	// Function to log the user in using a Promise
+	function login() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated login process completed
+				document.getElementById('promise-output-1').innerHTML += ('logIn end &lt;br&gt;');
+				resolve(); // Resolves the promise after successful login
+			}, 1000);
+		});
+	}
+
+	// Function to get user data using a Promise
+	function getUserDate() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated retrieval of user data completed
+				document.getElementById('promise-output-1').innerHTML += ('Got User Data &lt;br&gt;');
+				resolve(); // Resolves the promise after retrieving user data
+			}, 2000);
+		});
+	}
+
+	// Function to display user data using a Promise
+	function displayData() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated displaying of user data completed
+				document.getElementById('promise-output-1').innerHTML += ('User data Displayed &lt;br&gt;');
+				resolve(); // Resolves the promise after displaying user data
+			}, 1000);
+		});
+	}
+
+	// Calling the promises in sequence
+	register()
+		.then(sendEmail)
+		.then(login)
+		.then(getUserDate)
+		.then(displayData);
+
+	// Additional work that doesn't wait for the promises to finish
+	document.getElementById('promise-output-1').innerHTML += ('Other Application Work!&lt;br&gt;');
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="usingPromises()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="promise-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Using promises Example ========== -->
+
+
+
+
+
+
+		<!-- ========== Start Error handling in Promises ========== -->
+		<div class="container border rounded border-warning mb-3" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Error handling in Promises</p>
+				<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(5)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-5"><code class="language-javascript">&lt;script&gt;
+	function register() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulating an error while registering
+				return reject('Error while registering');
+				// The following line won't execute as reject() is called above
+				document.getElementById('prom-error-output-1').innerHTML += ('Register end &lt;br&gt;');
+			}, 1000);
+		});
+	}
+
+	// Function to simulate sending an email with a Promise
+	function sendEmail() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated email sending completed
+				document.getElementById('prom-error-output-1').innerHTML += ('Email end &lt;br&gt;');
+				resolve();
+			}, 3000);
+		});
+	}
+
+	// Function to simulate user login with a Promise
+	function login() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated login process completed
+				document.getElementById('prom-error-output-1').innerHTML += ('logIn end &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// Function to simulate getting user data with a Promise
+	function getUserDate() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated retrieval of user data completed
+				document.getElementById('prom-error-output-1').innerHTML += ('Got User Data &lt;br&gt;');
+				resolve();
+			}, 2000);
+		});
+	}
+
+	// Function to simulate displaying user data with a Promise
+	function displayData() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated displaying of user data completed
+				document.getElementById('prom-error-output-1').innerHTML += ('User data Displayed &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// Calling the promises in sequence and handling errors
+	register()
+		.then(sendEmail)
+		.then(login)
+		.then(getUserDate)
+		.then(displayData)
+		.catch((error) =&gt; {
+			// Catch any error thrown by any of the promises in the chain
+			document.getElementById('prom-error-output-1').innerHTML += ('Error: ' + error);
+		});
+
+	// Additional work that doesn't wait for the promises to finish
+	document.getElementById('prom-error-output-1').innerHTML += ('Other Application Work!&lt;br&gt;');
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="promiseErrorHandle()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="prom-error-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Error handling in Promises ========== -->
+
+
+
+
+
+		<!-- ========== Start Async Await Example ========== -->
+		<div class="container border rounded border-warning mb-3" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Async Await Example</p>
+				<button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(6)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-6"><code class="language-javascript">&lt;script&gt;
+	// Function to simulate user registration with a Promise
+	function register() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated registration process completed
+				document.getElementById('asyncawait-output-1').innerHTML += ('Register end &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// Function to simulate sending an email with a Promise
+	function sendEmail() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated email sending completed
+				document.getElementById('asyncawait-output-1').innerHTML += ('Email end &lt;br&gt;');
+				resolve();
+			}, 3000);
+		});
+	}
+
+	// Function to simulate user login with a Promise
+	function login() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated login process completed
+				document.getElementById('asyncawait-output-1').innerHTML += ('logIn end &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// Function to simulate getting user data with a Promise
+	function getUserDate() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated retrieval of user data completed
+				document.getElementById('asyncawait-output-1').innerHTML += ('Got User Data &lt;br&gt;');
+				resolve();
+			}, 2000);
+		});
+	}
+
+	// Function to simulate displaying user data with a Promise
+	function displayData() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated displaying of user data completed
+				document.getElementById('asyncawait-output-1').innerHTML += ('User data Displayed &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// An async function using await to handle promises sequentially
+	async function authenticate() {
+		await register();       // Wait for registration to complete
+		await sendEmail();      // Wait for email sending to complete
+		await login();          // Wait for login process to complete
+		await getUserDate();    // Wait for user data retrieval to complete
+		await displayData();    // Wait for displaying user data to complete
+	}
+
+	// Call the async function and perform actions after completion
+	//async function return promise so we can use .then()
+	authenticate().then(() =&gt; {
+		// Additional action after authentication completes
+		document.getElementById('asyncawait-output-1').innerHTML += ('Authentication Completed &lt;br&gt;');
+	});
+
+	// Additional work that doesn't wait for the promises to finish
+	document.getElementById('asyncawait-output-1').innerHTML += ('Other Application Work!&lt;br&gt;');
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="asyncawait()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="asyncawait-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Async Await Example ========== -->
+
+
+
+
+
+		<!-- ========== Start Async Await Error Example ========== -->
+		<div class="container border rounded border-warning mb-2 " id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Async Await Error Example</p>
+				<button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(7)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-7"><code class="language-javascript">&lt;script&gt;
+	// Function to simulate user registration with a Promise
+	function register() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated registration process completed
+				document.getElementById('asyncawait-error-output-1').innerHTML += ('Register end &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// Function to simulate sending an email with a Promise
+	function sendEmail() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated email sending completed
+				return reject('Error while sending email.');
+				document.getElementById('asyncawait-error-output-1').innerHTML += ('Email end &lt;br&gt;');
+			}, 3000);
+		});
+	}
+
+	// Function to simulate user login with a Promise
+	function login() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated login process completed
+				document.getElementById('asyncawait-error-output-1').innerHTML += ('logIn end &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// Function to simulate getting user data with a Promise
+	function getUserDate() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated retrieval of user data completed
+				document.getElementById('asyncawait-error-output-1').innerHTML += ('Got User Data &lt;br&gt;');
+				resolve();
+			}, 2000);
+		});
+	}
+
+	// Function to simulate displaying user data with a Promise
+	function displayData() {
+		return new Promise((resolve, reject) =&gt; {
+			setTimeout(() =&gt; {
+				// Simulated displaying of user data completed
+				document.getElementById('asyncawait-error-output-1').innerHTML += ('User data Displayed &lt;br&gt;');
+				resolve();
+			}, 1000);
+		});
+	}
+
+	// An async function using await to handle promises sequentially
+	async function authenticate() {
+		await register();       // Wait for registration to complete
+		await sendEmail();      // Wait for email sending to complete
+		await login();          // Wait for login process to complete
+		await getUserDate();    // Wait for user data retrieval to complete
+		await displayData();    // Wait for displaying user data to complete
+	}
+
+
+	//async function return promise so we can use .then()
+	// Call the async function and perform actions after completion or error
+	authenticate().then(() =&gt; {
+		// Additional action after authentication completes (won't execute due to previous rejection)
+		document.getElementById('asyncawait-error-output-1').innerHTML += ('Authentication Completed &lt;br&gt;');
+	}).catch((error) =&gt; {
+		// Catch any error thrown by the authenticate() function itself
+		document.getElementById('asyncawait-error-output-1').innerHTML += ('Error: ' + error);
+	});
+
+	// Additional work that doesn't wait for the promises to finish
+	document.getElementById('asyncawait-error-output-1').innerHTML += ('Other Application Work!&lt;br&gt;');
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="asyncawaitError()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="asyncawait-error-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Async Await Error Example ========== -->
+
+
+	</main>
+
+
+
+	<footer>
+		<script src="script.js"></script>
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

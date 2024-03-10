@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2">Perform arithmetic operations on two numbers</h4>
+    </div>
+
+    <div class="container border">
+        <script>
+            function operation(num1, num2, operator){
+                if(OP == "+"){
+                    document.write(`Sum of ${num1} and ${num2} is ${num1+num2}`);
+                }
+                else if(OP == "-"){
+                    document.write(`Difference of ${num1} and ${num2} is ${num1-num2}`);
+                }
+                else if(OP == "*"){
+                    document.write(`Product of ${num1} and ${num2} is ${num1*num2}`);
+                }
+                else if(OP == "/"){
+                    document.write(`Division of ${num1} and ${num2} is ${num1/num2}`);
+                }
+                else if(OP == "%"){
+                    document.write(`Modulus of ${num1} and ${num2} is ${num1%num2}`);
+                }
+                else{
+                    document.write("ERROR Occured")
+                }
+            }
+
+            let x = parseFloat(prompt(`Enter the first number`));
+            let y = parseFloat(prompt(`Enter the second number`));
+            let OP = prompt(`Enter a Operator: "+", "-", "*", "/", "%"`);
+
+            operation(x, y, OP)
+        </script>
+
+        <br><br>
+        <pre style="height:415px;"><code>&lt;script&gt;
+    function operation(num1, num2, operator){
+        if(OP == &quot;+&quot;){
+            document.write(`Sum of ${num1} and ${num2} is ${num1+num2}`);
+        }
+        else if(OP == &quot;-&quot;){
+            document.write(`Difference of ${num1} and ${num2} is ${num1-num2}`);
+        }
+        else if(OP == &quot;*&quot;){
+            document.write(`Product of ${num1} and ${num2} is ${num1*num2}`);
+        }
+        else if(OP == &quot;/&quot;){
+            document.write(`Division of ${num1} and ${num2} is ${num1/num2}`);
+        }
+        else if(OP == &quot;%&quot;){
+            document.write(`Modulus of ${num1} and ${num2} is ${num1%num2}`);
+        }
+        else{
+            document.write(&quot;ERROR Occured&quot;)
+        }
+    }
+
+    let x = parseFloat(prompt(`Enter the first number`));
+    let y = parseFloat(prompt(`Enter the second number`));
+    let OP = prompt(`Enter a Operator: &quot;+&quot;, &quot;-&quot;, &quot;*&quot;, &quot;/&quot;, &quot;%&quot;`);
+
+    operation(x, y, OP)
+ &lt;/script&gt;</code></pre>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>      

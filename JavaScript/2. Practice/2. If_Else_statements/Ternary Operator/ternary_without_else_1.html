@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary Operator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-dark bg-warning ">
+        <div class="container-fluid  nav justify-content-center ">
+            <p class="h1 ">Ternary Operator without else
+            </p>
+        </div>
+    </nav>
+
+<div class="container border mt-3 mb-3">
+    <p><b>Example of a ternary operator without else.</b></p>
+    <p id="output"></p>
+
+    <pre><code>&lt;script&gt;
+    let price = parseInt(prompt(&quot;Enter the price of Product&quot;));
+    let discount = parseInt(prompt(&quot;Enter the Discount in numbers:&quot;));
+
+    let discountedprice = (discount &gt;= 0) &amp;&amp; (price - discount);
+    document.getElementById(&quot;output&quot;).innerHTML = `Price = ${price} &lt;br/&gt; Discount = ${discount}&lt;br/&gt; Discounted Price = ${discountedprice}`
+&lt;/script&gt;</code></pre>
+</div>
+
+
+
+
+<script>
+    let price = parseInt(prompt("Enter the price of Product"));
+    let discount = parseInt(prompt("Enter the Discount in numbers:"));
+
+    let discountedprice = (discount >= 0) && (price - discount);
+    document.getElementById("output").innerHTML = `Price = ${price} <br/> Discount = ${discount}<br/> Discounted Price = <b>${discountedprice}<b/>`
+</script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

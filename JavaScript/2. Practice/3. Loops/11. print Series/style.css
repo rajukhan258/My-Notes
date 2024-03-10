@@ -1,0 +1,43 @@
+
+
+
+.a{
+    background-color: rgba(96, 166, 168, 0.812);
+    padding: 15px;
+    font-size: large;
+    /* color: white; */
+    font-weight: bold;
+}
+
+.b{
+    background-color: rgba(0, 139, 139, 0.64);
+    padding: 15px;
+    font-size: large;
+    /* color: white; */
+    font-weight: bold;
+}
+
+
+.c{
+    background-color: rgba(0, 139, 139, 0.88);
+    padding: 15px;
+    font-size: large;
+    /* color: white; */
+    font-weight: bold;
+}
+
+.d{
+    background-color: rgba(0, 118, 118, 0.904);
+    padding: 15px;
+    font-size: large;
+    /* color: white; */
+    font-weight: bold;
+}
+
+.e{
+    background-color: rgb(1, 107, 107);
+    padding: 15px;
+    font-size: large;
+    /* color: white; */
+    font-weight: bold;
+}

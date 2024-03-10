@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark  text-center">
+        <h3 class="text-white p-2">Print All Prime Numbers in an Interval</h3>
+    </div>
+
+    <div class="container">
+        <pre>
+            <code>
+&lt;script&gt;
+// take input from the user
+const startnum = parseInt(prompt(&quot;Enter Start number&quot;));
+const endnum = parseInt(prompt(&quot;Enter End number&quot;));
+
+// looping from first number to last number
+for (i = startnum; i &lt;= endnum; i++) {
+    let isPrime = true;  //let flag = 0;
+
+    //looping through 2 to user input number
+    for (let j = 2; j &lt; i; j++) {
+        if (i % j == 0) {
+            isPrime = false;    //flag = 1;
+            break;
+        }
+    }
+
+    //if number greater than 1 and not divisible by other numbers
+    if (i &gt; 1 &amp;&amp; isPrime == true) {
+        document.write(`&amp;emsp;` + i + ' ');
+    }
+}
+&lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+
+
+
+    <script>
+        // take input from the user
+        const startnum = parseInt(prompt("Enter Start number"));
+        const endnum = parseInt(prompt("Enter End number"));
+
+        document.write(`<div class="container border">`);
+        document.write(`Start number = ${startnum} <br>`);
+        document.write(`End number = ${endnum} <br>`);
+        document.write(`The prime numbers between ${startnum} and ${endnum} are: `);
+        document.write(`</div>`);
+
+        // looping from first number to last number
+        for (i = startnum; i <= endnum; i++) {
+            let isPrime = true;  //let flag = 0;
+
+            //looping through 2 to user input number
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;    //flag = 1;
+                    break;
+                }
+            }
+
+            //if number greater than 1 and not divisible by other numbers
+            if (i > 1 && isPrime == true) {
+                document.write(`&emsp;&emsp;&emsp;` + i + ' ');
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

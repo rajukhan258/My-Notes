@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Exercise</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Object Exercise</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Exercises: Level 2</p>
+            <ol>
+                <li>Find the person who has many skills in the users object.</li>
+                <li>Count logged in users, count users having greater than equal to 50 points from the following object.
+                </li>
+                <li>Find people who are MERN stack developer from the users object</li>
+                <li>Set your name in the users object without modifying the original users object</li>
+                <li>Get all keys or properties of users object</li>
+
+            </ol>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // The users object containing user information
+    const users = {
+        Alex: {
+            email: 'alex@alex.com',
+            skills: ['HTML', 'CSS', 'JavaScript'],
+            age: 20,
+            isLoggedIn: false,
+            points: 30
+        },
+        Asab: {
+            email: 'asab@asab.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+            age: 25,
+            isLoggedIn: false,
+            points: 50
+        },
+        Brook: {
+            email: 'daniel@daniel.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+            age: 30,
+            isLoggedIn: true,
+            points: 50
+        },
+        Daniel: {
+            email: 'daniel@alex.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        },
+        John: {
+            email: 'john@john.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+            age: 20,
+            isLoggedIn: true,
+            points: 50
+        },
+        Thomas: {
+            email: 'thomas@thomas.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        },
+        Paul: {
+            email: 'paul@paul.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        }
+    };
+
+    // Initializing variables to store specific user information
+    let maxSkills = 0; // Variable to track maximum skills
+    let skillfulPerson = ''; // Variable to store the person with the most skills
+    let loggedInusers = 0; // Variable to count logged-in users
+    let highPointsUsers = 0; // Variable to count users with points &gt;= 50
+    const mernDevelopers = []; // Array to store MERN stack developers
+
+    // Looping through the users object to find specific information
+    for (let keyuser in users) {
+        // Finding the person with the most skills
+        if (users[keyuser].skills.length &gt; maxSkills) {
+            maxSkills = users[keyuser].skills.length;
+            skillfulPerson = keyuser;
+        }
+        // Counting logged-in users and users with points &gt;= 50
+        if (users[keyuser].isLoggedIn &amp;&amp; users[keyuser].points &gt;= 50) {
+            loggedInusers++;
+            highPointsUsers++;
+        }
+
+        // Identifying MERN stack developers
+        const skills = users[keyuser].skills;
+        if (skills.includes(&quot;MongoDB&quot;) &amp;&amp;
+            skills.includes(&quot;Express&quot;) &amp;&amp;
+            skills.includes(&quot;React&quot;) &amp;&amp;
+            skills.includes(&quot;Node&quot;)) {
+            mernDevelopers.push(keyuser);
+        }
+    }
+
+    // Displaying information on the HTML page
+    document.getElementById(&quot;output-1&quot;).innerHTML = `&lt;b&gt;Ans 1:&lt;/b&gt; Most skillful Person: ${skillfulPerson}`;
+
+    document.getElementById(&quot;output-2&quot;).innerHTML = `&lt;b&gt;Ans 2:&lt;/b&gt; Logged-in users: ${loggedInusers}&lt;br&gt;Users with &gt;= 50 points: ${highPointsUsers}`;
+
+    document.getElementById(&quot;output-3&quot;).innerHTML = `&lt;b&gt;Ans 3:&lt;/b&gt; MERN stack developers: ${mernDevelopers.join(&quot;, &quot;)}`;
+
+    // Adding a new user 'Joseph' to the users object
+    const YourName = {
+        ...users, Joseph: {
+            email: 'Joseph@John.com',
+            skills: ['HTML', 'CSS', 'JavaScript'], // 
+            age: 25,
+            isLoggedIn: true,
+            points: 40
+        }
+    };
+
+    // Generating the object structure with its properties and values
+    let output = document.getElementById(&quot;output-4&quot;);
+    let text = &quot;{&lt;br&gt;&quot;;
+    for (let key in YourName) {
+        text += `${key}: {`;
+        for (let prop in YourName[key]) {
+            // Checking and formatting string values
+            if (prop === 'value' &amp;&amp; typeof YourName[key][prop] === 'string') {
+                text += `${prop}: &quot;${YourName[key][prop]}&quot;, `;
+            } else {
+                text += `${prop}: ${YourName[key][prop]}, `;
+            }
+        }
+        text = text.slice(0, -2);
+        text += &quot;},&lt;br&gt;&quot;;
+    }
+    text = text.slice(0, -5);
+    text += &quot;&lt;br&gt;}&quot;;
+    output.innerHTML = `&lt;b&gt;Ans 4:&lt;/b&gt; ${text}`;
+
+    // Getting all keys/properties of the users object and displaying them
+    const Userkeys = Object.keys(users);
+    document.getElementById(&quot;output-5&quot;).innerHTML = `&lt;b&gt;Ans 5:&lt;/b&gt; [${Userkeys.join(&quot;, &quot;)}]`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="runcode()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 overflow-auto  text-nowrap" style="max-height: 350px;">
+                    <p id="output-1"></p>
+                    <p id="output-2"></p>
+                    <p id="output-3"></p>
+                    <p id="output-4"></p>
+                    <p id="output-5"></p>
+                    <p id="output-6"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+        <script>
+            "use strict";
+            function runcode() {
+                // The users object containing user information
+                const users = {
+                    Alex: {
+                        email: 'alex@alex.com',
+                        skills: ['HTML', 'CSS', 'JavaScript'],
+                        age: 20,
+                        isLoggedIn: false,
+                        points: 30
+                    },
+                    Asab: {
+                        email: 'asab@asab.com',
+                        skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+                        age: 25,
+                        isLoggedIn: false,
+                        points: 50
+                    },
+                    Brook: {
+                        email: 'daniel@daniel.com',
+                        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+                        age: 30,
+                        isLoggedIn: true,
+                        points: 50
+                    },
+                    Daniel: {
+                        email: 'daniel@alex.com',
+                        skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+                        age: 20,
+                        isLoggedIn: false,
+                        points: 40
+                    },
+                    John: {
+                        email: 'john@john.com',
+                        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+                        age: 20,
+                        isLoggedIn: true,
+                        points: 50
+                    },
+                    Thomas: {
+                        email: 'thomas@thomas.com',
+                        skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+                        age: 20,
+                        isLoggedIn: false,
+                        points: 40
+                    },
+                    Paul: {
+                        email: 'paul@paul.com',
+                        skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+                        age: 20,
+                        isLoggedIn: false,
+                        points: 40
+                    }
+                };
+
+                // Initializing variables to store specific user information
+                let maxSkills = 0; // Variable to track maximum skills
+                let skillfulPerson = ''; // Variable to store the person with the most skills
+                let loggedInusers = 0; // Variable to count logged-in users
+                let highPointsUsers = 0; // Variable to count users with points >= 50
+                const mernDevelopers = []; // Array to store MERN stack developers
+
+                // Looping through the users object to find specific information
+                for (let keyuser in users) {
+                    // Finding the person with the most skills
+                    if (users[keyuser].skills.length > maxSkills) {
+                        maxSkills = users[keyuser].skills.length;
+                        skillfulPerson = keyuser;
+                    }
+                    // Counting logged-in users and users with points >= 50
+                    if (users[keyuser].isLoggedIn && users[keyuser].points >= 50) {
+                        loggedInusers++;
+                        highPointsUsers++;
+                    }
+
+                    // Identifying MERN stack developers
+                    const skills = users[keyuser].skills;
+                    if (skills.includes("MongoDB") &&
+                        skills.includes("Express") &&
+                        skills.includes("React") &&
+                        skills.includes("Node")) {
+                        mernDevelopers.push(keyuser);
+                    }
+                }
+
+                // Displaying information on the HTML page
+                document.getElementById("output-1").innerHTML = `<b>Ans 1:</b> Most skillful Person: ${skillfulPerson}`;
+
+                document.getElementById("output-2").innerHTML = `<b>Ans 2:</b> Logged-in users: ${loggedInusers}<br>Users with >= 50 points: ${highPointsUsers}`;
+
+                document.getElementById("output-3").innerHTML = `<b>Ans 3:</b> MERN stack developers: ${mernDevelopers.join(", ")}`;
+
+                // Adding a new user 'Joseph' to the users object
+                const YourName = {
+                    ...users, Joseph: {
+                        email: 'Joseph@John.com',
+                        skills: ['HTML', 'CSS', 'JavaScript'], // 
+                        age: 25,
+                        isLoggedIn: true,
+                        points: 40
+                    }
+                };
+
+                // Generating the object structure with its properties and values
+                let output = document.getElementById("output-4");
+                let text = "{<br>";
+                for (let key in YourName) {
+                    text += `${key}: {`;
+                    for (let prop in YourName[key]) {
+                        // Checking and formatting string values
+                        if (prop === 'value' && typeof YourName[key][prop] === 'string') {
+                            text += `${prop}: "${YourName[key][prop]}", `;
+                        } else {
+                            text += `${prop}: ${YourName[key][prop]}, `;
+                        }
+                    }
+                    text = text.slice(0, -2);
+                    text += "},<br>";
+                }
+                text = text.slice(0, -5);
+                text += "<br>}";
+                output.innerHTML = `<b>Ans 4:</b> ${text}`;
+
+                // Getting all keys/properties of the users object and displaying them
+                const Userkeys = Object.keys(users);
+                document.getElementById("output-5").innerHTML = `<b>Ans 5:</b> [${Userkeys.join(", ")}]`;
+
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

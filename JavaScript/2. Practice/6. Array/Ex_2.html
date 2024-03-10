@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Exercise</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        ol li::marker {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Array Exercise</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1" style="z-index: 100;">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Question 2:</p>
+            <ol>
+                <li>Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft,
+                    Apple, IBM, Oracle and Amazon</li>
+                <li>Print the array using document.getElementbyID()</li>
+                <li>Print the number of companies in the array</li>
+                <li>Print the first company, middle and last company</li>
+                <li>Print out each company</li>
+                <li>Change each company name to uppercase one by one and print them out</li>
+                <li>Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are
+                    big IT companies.</li>
+                <li>Check if a certain company exists in the itCompanies array. If it exist return the company else
+                    return a company is not found</li>
+                <!-- <li>Filter out companies which have more than one 'o' without the filter method</li> -->
+                <li>Sort the array using sort() method</li>
+                <li>Reverse the array using reverse() method</li>
+                <li>Slice out the first 3 companies from the array</li>
+                <li>Slice out the last 3 companies from the array</li>
+                <li>Slice out the middle IT company or companies from the array</li>
+                <li>Remove the first IT company from the array</li>
+                <li>Remove the middle IT company or companies from the array</li>
+                <li>Remove the last IT company from the array</li>
+                <li>Remove all IT companies</li>
+            </ol>
+
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Solutions:</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    const itCompanies = [&quot;Facebook&quot;, &quot;Google&quot;, &quot;Microsoft&quot;, &quot;Apple&quot;, &quot;IBM&quot;, &quot;Oracle&quot;, &quot;Amazon&quot;,];
+
+    // Print the array
+    document.getElementById(&quot;ans2&quot;).innerHTML = `&lt;b&gt;Ans 2:&lt;/b&gt; [${itCompanies.join(&quot;, &quot;)}]`;
+
+    // Print the number of companies
+    document.getElementById(&quot;ans3&quot;).innerHTML = `&lt;b&gt;Ans 3:&lt;/b&gt; No. of companies = ${itCompanies.length}`;
+
+    // Print the first, middle, and last companies
+
+    document.getElementById(&quot;ans4&quot;).innerHTML = `&lt;b&gt;Ans 4:&lt;/b&gt; First Company = &quot;${itCompanies[0]}&quot; &lt;br&gt; 
+    Middle Company = &quot;${itCompanies[Math.floor(itCompanies.length / 2)]}&quot; &lt;br&gt; 
+    Last Company =  &quot;${itCompanies[itCompanies.length - 1]}&quot;`;
+
+    // Print out each company
+    document.getElementById(&quot;ans5&quot;).innerHTML = `&lt;b&gt;Ans 5: &lt;/b&gt; ${itCompanies.join(&quot;&lt;br&gt; &quot;)}`;
+
+    // Change each company name to uppercase 
+    let output6 = document.getElementById(&quot;ans6&quot;);
+    output6.innerHTML = `&lt;b&gt;Ans 6:&lt;/b&gt;`;
+    itCompanies.forEach(elements =&gt; {
+        { output6.innerHTML += elements.toUpperCase() + &quot;&lt;br&gt;&quot; }
+    });
+
+    // Print the array as a sentence
+    let output7 = document.getElementById(&quot;ans7&quot;);
+    output7.innerHTML = `&lt;b&gt;Ans 7: &lt;/b&gt;${itCompanies.join(&quot;, &quot;)} are big iT companies.`;
+
+    // Check if a certain company exists in the itCompanies array
+    let output8 = document.getElementById(&quot;ans8&quot;);
+    output8.innerHTML = `&lt;b&gt;Ans 8: &lt;/b&gt;`;
+    if (itCompanies.includes(&quot;Facebook&quot;)) {
+        output8.innerHTML += &quot;Facebook found&quot;;
+    }
+    else {
+        output8.innerHTML += &quot;Not Found&quot;
+    };
+
+    // Sort the array
+    itCompanies.sort();
+    document.getElementById(&quot;ans9&quot;).innerHTML = `&lt;b&gt;Ans 9: &lt;/b&gt;[${itCompanies.join(&quot;, &quot;)}]`;
+
+    // Reverse the array
+    itCompanies.reverse();
+    document.getElementById(&quot;ans10&quot;).innerHTML = `&lt;b&gt;Ans 10: &lt;/b&gt;[${itCompanies.join(&quot;, &quot;)}]`;
+
+    // Slice out the first 3 companies
+    const first3Companies = itCompanies.slice(0, 3);
+    document.getElementById(&quot;ans11&quot;).innerHTML = `&lt;b&gt;Ans 11: &lt;/b&gt;[${first3Companies.join(&quot;, &quot;)}]`;
+
+    // Slice out the last 3 companies\
+    const last3Companies = itCompanies.slice(-3);
+    document.getElementById(&quot;ans12&quot;).innerHTML = `&lt;b&gt;Ans 12: &lt;/b&gt;[${last3Companies.join(&quot;, &quot;)}]`;
+
+    // Slice out the middle IT company or companies
+    const middleIndex = Math.floor(itCompanies.length / 2);
+    const isEven = itCompanies.length % 2 === 0;
+    let middleCompanies;
+    if (isEven) {
+        middleCompanies = [itCompanies[middleIndex - 1], itCompanies[middleIndex]];
+    }
+    else {
+        middleCompanies = [itCompanies[middleIndex]];
+    }
+    document.getElementById(&quot;ans13&quot;).innerHTML = `&lt;b&gt;Ans 13: &lt;/b&gt;[${middleCompanies.join(&quot;, &quot;)}]`;
+
+    // Remove the first IT company
+    itCompanies.shift();
+    document.getElementById(&quot;ans14&quot;).innerHTML = `&lt;b&gt;Ans 14: &lt;/b&gt;[${itCompanies.join(&quot;, &quot;)}]`;
+
+    // Remove the middle IT company or companies
+    itCompanies.splice(middleIndex - 1, middleCompanies.length + 1);
+    document.getElementById(&quot;ans15&quot;).innerHTML = `&lt;b&gt;Ans 15: &lt;/b&gt;[${itCompanies.join(&quot;, &quot;)}]`;
+
+    // Remove the last IT company
+    itCompanies.pop()
+    document.getElementById(&quot;ans16&quot;).innerHTML = `&lt;b&gt;Ans 16: &lt;/b&gt;[${itCompanies.join(&quot;, &quot;)}]`;
+
+    // Remove all IT companies
+    itCompanies.splice(0, itCompanies.length)
+    document.getElementById(&quot;ans17&quot;).innerHTML = `&lt;b&gt;Ans 17: &lt;/b&gt;[${itCompanies.join(&quot;, &quot;)}]`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="runcode()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 overflow-auto" style="max-height: 350px; ">
+                    <!-- <p id="ans1"></p> -->
+                    <p id="ans2"></p>
+                    <p id="ans3"></p>
+                    <p id="ans4"></p>
+                    <p id="ans5"></p>
+                    <p id="ans6"></p>
+                    <p id="ans7"></p>
+                    <p id="ans8"></p>
+                    <p id="ans9"></p>
+                    <p id="ans10"></p>
+                    <p id="ans11"></p>
+                    <p id="ans12"></p>
+                    <p id="ans13"></p>
+                    <p id="ans14"></p>
+                    <p id="ans15"></p>
+                    <p id="ans16"></p>
+                    <p id="ans17"></p>
+                    <p id="ans18"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <script>
+            function runcode() {
+                const itCompanies = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon",];
+
+                // Print the array
+                document.getElementById("ans2").innerHTML = `<b>Ans 2:</b> [${itCompanies.join(", ")}]`;
+
+                // Print the number of companies
+                document.getElementById("ans3").innerHTML = `<b>Ans 3:</b> No. of companies = ${itCompanies.length}`;
+
+                // Print the first, middle, and last companies
+
+                document.getElementById("ans4").innerHTML = `<b>Ans 4:</b> First Company = "${itCompanies[0]}" <br> 
+                Middle Company = "${itCompanies[Math.floor(itCompanies.length / 2)]}" <br> 
+                Last Company =  "${itCompanies[itCompanies.length - 1]}"`;
+
+                // Print out each company
+                document.getElementById("ans5").innerHTML = `<b>Ans 5: </b> ${itCompanies.join("<br> ")}`;
+
+                // Change each company name to uppercase 
+                let output6 = document.getElementById("ans6");
+                output6.innerHTML = `<b>Ans 6:</b>`;
+                itCompanies.forEach(elements => {
+                    { output6.innerHTML += elements.toUpperCase() + "<br>" }
+                });
+
+                // Print the array as a sentence
+                let output7 = document.getElementById("ans7");
+                output7.innerHTML = `<b>Ans 7: </b>${itCompanies.join(", ")} are big iT companies.`;
+
+                // Check if a certain company exists in the itCompanies array
+                let output8 = document.getElementById("ans8");
+                output8.innerHTML = `<b>Ans 8: </b>`;
+                if (itCompanies.includes("Facebook")) {
+                    output8.innerHTML += "Facebook found";
+                }
+                else {
+                    output8.innerHTML += "Not Found"
+                };
+
+                // Sort the array
+                itCompanies.sort();
+                document.getElementById("ans9").innerHTML = `<b>Ans 9: </b>[${itCompanies.join(", ")}]`;
+
+                // Reverse the array
+                itCompanies.reverse();
+                document.getElementById("ans10").innerHTML = `<b>Ans 10: </b>[${itCompanies.join(", ")}]`;
+
+                // Slice out the first 3 companies
+                const first3Companies = itCompanies.slice(0, 3);
+                document.getElementById("ans11").innerHTML = `<b>Ans 11: </b>[${first3Companies.join(", ")}]`;
+
+                // Slice out the last 3 companies\
+                const last3Companies = itCompanies.slice(-3);
+                document.getElementById("ans12").innerHTML = `<b>Ans 12: </b>[${last3Companies.join(", ")}]`;
+
+                // Slice out the middle IT company or companies
+                const middleIndex = Math.floor(itCompanies.length / 2);
+                const isEven = itCompanies.length % 2 === 0;
+                let middleCompanies;
+                if (isEven) {
+                    middleCompanies = [itCompanies[middleIndex - 1], itCompanies[middleIndex]];
+                }
+                else {
+                    middleCompanies = [itCompanies[middleIndex]];
+                }
+                document.getElementById("ans13").innerHTML = `<b>Ans 13: </b>[${middleCompanies.join(", ")}]`;
+
+                // Remove the first IT company
+                itCompanies.shift();
+                document.getElementById("ans14").innerHTML = `<b>Ans 14: </b>[${itCompanies.join(", ")}]`;
+
+                // Remove the middle IT company or companies
+                itCompanies.splice(middleIndex - 1, middleCompanies.length + 1);
+                document.getElementById("ans15").innerHTML = `<b>Ans 15: </b>[${itCompanies.join(", ")}]`;
+
+                // Remove the last IT company
+                itCompanies.pop()
+                document.getElementById("ans16").innerHTML = `<b>Ans 16: </b>[${itCompanies.join(", ")}]`;
+
+                // Remove all IT companies
+                itCompanies.splice(0, itCompanies.length)
+                document.getElementById("ans17").innerHTML = `<b>Ans 17: </b>[${itCompanies.join(", ")}]`;
+            }
+        </script>
+
+
+
+
+
+
+
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `< i class="bi bi-clipboard-check-fill" ></i > `;
+                setTimeout(function () {
+                    copyButton.innerHTML = `< i class="bi bi-clipboard" ></i >`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-center">
+        <h4 class="text-white p-2">Program to Print the Fibonacci Sequence</h4>
+    </div>
+
+<div class="container ">
+    <p class="h4">Fibonacci Series Up to n Terms using for loop</p>
+</div>
+
+<script>
+    document.write(`<div class = "container ">`);
+    const number = parseInt(prompt(`Enter the number of terms:`));
+
+    let a = 0;
+    let b = 1;
+    document.write(`${a} &emsp;`);
+    document.write(`${b}`);
+    for(let i=1; i<=number; i++){
+        let temp = a + b;
+        document.write(`&emsp;${temp}`);
+        a = b;
+        b = temp;
+    }
+    document.write(`</div>`);
+</script>
+
+<div class="container   mb-5">
+<pre>
+        <code>
+&lt;script&gt;
+    document.write(`&lt;div class = container border&gt;`);
+    const number = parseInt(prompt(`Enter the number of terms:`));
+
+    let a = 0;
+    let b = 1;
+    document.write(`${a} &amp;emsp;`);
+    document.write(`${b}`);
+    for(let i=1; i&lt;=number; i++){
+        let temp = a + b;
+        document.write(`&amp;emsp;${temp}`);
+        a = b;
+        b = temp;
+    }
+&lt;/script&gt;
+        </code>
+</pre>
+</div>
+
+
+<div class="container ">
+    <p class="h4">Fibonacci Sequence Up to a Certain Number using while loop</p>
+</div>
+
+<script>
+    document.write(`<div class = "container ">`);
+    // const number = parseInt(prompt(`Enter the number of terms:`));
+
+    let x = 0;
+    let y = 1;
+    document.write(`${x} &emsp;`);
+    document.write(`${y}`);
+    let Z = x + y;
+    let j =1;
+    while(Z <= number){
+        document.write(`&emsp;${Z}`);
+        x = y;
+        y = Z;
+        Z = x + y;
+    }
+    document.write(`</div>`);
+</script>
+
+<div class="container ">
+    <pre>
+            <code>
+&lt;script&gt;
+    document.write(`&lt;div class = &quot;container &quot;&gt;`);
+    // const number = parseInt(prompt(`Enter the number of terms:`));
+
+    let x = 0;
+    let y = 1;
+    document.write(`${x} &amp;emsp;`);
+    document.write(`${y}`);
+    let Z = x + y;
+    let j =1;
+    while(Z &lt;= number){
+        document.write(`&amp;emsp;${Z}`);
+        x = y;
+        y = Z;
+        Z = x + y;
+    }
+document.write(`&lt;/div&gt;`);
+&lt;/script&gt;
+            </code>
+    </pre>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
