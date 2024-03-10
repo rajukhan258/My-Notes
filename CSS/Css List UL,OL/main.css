@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    /* line-height: 20px; */
+}
+
+h1{
+    text-align: center;
+    background: rgb(0, 179, 182);
+    padding: 18px;
+}
+h2{
+    background-color: blanchedalmond;
+    margin: 0;
+    padding: 5px;
+}
+
+ul, ol{
+    /* border: 2px solid black; */
+    list-style-position: inside;
+    margin-left: 50px;
+}
+#container{
+    border: 1px solid black;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+.box1{
+    display: flow-root;
+    /* border: 2px solid black; */
+}
+.listbox{
+    /* border: 2px solid black; */
+    width: 40%;
+    float: left;
+}
+.ordered{
+    list-style-type:'☯' ;
+    
+}
+.unordered{
+    list-style-type:'👉' ;
+}
+.picbox{
+    /* border: 1px solid black; */
+    width: 40%;
+    float: right;
+}
+img{
+    width: 100%;
+}
+
+
+
+
+
+
+.styleimg{
+    list-style-image: url("./images/globe.png");
+    /* list-style-image: linear-gradient(to left bottom, red, blue); */
+}
+
+
+
+
+.shorthand{
+    list-style: square inside url("sqpurple.gif");
+}

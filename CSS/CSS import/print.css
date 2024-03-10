@@ -1,0 +1,7 @@
+#menu, #sidebar{
+    display: none;
+}
+
+#content{
+    width: 100%;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS List UL / OL</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>CSS List UL / OL</h1>
+
+    <div id="container">
+
+        <P>In HTML, there are two main types of lists:</P>
+        <ol>
+            <li><b>unordered lists (&ltUl&gt)</b> - the list items are marked with bullets</li>
+            <li><b>ordered lists (&ltOl&gt)</b> - the list items are marked with numbers or letters.</li>
+        </ol>
+        <br>
+        <p>The CSS list properties allow you to:</p>
+        <ul>
+            <li><b>list-style-type:</b> This property is responsible for controlling the appearance and shape of the
+                marker.</li>
+            <li><b>list-style-image:</b> It sets an image for the marker instead of the number or a bullet point.</li>
+            <li><b>list-style-position:</b> It specifies the position of the marker.</li>
+            <li><b>list-style:</b> It is the shorthand property of the above properties.</li>
+
+            <!-- <li><b>marker-offset:</b>: It is used to specify the distance between the text and the marker.</li> -->
+        </ul>
+        <br><br>
+
+
+
+
+
+        <h2>List-Style-Type</h2>
+        <br>
+        <p>The list-style-type property specifies the type of list item marker.</p>
+        <br>
+        <div class="box1">
+            <p><b>For Ordered List</b></p>
+            <div class="listbox">
+                <ol class="list ordered">
+                    <li> list-style-type:decimal;(default)</li>
+                    <li> list-style-type:lower-alpha;</li>
+                    <li> list-style-type:upper-alpha;</li>
+                    <li> list-style-type:lower-roman;</li>
+                    <li> list-style-type:upper-roman;</li>
+                    <li> list-style-type:string; (used here in CSS)</li>
+                    <li> list-style-type:none;</li>
+                </ol>
+                <br>
+                <p><b>For Unordered List</b></p>
+
+                <ul class="list unordered">
+                    <li> list-style-type:disc;(default)</li>
+                    <li> list-style-type:circle;</li>
+                    <li> list-style-type:square;</li>
+                    <li> list-style-type:none;</li>
+                </ul>
+            </div>
+
+            <div class="picbox"><img src="./images/Capture1.JPG" alt=""></div>
+
+        </div>
+        <br>
+        <p><b>NOTE: </b>Pseudo Element ::marker also can be used to change list style type</p>
+        <br><br>
+
+
+
+
+
+        <h2>List-Style-Position</h2>
+        <br>
+        <p> The list-style-position property specifies the position of the list-item markers (bullet points).</p>
+
+        <br>
+        <div class="box1">
+            <div class="listbox">
+                <ul class="list ">
+                    <li> list-style-position:outside; (default)</li>
+                    <li> list-style-position:inside;</li>
+                </ul>
+            </div>
+
+            <div class="picbox"><img src="./images/Capture2.JPG" alt=""></div>
+
+        </div>
+<br><br>
+
+
+
+
+
+        <h2>List-Style-image</h2>
+        <br>
+        <p>The list-style-image property specifies an image as the list item marker:</p>
+
+        <br>
+        <div class="box1">
+            <div class="listbox">
+                <ul class="list styleimg">
+                    <li> list-style-image: none;</li>
+                    <li> list-style-image: url("starsolid.gif");</li>
+                    <li> list-style-image: linear-gradient(to left bottom, red, blue);</li>
+                </ul>
+            </div>
+
+            <div class="picbox"><img src="./images/capture3.png" alt=""></div>
+        </div>
+<br><br>
+
+
+
+
+
+
+
+        <h2>List-Style (Shorthand)</h2>
+        <br>
+        <p> The list-style property is a shorthand property. It is used to set all the list properties in one declaration. When using the shorthand property, the order of the property values are:</p>
+
+        <br>
+        <div class="box1">
+            <div class="listbox">
+                <ul class="list shorthand">
+                    <li> list-style-type: </li>
+                    <li> list-style-position: </li>
+                    <li> list-style-image: </li>
+                </ul>
+            </div>
+
+            <div class="picbox"><img src="./images/capture4.png" alt=""></div>
+        </div>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <br><br><br><br><br>
+</body>
+
+</html>

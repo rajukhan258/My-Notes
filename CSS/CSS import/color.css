@@ -1,0 +1,47 @@
+h1 {
+    background-color: brown;
+    color: white;
+}
+
+body {
+    color: #777;
+    background: #f0f0f0;
+}
+
+#wrapper {
+    background-color: rgb(226, 226, 226);
+}
+
+#header {
+    background-color: crimson;
+    color: white;
+}
+
+#menu {
+    background-color: rgb(0, 186, 200);
+}
+
+#menu li a {
+    color: rgb(0, 0, 0);
+}
+
+#menu li a:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#content {
+    color: black;
+}
+
+#sidebar {
+    background-color: rgb(202, 207, 202);
+}
+
+#sidebar li a {
+    color: rgb(18, 18, 18);
+}
+
+#footer {
+    background-color: crimson;
+    color: white;
+}
