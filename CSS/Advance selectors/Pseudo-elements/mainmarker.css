@@ -1,0 +1,63 @@
+@import url(fileselector.css);
+
+
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: rgb(2, 145, 155);
+    padding: 10px;
+    text-align: center;
+}
+h2{
+    padding: 5px 0 5px 10px;
+}
+
+
+
+
+
+
+
+
+.box1{
+    /* border: 1px solid black; */
+    padding: 30px 20px;
+    display: flow-root;
+}
+
+.box1 .list1 li::marker{
+    color: red;
+    font-size: 25px;
+}
+
+.box1 .list2 li::marker{
+    color: blue;
+    content: "☞";
+    font-size: 25px;
+} 
+.box1 img{
+    width: 500px;
+}
+
+#box1A{
+    /* border: 1px solid black; */
+    width: 30%;
+    float: left;
+    margin: 5px 0;
+}
+#box1B{
+    /* border: 1px solid black; */
+    width: 60%;
+    float: right;
+    margin: 5px 0;
+}

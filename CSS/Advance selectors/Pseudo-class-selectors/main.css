@@ -1,0 +1,82 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: rgb(2, 145, 155);
+    padding: 10px;
+    text-align: center;
+}
+h2{
+    padding: 15px 0 5px 10px;
+}
+
+
+
+
+
+
+
+.container{
+    /* border: 2px solid red; */
+    padding: 15px 20px;
+    display: flex;
+
+    justify-content: space-between;
+}
+.text-container{
+    border: 2px solid black;
+    width: 48%;
+}
+.tbox{
+    /* border: 2px solid orangered; */
+    padding-bottom: 10px;
+}
+.img-container{
+    /* border: 2px solid green; */
+    width: 48%;
+}
+
+.img-container img{
+    width: 100%;
+}
+
+
+
+
+
+#text1 :is(h3, h4){
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    padding: 5px 0px;
+}
+
+:is(#text3, #text4) h3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: green;
+    padding: 5px 0px;
+}
+
+:is(#text5, #text6) :is(h4, p){
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: orange;
+    padding: 5px 0px;
+}
+
+
+
+:is(#text7, #text8) :is(h3, p){
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    padding: 5px 0px;
+}
+
+:is(#text7, #text8) p:hover{
+    color: green;
+}

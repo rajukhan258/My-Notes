@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link href="https://fonts.googleapis.com/css?family=Mate:regular,italic" rel="stylesheet" />
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+        <h1>Animation</h1>
+        <h2>Animation properties</h2>
+        <ul>
+            <li>animation-name</li>
+            <li>animation-duration</li>
+            <li>animation-timing-function</li>
+            <li>animation-delay</li>
+            <li>animation-iteration-count</li>
+            <li>animation-direction</li>
+            <li>animation-fill-mode</li>
+            <li>animation-play-state</li>
+            <li>animation (Shorthand property)</li>
+        </ul>
+        <br><hr>
+<h3>animation-name and Animation-duration</h3>
+<p>Animation name works with animation duration</p>
+<div class="card">Hello</div>
+<pre><b>CODE USED</b>.card{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    line-height: 150px;
+    margin: -150px;
+    background-color: white;
+    color: #03446A;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+</b>  animation-name: sample;</b>
+<b>  animation-duration: 1s;</b>
+}
+@keyframes sample{
+    from{border-radius: 0%;}
+    to{border-radius: 50%;}
+}</pre>
+
+<h3>animation-iteration-count</h3>
+<P>Other value can be infinite</P>
+<div class="card2">Hello</div>
+<pre><b>CODE USED</b>.card2{
+    width: 150px;
+    height: 150px;
+    margin-left: 30%;
+    line-height: 150px;
+    background-color: white;
+    color: #03446A;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation-name: sample;
+    animation-duration: 1s;
+ <b>animation-iteration-count: 3;</b>
+}
+@keyframes sample{
+    from{border-radius: 0%;}
+    to{border-radius: 50%;}
+}</pre>
+
+<h3>animation-Direction</h3>
+<b>Values:</b>
+<ul>
+    <li>normal (default)</li>
+    <li>reverse</li>
+    <li>alternate</li>
+    <li>alternate-reverse</li>
+</ul>
+
+<div class="card3">Hello</div>
+<pre><b>CODE USED</b>.card3{
+    width: 150px;
+    height: 150px;
+    margin-left: 30%;
+    line-height: 150px;
+    background-color: white;
+    color: #03446A;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation-name: sample;
+    animation-duration: 1s;
+animation-iteration-count: infinite;
+ <b>animation-direction: alternate;</b>
+}
+@keyframes sample{
+    0%{border-radius: 0%;}
+    100%{border-radius: 50%; background-color: tomato; color: white;}
+}</pre>
+
+<h3>animation-delay</h3>
+<div class="card4">Hello</div>
+<pre><b>CODE USED</b>.card4{
+    width: 150px;
+    height: 150px;
+    margin-left: 30%;
+    line-height: 150px;
+    background-color: white;
+    color: #03446A;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation-name: sample;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    <b> aniamtion-delay:3s;</b>
+}
+@keyframes sample{
+    from{border-radius: 0%;}
+    to{border-radius: 50%;}
+}</pre>
+
+
+
+<h3>animation-timing-function</h3>
+<b>Values</b>
+<ul>
+    <li>animation-name</li>
+    <li>animation-duration</li>
+    <li>animation-iteration-count</li>
+    <li>animation-direction</li>
+</ul>
+
+<!-- <div class="card5">Hello</div> -->
+<div id="common2">
+    <div id="table" border="1">
+<table>
+    <tr>
+        <th>Unit</th>
+        <th>Descrition</th>
+    </tr>
+    <tr>
+        <td>Ease</td>
+        <td>Slow start, then fast, then end slowly</td>
+    </tr>
+    <tr>
+        <td>Linear</td>
+        <td>Same speed from Start to End</td>
+    </tr>
+    <tr>
+        <td>Ease-in</td>
+        <td>Slow start</td>
+    </tr>
+    <tr>
+        <td>Ease-out</td>
+        <td>slow end</td>
+    </tr>
+    <tr>
+        <td>Ease-in-out</td>
+        <td>slow start and end</td>
+    </tr>
+
+    <tr>
+        <td>step-start</td>
+        <td>Equivalent to steps (1, start)</td>
+    </tr>
+    <tr>
+        <td>Step-end</td>
+        <td>Equivalent to steps (1, end)</td>
+    </tr>
+    <tr>
+        <td>steps(#, start/end)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Cubic-bezier</td>
+        <td>Lets you define your own Values(0 to 1)</td>
+    </tr>
+</table>
+</div>
+<div id="side"><br><br>
+    <div id="ease">Ease</div>
+    <div id="Linear">Linear</div>
+    <div id="Ease-in">Ease-in</div>
+    <div id="Ease-out">Ease-out</div>
+    <div id="Ease-in-out">Ease-in-out</div>
+    <div id="step-start">step-start</div>
+    <div id="step-end">Step-end</div>
+    <div id="step4">step4</div>
+    <div id="Cubic-bezier">Cubic-bezier</div>
+</div>
+</div>
+
+<h3>animation(shorthand)</h3>
+<b>sequence</b>
+<ul>
+    <li>animation-name</li>
+    <li>animation-duration</li>
+    <li>animation-timing-function</li>
+    <li>animation-delay</li>
+    <li>animation-iteration-count</li>
+    <li>animation-direction</li>
+</ul>
+
+<div class="card5">Hello</div>
+<pre><b>CODE USED</b>.card5{
+    width: 150px;
+    height: 150px;
+    margin-left: 30%;
+    line-height: 150px;
+    background-color: white;
+    color: #03446A;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: sample cubic-bezier(0.075, 0.82, 0.165, 1) 2s infinite alternate;
+}
+@keyframes sample{
+    0%{border-radius: 0%;}
+    100%{border-radius: 50%; background-color: tomato; color: white;}
+}</pre>
+
+<h3>animation-fill-mode</h3>
+<b>Values</b>
+<ul>
+    <li>none</li>
+    <li>forwards</li>
+    <li>backwards</li>
+    <li>both</li>
+</ul>
+<div id="box1"></div>
+<pre><b>CODE USED: </b>#box1{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    margin-left: 30%;
+    animation-name: sample2;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-fill-mode: backwards;
+}
+@keyframes sample2{
+    0%{background: yellow; width: 200px;}
+    50%{background: green; width: 250px;}
+    100%{background: red; width: 350px;}
+}</pre>
+<div id="box2"></div>
+<pre><b>CODE USED: </b>#box2{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    margin-left: 30%;
+    animation-name: sample2;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+@keyframes sample2{
+    0%{background: yellow; width: 200px;}
+    50%{background: green; width: 250px;}
+    100%{background: red; width: 350px;}
+}</pre>
+
+
+<h3>animation--play-state</h3>
+<b>Values</b>
+<ul>
+    <li>Paused</li>
+    <li>running</li>
+</ul>
+<div id="box3"></div>
+<pre><b>CODE USED: </b>#box3{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    margin-left: 30%;
+    animation-name: sample2;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    /* animation-fill-mode: forwards; */
+}
+#box3:hover{
+    animation-play-state: paused;
+}
+@keyframes sample2{
+    0%{background: yellow; width: 200px;}
+    50%{background: green; width: 250px;}
+    100%{background: red; width: 350px;}
+}</pre>
+<div id="box4"></div>
+<pre><b>CODE USED: </b>#box4{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    margin-left: 30%;
+    animation-name: sample2;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    /* animation-fill-mode: forwards; */
+    animation-play-state: paused;
+}
+#box4:hover{
+    animation-play-state: running;
+}
+@keyframes sample2{
+    0%{background: yellow; width: 200px;}
+    50%{background: green; width: 250px;}
+    100%{background: red; width: 350px;}
+}
+</pre>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br></body>
+</html>

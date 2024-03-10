@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Selectors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Advance Selectors</h1>
+    <h2>Selcetors Category</h2>
+    <ul>
+        <li>Simple selectors</li>
+        <ul>
+            <li>Type Selector</li>
+            <li>Class selector</li>
+            <li>ID selector</li>
+            <li>Universal Selector</li>
+        </ul>
+        <li>Combinators Selectors</li>
+        <ul>
+            <li>Descendant Selector</li>
+            <li>Direct Child Selector</li>
+            <li>Adjacent Sibling Selector</li>
+            <li>General Sibling Selectors</li>
+        </ul>
+        <li>Attirbute Selectors</li>
+        <li>Pseudo-classes & Pseudo-elements</li>
+    </ul>
+    <hr>
+    <h2>Simple Selectors</h2>
+    <pre>
+    <b>Type Selector</b>
+    p{
+        color: red;
+    }
+
+    <b>Class Selector</b>
+    .head{
+        color: red;
+    }
+
+    <b>ID Selector</b>
+    #box{
+        color: red;
+    }
+
+    
+    <b>Universal Selector</b>
+    *{
+        color: red;
+    }
+
+    #box *{
+        color: red;
+    }
+</pre>
+
+    <h2>Combinator Selectors</h2>
+    <pre>
+    <b>Descendant Selector</b>
+        p span{
+            color: red;
+        }
+
+        .box p{
+            color: red;
+        }
+
+        div p span{
+            color: red;
+        }
+
+     <b>Direct child selectors</b> 
+     p > span{
+        color: red;
+        }
+
+     ul > li{
+        color: red;
+     }   
+
+     #box > p{
+        color: red;
+     }
+
+     <b>Adjecent Sibling Selector</b>
+        p + span{
+            color: red;
+            }
+
+        div + p{
+            color: red;
+        }    
+
+        Ul + p{
+            color: red;
+        }
+
+        #box + p{
+            color: red;
+        }
+
+        <b>General Sibling Selector</b>  
+        p ~ span{
+            color: red;
+            }
+
+        div ~ p{
+            color: red;
+        }    
+
+        ul ~ p{
+            color: red;
+        }
+
+        #box ~ p{
+            color: red;
+            }
+
+        </pre>
+
+        <h2>Attribute Selectors</h2>
+        <ul>
+            <li>tag[attr] - Element with specific Attirbute</li>
+            <li>tag[attr=val] - Attribute having exact value</li>
+            <li>tag[attrr^=val] - Attribute begins with value</li>
+            <li>tag[attr|=val] - Attribute begins with value OR is the first in a dash seperated list</li>
+            <li>tag[attr*=val] - Value occurs anywhere in attribute</li>
+            <li>tag[attr$=val] - Attribute ends with value</li>
+            <li>tag[attr~=val] - Value matches attribute in space seperated list</li>
+        </ul>  
+        
+        <h2>Pseudo-class Selectors</h2>
+        <div id="box">
+            <ul>
+                <li>:first-child</li>
+                <li>:last-child</li>
+                <li>:nth-child()</li>
+                <li>:nth-last-child()</li>
+                <li>:nth-last-0f-child()</li>
+                <li>:nth-of-type</li>
+                <li>:only-child</li>
+                <li>:only-0f-child</li>
+                <li>:first-0f-type</li>
+                <li>:last-0f-type</li>
+                <li>:empty</li>
+                <li>:not()</li>
+                <li>:lang()</li>
+                <li>:link</li>
+                <li>:hover</li>
+                <li>:visited</li>
+                <li>:active</li>
+                <li>:target</li>
+                <li>:focus</li>
+                <li>:checked</li>
+                <li>:disabled</li>
+                <li>:enabled</li>
+                <li>:required</li>
+                <li>:optional</li>
+                <li>:in-range</li>
+                <li>:out-of-range</li>
+                <li>:read-only</li>
+                <li>:read-write</li>
+                <li>:valid</li>
+                <li>:invalid</li>
+                <li>:default</li>
+                <li>:root</li>
+                <li>:placeholder</li>
+                <li>:is()</li>
+                <li>:focus-within</li>
+                <li>:fullscreen</li>
+                <li>:has()</li>
+            </ul>
+        </div>
+
+            <h2>Pseudo-element </h2>
+            <ul>
+                <li>::after</li>
+                <li>::before</li>
+                <li>::first-letter</li>
+                <li>::first-line</li>
+                <li>::selection</li>
+                <li>::placeholder</li>
+                <li>::scrollbar</li>
+                <li>::scrollbar-track</li>
+                <li>::scrollbar-thumb</li>
+                <li>::scrollbar-corner</li>
+                <li>::marker</li>
+                <li>::file-selector-button</li>
+            </ul>
+
+</body>
+
+</html>

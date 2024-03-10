@@ -1,0 +1,14 @@
+h1{
+    background-color: brown;
+    text-align: center;
+}
+h2{
+    background-color: orange;
+}
+
+#box{
+    width: 98%;
+    height: auto;
+    column-count: 4;
+
+}

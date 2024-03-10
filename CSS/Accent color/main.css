@@ -1,0 +1,40 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: rgb(2, 145, 155);
+    padding: 10px;
+    text-align: center;
+}
+h2{
+    padding: 15px 0 5px 10px;
+}
+ul{
+    list-style-position: inside;
+}
+
+
+
+form{
+    width: 50%;
+    /* padding: 15px; */
+    margin: 20px;
+}
+
+input{
+    width: 15px;
+    height: 15px;
+    accent-color: red;
+}
+
+img{
+    width: 50%;
+    margin: 20px;
+}
