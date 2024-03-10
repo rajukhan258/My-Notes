@@ -1,0 +1,33 @@
+.box002{
+    background: #eee;
+    width: 50%;
+    margin: 20px;
+    color: white;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,minmax(100px, min-content));  
+}
+
+.order1{
+    background: orangered;
+    order: 1;
+}
+.order2{
+    background: yellowgreen;
+}
+.order3{
+    background: slateblue;
+    order: 2;
+}
+.order4{
+    background: hotpink;
+}
+.order5{
+    background: rgb(208, 225, 27);
+    order: 3;
+}
+.order6{
+    background: rgb(9, 206, 209);
+    order: 0;
+}

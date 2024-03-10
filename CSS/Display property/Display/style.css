@@ -1,0 +1,66 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+h2{
+    background-image: linear-gradient(red, white);
+    text-align: center;
+}
+
+h3{
+    background-color: yellow;
+}
+
+.content{
+    width:95%;
+    border:1px solid black;
+    height:auto;
+    margin: 5px auto;
+}
+
+div .ex1{
+    display: block;
+    border: 1px solid red;
+    background-color: lightblue;
+    height:50px;
+    width:auto;
+}
+
+div .ex2{
+    display: inline;
+    border: 1px solid red;
+    background-color: lightblue;
+}
+
+div .ex3{
+    display: inline-block;
+    border: 1px solid red;
+    background-color: lightblue;
+    height:50px;
+    width:auto;
+}
+#box{
+    border: 2px solid red;
+    display: flow-root;
+}
+
+#child{
+    background-color: green;
+    width: 100px;
+    height: 50px;
+    float: left;
+}
+
+div .ex4{
+    display: none;
+    border: 1px solid red;
+    background-color: lightblue;
+    height:50px;
+    width:auto;
+}
+
+div .hidden{
+    visibility: hidden;
+}
+

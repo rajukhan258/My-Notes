@@ -1,0 +1,220 @@
+h2{
+    text-align: center;
+    background-color:red;
+}
+.cont{
+    margin:40px;
+  }
+
+h3{
+    background-color:orange;
+}
+
+/* FONT COLOR */
+.font_color1{
+    color:red;
+}
+.font_color2{
+    color: #0000ff; 
+}
+.font_color3{
+    color:rgb(220, 158, 0);
+}
+/* END FONT COLOR */
+
+
+
+/* FONT FAMILY */
+.f1{
+    font-family: "Times New Roman", serif;
+}
+.f2{
+    font-family: "Georgia", serif;
+}
+.f3{
+    font-family: "Garamond", serif;
+}
+
+.f11{
+    font-family: "Arial", Sans-serif;
+}
+.f12{
+    font-family: "Verdana", Sans-serif;
+}
+.f13{
+    font-family: "Helvetica", Sans-serif;
+}
+
+.f21{
+    font-family: "Courier New", Monospace;
+}
+.f22{
+    font-family: "Lucida Console", Monospace;
+}
+.f23{
+    font-family: "Monaco", Monospace;
+}
+
+.f31{
+    font-family: "Brush Script MT", Cursive;
+}
+.f32{
+    font-family: "Lucida Handwriting", Cursive;
+}
+
+.f41{
+    font-family: "Copperplate", Fantasy;
+}
+.f42{
+    font-family: "Papyrus", Fantasy;
+}
+/* END FONT FAMILY */
+
+
+
+/* FONT SIZE */
+.xx-small{
+    font-size: xx-small;
+}
+.x-small{
+    font-size: x-small;
+}
+.small{
+    font-size: small;
+}
+.smaller{
+    font-size: smaller;
+}
+.medium{
+    font-size: medium;
+}
+.large{
+    font-size: large;
+}
+.larger{
+    font-size: larger;
+}
+.x-large{
+    font-size: x-large;
+}
+.xx-large{
+    font-size: xx-large;
+}
+.percent{
+    font-size: 200%;
+}
+.pixel{
+    font-size: 20px;
+}
+
+/* END FONT SIZE */
+
+/* Line Height */
+#one{
+    line-height: 20px;
+}
+#two{
+    line-height: 30px;
+}
+#three{
+    line-height: 40px;
+}
+
+/* FONT STYLE */
+ .normal {
+    font-style: normal;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  .oblique {
+    font-style: oblique;
+  }
+  .obliquetwo {
+    font-style: oblique 20deg;
+  }
+
+
+/* END FONT STYLE */
+
+
+
+
+/* FONT VARIANT */
+.normal{
+    font-variant: normal; 
+}
+.small-caps{
+    font-variant: small-caps; 
+}
+
+/* END FONT VARIANT */
+
+
+
+/* FONT WEIGHT */
+.bold{
+    font-weight:bold;
+}
+.bolder{
+    font-weight:bolder;
+}
+.liweight{
+    font-weight:lighter;
+}
+.weight_one{
+    font: weight 100;
+}
+.weight_two{
+    font-weight:200;
+}
+.weight_three{
+    font-weight:300;
+}
+.weight_four{
+    font-weight:400;
+}
+.weight_five{
+    font-weight:500;
+}
+.weight_six{
+    font-weight:600;
+}
+.weight_seven{
+    font-weight:700;
+}
+.weight_eight{
+    font-weight:800;
+}
+.weight_nine{
+    font-weight:900;
+}
+/* END FONT WEIGHT */
+
+
+
+/* FONT STRETCH */
+.imp{
+    background-color:yellow
+}
+           /* Note: This property has no effect if the selected font does not offer condensed or expanded faces! 
+           So class has not been used*/
+
+/* END FONT STRETCH */
+
+
+
+/* SHORTHAN PROPERTY */
+.a {
+    font: 20px Arial, sans-serif;
+  }
+
+  .b {
+    font: italic bold 12px/30px Georgia, serif;
+  }  
+
+
+  /* END SHORTHAN PROPERTY */
+
+

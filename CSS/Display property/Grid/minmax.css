@@ -1,0 +1,37 @@
+.container6{
+    background: #eee;
+    width: 50%;
+    margin: 20px;
+
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: max-content  1fr 1fr 1fr;
+    /* grid-template-rows: repeat(2, min-content) ; */
+    grid-template-rows: repeat(2, minmax(150px, min-content));
+    gap: 5px;
+}
+
+.sec1{
+    background: orangered;
+}
+.sec2{
+    background: yellowgreen;
+}
+.sec3{
+    background: slateblue;
+}
+.sec4{
+    background: hotpink;
+}
+.sec5{
+    background: royalblue;
+}
+.sec6{
+    background: goldenrod;
+}
+.sec7{
+    background: rgb(13, 179, 230);
+}
+.sec8{
+    background: rgb(32, 218, 38);
+}

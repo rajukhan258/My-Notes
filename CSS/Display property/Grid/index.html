@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display: Grid</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1 class="title">Display: Grid</h1>
+    <h3>CSS Grid Properties</h3>
+    <div id="unordered">
+        <ul class="green">
+            <li>grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));</li>
+            <li>grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));</li>
+            <li>grid-template-areas: </li>
+            <li>grid-template</li>
+        </ul>
+        <ul class="orange">
+            <li>grid-row-gap;</li>
+            <li>grid-column gap;</li>
+            <li>grid-gap</li>
+        </ul>
+        <ul class="purple">
+            <li>justify-items</li>
+            <li>align-items</li>
+            <li>justify-content</li>
+            <li>align-content</li>
+        </ul>
+        <ul class="golden">
+            <li>grid-auto-rows</li>
+            <li>grid-auto-columns</li>
+            <li>grid-auto-flow</li>
+        </ul>
+
+        <ul class="blue">
+            <li>grid-row-start</li>
+            <li>grid-row-end</li>
+            <li>grid-row</li>
+            <li>grid-column-start</li>
+            <li>grid-column-end</li>
+            <li>grid-column</li>
+            <li>grid-area</li>
+        </ul>
+
+        <ul class="pink">
+            <li>justify-self</li>
+            <li>align-self</li>
+            <li>order</li>
+        </ul>
+
+    </div>
+
+    <hr>
+    <h3>CSS Grid Layout</h3>
+    <div class="container1">
+        <div class="items items1">First</div>
+        <div class="items items2">Second</div>
+        <div class="items items3">Third</div>
+        <div class="items items4">Fourth</div>
+        <div class="items items5">Fifth</div>
+        <div class="items items6">Sixth</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container{
+        background: #eee;
+        width: 700px;
+        margin: 20px;
+        display: grid;
+        /* grid-template-columns: 150px 20% auto; */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* grid-template-columns: repeat(3, 200px); */
+        /* grid-template-columns: repeat(2, 200px) 1fr; */
+        grid-template-columns: 1fr repeat(2, 200px);
+        grid-template-rows: 50px 70px ;
+    }
+</pre>
+
+
+    <h3>Grid-Gap</h3>
+    <div class="container2">
+        <div class="items items1">First</div>
+        <div class="items items2">Second</div>
+        <div class="items items3">Third</div>
+        <div class="items items4">Fourth</div>
+        <div class="items items5">Fifth</div>
+        <div class="items items6">Sixth</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container2{
+        background: #eee;
+        width: 700px;
+        margin: 20px;
+        display: grid;
+        grid-template-columns: 1fr  1fr;
+        grid-template-rows: 100px 100px 100px ;
+        /* grid-row-gap: 10px;
+        grid-column-gap: 10px; */
+        grid-gap: 10px 20px;  /*  shorthand  */
+    }
+</pre>
+
+
+    <h3>Grid-item-Position</h3>
+    <div class="container3">
+        <div class="items items1 p1">First</div>
+        <div class="items items2 p2">Second</div>
+        <div class="items items3 p3">Third</div>
+        <div class="items items4 p4">Fourth</div>
+        <div class="items items5 p5">Fifth</div>
+        <div class="items items6 p6">Sixth</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container3{
+        background: #eee;
+        width: 700px;
+        margin: 20px;
+        display: grid;
+        grid-template-columns: 1fr  1fr 1fr;
+        grid-template-rows: 100px 100px 100px;
+        grid-gap: 10px 20px;  /*  shorthand  */
+    }
+    
+    .p1{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    
+    .p6{
+        /* grid-row-start: 1;
+        grid-row-end: 2; */
+        grid-row: 1/2;    /*Shorthand for Grid-row start and end*/
+        /* grid-column-start: 1;
+        grid-column-end: 2; */
+        grid-column: 1/2;    /*Shorthand for Grid-column start and end*/
+    }
+    .p2{
+        /* grid-row: 2/3;
+        grid-column: 1/2; */
+        grid-area: 2/1 / 3/2;    /*Shorthand for Grid-row and grid-column; row-start/column-start / row-end/column-end*/
+    }
+</pre>
+
+    <h3>Grid-item-spanning</h3>
+    <div class="container4">
+        <div class="items items1 p1">First</div>
+        <div class="items items2 p2">Second</div>
+        <div class="items items3 p3">Third</div>
+        <div class="items items4 p4">Fourth</div>
+        <div class="items items5 p5">Fifth</div>
+        <div class="items items6 p6">Sixth</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container4{
+        background: #eee;
+        width: 700px;
+        margin: 20px;
+        display: grid;
+        grid-template-columns: 1fr  1fr 1fr;
+        grid-template-rows: 100px 100px 100px;
+        grid-gap: 10px 20px;  /*  shorthand  */
+    }
+    
+    .p1{
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        z-index: 1;
+    }
+    
+    .p6{
+        /* grid-row-start: 1;
+        grid-row-end: 2; */
+        grid-row: 1/2;    /*Shorthand for Grid-row start and end*/
+        /* grid-column-start: 1;
+        grid-column-end: 2; */
+        grid-column: 1/3;    /*Shorthand for Grid-column start and end*/
+    }
+    .p2{
+        /* grid-row: 2/3;
+        grid-column: 1/2; */
+        grid-area: 2/1 / 3/2;    /*Shorthand for Grid-row and grid-column; row-start/column-start / row-end/column-end*/
+        /* z-index: 1; */
+    }
+    .p4{
+        grid-area: 2/2 / 3/4;
+    }
+</pre>
+
+    <h3>Grid-lines-naming</h3>
+    <div class="container">
+        <div class="items header">Header</div>
+        <div class="items menu">Second</div>
+        <div class="items box1">Box1</div>
+        <div class="items box2">Box2</div>
+        <div class="items sidebar">Sidebar</div>
+        <div class="items content">Content</div>
+        <div class="items footer">Footer</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container{
+        background: #eee;
+        width: 700px;
+        margin: 20px;
+        display: grid;
+        /* grid-template-columns: 150px 20% auto; */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* grid-template-columns: repeat(3, 200px); */
+        /* grid-template-columns: repeat(2, 200px) 1fr; */
+        grid-template-columns: repeat(3,[col-start]1fr [col-end]);
+        grid-template-rows: [header-start]85px[header-end menu-start] 40px[menu-end box-start] 85px
+                            [box-end content-start] 200px [content-end footer-start]30px[footer-end];
+        gap: 10px 10px;
+        color: #eee;
+    }
+    
+    .header{
+        background: orangered;
+        /* grid-area: 1/1 / 2/4; */
+        grid-row: header-start/header-end;
+        grid-column: col-start 1/col-end 3;
+    
+    }
+    .menu{
+        background: yellowgreen;
+        /* grid-area: 2/1 / 3/-1; */
+        grid-row: menu-start/menu-end;
+        grid-column: col-start 1/ -1;
+    }
+    .box1{
+        background: slateblue;
+        /* grid-row: box-start/box-end;
+        grid-column: col-start 1/col-end 1; */
+    }
+    .box2{
+        background: hotpink;
+        /* grid-row: box-start/box-end;
+        grid-column: col-start 2/col-end 2; */
+    }
+    .sidebar{
+        background: royalblue;
+        /* grid-area: 3/3 / 5/4; */
+        grid-row: box-start/content-end;
+        grid-column: col-start 3/col-end 3;
+    }
+    .content{
+        background: rgb(109, 193, 152);
+        /* grid-area: 4/1 / 5/3; */
+        grid-row: content-start/content-end;
+        grid-column: col-start 1/col-end 2;
+    }
+    .footer{
+        background: goldenrod;
+        /* grid-area: 5/1 / 5/4; */
+        grid-row: footer-start/footer-end;
+        grid-column: col-start 1/col-end 3;
+    }
+</pre>
+
+
+    <h3>Grid-area-naming</h3>
+    <div class="container5">
+        <div class="items header1">Header</div>
+        <div class="items menu1">Second</div>
+        <div class="items box11">Box1</div>
+        <div class="items box21">Box2</div>
+        <div class="items sidebar1">Sidebar</div>
+        <div class="items content1">Content</div>
+        <div class="items footer1">Footer</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container5{
+        background: #eee;
+        width: 700px;
+        margin: 20px;
+        gap: 10px 10px;
+        color: #eee;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 85px 40px 85px 200px 30px;
+        grid-template-areas: "header header header"
+                            "menu menu ."
+                            "box1 box2 sidebar"
+                            "content . sidebar"
+                            "footer footer footer";
+    }
+    
+    .header1{
+        background: orangered;
+        grid-area: header;
+    
+    }
+    .menu1{
+        background: yellowgreen;
+        grid-area: menu;
+    }
+    .box11{
+        background: slateblue;
+        grid-area: box1;
+    }
+    .box21{
+        background: hotpink;
+        grid-area: box2;
+    }
+    .sidebar1{
+        background: royalblue;
+        grid-area: sidebar;
+    }
+    .content1{
+        background: rgb(109, 193, 152);
+        grid-area: content;
+    }
+    .footer1{
+        background: goldenrod;
+        grid-area: footer;
+    } 
+</pre>
+
+    <h3>Grid minmax() Function</h3>
+    <div class="container6">
+        <div class="items sec1">One Lorem ipsum dolor sit amet.<br><br>grid-template-columns: max-content 1fr 1fr 1fr;
+        </div>
+        <div class="items sec2">Two</div>
+        <div class="items sec3">Three</div>
+        <div class="items sec4">Four Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br><br>
+            grid-template-rows: repeat(2, min-content) ;</div>
+        <div class="items sec5">Five</div>
+        <div class="items sec6">Six Lorem ipsum dolor sit amet.</div>
+        <div class="items sec7">Seven</div>
+        <div class="items sec8">Eight</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container6{
+        background: #eee;
+        width: 50%;
+        margin: 20px;
+    
+        display: grid;
+        /* grid-template-columns: repeat(4, 1fr); */
+        grid-template-columns: max-content  1fr 1fr 1fr;
+        /* grid-template-rows: repeat(2, min-content) ; */
+        grid-template-rows: repeat(2, minmax(150px, min-content));
+        gap: 5px;
+    }
+
+    .sec1{
+        background: orangered;
+    }
+    .sec2{
+        background: yellowgreen;
+    }
+    .sec3{
+        background: slateblue;
+    }
+    .sec4{
+        background: hotpink;
+    }
+    .sec5{
+        background: royalblue;
+    }
+    .sec6{
+        background: goldenrod;
+    }
+    .sec7{
+        background: rgb(13, 179, 230);
+    }
+    .sec8{
+        background: rgb(32, 218, 38);
+    }
+    </pre>
+
+    <h3>Implicit and Explicit Grid</h3>
+    <div class="container7">
+        <div class="items sec11">One Explicit Grid (defined rows and columns)</div>
+        <div class="items sec21">Two Explicit Grid</div>
+        <div class="items sec31">Three Explicit Grid</div>
+        <div class="items sec41">Four Explicit Grid</div>
+        <div class="items sec51">Five Implicit Grid</div>
+        <div class="items sec61">Six Implicit Grid</div>
+        <div class="items sec71">Seven Implicit Grid</div>
+        <div class="items sec81">Eight Implicit Grid</div>
+    </div>
+    <pre><b>CODE USED: </b>
+        .container7{
+            background: #eee;
+            width: 50%;
+            margin: 20px;
+        
+            display: grid;
+            grid-template-columns: repeat(2, 150px);
+            grid-template-rows: repeat(2,150px);  
+            gap: 5px;
+        
+            /* rows and columns defined by grid-template-columns and grid-template-rows are Explicit*/
+        
+             /* rows and columns not defined by grid-template-columns and grid-template-rows are Implicit*/
+        
+             /* Defining Implicit Grid */
+             grid-auto-rows: 50px;
+             grid-auto-flow: column;
+             grid-auto-columns: .5fr;
+        }
+        
+        .sec11{
+            background: orangered;
+        }
+        .sec21{
+            background: yellowgreen;
+        }
+        .sec31{
+            background: slateblue;
+        }
+        .sec41{
+            background: hotpink;
+        }
+        .sec51{
+            background: royalblue;
+        }
+        .sec61{
+            background: goldenrod;
+        }
+        .sec71{
+            background: rgb(13, 179, 230);
+        }
+        .sec81{
+            background: rgb(32, 218, 38);
+        }
+</pre>
+
+
+    <h3>Grid-items align</h3>
+    <p>The align-items property aligns the grid items along the vertical axis.</p>
+    <ul>
+        <li>align-items: Start/end/center/stretch(Default); //Used for Vertical Alignment</li>
+        <li>justify items: start/end/center/stretch(default); //used for Horizontal alignment</li>
+        <li>place-items:align-items justify-items; //shorthand</li>
+        <li>align-self: start/end/center/stretch(default); //used for V-alignment for specific grid</li>
+        <li>justify-self: start/end/center/stretch(default); //used for H-alignment for specific grid</li>
+        <li>place-self: align-self justify-self; //shorthand</li>
+    </ul>
+    <div class="container9">
+        <div class="items align1">One</div>
+        <div class="items align2">Two</div>
+        <div class="items align3">Three</div>
+        <div class="items align4">Four</div>
+        <div class="items align5">Five</div>
+        <div class="items align6">Six</div>
+        <div class="items align7">Seven</div>
+        <div class="items align8">Eight</div>
+    </div>
+    <pre><b>CODE USED: </b>
+    .container9{
+        background: #eee;
+        width: 50%;
+        margin: 20px;
+    
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,100px);  
+        gap: 5px;
+    
+         grid-auto-rows: 50px;
+        /* align-items: start;
+        justify-items: end; */
+        place-items: start end;   /* shorthand */
+    }
+    
+    .align1{
+        background: orangered;
+    }
+    .align2{
+        background: yellowgreen;
+        /* align-self: center;
+        justify-self: start; */
+        place-self: center start;   /* shorthand */
+    }
+    .align3{
+        background: slateblue;
+        grid-row: span 3;
+        
+    }
+    .align4{
+        background: hotpink;
+        
+    }
+    .align5{
+        background: royalblue;
+    }
+    .align6{
+        background: goldenrod;
+    }
+    .align7{
+        background: rgb(13, 179, 230);
+        grid-column: span 2;
+    }
+    .align8{
+        background: rgb(32, 218, 38);
+    }
+    </pre>
+
+
+    <h3>Grid-track-align</h3>
+    <p>The grid-track-align property aligns the grid tracks (rows and columns) in the grid container.</p>
+    <ul>
+        <li>justify-content: start/end/center/stretch/space-around/space-between/space-evenly //used for H-alignment
+        </li>
+        <li>align content: start/end/center/stretch/space-around/space-between/space-evenly //used for V-alignment</li>
+        <li>place-content:align-content justify content //shorthand</li>
+    </ul>
+    <div class="container10">
+        <div class="items content11">One</div>
+        <div class="items content12">Two</div>
+        <div class="items content13">Three</div>
+        <div class="items content14">Four</div>
+        <div class="items content15">Five</div>
+        <div class="items content16">Six</div>
+        <div class="items content17">Seven</div>
+        <div class="items content18">Eight</div>
+    </div>
+    <pre><b>CODE USED: </b>
+            .container10{
+                background: #eee;
+                width: 50%;
+                margin: 20px;
+                height: 500px;
+            
+                display: grid;
+                grid-template-columns: repeat(2, 100px);
+                grid-template-rows: repeat(2,100px);  
+                gap: 5px;
+            
+                grid-auto-rows: 40px;
+                /* align-content: end;
+                justify-content: space-between; */
+                place-content:end space-between ;
+            }
+            
+            .content11{
+                background: orangered;
+            }
+            .content12{
+                background: yellowgreen;
+            
+            }
+            .content13{
+                background: slateblue;
+                grid-row: span 3;
+                
+            }
+            .content14{
+                background: hotpink;
+                
+            }
+            .content15{
+                background: royalblue;
+            }
+            .content16{
+                background: goldenrod;
+            }
+            .content17{
+                background: rgb(13, 179, 230);
+                grid-column: span 2;
+            }
+            .content18{
+                background: rgb(32, 218, 38);
+            }
+
+            </pre>
+
+    <h3>Grid-autofit and autofill</h3>
+    <div class="box22">
+        <div class="items111">One</div>
+        <div class="items222">Two</div>
+        <div class="items333">Three</div>
+        <div class="items444">Four</div>
+        <!-- <div class="items content15">Five</div>
+                <div class="items content16">Six</div>
+                <div class="items content17">Seven</div>
+                <div class="items content18">Eight</div> -->
+    </div>
+    <pre><b>CODE USED: </b>
+                .box22{
+                    background: #eee;
+                    width: 50%;
+                    margin: 20px;
+                
+                
+                    display: grid;
+                    /* grid-template-columns: repeat(auto-fill, 100px); */
+                    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                    grid-template-rows: repeat(2,100px);  
+                }
+                
+                .items111{
+                    background: orangered;
+                }
+                .items222{
+                    background: yellowgreen;
+                }
+                .items333{
+                    background: slateblue;
+                }
+                .items444{
+                    background: hotpink;
+                    grid-column-end: -1;
+                }
+</pre>
+
+
+
+    <h3>Grid-fit-content</h3>
+    <div class="box122">
+        <div class="fit11">One Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, error? Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Ex amet voluptas consequuntur, placeat quasi iusto!</div>
+        <div class="fit12">Two Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus deleniti vel
+            assumenda cupiditate dignissimos corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+            aliquam, fugiat ut molestiae similique sed!</div>
+        <div class="fit13">Three</div>
+        <div class="fit14">our</div>
+        <div class="fit15 ">Five</div>
+        <div class="fit16 ">Six</div>
+
+    </div>
+    <pre><b>CODE USED: </b>
+    .box122{
+        background: #eee;
+        width: 50%;
+        margin: 20px;
+        color: white;
+    
+        display: grid;
+        grid-template-columns: fit-content(100px) fit-content(200px) 1fr;
+        grid-template-rows: repeat(2,minmax(100px, min-content));  
+    }
+    
+    .fit11{
+        background: orangered;
+    }
+    .fit12{
+        background: yellowgreen;
+    }
+    .fit13{
+        background: slateblue;
+    }
+    .fit14{
+        background: hotpink;
+    }
+    .fit15{
+        background: rgb(208, 225, 27);
+    }
+    .fit16{
+        background: rgb(9, 206, 209);
+    }
+</pre>
+
+
+    <h3>Grid-order</h3>
+    <div class="box002">
+        <div class="order1">One</div>
+        <div class="order2">Two</div>
+        <div class="order3">Three</div>
+        <div class="order4">our</div>
+        <div class="order5">Five</div>
+        <div class="order6">Six</div>
+
+    </div>
+    <pre><b>CODE USED: </b>
+    .box002{
+        background: #eee;
+        width: 50%;
+        margin: 20px;
+        color: white;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2,minmax(100px, min-content));  
+    }
+    
+    .order1{
+        background: orangered;
+        order: 1;
+    }
+    .order2{
+        background: yellowgreen;
+    }
+    .order3{
+        background: slateblue;
+        order: 2;
+    }
+    .order4{
+        background: hotpink;
+    }
+    .order5{
+        background: rgb(208, 225, 27);
+        order: 3;
+    }
+    .order6{
+        background: rgb(9, 206, 209);
+        order: 0;
+    }
+    </pre>
+
+    <h3>Nested-Grid</h3>
+    <div class="box012">
+        <div class="nested1">One</div>
+        <div class="nested2">Two</div>
+        <div class="nested3">
+        <div class="nest1">A</div>
+        <div class="nest2">B</div>
+        <div class="nest3">C</div></div>
+        <div class="nested4">Four</div>
+    </div>
+    <pre><b>CODE USED: </b>
+        .box012{
+            background: #eee;
+            width: 50%;
+            margin: 20px;
+            color: white;
+        
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2,100px); 
+            gap: 2px; 
+        }
+        
+        .nested1{
+            background: orangered;
+        }
+        .nested2{
+            background: yellowgreen;
+        }
+        .nested3{
+            background: slateblue;
+            display: grid;
+            grid-template-columns: repeat(2,1fr); 
+            gap: 5px;
+        }
+        .nested3 > div{
+            margin: 2px 2px;
+                background-color: rgb(250, 250, 250);
+                color: rgb(159, 19, 19);
+            }
+        
+        .nested4{
+            background: hotpink;
+        }
+</pre>        
+
+<h3>Grid-ovrlapping</h3>
+<div class="box999">
+    <div class="item over1">One Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptatibus! Tenetur maxime eos suscipit voluptatum hic ut modi, odio quod?
+    </div>
+    <div class="item over2">Two Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptatibus! Tenetur maxime eos suscipit voluptatum hic ut modi, odio quod?</div>
+    <div class="item over3">Three Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptatibus! Tenetur maxime eos suscipit voluptatum hic ut modi, odio quod?</div>
+</div>
+<pre><b>CODE USED: </b>
+    .box999{
+        background: #eee;
+        width: 300px;
+        margin: 20px;
+        color: white;
+    
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(2,150px); 
+    }
+    .item{
+        max-width:150px ;
+    }
+    
+    .over1{
+        background: orangered;
+        grid-column: 1/span2;
+        grid-row: 1/span2;
+        align-self: start;
+    }
+    .over2{
+        background: yellowgreen;
+        grid-column: 1/span2;
+        grid-row: 1/span2;
+        align-self: center;
+        justify-self: center;
+        z-index: 1;
+    }
+    .over3{
+        background: slateblue;
+        grid-column: 1/span2;
+        grid-row: 1/span2;
+        align-self: end;
+        justify-self: end;
+    }
+</pre>    
+
+
+
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br>
+    <br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.box122{
+    background: #eee;
+    width: 50%;
+    margin: 20px;
+    color: white;
+
+    display: grid;
+    grid-template-columns: fit-content(100px) fit-content(200px) 1fr;
+    grid-template-rows: repeat(2,minmax(100px, min-content));  
+}
+
+.fit11{
+    background: orangered;
+}
+.fit12{
+    background: yellowgreen;
+}
+.fit13{
+    background: slateblue;
+}
+.fit14{
+    background: hotpink;
+}
+.fit15{
+    background: rgb(208, 225, 27);
+}
+.fit16{
+    background: rgb(9, 206, 209);
+}

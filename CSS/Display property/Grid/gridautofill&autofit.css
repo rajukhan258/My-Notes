@@ -1,0 +1,25 @@
+.box22{
+    background: #eee;
+    width: 50%;
+    margin: 20px;
+
+
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, 100px); */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(2,100px);  
+}
+
+.items111{
+    background: orangered;
+}
+.items222{
+    background: yellowgreen;
+}
+.items333{
+    background: slateblue;
+}
+.items444{
+    background: hotpink;
+    grid-column-end: -1;
+}

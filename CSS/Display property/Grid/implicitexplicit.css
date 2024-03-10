@@ -1,0 +1,44 @@
+.container7{
+    background: #eee;
+    width: 50%;
+    margin: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2,150px);  
+    gap: 5px;
+
+    /* rows and columns defined by grid-template-columns and grid-template-rows are Explicit*/
+
+     /* rows and columns not defined by grid-template-columns and grid-template-rows are Implicit*/
+
+     /* Defining Implicit Grid */
+     grid-auto-rows: 50px;
+     grid-auto-flow: column;
+     grid-auto-columns: .5fr;
+}
+
+.sec11{
+    background: orangered;
+}
+.sec21{
+    background: yellowgreen;
+}
+.sec31{
+    background: slateblue;
+}
+.sec41{
+    background: hotpink;
+}
+.sec51{
+    background: royalblue;
+}
+.sec61{
+    background: goldenrod;
+}
+.sec71{
+    background: rgb(13, 179, 230);
+}
+.sec81{
+    background: rgb(32, 218, 38);
+}

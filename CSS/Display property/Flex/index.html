@@ -1,0 +1,694 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Display Flex Property</h2><br>
+    <div class="content">
+        <P>Flexbox can be divided into two parts:-<br>&emsp;1. Flex Container [parent element]<br>&emsp;2. Flex Items
+            [Child elenents]<br><br>To start using the Flexbox model, you need to first
+            define a flex container.</P>
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>div.container{
+            background-color: dodgerblue;
+            display: flex;
+            }
+            <br><br>
+            div.container div{
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            }
+        </p>
+    </div><br>
+
+
+    <h3>1. Flex Container [Parent Element]</h3><br>
+    <div class="content">
+        <p>The flex container properties are:<br>&emsp;a. flex-direction<br>&emsp;b. flex-wrap<br>&emsp;c.
+            flex-flow<br>&emsp;d. justify-content<br>&emsp;e. align-items<br>&emsp;f. align-content</p><br>
+
+        <h4>a. flex-direction</h4>
+        <p>Specifies the direction of the flexible items inside a flex container<br>&emsp;* row (default): left to right
+            in ltr; right to left in rtl<br>&emsp;* row-reverse: right to left in ltr; left to right in rtl<br>&emsp;*
+            column: same as row but top to bottom<br>&emsp;* column-reverse: same as row-reverse but bottom to top</p>
+        <hr><br>
+        <b>flex-direction: row;</b>
+        <div class="container1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-direction: row;</p>
+
+
+        <hr><br>
+        <b>flex-direction: row-reverse;</b>
+        <div class="container2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-direction: row-reverse;</p>
+
+        <hr><br>
+        <b>flex-direction: column;</b>
+        <div class="container3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-direction: column;</p>
+
+        <hr><br>
+        <b>flex-direction: column-reverse;</b>
+        <div class="container4">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-direction: column-reverse;</p>
+        <br>
+        <h4>b. flex-wrap</h4>
+        <p>Specifies whether the flex items should wrap or not, if there is not enough room for them on one flex
+            line<br>&emsp;* nowrap (default): all flex items will be on one line<br>&emsp;* wrap: flex items will wrap
+            onto multiple lines, from top to bottom.<br>&emsp;*
+            wrap-reverse: flex items will wrap onto multiple lines from bottom to top.<br>
+            <hr><br>
+            <b>flex-wrap: nowrap; [default]</b>
+        <div class="container5">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-wrap: nowrap;</p>
+        <hr><br>
+
+        <b>flex-wrap: wrap;</b>
+        <div class="container6">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-wrap: wrap;</p>
+        <hr><br>
+
+        <b>flex-wrap: wrap-reverse;</b>
+        <div class="container7">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-wrap: wrap-reverse;</p>
+        <hr><br>
+
+
+        <h4>c. flex-flow</h4>
+        <p>The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap
+            properties.<br><br>
+            <b>flex-flow: row wrap;</b>
+        <div class="container8">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            flex-folw: row-wrap;<br><b>Other Values: </b>row nowrap, column wrap, column nowrap</p>
+        <hr><br>
+
+        <h4>d. justify-content</h4>
+        <p> Horizontally aligns the flex items when the items do not use all available space on the main-axis<br>&emsp;*
+            flex-start (default): aligns the flex items at the beginning of the container (this is default)<br>&emsp;*
+            flex-end: value aligns the flex items at the end of the container<br>&emsp;* center: aligns the flex items
+            at the center of the container:<br>&emsp;* space-between: items are evenly distributed in the line; first
+            item is on the start line, last item on the end line<br> &emsp;* space-around: items are evenly distributed
+            in the line with equal space around them.<br>&emsp;* space-evenly: items are distributed so that the spacing
+            between any two items (and the space to the edges) is equal. </p>
+        <hr><br>
+
+        <b>justify-content: flex-start;</b>
+        <div class="container9">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            justify-content: flex-start;</p>
+        <hr><br>
+
+        <b>justify-content: flex-end;</b>
+        <div class="container10">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            justify-content: flex-end;</p>
+        <hr><br>
+
+        <b>justify-content: center;</b>
+        <div class="container11">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            justify-content: center;</p>
+        <hr><br>
+
+        <b>justify-content: space-between;</b>
+        <div class="container12">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            justify-content: space-between;</p>
+        <hr><br>
+
+        <b>justify-content: space-around;</b>
+        <div class="container13">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            justify-content: space-around;</p>
+        <hr><br>
+
+        <b>justify-content: space-evenly;</b>
+        <div class="container14">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            justify-content: space-evenly;</p>
+        <hr><br>
+
+
+
+
+        <h4>e. Align-items</h4>
+        <p> Vertically aligns the flex items when the items do not use all available space on the cross-axis<br>&emsp;*
+            stretch: stretches the flex items to fill the container (this is default)<br>&emsp;*
+            flex-start: aligns the flex items at the top of the container<br>&emsp;*
+            flex-end: aligns the flex items at the bottom of the container<br>&emsp;* center: aligns the flex items in
+            the middle of the container<br> &emsp;* baseline: aligns the flex items such as their baselines aligns</p>
+        <hr><br>
+
+        <b>align items: stretch; [default]</b>
+        <div class="container15">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align items: stretch;</p>
+        <hr><br>
+
+        <b>align items: flex-start</b>
+        <div class="container16">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align items: flex-start;</p>
+        <hr><br>
+
+        <b>align items: flex-end</b>
+        <div class="container17">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align items: flex-end;</p>
+        <hr><br>
+
+        <b>align items: center</b>
+        <div class="container18">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align items: center;</p>
+        <hr><br>
+
+        <b>align items: baseline</b>
+        <div class="container19">
+            <div>
+                <h1>1</h1>
+            </div>
+            <div><big>2</big></div>
+            <div><small>3</small></div>
+            <div>
+                <h1>1</h1>
+            </div>
+            <div><big>2</big></div>
+            <div><small>3</small></div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align items: baseline;</p>
+        <hr><br>
+
+
+
+        <h4>f. Align-content</h4>
+        <p> Modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex
+            items, it aligns flex lines<br>&emsp;*
+            stretch: stretches the flex lines to take up the remaining space (this is default)<br>&emsp;*
+            flex-start: displays the flex lines at the start of the container<br>&emsp;*
+            flex-end: displays the flex lines at the end of the container<br>&emsp;* center: displays display the flex
+            lines in the middle of the container<br> &emsp;* space-around: displays the flex lines with space before,
+            between, and after them.<br>&emsp;* space-between: displays the flex lines with equal space between
+            them<br>&emsp;* space-evenly: items are evenly distributed with equal space around them</p>
+        <hr><br>
+
+        <b>align-content: stretch; [default]</b>
+        <div class="container20">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: stretch;</p>
+        <hr><br>
+
+        <b>align-content: flex-start; [default]</b>
+        <div class="container21">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: flex-start;</p>
+        <hr><br>
+
+        <b>align-content: flex-end; </b>
+        <div class="container22">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: flex-end;</p>
+        <hr><br>
+
+        <b>align-content: center;</b>
+        <div class="container23">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: center;</p>
+        <hr><br>
+
+        <b>align-content: space-around;</b>
+        <div class="container24">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: space-around;</p>
+        <hr><br>
+
+        <b>align-content: space-between;</b>
+        <div class="container25">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: space-between;</p>
+        <hr><br>
+
+        <b>align-content: space-evenly;</b>
+        <div class="container26">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            align content: space-evenly;</p>
+        <hr><br>
+    </div>
+
+    <br>
+    <br><br>
+
+
+
+
+    <h3>2. Flex Items [Child Element]</h3><br>
+    <div class="content">
+        <p>The flex container properties are:<br>&emsp;a. order<br>&emsp;b. flex-grow<br>&emsp;c.
+            flex-shrink<br>&emsp;d. flex-basis<br>&emsp;e. flex [shorthand property]<br>&emsp;f. align-self</p>
+        <hr><br>
+
+        <h4>a. order</h4>
+        <p> Specifies the order of the flex items inside the same container. The order value must be a number, default
+            value is 0.
+            <br><br>
+        <div class="container27">
+            <div style="order: 3">1</div>
+            <div style="order: 1">2</div>
+            <div style="order: 2">3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            &lt;div style="order: 3"&gt;1&lt;/div&gt;<br>
+            &lt;div style="order: 1"&gt;2&lt;/div&gt;<br>
+            &lt;div style="order: 2"&gt;3&lt;/div&gt;</p>
+        <hr><br>
+
+        <h4>b. flex-grow</h4>
+        <p> SSpecifies how much a flex item will grow relative to the rest of the flex items inside the same container. The value must be a number, default value is 0.</p><br>
+        <div class="container28">
+            <div style="flex-grow: 1">1</div>
+            <div style="flex-grow: 1">2</div>
+            <div style="flex-grow: 5">3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            &lt;div style="flex-grow: 1"&gt;1&lt;/div&gt;<br>
+            &lt;div style="flex-grow: 1"&gt;2&lt;/div&gt;<br>
+            &lt;div style="flex-grow: 5"&gt;3&lt;/div&gt;</p>
+        <hr><br>
+
+        <h4>c. flex-shrink</h4>
+        <p> specifies how much a flex item will shrink relative to the rest of the flex items. The value must be a number, default value is 1.</p>
+            <br>
+        <div class="container29">
+            <div>1</div>
+            <div style="flex-shrink: 5">2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            &lt;div&gt;1&lt;/div&gt;<br>
+            &lt;div style="flex-shrink: 1"&gt;2&lt;/div&gt;<br>
+            &lt;div&gt;3&lt;/div&gt;</p>
+        <hr><br>
+
+
+        <h4>d. flex-basic</h4>
+        <p>specifies the initial length of a flex item.
+            <br><br>
+        <div class="container30">
+            <div>1</div>
+            <div style="flex-basis: 300px">2</div>
+            <div>3</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            &lt;div&gt;1&lt;/div&gt;<br>
+            &lt;div style="flex-basis: 300px;"&gt;2&lt;/div&gt;<br>
+            &lt;div&gt;3&lt;/div&gt;</p>
+        <hr><br>
+
+        <h4>e. flex</h4>
+        <p> shorthand property for the flex-grow, flex-shrink, and flex-basis properties.<br>Make the second flex item not growable (0), not shrinkable (0), and with an initial length of 200 pixels:<br>The default is 0 1 auto</p>
+            <br>
+        <div class="container31">
+            <div>1</div>
+            <div style="flex: 0 0 200px">2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            &lt;div&gt;1&lt;/div&gt;<br>
+            &lt;div style="flex: 0 0 200px"&gt;2&lt;/div&gt;<br>
+            &lt;div&gt;3&lt;/div&gt;</p>
+        <hr><br>
+
+        <h4>f. align-self</h4>
+        <p>specifies the alignment for the selected item inside the flexible container.<br>The align-self property overrides the default alignment set by the container's align-items property.</p>
+            <br>
+        <div class="container32">
+            <div style="align-self: flex-start">1</div>
+            <div style="align-self: center">2</div>
+            <div style="align-self: flex-end">3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <p><b>Code:-</b>display: flex;<br>
+            &lt;div&gt;1&lt;/div&gt;<br>
+            &lt;div style="align-self: center"&gt;2&lt;/div&gt;<br>
+            &lt;div&gt;3&lt;/div&gt;</p><br>
+            <p><b>Other Values:</b> flex-end, flex-star, auto</p>
+        <hr><br>
+        </div>
+
+<br>
+<br>
+
+<h2>Flexbox-margin</h2>
+<div class="container001">
+    <div class="item001">One</div>
+</div>
+<pre><b>CODE USED: </b>
+    .container001{
+        background-color: #eee;
+        margin: 50px;
+        padding: 0px;
+        border: 4px solid #000;
+        height: 300px;
+    
+        display: flex;
+    }
+    .item001{
+        background-color: orangered;
+        color: #fff;
+        font-weight: bold;
+        padding: 20px;
+        /* margin: auto; */
+        margin-left: auto;
+        margin-top: auto;
+    }
+</pre>
+
+<h2>Nested flexbox</h2>
+<div class="container101">
+    <div class="item items101">one</div>
+    <div class="item items201">
+        <div class="subitem subitem1">A</div>
+        <div class="subitem subitem2">B</div>
+        <div class="subitem subitem3">C</div>
+    </div>
+    <div class="item items301">Three</div>
+</div>
+<pre>
+    <b>CODE USED: </b>.container101{
+        background-color: #eee;
+        margin: 50px;
+        padding: 0px;
+        border: 2px solid #000;
+        /* height: 300px; */
+    
+        display: flex;
+        flex-direction: column;
+    }
+    .item{
+        color: #fff;
+        font-weight: bold;
+        padding: 0px;
+        height: 80px;
+        text-align: center;
+    }
+    .items101{
+        background-color: orangered;
+    
+    }
+    .items201{
+        background-color: rgb(5, 172, 166);
+    
+        display: flex;
+    }
+    .items201 > .subitem{
+        background-color: bisque;
+        color: red;
+        flex-grow: 1;
+        margin: 5px;
+    }
+    .items301{
+        background-color: rgb(0, 115, 255);
+    
+    }
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+</body>
+
+</html>

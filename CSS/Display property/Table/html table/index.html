@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Table</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: brown;
+        }
+        table, td, th{
+            border: 1px solid black;
+        }
+        table{
+            border-spacing: 2px 2px;
+             /*column gap 10px and row gap 10px
+            border-spacing:10px  (from all sides) */
+
+            border-collapse: separate;
+            /* second value is collapse */
+            width: 300px;
+            empty-cells: hide;
+            /* other value hide */
+            table-layout: auto;
+            /* second value is fixed */
+        }
+        td, th{
+            vertical-align: top;
+            /* other value are Middle and Bottom */
+            padding: 5px 20px;
+            /* top and bottom 5px
+            left and light 20px
+            single value can be used for all sides */
+        }
+        caption{
+            caption-side: top;
+            /* other value is bottom */
+        }
+        tr:hover{
+            background-color: bisque;
+        }
+        tr:nth-child(even){
+            background-color: lightgrey
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Table</h1>
+    <h2>CSS Table Properties</h2>
+    <ul>
+        <li>broder-spacing</li>
+        <li>broder-collapse</li>
+        <li>vertical-align</li>
+        <li>caption-side</li>
+        <li>empty-cells</li>
+        <li>table-layout</li>
+    </ul>
+    <br>
+    <table>
+        <caption>Employee Record</caption>
+        <tr>
+            <th>FName</th>
+            <th>LName</th>
+            <th>Saving</th>
+        </tr>
+        <tr>
+            <td>Mohanafafasdsfgssffdfdgfafaafafaf Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sapiente!</td>
+            <td>Kumarskfnsksknsksjkfjkfsjkks</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Salim Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, omnis?</td>
+            <td>Khan</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>brown</td>
+            <td>$2500</td>
+        </tr>
+        <tr>
+            <td>Inder</td>
+            <td>Singh</td>
+            <td>$200</td>
+        </tr>
+        <tr>
+            <td>Inder</td>
+            <td>Singh</td>
+            <td>$200</td>
+        </tr>
+        <tr>
+            <td>Inder</td>
+            <td>Singh</td>
+            <td>$200</td>
+        </tr>
+        <tr>
+            <td>Inder</td>
+            <td>Singh</td>
+            <td>$200</td>
+        </tr>
+        <tr>
+            <td>Inder</td>
+            <td>Singh</td>
+            <td>$200</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

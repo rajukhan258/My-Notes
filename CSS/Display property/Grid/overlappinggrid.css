@@ -1,0 +1,35 @@
+.box999{
+    background: #eee;
+    width: 300px;
+    margin: 20px;
+    color: white;
+
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2,150px); 
+}
+.item{
+    max-width:150px ;
+}
+
+.over1{
+    background: orangered;
+    grid-column: 1/span2;
+    grid-row: 1/span2;
+    align-self: start;
+}
+.over2{
+    background: yellowgreen;
+    grid-column: 1/span2;
+    grid-row: 1/span2;
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+}
+.over3{
+    background: slateblue;
+    grid-column: 1/span2;
+    grid-row: 1/span2;
+    align-self: end;
+    justify-self: end;
+}
