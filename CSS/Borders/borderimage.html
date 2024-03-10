@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border-image</title>
+    <link rel="stylesheet" href="borderimage.css">
+</head>
+<body>
+    <h1>Border-image</h1>
+    <h2>Border-image properties and values</h2>
+    <ul>
+        <li>Border-image-source: url()</li>
+        <li>Border-image-slice: top right bottom left fill</li>
+        <li>Border-image-width: top right bottom left</li>
+        <li>Border-image-outset: top right bottom left</li>
+        <li>border-image-repeat</li>
+        <ul><li>repeat-X: round/ stretch/ repeat/ space</li>
+            <li>repeat-Y: round/ stretch/ repeat/ space</li></ul>
+        <li>Border-image</li>
+    </ul>
+    <p><b>Click on the link to goto Border image generator.</b><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Border-image_generator" target="_blank"> Click Here</a></p>
+<hr>
+
+<div id="box"><pre>#box{
+    width: 350px;
+    height: 250px;
+    border: 30px solid black;
+    text-align: justify;
+    padding: 20px;
+    margin: 20px;
+    background-color: bisque;
+    border-image-slice: 217 217 215 213;
+    border-image-width:20px 20px 20px 20px;
+    border-image-outset:0px 0px 0px 0px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://tipsmake.com/data/images/border-image-create-image-borders-in-css-picture-2-ag4esQyxz.png");
+    border-style:solid;
+}</pre></div>
+
+<div id="box2"><pre>#box2{
+    width: 350px;
+    height: 250px;
+    border: 30px solid black;
+    text-align: justify;
+    padding: 20px;
+    margin: 20px;
+    background-color: bisque;
+    border-image-slice:217 217 215 213 fill;
+    border-image-slice:27 27 27 27;
+    border-image-width:20px 20px 20px 20px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source:url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
+    border-style:solid;
+}</pre></div>
+
+<div id="box3"><pre>#box3{
+    width: 350px;
+    height: 250px;
+    border: 30px solid black;
+    text-align: justify;
+    padding: 20px;
+    margin: 20px;
+    background-color: bisque;
+    border-image-slice:15 15 15 15;
+    border-image-width:10px 10px 10px 10px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat:round round;
+    border-image-source:url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-3.png");
+    border-style:solid;
+}</pre></div>
+
+<h2>Border-image(Shorthand sequence)</h2>
+<b>border-image: source | slice | width | outset | repeat;</b>
+<p>The border-image property is a shorthand for the border-image-source, border-image-slice, border-image-width, border-image-outset, and border-image-repeat properties.</p>
+<p>The border-image-source property specifies the image to be used as the border image.</p>
+<div id="box4"><pre>#box4{
+    width: 350px;
+    height: 250px;
+    border: 30px solid black;
+    text-align: justify;
+    padding: 20px;
+    margin: 20px;
+    border-image:url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png") 27/20/0 stretch;
+    border-style:solid;
+}</pre</div>
+<br><br><br><br><br><br><br><br>
+<div id="box5"><pre>#box5{
+    width: 350px;
+    height: 250px;
+    border: 30px solid black;
+    text-align: justify;
+    padding: 20px;
+    margin: 20px;
+    background-color: bisque;
+    border-image:linear-gradient(red, yellow) 25
+}</pre</div>
+
+</body>
+</html>

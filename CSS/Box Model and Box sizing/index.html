@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model and Box Sizing</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <h2>Box Model and Box Sizing</h2>
+    <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:</p>
+
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/box-model-1.png">
+
+   <p> Explanation of the different parts:<br><br>
+
+<b>Content -</b> The content of the box, where text and images appear<br>
+<b>Padding -</b> Clears an area around the content. The padding is transparent<br>
+<b>Border -</b> A border that goes around the padding and content<br>
+<b>Margin -</b> Clears an area outside the border. The margin is transparent<br><br>
+The box model allows us to add a border around elements, and to define space between elements.</p> 
+
+<h3>Demonstrating the Box Model</h3>
+<p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: borders, padding, margins, and the actual content.</p>
+
+<div class="text1">This text is the content of the box.It is the actual content of the div. <br><br>We have added - <br><br><b>width: 350px; <br>height: auto;</b></div><br>
+
+<div class="text2">This text is the content of the box.It is the actual content of the div. <br><br>We have added - <br><br><b>width: 350px; <br>height: auto; <br>border: 15px solid green;</b></div><br>
+
+<div class="text3">This text is the content of the box.It is the actual content of the div. <br><br>We have added - <br><br><b>width: 350px; <br>height: auto; <br>border: 15px solid green;<br>padding: 20px;</b></div><br>
+
+<div class="text4">This text is the content of the box.It is the actual content of the div. <br><br>We have added - <br><br><b>width: 350px; <br>height: auto; <br>border: 15px solid green;<br>padding: 20px; <br>margin:60px;</b></div>
+
+<p>Here is the calculation:</p>
+<div class="one">
+350px (width) [actual content]<br>
+20px (left + right + top + bottom padding)<br>
+15px (left + right + top + bottom border)<br>
+60px (left + right + top + bottom margin)<br>
+
+<P><b>Total element width =</b> width + left padding + right padding + left border + right border + left margin + right margin</P>
+<p>=350px + 20px + 20px + 15px + 15px + 60px + 60px = 540px</p>
+<p><b>Total element height =</b> height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+    <p>=185px + 20px + 20px + 15px + 15px + 60px + 60px = 375px</p>
+</div>
+
+
+
+
+<h2>Box Sizing</h2>
+<p>The following illustration shows two elements with the same specified width and height:</p>
+
+    <h3>Without box-sizing</h3>
+
+<div class="div1">This div is smaller (width is 300px and height is 100px).<br><br><b>  .div1 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+  }</b></bbr></div>
+<br>
+<div class="div2">This div is bigger (width is also 300px and height is 100px).<br><br><b>  .div2 {
+    width: 300px;
+    height: 100px;  
+    padding: 50px;
+    border: 1px solid red;
+    
+  }</b></div>
+<p>This means: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).</p>
+<h3>With box-sizing</h3>
+<p>The box-sizing property allows us to include the padding and border in an element's total width and height.<br>
+
+    If you set box-sizing: border-box; on an element, padding and border are included in the width and height:</p>
+
+    <div class="div3">Both divs are the same width now!<br><br><b>        .div3 {
+        width: 300px;
+        height: 100px;
+        border: 1px solid blue;
+      }</b>
+</div>
+<br>
+<div class="div4"> <b>  .div4 {
+    width: 300px;
+    height: auto;  
+    padding: 50px;
+    border: 10px solid red;
+    box-sizing: border-box;
+  }</b></div>
+
+    
+</body>
+</html>

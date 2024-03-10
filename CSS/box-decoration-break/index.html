@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Decoration-Break</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Box-Decoration-Break</h1>
+    <h2>Box-Decoration-Break values</h2>
+    <ol>
+        <li>Clone</li>
+        <li>Slice (Default)</li>
+    </ol>
+
+    <h2>Box-Decoration-Break: Slice</h2>
+    <span>This is<br> a single<br> line within<br> a span Tag</span>
+    <pre>span{
+        background-color: blanchedalmond;
+        font-size: 21px;
+        line-height: 32px;
+        border: 2px solid black;
+        border-radius: 5px;
+        -webkit-box-decoration-break: slice;
+        box-decoration-break: slice;
+    }</pre>
+
+    <h2>Box-Decoration-Break: Clone</h2>
+    <span class="clon">This is<br> a single<br> line within<br> a span Tag</span>
+<pre>.clon{
+    background-color: blanchedalmond;
+    font-size: 21px;
+    line-height: 32px;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}</pre>
+
+
+
+</body>
+</html>

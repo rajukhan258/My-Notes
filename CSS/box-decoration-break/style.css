@@ -1,0 +1,28 @@
+h1{
+    background-color: brown;
+    text-align: center;
+}
+
+h2{
+    background-color: orange;
+}
+
+span{
+    background-color: blanchedalmond;
+    font-size: 21px;
+    line-height: 32px;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-box-decoration-break: slice;
+    box-decoration-break: slice;
+}
+
+.clon{
+    background-color: blanchedalmond;
+    font-size: 21px;
+    line-height: 32px;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}

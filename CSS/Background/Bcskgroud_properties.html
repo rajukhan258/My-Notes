@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Background Properties</title>
+  <link rel="stylesheet" type="text/css" href="Background_properties.css" />
+</head>
+
+<body>
+  <h1>Background property</h1><br>
+
+  <p>CSS background property is used to define the background effects on element. Background properties that affects the
+    HTML elements:<br><br>
+    1. background-color<br>
+    2. background-image<br>
+    3. background-repeat<br>
+    4. background-position<br>
+    5. background-attachment<br>
+    6. background-size<br>
+    7. background-origin<br>
+    8. background-clip<br>
+    9. background-blend-mode<br></p><br>
+
+  <h3>&emsp;1. Background Color</h3>
+  <p><b>The background-color</b> property specifies the background color of an element. The color is specified
+    by:<br><br>
+
+      a color name - like "red"<br>
+      a HEX value - like "#ff0000"<br>
+      an RGB value - like "rgb(255,0,0)"</p>
+
+  <div class="one">
+    This is a text inside a div element.
+    <p class="para">This paragraph has its own background color inside div. [background-color: yellow;
+      margin-left:0px;]</p>
+    We are still in the div element with div background color light blue. [background-color: lightblue;
+    margin-left:40px;]
+  </div><br>
+
+  <p><b>The opacity property</b> specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0.
+    The lower value, the more transparent:</p>
+  <p>When using the opacity property on div to add transparency to the background of an element, all of its child
+    elements become transparent as well.</p><br>
+  <p><b>Result with Opacity. The text inside div becomes transparent.</b></p>
+  <div id="transparent">
+    <div class="first">
+      <p>opacity: 1.0; (default)</p>
+    </div>
+    <div class="second">
+      <p>opacity: 0.6;</p>
+    </div>
+    <div class="third">
+      <p>opacity: 0.3;</p>
+    </div>
+    <div class="forth">
+      <p>opacity: 0.1;</p>
+    </div>
+  </div><br>
+  <p>We can also use an RGB color value with an alpha channel <b> (RGBA) - which specifies the opacity for a
+      color.</b><br>An RGBA color value is specified with: <b>rgba(red, green, blue, alpha). The alpha parameter is a
+      number between 0.0 (fully transparent) and 1.0 (fully opaque).</b></p><br>
+
+  <p><b>Result with RGBA. The text inside div remains Opaque/ visible.</b></p>
+  <div id="rgba">
+    <div class="rgba1">
+      <p>background: rgb(0, 128, 0); (default)</p>
+    </div>
+    <div class="rgba2">
+      <p>background: rgba(0, 128, 0, 0.6);</p>
+    </div>
+    <div class="rgba3">
+      <p>background: rgba(0, 128, 0, 0.3);</p>
+    </div>
+    <div class="rgba4">
+      <p>background: rgba(0, 128, 0, 0.1);</p>
+    </div>
+  </div>
+
+  <br><br>
+
+
+
+
+  <h3>&emsp;2. Background Image</h3><br>
+  <p>There are two different types of images you can include with CSS:<b> regular images and gradients.</b></p> <br>
+
+  <p><b>The background-image</b> property specifies an image to use as the background of an element. The
+    background-image property in CSS applies a graphic (e.g. PNG, SVG, JPG, GIF, WEBP)</p><br>
+  <p><b>Set the background image for a page: </b></p>
+  <p>This page has an image as the background! &emsp;[background-image: url(pic1.webp);]</p><br>
+
+  <p>The background image can also be set for specific elements, like the [div and P] element:</p>
+
+  <div class="bckgrnd">
+    <p></p>
+    This is a div with a background. <br>
+    background-image: url(pic2.jpg);
+  </div><br><br>
+
+
+  <p><b>CSS gradients</b> display smooth transitions between two or more specified colors.<br>
+
+    CSS defines three types of gradients:<br><br>
+    1. Linear Gradients (goes down/up/left/right/diagonally)<br>
+    2. Radial Gradients (defined by their center)<br>
+    3.Conic Gradients (rotated around a center point) </p><br>
+  <p><b>1. Linear Gradients:-</b> To create a linear gradient you must define at least two color stops. Color stops are
+    the colors you want to render smooth transitions among. You can also set a starting point and a direction (or an
+    angle) along with the gradient effect.</p><br>
+  <p><big>Syntax</big></p>
+  <p class="syntax1">background-image: linear-gradient(direction, color-stop1, color-stop2, ...);</p>
+  <p> &emsp;<b>Direction - Top to Bottom (this is default)</b></p>
+  <div id="grad1">background-image: linear-gradient(red, yellow);
+  </div>
+
+  <p> &emsp;<b>Direction - Left to Right</b></p>
+  <div id="grad2">background-image: linear-gradient(to right, red , yellow);</div>
+
+  <p> &emsp;<b>Direction - Diagonal</b></p>
+  <div id="grad3">background-image: linear-gradient(to bottom right, red, yellow);</div>
+
+  <p> &emsp;<b>Direction - Angles</b></p>
+  <div id="grad4">background-image: linear-gradient(220deg, red, yellow);</div>
+
+  <p> &emsp;<b>Using Multiple Color Stops</b></p>
+  <div id="grad5">background-image: linear-gradient(red, yellow, green);</div>
+
+  <div id="grad6">background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    <b>Rainbow Background</b>
+  </div>
+
+  <p> &emsp;<b>Using Transparency</b></p>
+  <div id="grad7">background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  </div>
+
+  <p> &emsp;<b>Repeating a linear-gradient</b></p>
+  <div id="grad7a">background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+  </div>
+
+  <br><br>
+
+
+
+  <p><b>2. Radial Gradients:-</b> A radial gradient is defined by its center. To create a radial gradient you must also
+    define at least two color stops.</p><br>
+  <p><big>Syntax</big></p>
+  <p class="syntax2">background-image: radial-gradient(shape size at position, start-color, ..., last-color);</p> <br>
+  <p>By default, shape is ellipse, size is farthest-corner, and position is center.</p>
+
+  <p> &emsp;<b>Radial Gradient - Evenly Spaced Color Stops (this is default)</b></p>
+  <div id="grad8">background-image: radial-gradient(red, yellow, green);
+  </div>
+
+  <p> &emsp;<b>Radial Gradient - Differently Spaced Color Stops</b></p>
+  <div id="grad9">background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+  </div>
+
+  <p> &emsp;<b>Set Shape</b></p>
+  <div id="grad10">background-image: radial-gradient(circle, red, yellow, green);<br>The shape parameter defines the
+    shape. It can take the value circle or ellipse. The default value is ellipse.
+  </div>
+
+  <p> &emsp;<b>Use of Different Size Keywords</b></p>
+  <p>The size parameter defines the size of the gradient. It can take four values:<br>
+
+    &emsp;closest-side<br>
+    &emsp;farthest-side<br>
+    &emsp;closest-corner<br>
+    &emsp;farthest-corner</p><br>
+
+  <div id="divxyz">
+    <div id="grad11">
+      <p><b>closest-side</b></p>background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+    </div><br>
+    <div id="grad12">
+      <p><b>farthest-side</b></p>background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+    </div><br>
+    <div id="grad13">
+      <p><b>closest-corner</b></p> background-image: radial-gradient(closest-corner at 60% 55%, red, yellow,black);}
+    </div>
+    <div id="grad14">
+      <p><b>farthest-corner</b></p> background-image: radial-gradient(farthest-corner at 60% 55%, red, yellow, black);}
+    </div>
+  </div>
+
+
+  <p> &emsp;<b>Repeating a radial-gradient</b></p>
+  <div id="grad15">background-image: repeating-radial-gradient(red, yellow 10%, green 15%);}</div>
+
+  <br><br>
+
+  <p><b>3. Conic Gradients:-</b> A conic gradient is a gradient with color transitions rotated around a center
+    point.<br>
+
+    To create a conic gradient you must define at least two colors.</p><br>
+  <p><big>Syntax</big></p>
+  <p class="syntax3">background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);
+  </p> <br>
+  <p>By default, angle is 0deg and position is center.
+
+    If no degree is specified, the colors will be spread equally around the center point.</p><br>
+
+
+  <div id="divxyz">
+    <div id="grad16">
+      <p><b>Conic Gradient: Three Colors</b></p><br><br>background-image: conic-gradient(red, yellow, green,);
+    </div>
+
+
+    <div id="grad17">
+      <p><b>Conic Gradient: Five Colors</b></p><br><br>background-image: conic-gradient(red, yellow, green, blue,
+      black);
+    </div>
+
+
+    <div id="grad18">
+      <p><b>Conic Gradient: Three Colors and Degrees</b></p><br><br>background-image: conic-gradient(red 45deg, yellow
+      90deg, green 210deg);
+    </div>
+  </div> <br>
+
+
+  <p> &emsp;<b>Create Pie Charts</b></p>
+
+  <div class="piechart">
+    <div id=grad19></div>
+    <div id="desc"> <b>background-image: conic-gradient(red, yellow, green, blue, black);border-radius: 50%;</b></div>
+    <br>
+  </div>
+
+  <div class="pie">
+    <div id=grad20></div>
+    <div id="desc"> <b>background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg,
+        green 270deg, blue 270deg);border-radius: 50%;</b></div>
+  </div>
+
+  <p> &emsp;<b>Conic Gradient With Specified From Angle</b><br>The [from angle] specifies an angle that the entire conic
+    gradient is rotated by.</p>
+  <br>
+
+  <div class="pie2">
+    <div id=grad21></div>
+    <div id="desc"> <b> background-image: conic-gradient(at 60% 45%, red, yellow, green);</b></div>
+  </div>
+  <br>
+  <p> &emsp;<b>Conic Gradient With Specified Center Position</b><br>The [at position] specifies the center of the conic
+    gradient.</p>
+  <div class="pie2">
+    <div id=grad22></div>
+    <div id="desc"> <b> background-image: conic-gradient(at 60% 45%, red, yellow, green);</b></div>
+  </div>
+
+  <br>
+
+  <p> &emsp;<b>Repeating a Conic Gradient</b></p>
+  <div class="piechart">
+    <div id=grad23></div>
+    <div id="desc"> <b> background-image: repeating-conic-gradient(red 10%, yellow 20%);
+        border-radius: 50%;</b></div>
+  </div>
+
+  <div class="pie">
+    <div id=grad24></div>
+    <div id="desc"> <b> background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg
+        30deg);
+        border-radius: 50%;</b></div>
+  </div>
+
+  <br>
+  <br>
+
+
+  <h3>&emsp;3.. Background Image Repeat</h3><br>
+  <p>By default, the background-image property repeats an image both horizontally and vertically.</b></p> <br>
+  <p> &emsp;<b>Background-repeat: repeat; (default)</b></p>
+
+  <div class="repeat"></div><br>
+
+  <p> &emsp;<b>Background-repeat: no-repeat</b></p>
+  <div class="norepeat"></div><br>
+
+  <p> &emsp;<b>Background-repeat: repeat-x;</b></p>
+  <div class="repeatx"></div><br>
+
+  <p> &emsp;<b>Background-repeat: repeat-y;</b></p>
+  <div class="repeaty"></div><br>
+
+  <p> &emsp;<b>Background-repeat: space;</b><br>Never crop the image unless a single image is too large to fit. If
+    multiple images can fit, space them out evently images always touching the edges.</p>
+  <div class="repeat_space"></div><br>
+
+  <p> &emsp;<b>Background-repeat: round;</b><br>Never crop the image unless a single image is too large to fit. If
+    multiple images can fit with leftover space, squish them or stretch them to fill the space.</p>
+  <div class="repeat_round"></div><br>
+
+<br>
+ 
+
+
+  <h3>&emsp;4. Background Position</h3>
+  <p>The background-position property sets the starting position of a background image.<br>By default, a
+    background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally.</p>
+  <div id="position_container">
+
+    <div class="box">
+      <div id=background_area1></div>
+      <div class="desc"> <b>background-position: left top;</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area2></div>
+      <div class="desc"> <b>background-position: left center;</b></div>
+    </div>
+
+    <div class="box" class="clear">
+      <div id=background_area3></div>
+      <div class="desc"> <b>background-position: left bottom;</b></div>
+    </div>
+
+<div class="box">
+  <div id=background_area4></div>
+      <div class="desc"> <b>background-position: right top;</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area5></div>
+      <div class="desc"> <b>background-position: right center;</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area6></div>
+      <div class="desc"> <b>background-position: right bottom</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area7></div>
+      <div class="desc"> <b>background-position: center top;</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area8></div>
+      <div class="desc"> <b>background-position: center center;</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area9></div>
+      <div class="desc"> <b>background-position: center bottom;</b></div>
+    </div>
+
+    <div class="box">
+      <div id=background_area10></div>
+      <div class="desc"> <b>background-position: 10% 40%;</b><br>The first value is the horizontal position and the second
+        value is the vertical. </div>
+    </div>
+
+    <div class="box">
+      <div id=background_area11></div>
+      <div class="desc"> <b>background-position:50px 100px;</b><br>The first value is the horizontal position and the
+        second value is the vertical.</div>
+    </div>
+  </div>
+
+<br>
+<br>
+
+
+  <h3>&emsp;5. Background Attachment</h3>
+  <p>The background-attachment property specifies whether the background image should scroll or be fixed </p><br>
+  <div class="desc"><b>background-attachment: fixed;</b></div>
+
+  <div id="fixed">
+    <p>Consider this div as a webpage and the background is inside the inner div with some text.</p>
+    <div class="fixed">
+    The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.</div></div><br>
+
+
+    <div class="desc"><b>background-attachment: scroll;</b></div>
+    <div id="scroll">
+      <p>Consider this div as a webpage and the background is inside the inner div with some text.</p>
+<div class="scroll">
+  The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.<br>The background-image scrolls. Try to scroll down the page.</div>
+  </div><br><br>
+
+<div class="desc"><b>background-attachment: local;</b></div>
+  <div id="local">
+    <p>Consider this div as a webpage and the background is inside the inner div with some text.</p>
+    <div class="local">
+    The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.<br>The background-image is fixed. Try to scroll down the page.</div></div><br><br>
+
+
+    <h3>&emsp;6. Background Size</h3>
+    <p>The background-size property specifies the size of the background images.</p><br>
+    <div id="bcksize">
+    <div id="auto"><b>background-size: auto;</b><br><p>Default value. The background image is displayed in its original size</p></div>
+    <div id="contain"><b>background-size: contain;</b><br><p>Resize the background image to make sure the image is fully visible</p></div>
+    <div id="cover"><b>background-size: cover;</b><br><p>Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges</p></div>
+    <div id="percent"><b>background-size: 50%;</b><br><p>Sets the width and height of the background image in percent of the parent element. The first value sets the width, the second value sets the height.</p></div>
+    <div id="pixel"><b>background-size: 300px;</b><br><p>Sets the width and height of the background image. The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto".</p></div>
+    <div id="contain_cover"><b>background-size: 300px;</b><br><p>Here we have two background images. We specify the size of the first background image with "contain", and the second background-image with "cover".</p></div>
+    </div><br><br>
+
+
+    <h3>&emsp;7. Background Origin</h3>
+    <p>The background-origin property specifies the origin position (the background positioning area) of a background image.
+        <br>
+      <b>Note:</b> This property has no effect if background-attachment is "fixed".</p><br>
+    <div id="origin">
+      <div id="padding"><b>background-origin: padding-box;</b></div>
+      <div id="border"><b>background-origin: border-box;</b></div>
+      <div id="content"><b>background-origin: content-box;</b></div>
+    </div>
+    <br><br>
+
+<h3>&emsp;8. Background Clip</h3>
+    <p>The background-clip property defines how far the background (color or image) should extend within an element.</p><br>   
+      
+      <div id="origin">
+        <div id="padding1"><b>background-Clip: padding-box;</b></div>
+        <div id="border1"><b>background-Clip: border-box;</b></div>
+        <div id="content1"><b>background-Clip: content-box;</b></div>
+      </div>
+    
+<br>
+<br>
+
+      <h3>&emsp;9. Background Blend-Mode</h3>
+      <p>The background-blend-mode property defines the blending mode of each background layer (color and/or image).</p><br>   
+        
+        <p>&emsp;Normal - &emsp; This is default. Sets the blending mode to normal <br>&emsp;multiply - &emsp; Sets the blending mode to multiply <br>&emsp;screen - &emsp;&emsp; Sets the blending mode to screen <br>&emsp;overlay - &emsp;&emsp;Sets the blending mode to overlay <br>&emsp;darken - &emsp;&emsp; Sets the blending mode to darken <br>&emsp;lighten - &emsp;&emsp; Sets the blending mode to lighten	
+        <br>&emsp;color-dodge	-&emsp;Sets the blending mode to color-dodge <br>&emsp;saturation - &emsp; Sets the blending mode to saturation <br>&emsp;color - &emsp;&emsp;&emsp; Sets the blending mode to color	<br>&emsp;luminosity - 	&emsp;Sets the blending mode to luminosity<br>&emsp;Color-burn - 	&emsp;Sets the blending mode to color-burn<br>&emsp;hard-light - 	&emsp;Sets the blending mode to hard-light<br>&emsp;soft-light - 	&emsp;Sets the blending mode to soft-light<br>&emsp;Difference - 	&emsp;Sets the blending mode to Difference<br>&emsp;exclusion - 	&emsp;Sets the blending mode to exclusion<br>&emsp;hue - 	&emsp;Sets the blending mode to hue<br>&emsp;luminosity - 	&emsp;Sets the blending mode to luminosity</p>
+<br>
+  <div id="blend">
+
+    <div class="box">
+      <div id="normal"></div>
+      <div id="desc"> background-blend-mode: normal;</div>
+    </div> 
+     
+    <div class="box">
+      <div id="multiply"></div>
+      <div id="desc">background-blend-mode: multiply;</div>
+    </div> 
+
+    <div class="box">
+      <div id="screen"></div>
+      <div id="desc">background-blend-mode: screen;</div>
+    </div> 
+
+    <div class="box">
+      <div id="overlay"></div>
+      <div id="desc">background-blend-mode: overlay;</div>
+    </div>
+
+    <div class="box">
+      <div id="darken"></div>
+      <div id="desc">background-blend-mode: darken;</div>
+    </div>
+
+    <div class="box">
+      <div id="lighten"></div>
+      <div id="desc">background-blend-mode: lighten;</div>
+    </div>
+
+    <div class="box">
+      <div id="color-dodge"></div>
+      <div id="desc">background-blend-mode: color-dodge;</div>
+    </div>
+
+    <div class="box">
+      <div id="saturation"></div>
+      <div id="desc">background-blend-mode: saturation;</div>
+    </div>
+
+    <div class="box">
+      <div id="color"></div>
+      <div id="desc">background-blend-mode: color;</div>
+    </div>
+
+    <div class="box">
+      <div id="luminosity"></div>
+      <div id="desc">background-blend-mode: luminosity;</div>
+      
+    </div>
+ 
+
+  </div>
+  <br>
+  <h3>&emsp;9.1 Mix-Blend-Mode</h3>
+  <p>The mix-blend-mode property is used for blending two images or text and image and defines the blending mode of each background layer (color and/or image).</p><br> 
+
+<B >mix-blend-mode: overlay;</B>
+    <div class="boxx">
+      <h3 class="mmm">Mix-Blend_Mode</h3>
+   </div> 
+   <p>&emsp;Normal - &emsp; This is default. Sets the blending mode to normal <br>&emsp;multiply - &emsp; Sets the blending mode to multiply <br>&emsp;screen - &emsp;&emsp; Sets the blending mode to screen <br>&emsp;overlay - &emsp;&emsp;Sets the blending mode to overlay <br>&emsp;darken - &emsp;&emsp; Sets the blending mode to darken <br>&emsp;lighten - &emsp;&emsp; Sets the blending mode to lighten	
+    <br>&emsp;color-dodge	-&emsp;Sets the blending mode to color-dodge <br>&emsp;saturation - &emsp; Sets the blending mode to saturation <br>&emsp;color - &emsp;&emsp;&emsp; Sets the blending mode to color	<br>&emsp;luminosity - 	&emsp;Sets the blending mode to luminosity<br>&emsp;Color-burn - 	&emsp;Sets the blending mode to color-burn<br>&emsp;hard-light - 	&emsp;Sets the blending mode to hard-light<br>&emsp;soft-light - 	&emsp;Sets the blending mode to soft-light<br>&emsp;Difference - 	&emsp;Sets the blending mode to Difference<br>&emsp;exclusion - 	&emsp;Sets the blending mode to exclusion<br>&emsp;hue - 	&emsp;Sets the blending mode to hue<br>&emsp;luminosity - 	&emsp;Sets the blending mode to luminosity</p>
+<br>
+<br>
+
+
+  <h3>&emsp;Background shorthand property</h3>
+
+  <p>When using the shorthand property the order of the property values is:<br><br>&emsp;*background-color<br>&emsp;*background-image<br>&emsp;*background-repeat<br>&emsp;*background-attachment<br>&emsp;*background-position</p><br>
+
+  <div class="shorthand"><b> background: #ffffff url("pic4.jpg") no-repeat right top;</b></div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+   
+  <br>
+  <br>
+  <br>
+  <br>
+
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+h2{
+    text-align:center;
+    background-color:red;
+}
+h3{
+    background-color:orange; 
+}
+
+
+/* BORDER STYLE PROPERTY */
+
+.dotted{border-style:dotted;padding: 5px;border-width:2px;}
+.dashed{border-style:dashed;padding: 5px;border-width:2px;}
+.solid{border-style: solid;padding: 5px;border-width:2px;}
+.double{border-style:double;padding: 5px;border-width:2px;}
+.groove{border-style:groove;padding: 5px;border-width:2px;}
+.ridge{border-style: ridge;padding: 5px;border-width:2px;}
+.inset{border-style:inset;padding: 5px;border-width:2px;}
+.outset{border-style:outset;padding: 5px;border-width:2px;}
+.mix{border-style: dotted dashed solid double;padding: 5px;border-width:2px;}
+.hidden{border-style:hidden;padding: 5px;border-width:2px;}
+.none{border-style:none;padding: 5px;border-width:2px;}
+
+.individual{border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dashed;
+    border-left-style: ridge;  padding: 5px;border-width:2px;
+}
+
+.border_style_one{
+    border-style: dotted;
+    padding: 5px;border-width:2px;
+}
+.border_style_two{
+    border-style: dotted solid;
+    padding: 5px;border-width:2px;
+}
+.border_style_three{
+    border-style: dotted solid double;
+    padding: 5px;border-width:2px;
+}
+.border_style_four{
+    border-style: dotted solid double dashed;
+    padding: 5px;border-width:2px;
+}
+/* END BORDER STYLE PROPERTY  */
+
+
+/* BORDER WIDTH PROPERTY */
+.wone{
+    border-style:solid;
+    border-width:5px;
+    padding: 5px;
+}
+.wtwo{
+    border-style:solid;
+    border-width:medium;
+    padding: 5px;
+}
+.wthree{
+    border-style:dotted;
+    border-width:2px;
+    padding: 5px;
+}
+.wfour{
+    border-style:dotted;
+    border-width:thick;
+}
+.wfive{
+    border-style:double;
+    border-width:15px;
+    padding: 5px;
+}
+
+.border_width_one {
+    border-style: solid;
+    border-width: 5px; /* 5px top and bottom, 20px on the sides */
+    padding: 5px;
+  }
+.border_width_two {
+    border-style: solid;
+    border-width: 5px 20px; /* 5px top bottom, 20px left and right */
+    padding: 5px;
+  }
+.border_width_three {
+    border-style: solid;
+    border-width: 20px 5px 30px; /* 20px top, 5px on the sides, 30px bottom*/
+    padding: 5px;
+  }
+.border_width_four {
+    border-style: solid;
+    border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+    padding: 5px;
+  }
+ /* END BORDER WIDTH PROPERTY */
+
+
+
+ /* BORDER COLOR PROPERTY  */
+.cone{
+    border-style:solid;
+    border-color: red;
+    padding: 5px;
+  }
+.ctwo{
+    border-style:dashed;
+    border-color: green;
+    padding: 5px;
+  }
+.cthree{
+    border-style:dotted;
+    border-color: blue;
+    padding: 5px;
+  }
+
+.border_color_one{
+    border-style: dashed;
+    border-width:2px;
+    border-color: blue; /* blue all sides */
+    padding: 5px;
+}
+.border_color_two{
+    border-style: dotted solid;
+    border-width:2px;
+    border-color: red blue; /* red top and bottom, blue right and left */
+    padding: 5px;
+}
+.border_color_three{
+    border-style:solid;
+    border-width:2px;
+    border-color: red blue green; /* red top, green bottom, blue right and left */
+    padding: 5px;
+}
+.border_color_four{
+    border-style:solid;
+    border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+    padding: 5px;
+}
+/* END BORDER COLOR PROPERTY  */
+
+
+
+/* BORDER RADIUS PROPERTY */
+.rone{
+    border: 2px solid red;  /*shorthand*/
+  border-radius: 5px;
+  padding: 5px;
+}
+.rtwo{
+    border: 2px solid red;
+  border-radius: 10px;
+  padding: 5px;
+}
+.rthree{
+    border: 2px solid red;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+
+.border_radius_one{
+    border-style: solid;
+    border-width:2px;
+    border-color:blue;
+    border-radius:15px; /*radius applied on all four corners*/
+    padding: 5px;
+
+}
+.border_radius_two{
+    border-style: solid;
+    border-width:2px;
+    border-color:blue ;
+    border-radius:5px 15px; /* 5px top-left and bottom-right,    15px bottom-left and top-right, */
+    padding: 5px;
+}
+.border_radius_three{
+    border-style: solid;
+    border-width:2px;
+    border-color:blue ;
+    border-radius:5px 15px 20px; /* 5px top-left,    15px bottom-left and top-right, 20px bottom-right*/
+    padding: 5px;
+}
+.border_radius_four{
+    border-style: solid;
+    border-width:2px;
+    border-color:blue ;
+    border-radius:5px 10px 15px 20px; /* 5px top-left,  10px top-right,  15px bottom-right, 20px bottom-left*/
+    padding: 5px;
+}
+/* END BORDER RADIUS PROPERTY */
+
+
+
+ /* BORDER SHORTHAND PROPERTY  */
+.border_shorthand{
+    border: 3px solid red; /* border-width, border-style, and border-color  */
+}
+.border-left{
+    border-left: 6px solid red;
+    background-color: lightgrey;
+}
+.border-right{
+    border-right: 6px solid red;
+    background-color: lightgrey;
+}
+.border-top{
+    border-top: 6px solid red;
+    background-color: lightgrey;
+}
+.border-bottom{
+    border-bottom: 6px solid red;
+    background-color: lightgrey;
+}
+ /* END BORDER SHORTHAND PROPERTY  */

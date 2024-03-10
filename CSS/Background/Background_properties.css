@@ -1,0 +1,1026 @@
+*{
+    margin:0px;
+}
+
+b{
+    text-decoration-line:underline;
+    text-decoration-color: blue;
+}
+
+h1{
+    background-color:red;
+    text-align:center;
+}
+p{
+    margin-left:40px ;
+}
+
+h3{
+    background-color:orange;
+}
+
+.one {
+    background-color: lightblue;
+    margin-left:40px;
+  }
+  
+ div .para {
+    background-color: yellow;
+    margin-left:0px;
+  }
+
+#transparent{
+    display:flex;
+    Margin-left:40px;
+  }
+
+  div.first {
+    background-color: green;
+    opacity: 1.0;
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+  div.second {
+    background-color: green;
+    opacity: 0.6;
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+  div.third {
+    background-color: green;
+    opacity: 0.3;
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+  div.forth {
+    background-color: green;
+    opacity: 0.1;
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+
+
+  #rgba{
+    display:flex;
+    Margin-left:40px;
+  }
+
+  div.rgba1 {
+    background-color: green;
+    background: rgb(0, 128, 0);
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+  div.rgba2 {
+    background-color: green;
+    background: rgba(0, 128, 0, 0.6);
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+  div.rgba3 {
+    background-color: green;
+    background: rgba(0, 128, 0, 0.3);
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  }  
+
+  div.rgba4 {
+    background-color: green;
+    background: rgba(0, 128, 0, 0.1);
+    font-weight:bolder;
+    height:100px;
+    width:150px;
+  } 
+
+
+
+
+  body{
+    background-image: url(pic1.webp);
+  }
+
+.bckgrnd{
+    width:80%;
+    height:200px;
+    margin-left:60px;    
+    border:2px solid black;
+    background-image: url(pic2.jpg);
+    text-align:center;
+    font-weight: bolder;
+    color:blue;
+}
+
+.syntax1{
+    width:60%;
+    border:1px solid red;
+}
+#grad1 {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+height: 200px;
+background-color: red; /* For browsers that do not support gradients */
+background-image: linear-gradient(red, yellow);
+}
+
+#grad2 { 
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, red , yellow);
+}
+
+#grad3 {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+#grad4 {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(220deg, red, yellow);
+}
+
+#grad5 {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  
+  background-image: linear-gradient(red, yellow, green);
+}
+
+#grad6 {
+ 
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+#grad7 {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+#grad7a {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+}
+
+.syntax2{
+  width:70%;
+  border:1px solid red;
+}
+
+#grad8 { 
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(red, yellow, green);
+}
+
+#grad9 { 
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+#grad10 { 
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, red, yellow, green);
+}
+
+#divxyz{
+  display:flex;
+}
+
+#grad11 {
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  color:white;
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+}
+
+#grad12 {
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  color:white;
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+}
+
+#grad13 {
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  color:white;
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(closest-corner at 70% 75%, red, yellow, black);
+}
+
+#grad14 {
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  color:white;
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(farthest-corner at 60% 55%, red, yellow, black);
+}
+
+#grad15 {
+  font-weight: bolder;
+  padding-top: 90px;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:80%;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+
+.syntax3{
+  width:80%;
+  border:1px solid red;
+}
+
+#grad16 {
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(red, yellow, green);
+}
+
+
+#grad17 {
+  color:white;
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(red, yellow, green, blue, black);
+}
+
+#grad18 {
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-align:center;
+  margin-left:60px;
+  width:250px;
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+}
+
+.piechart{
+  position:relative;
+  border:1px solid red;
+  margin-left:60px;
+  width:25%;
+  height: auto;
+  /* display:flex; */
+  float: left;
+}
+
+.pie{
+  position:relative;
+  border:1px solid red;
+  margin-left:60%;
+  width:25%;
+  height: auto;
+  /* display:flex; */
+ 
+}
+#grad19 {
+  border:1px solid red;
+  border-radius: 50%;
+  margin-left:13%;
+  width:150px;
+  height: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+}
+
+#grad20 {
+  border:1px solid red;
+  border-radius: 50%;
+  margin-left:13%;
+  width:150px;
+  height: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+  border-radius: 50%;
+}
+
+#desc{
+  
+  width:auto;
+  height: auto;
+  /* margin-left:2px; */
+  text-align:center;
+}
+
+.pie2{
+  position:relative;
+  border:1px solid red;
+  margin-left:60px;
+  width:25%;
+  height: auto;
+  /* display:flex; */
+  /* float: left; */
+}
+
+#grad21 {
+  border:1px solid red;
+  border-radius: 50%;
+  margin-left:13%;
+  width:150px;
+  height: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(from 90deg, red, yellow, green);
+  border-radius: 50%;
+}
+
+#grad22 {
+  border:1px solid red;
+  border-radius: 50%;
+  margin-left:13%;
+  width:150px;
+  height: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(at 60% 45%, red, yellow, green);
+  border-radius: 50%;
+}
+
+#grad23 {
+  border:1px solid red;
+  border-radius: 50%;
+  margin-left:13%;
+  width:150px;
+  height: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: repeating-conic-gradient(red 10%, yellow 20%);
+  border-radius: 50%;
+}
+
+#grad24 {
+  border:1px solid red;
+  border-radius: 50%;
+  margin-left:13%;
+  width:150px;
+  height: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg); border-radius: 50%;
+  border-radius: 50%;
+}
+
+.repeat {
+  border:2px solid red;
+  margin-left:60px;
+  background-image: url(pic4.jpg);
+  width:80%;
+  height: 300px;
+}
+
+.norepeat {
+  border:2px solid red;
+  margin-left:60px;
+  background-image: url(pic4.jpg);
+  width:80%;
+  height: 200px;
+  background-repeat: no-repeat;
+}
+
+.repeatx {
+  border:2px solid red;
+  margin-left:60px;
+  background-image: url(pic4.jpg);
+  width:80%;
+  height: 200px;
+  background-repeat: repeat-x;
+}
+
+.repeaty {
+  border:2px solid red;
+  margin-left:60px;
+  background-image: url(pic4.jpg);
+  width:80%;
+  height: 300px;
+  background-repeat: repeat-y;
+}
+
+.repeat_space {
+  border:2px solid red;
+  margin-left:60px;
+  background-image: url(pic4.jpg);
+  width:80%;
+  height: 300px;
+  background-repeat: space;
+}
+
+.repeat_round {
+  border:2px solid red;
+  margin-left:60px;
+  background-image: url(pic3.jpg);
+  width:80%;
+  height: 300px;
+  background-repeat: round;
+}
+
+
+
+
+
+#position_container{
+  /* border:2px solid black; */
+  margin-left:60px;
+  margin-right:60px;
+  box-sizing: border-box;
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.box{
+  margin-top:5px;
+  border:1px solid rgb(255, 0, 0);
+  width:25%;
+  height: auto;
+}
+.desc{
+  /* border:2px solid green; */
+  width:auto;
+  height: auto;
+  /* margin-left:2px; */
+  text-align:center;
+}
+
+#background_area1 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+#background_area2 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+#background_area3 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+#background_area4 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-repeat: no-repeat;
+  background-image: url(pic4.jpg);
+  background-position: right top;
+}
+
+#background_area5 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+#background_area6 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+#background_area7 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+#background_area8 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#background_area9 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+#background_area10 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position:  10% 40%;
+}
+
+#background_area11 {
+  width:100%;
+  height: 200px;
+  background-color: rgb(252, 185, 185); /* For browsers that do not support gradients */
+  background-image: url(pic4.jpg);
+  background-repeat: no-repeat;
+  background-position:50px 100px;
+  
+}
+
+
+#fixed{
+  /* box-sizing: border-box; */
+  margin:auto;
+  width:41%;
+  height: 250px;
+  border:1px solid red;
+  overflow:auto;
+}
+.fixed{
+  /* box-sizing: border-box; */
+  width:90%;
+  height:500px;
+  margin:auto;
+  border:1px solid red;
+  overflow:auto;
+  background-image:url(pic2.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+}
+
+
+#scroll{
+  /* box-sizing: border-box; */
+  margin:auto;
+  width:41%;
+  height: 250px;
+  border:1px solid red;
+  overflow:auto;
+}
+.scroll{
+  /* box-sizing: border-box; */
+  width:90%;
+  height:500px;
+  margin:auto;
+  border:1px solid red;
+  overflow:auto;
+  background-image:url(pic2.jpg);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+}
+
+#local{
+  /* box-sizing: border-box; */
+  margin:auto;
+  width:41%;
+  height: 250px;
+  border:1px solid red;
+  overflow:auto;
+}
+.local{
+  /* box-sizing: border-box; */
+  width:90%;
+  height:500px;
+  margin:auto;
+  border:1px solid red;
+  overflow:auto;
+  background-image:url(pic2.jpg);
+  background-attachment: local;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+}
+
+#bcksize{
+  width:80%;
+  margin:auto;
+  height:auto;
+  /* border:1px solid red; */
+  display: flex;
+  
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align:center;
+}
+#auto{
+  width:37%;
+  height:200px;
+  border:1px solid red;
+  background-image:url(pic2.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-top:6px;
+}
+
+#contain{
+  width:37%;
+  height:200px;
+  border:1px solid red;
+  background-image:url(pic2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top:6px;
+}
+
+#cover{
+  width:37%;
+  height:200px;
+  border:1px solid red;
+  background-image:url(pic2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top:6px;
+}
+
+#percent{
+  width:37%;
+  height:200px;
+  border:1px solid red;
+  background-image:url(pic2.jpg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  margin-top:6px;
+}
+
+#pixel{
+  width:37%;
+  height:200px;
+  border:1px solid red;
+  background-image:url(pic2.jpg);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  margin-top:6px;
+}
+
+#contain_cover{
+  width:37%;
+  height:200px;
+  border:1px solid red;
+  background-image:url(pic4.jpg), url(pic2.jpg);
+  background-size: auto, cover;
+  background-repeat: no-repeat;
+  margin-top:6px;
+}
+
+#origin{
+  /* border:1px solid red; */
+  width: 98%;
+  margin:auto;
+  display:flex;
+  justify-content: space-between;
+}
+
+#padding{
+
+  border:10px dashed black;
+  width:25%;
+  height:150px;
+  padding: 15px;
+  background-image: url(pic6.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  /* background-size:cover; */
+}
+
+#border{
+
+  border:10px dashed black;
+  width:25%;
+  /* height:200px; */
+  padding:15px;
+  background-image: url(pic6.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  /* background-size:cover; */
+  background-origin: border-box;
+  background-repeat: no-repeat;
+
+}
+
+#content{
+  border:10px dashed black;
+  width:25%;
+  /* height: 80px; */
+  padding: 15px;
+  background-image: url(pic6.jpg);
+  background-color: hsl(24, 98%, 49%);
+  /* background-size:cover; */
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+
+
+#padding1{
+  border:10px dashed black;
+  width:25%;
+  height:150px;
+  padding: 15px;
+  background-image: url(pic6.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  /* background-size:cover; */
+}
+
+#border1{
+  border:10px dashed black;
+  width:25%;
+  height:150px;
+  padding: 15px;
+  background-image: url(pic6.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  /* background-size:cover; */
+  background-clip: border-box;
+  background-repeat: no-repeat;
+
+}
+
+#content1{
+  border:10px dashed black;
+  width:25%;
+  height:150px;
+  padding: 15px;
+  background-image: url(pic6.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  /* background-size:cover; */
+  background-clip: content-box;
+  background-repeat: no-repeat;
+}
+
+#blend{
+  /* border:1px solid red; */
+  width: 80%;
+  margin:auto;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+
+#normal{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: normal;
+}
+
+#multiply{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+#screen{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+}
+
+#overlay{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+#darken{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+}
+
+#lighten{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+}
+
+#color-dodge	{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color-dodge	;
+}
+
+#saturation{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: saturation;
+}
+
+#color{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color;
+}
+
+#luminosity{
+  /* border:1px solid rgb(255, 0, 0); */
+  width:100%;
+  height:200px;
+  background-image: url(pic3.jpg);
+  background-color: hsl(24, 98%, 49%);;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+}
+
+.boxx{
+  margin: 20px;
+  width:200px;
+  height: 200px;
+  border: 2px solid black;
+  background-image: url(pic3.jpg);
+}
+.mmm{
+  background-color: red;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 80px;
+  mix-blend-mode: overlay;
+}
+
+.shorthand{
+  width:80%;
+  height:200px;
+  background: #ffffff url("pic4.jpg") no-repeat right top;
+  margin:auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
