@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add DOM CSS</title>
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Local CSS File (style.css) -->
+	<!-- <link rel="stylesheet" href="style.css"> -->
+
+	<!-- Custom CSS Styles -->
+	<style>
+		.nav-background {
+			background: #1a2a6c;
+			background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+			background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+		}
+
+		#anim-container {
+			width: 300px;
+			height: 300px;
+			position: relative;
+			background: yellow;
+		}
+
+		#animate {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			background: red;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">Add DOM CSS</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<!-- ========== Start Basics ========== -->
+		<div class="container border border-2 rounded border-warning mb-2" id="sample1">
+			<p>We can use javascript to <b>directly set a style</b> on an element and you can also use <b>it to add or remove
+					classes</b> from the elements which will add or remove a set of CSS style to the element.</p>
+
+			<ol>
+				<li>Directly setting CSS style on element</li>
+				<li>Adding or removing class from the element</li>
+			</ol>
+
+			<pre class="rounded border" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+	const target = document.querySelector('#sample1');
+	target.style.backgroundColor = '#363636';
+	target.style.color = '#ffffff';
+&lt;/script&gt;</code></pre>
+		</div>
+
+		<!-- ========== End Basics ========== -->
+
+
+
+
+
+
+		<!-- ========== Start container -2 table ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">Changing CSS property having hyphen</p>
+			<div class="table-responsive col-md-6">
+				<table class="table table-bordered table-stripped  text-center">
+					<thead>
+						<tr class="table-warning">
+							<th>Property name in CSS</th>
+							<th>in Javascript</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>background-color</td>
+							<td>backgroundColor</td>
+						</tr>
+						<tr>
+							<td>background-image</td>
+							<td>backgroundImage</td>
+						</tr>
+						<tr>
+							<td>border-bottom</td>
+							<td>borderBottom</td>
+						</tr>
+						<tr>
+							<td>border-top</td>
+							<td>borderTop</td>
+						</tr>
+						<tr>
+							<td>box-shadow</td>
+							<td>boxShadow</td>
+						</tr>
+						<tr>
+							<td>margin-top</td>
+							<td>marginTop</td>
+						</tr>
+						<tr>
+							<td>font-family</td>
+							<td>fontFamily</td>
+						</tr>
+						<tr>
+							<td>line-height</td>
+							<td>lineHeight</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="container">
+				<p><mark><b>Special case:</b></mark> The CSS property <b><code>float</code></b> is used as
+					<b><code>cssFloat</code></b> when using with javascript because the word float is a reserved word in
+					javascript.
+				</p>
+			</div>
+		</div>
+		<!-- ========== End container -2 table ========== -->
+
+
+
+
+
+
+
+
+		<!-- ========== Start adding or removing class ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">2. Adding or removing class from the element</p>
+			<p>In JavaScript, we have <b><code>className</code></b> and <b><code>classList</code></b> properties to handle
+				classes.</p>
+			<ul>
+				<li><b>className: </b>It returns all the classes present in the element in form of string</li>
+				<li><b>classList: </b>It returns DOMTokenList, which contains various methods to handle classes in an element
+				</li>
+			</ul>
+			<p class="h4 text-danger">className</p>
+			<p>The <b><code>className</code></b> property is an older approach that sets or retrieves the value of the
+				<b>class</b> attribute of an HTML element as a single string. While the <b><code>classList</code></b> property
+				provides a more modern and powerful way to manipulate classes
+			</p>
+
+			<div id="myDiv" class="d-none">
+				<p>This is a div element.</p>
+			</div>
+			<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;div id=&quot;myDiv&quot; class=&quot;d-none&quot;&gt;
+	&lt;p&gt;This is a div element.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-4 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;		
+	document.querySelector('#classnamebtn').addEventListener('click', () =&gt; {
+	const target = document.querySelector('#myDiv p');
+	target.className += ' newClass-added';
+	alert(myDiv.innerHTML);
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="classnamebtn">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-classname"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">classList</p>
+			<p>The <b><code>classList</code></b> property returns a collection of all classes of an element, allowing you to
+				manipulate them easily. Here are few methods to modify classes:</p>
+			<ul>
+				<li>classList.add()</li>
+				<li>classList.toggle()</li>
+				<li>classList.remove()</li>
+				<li>classList.replace()</li>
+			</ul>
+
+			<p class="h4 text-danger">a. classList.add()</p>
+			<p>To add a class value to an element use <b><code>add</code></b> method on an element via
+				<b><code>classList</code></b> property of the element.
+			</p>
+			<p>Single or multiple classes can be added to the element at once. To add multiple classes provide a class name in
+				the <b><code>add</code></b> method separated by a comma.</p>
+			<p>Adding a single class to the element.</p>
+			<pre class="rounded" style="max-height: 350px;"
+				id=""><code class="language-javascript">element.classList.add('size');</code></pre>
+			<p>Adding multiple classes to the element.</p>
+			<pre class="rounded" style="max-height: 350px;"
+				id=""><code class="language-javascript">element.classList.add('padding', 'color');</code></pre>
+			<p>Here is a working example:</p>
+
+			<div id="Div2" class="d-none">
+				<p>This is a div element.</p>
+			</div>
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">&lt;div id=&quot;myDiv&quot; class=&quot;d-none&quot;&gt;
+	&lt;p&gt;This is a div element.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code class="language-javascript">document.querySelector('#classlist1').addEventListener('click', () =&gt; {
+	const target2 = document.querySelector('#Div2 p');
+	target2.classList.add('size');
+	alert(Div2.innerHTML);
+});
+
+document.querySelector('#classlist2').addEventListener('click', () =&gt; {
+	const target2 = document.querySelector('#Div2 p');
+	target2.classList.add('size', 'color', 'border');
+	alert(Div2.innerHTML);
+});</code></pre>
+				<button class="btn btn-warning fw-bold" id="classlist1">Run code</button>
+				<button class="btn btn-warning fw-bold" id="classlist2">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<!-- <p id="output-1"></p> -->
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="container border rounded border-warning mb-2" id="toggle">
+			<p class="h4 text-danger">b. toggle class in javascript</p>
+			<p>The <b><code>toggle</code></b> method of <b><code>classList</code></b> property toggle a class value from the
+				element means if the class is present in the element then it removes the class and if the class is not present
+				in the element then it adds the class to the element.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(3)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-3"><code class="language-javascript">document.querySelector('#togglebtn').addEventListener('click', () =&gt; {
+	const target3 = document.querySelector('#toggle pre');
+	target3.classList.toggle('bg-light');
+});</code></pre>
+				<button class="btn btn-warning fw-bold" id="togglebtn">Run code</button>
+			</div>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">c. remove class in javascript</p>
+			<p>To remove a class from an element use <b><code>remove</code></b> method of <b><code>classList</code></b>
+				property.</p>
+			<p>Removing single class:</p>
+			<pre class="rounded" style="max-height: 350px;"
+				id=""><code class="language-javascript">element.classList.remove('size');</code></pre>
+			<p>Removing multiple class:</p>
+			<pre class="rounded" style="max-height: 350px;"
+				id=""><code class="language-javascript">element.classList.remove('padding', 'color');</code></pre>
+
+			<div id="remove" class="d-none">
+				<p class="size border font">This is a div element.</p>
+			</div>
+			<pre class="rounded " style="max-height: 350px;" id=""><code class="language-javascript">&lt;div id=&quot;remove&quot; class=&quot;d-none&quot;&gt;
+	&lt;p class=&quot;size border font&quot;&gt;This is a div element.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-4"><code class="language-javascript">document.querySelector('#removebtn1').addEventListener('click', () =&gt; {
+	const target2 = document.querySelector('#remove p');
+	target2.classList.remove('size');
+	alert(remove.innerHTML);
+});
+
+document.querySelector('#removebtn2').addEventListener('click', () =&gt; {
+	const target2 = document.querySelector('#remove p');
+	target2.classList.remove('size', 'border', 'font');
+	alert(remove.innerHTML);
+});</code></pre>
+				<button class="btn btn-warning fw-bold" id="removebtn1">Run code</button>
+				<button class="btn btn-warning fw-bold" id="removebtn2">Run code</button>
+			</div>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">d. replace class in javascript</p>
+			<p>To replace a class with another class in an element use <b><code>replace()</code></b> method with
+				<b><code>classList</code></b> API.
+			</p>
+			<p>The replace method takes two arguments, the first argument is old class and the second argument is a new class.
+			</p>
+			<p>Replacing a class with another class:</p>
+			<pre class="rounded" style="max-height: 350px;"
+				id=""><code class="language-javascript">element.classList.replace('blue', 'red');</code></pre>
+
+			<div id="replace" class="d-none">
+				<p class="size">This is a div element.</p>
+			</div>
+
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">&lt;div id=&quot;replace&quot; class=&quot;d-none&quot;&gt;
+	&lt;p class=&quot;size&quot;&gt;This is a div element.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(5)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-5"><code class="language-javascript">document.querySelector('#replacebtn').addEventListener('click', () =&gt; {
+	const target5 = document.querySelector('#replace p');
+	target5.classList.replace('size', 'border');
+	alert(replace.innerHTML);
+});</code></pre>
+				<button class="btn btn-warning fw-bold" id="replacebtn">Run code</button>
+			</div>
+		</div>
+		<!-- ========== End adding or removing class ========== -->
+
+
+		<!-- ========== Start JS DOM Animation ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">JS DOM Animation</p>
+			<p class="h5">Create an Animation Container</p>
+			<p>All animations should be relative to a container element.</p>
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">&lt;div id =&quot;container&quot;&gt;
+  &lt;div id =&quot;animate&quot;&gt;My animation will go here&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<p class="h5">Style the Elements</p>
+			<p>The container element should be created with style = "<b><code>position: relative</code></b>".</p>
+			<p>The animation element should be created with style = '<b><code>position: absolute</code></b>'.</p>
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: red;
+}</code></pre>
+			<p class="h5">Animation Code</p>
+			<p>JavaScript animations are done by programming gradual changes in an element's style.
+
+				The changes are called by a timer. When the timer interval is small, the animation looks continuous.</p>
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">id = setInterval(frame, 5);
+
+function frame() {
+  if (/* test for finished */) {
+    clearInterval(id);
+  } else {
+    /* code to change the element style */ 
+  }
+}</code></pre>
+			<div class="fluid-container mb-3 rounded" id="anim-container">
+				<div id="animate"></div>
+			</div>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(6)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-6"><code class="language-javascript">function myMove(){
+	let id = null;
+	const elem = document.getElementById(&quot;animate&quot;);
+	let pos = 0;
+	id = setInterval(frame, 5);
+	function frame(){
+		if(pos == 250){
+			clearInterval(id);
+		} else{
+			pos++;
+			elem.style.top = pos + &quot;px&quot;;
+			elem.style.left = pos + &quot;px&quot;;
+		}
+	}
+}</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="myMove()">Run code</button>
+
+				<!-- <div class="container bg-light rounded mt-1 ">
+					<p id="output-1"></p>
+					<p id="output-2"></p>
+				</div> -->
+			</div>
+		</div>
+		<!-- ========== End JS DOM Animation ========== -->
+
+
+
+	</main>
+
+
+
+
+
+	<footer>
+		<script>
+			// Function to copy text to the clipboard
+			function copyToClipboard(buttonNumber) {
+				const codeBlock = document.getElementById("code-block-" + buttonNumber);
+				const textToCopy = codeBlock.textContent;
+
+				const textArea = document.createElement("textarea");
+				textArea.value = textToCopy;
+				document.body.appendChild(textArea);
+
+				textArea.select();
+				document.execCommand("copy");
+
+				document.body.removeChild(textArea);
+
+				const copyButton = document.getElementById("copy-button-" + buttonNumber);
+				copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+				setTimeout(function () {
+					copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+				}, 2000); // Reset the button text after 2 seconds
+			}
+		</script>
+
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+
+	<script>
+		//container - 1 Basic
+		const target = document.querySelector('#sample1');
+		target.style.backgroundColor = '#363636';
+		target.style.color = '#ffffff';
+		//container - 1 Basic
+
+
+		//Adding or removing class from the element
+		document.querySelector('#classnamebtn').addEventListener('click', () => {
+			const target = document.querySelector('#myDiv p');
+			target.className += ' newClass-added';
+			alert(myDiv.innerHTML);
+		});
+
+
+		document.querySelector('#classlist1').addEventListener('click', () => {
+			const target2 = document.querySelector('#Div2 p');
+			target2.classList.add('size');
+			alert(Div2.innerHTML);
+		});
+
+		document.querySelector('#classlist2').addEventListener('click', () => {
+			const target2 = document.querySelector('#Div2 p');
+			target2.classList.add('size', 'color', 'border');
+			alert(Div2.innerHTML);
+		});
+
+
+
+		document.querySelector('#togglebtn').addEventListener('click', () => {
+			const target3 = document.querySelector('#toggle pre');
+			target3.classList.toggle('bg-light');
+		});
+
+
+
+		document.querySelector('#removebtn1').addEventListener('click', () => {
+			const target4 = document.querySelector('#remove p');
+			target4.classList.remove('size');
+			alert(remove.innerHTML);
+		});
+
+		document.querySelector('#removebtn2').addEventListener('click', () => {
+			const target4 = document.querySelector('#remove p');
+			target4.classList.remove('size', 'border', 'font');
+			alert(remove.innerHTML);
+		});
+
+
+
+
+		document.querySelector('#replacebtn').addEventListener('click', () => {
+			const target5 = document.querySelector('#replace p');
+			target5.classList.replace('size', 'border');
+			alert(replace.innerHTML);
+		});
+		//Adding or removing class from the element
+
+
+
+		//JS DOM Animation
+		function myMove(){
+			let id = null;
+			const elem = document.getElementById("animate");
+			let pos = 0;
+			id = setInterval(frame, 5);
+			function frame(){
+				if(pos == 250){
+					clearInterval(id);
+				} else{
+					pos++;
+					elem.style.top = pos + "px";
+					elem.style.left = pos + "px";
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

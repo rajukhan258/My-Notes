@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-warning ">
+        <div class="container-fluid nav justify-content-center ">
+            <p class="h1">JavaScript Output</p>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container border mt-3 mb-3">
+        <p>JavaScript can "display" data in different ways:</p>
+        <ul>
+            <li> Writing into an HTML element, using innerHTML.</li>
+            <li>Writing into the HTML output using document.write().</li>
+            <li>Writing into an alert box, using window.alert().</li>
+            <li> Writing into the browser console, using console.log().</li>
+            <li>Using window.print() method in the browser to print the content of the current window.</li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="container border mb-3">
+        <p class="h2">Using innerHTML</p>
+        <p>To access an HTML element, JavaScript can use the <b>document.getElementById("id")</b> method.</p>
+        <p>The <b>id</b> attribute defines the HTML element. The <b>innerHTML</b> property defines the HTML content:</p>
+
+        <p class="h5">Example:</p>
+        <p id="demo"><i><b><u>Hi EveryOne.</u></b></i></p>
+        <button type="button" class="btn btn-success mb-3"onclick="getElementById(`demo`).innerHTML =`<i><b><u>Hello World</u></b></i>.(content Changed)`">getElementById(`demo`)</button>
+
+        <pre><code>&lt;p id=&quot;demo&quot;&gt;Hi EveryOne.&lt;/p&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-success mb-3&quot; onclick=&quot;getElementById(`demo`).innerHTML = `&lt;i&gt;&lt;b&gt;&lt;u&gt;Hello World. &lt;/u&gt;&lt;/b&gt;&lt;/i&gt;(content Changed)`&quot;&gt;Click Here&lt;/button&gt;</code></pre>
+    </div>
+
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using document.write()</p>
+    <p>For testing purposes, it is convenient to use <b>document.write()</b>:</p>
+    <p class="h5">Example:</p>
+
+    <button type="button" class="btn btn-success mb-3"onclick="document.write(`Hi, I am here because of document.write(). Using document.write() after an HTML document is loaded, will delete all existing HTML:`)">Document.write( )</button>
+
+    <p>Using document.write() after an HTML document is loaded, will delete all existing HTML:</p>
+
+    <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-success mb-3&quot;onclick=&quot;document.write(`Hi, I am here because of document.write()`)&quot;&gt;Click Here&lt;/button&gt;&gt;&lt;/i&gt;(content Changed)`&quot;&gt;Click Here&lt;/button&gt;</code></pre>
+</div>
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using window.alert()</p>
+    <p>We can use an <b>window.alert()</b> to display data. We can skip the <b>window</b> keyword. </p>
+    
+    <p class="h5">Example:</p>
+    <button type="button" class="btn btn-success mb-3" onclick="alert(`Hi, I am here because of window.alert()`)">Window.alert( )</button>
+
+    <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-success mb-3&quot; onclick=&quot;alert(`Hi, I am here because of window.alert()`)&quot;&gt;Click Here&lt;/button&gt;</code></pre>
+</div>
+
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using console.log()</p>
+    <p>For debugging purposes, We can call the <b>console.log()</b> method in the browser to display data.</p>
+
+    <p class="h5">Example:</p>
+    <button type="button" class="btn btn-success mb-3" onclick="console.log(`Hi, I am here because of console.log()`)">Console.log( )</button>
+
+    <p>Now click <b>F12</b> on your keyboard to activate debugging. Then select <b>Console</b> in the debugger menu. Then click Run again.</p>
+
+    <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-success mb-3&quot; onclick=&quot;console.log(`Hi, I am here because of console.log()`)&quot;&gt;Click Here&lt;/button&gt;</code></pre>
+</div>
+
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using Print()</p>
+    <p>JavaScript does not have any print object or print methods.</p>
+    <p>We cannot access output devices from JavaScript. The only exception is that you can call the <b>window.print()</b> method in the browser to print the content of the current window.</p>
+
+    <p class="h5">Example:</p>
+    <button type="button" class="btn btn-success mb-3" onclick="window.print()">Window.print( )</button>
+
+    <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-success mb-3&quot; onclick=&quot;window.print()&quot;&gt;Window.print( )&lt;/button&gt;</code></pre>
+</div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

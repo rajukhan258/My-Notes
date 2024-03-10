@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JAVASCRIPT DOM METHODS</title>
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Local CSS File (style.css) -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Custom CSS Styles -->
+	<style>
+		.nav-background {
+			background: #1a2a6c;
+			background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+			background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">JAVASCRIPT DOM METHODS</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<div class="container border rounded border-warning mb-2" id="">
+			<!-- <p class="h4 text-danger">Heading</p> -->
+			<p><b><code>DOM Methods</code></b> are the actions that you can perform on objects (elements) of DOM.</p>
+			<p>DOM methods include selecting an element, creating a new element, changing the content of the element, changing
+				CSS, removing element etc.</p>
+		</div>
+
+		<div class="container border rounded border-warning mb-2" id="">
+			<strong class="text-danger">DOM Methods To Find/Target Element</strong>
+			<p>Javascript provides us with various methods to find an element within the document.</p>
+			<div class="container table-responsive">
+				<table class="table table-stripped table-bordered">
+					<thead>
+						<tr class="text-center table-warning">
+							<th>Methods</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>document.getElementById()</td>
+							<td>Select the unique element with given id. In case there are 2 same ID then it selects the first
+								element.</td>
+						</tr>
+						<tr>
+							<td>document.getElementsByClassName()</td>
+							<td>Select collection elements with given classname</td>
+						</tr>
+						<tr>
+							<td>document.getElementsByTagName()</td>
+							<td>Select collection elements with given tagname</td>
+						</tr>
+						<tr>
+							<td>document.querySelector()</td>
+							<td>Select the first element on the basic of CSS string</td>
+						</tr>
+						<tr>
+							<td>document.querySelectorALL()</td>
+							<td>Select a list of elements on the basic of CSS string</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-2" id="">
+			<strong class="text-danger">Modifying DOM Elements</strong>
+			<p>These methods and properties are used to change content, CSS style and get or set attributes to the element.
+			</p>
+			<div class="container table-responsive">
+				<table class="table table-stripped table-bordered border-primary">
+					<thead>
+						<tr class="text-center table-warning">
+							<th>Properties/Methods</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>element.innerHTML</td>
+							<td>This is an element property using which you can get or set the inner content of the element</td>
+						</tr>
+						<tr>
+							<td>element.innerText</td>
+							<td>It returns and sets the inner text of an element to the value given in string, without parsing to HTML
+							</td>
+						</tr>
+						<tr>
+							<td>element.style.<mark>css_property</mark> = value</td>
+							<td>Using these element properties you can set CSS to the element using javascript</td>
+						</tr>
+						<tr>
+							<td>element.getAttribute(attribute_name)</td>
+							<td>This method is used to get the value of the specified attribute</td>
+						</tr>
+						<tr>
+							<td>element.setAttribute(attribute_name, value)</td>
+							<td>It is the element method that is used to set a new attribute or modify the value of the attribute to
+								the element</td>
+						</tr>
+						<tr>
+							<td>element.removeAttribute(attribute_name)</td>
+							<td>This element method removes the specified attribute from the element</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-3" id="">
+			<strong class="text-danger">innerHTML in javascript</strong>
+			<p>The <b><code>innerHTML</code></b> is an element property that gets or sets the inner HTML of the
+				specific
+				element.</p>
+			<p><strong>Note:</strong> If any element like <b><code>&lt;p&gt;,&lt;div&gt;</code></b> etc contains a child text
+				node that includes characters <b><code>&</code></b>, <b><code><</code></b> or <b><code>></code></b> then the
+				innerHTML property returns <b><code>&amp;amp;</code></b>, <b><code>&amp;lt;</code></b> and
+				<b><code>&amp;gt;</code></b> respectively.
+			</p>
+			<div class="container d-none">
+				<p id="id1">This is <strong>Paragraph 1</strong>.</p>
+				<div id="id2">
+					<div class="column">
+						<p>This is column 1.</p>
+					</div>
+					<div class="column">
+						<p>This is column 2.</p>
+					</div>
+				</div>
+			</div>
+
+			<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;p id=&quot;id1&quot;&gt;This is &lt;strong&gt;Paragraph 1&lt;/strong&gt;.&lt;/p&gt;
+	&lt;div id=&quot;id2&quot;&gt;
+		&lt;div class=&quot;column&quot;&gt;
+			&lt;p&gt;This is column 1.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;column&quot;&gt;
+			&lt;p&gt;This is column 2.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+	const node1 = document.getElementById(&quot;id1&quot;);
+	const node2 = document.getElementById(&quot;id2&quot;);
+	function textNode1() {
+		alert(node1.innerHTML);
+	}
+	function textNode2() {
+		alert(node2.innerHTML);
+	}
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="textNode1()">Show node1 innerHTML</button>
+				<button class="btn btn-warning fw-bold" onclick="textNode2()">Show node2 innerHTML</button>
+			</div>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-3" id="">
+			<strong class="text-danger">innerText in javascript</strong>
+			<p>The <b><code>innerText</code></b> hat is used to set or returns the inner text content of the specific node and
+				its descendants.</p>
+			<p><strong>Note:</strong> </p>
+
+			<div class="container d-none">
+				<p id="id1">This is <strong>Paragraph 1</strong>.</p>
+				<div id="id2">
+					<div class="column">
+						<p>This is column 1.</p>
+					</div>
+					<div class="column">
+						<p>This is column 2.</p>
+					</div>
+				</div>
+			</div>
+
+			<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;p id=&quot;id1&quot;&gt;This is &lt;strong&gt;Paragraph 1&lt;/strong&gt;.&lt;/p&gt;
+	&lt;div id=&quot;id2&quot;&gt;
+		&lt;div class=&quot;column&quot;&gt;
+			&lt;p&gt;This is column 1.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;column&quot;&gt;
+			&lt;p&gt;This is column 2.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+	const node1 = document.getElementById(&quot;id1&quot;);
+	const node2 = document.getElementById(&quot;id2&quot;);
+	function textNode1() {
+		alert(node1.innerText);
+	}
+	function textNode2() {
+		alert(node2.innerText);
+	}
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="textNode3()">Show node1 innerText</button>
+				<button class="btn btn-warning fw-bold" onclick="textNode4()">Show node2 innerText</button>
+			</div>
+		</div>
+
+
+
+		<div class="container border rounded border-warning mb-2" id="">
+			<strong class=" text-danger">DOM methods to create and remove elements</strong>
+			<div class="container table-responsive">
+				<table class="table table-stripped table-bordered border-warning">
+					<thead>
+						<tr class="text-center table-warning">
+							<th>Methods</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>document.createElement()</td>
+							<td>Creates an element specified by tag name</td>
+						</tr>
+						<tr>
+							<td>document.createTextNode()</td>
+							<td>Creates a new text node</td>
+						</tr>
+						<tr>
+							<td>document.appendChild()</td>
+							<td>t appends another element to an element in the DOM</td>
+						</tr>
+						<tr>
+							<td>document.insertBefore()</td>
+							<td>This method inserts a node before a specified node, if the node already exists in the DOM then it changes its position</td>
+						</tr>
+						<tr>
+							<td>document.replaceChild(new,old)</td>
+							<td>It replaces an element from DOM with another element</td>
+						</tr>
+						<tr>
+							<td>document.removeChild()</td>
+							<td>It removes an element from DOM</td>
+						</tr>
+						<tr>
+							<td>document.remove()</td>
+							<td>This method removes the node from the DOM it is applied upon</td>
+						</tr>
+						<tr>
+							<td>document.write()</td>
+							<td>It write something in the document</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+
+
+	</main>
+
+
+
+
+
+	<footer>
+		<script>
+			const node1 = document.getElementById("id1");
+			const node2 = document.getElementById("id2");
+			function textNode1() {
+				alert(node1.innerHTML);
+			}
+			function textNode2() {
+				alert(node2.innerHTML);
+			}
+
+
+			const node3 = document.getElementById("id1");
+			const node4 = document.getElementById("id2");
+			function textNode3() {
+				alert(node3.innerText);
+			}
+			function textNode4() {
+				alert(node4.innerText);
+			}
+		</script>
+
+		<script>
+			// Function to copy text to the clipboard
+			function copyToClipboard(buttonNumber) {
+				const codeBlock = document.getElementById("code-block-" + buttonNumber);
+				const textToCopy = codeBlock.textContent;
+
+				const textArea = document.createElement("textarea");
+				textArea.value = textToCopy;
+				document.body.appendChild(textArea);
+
+				textArea.select();
+				document.execCommand("copy");
+
+				document.body.removeChild(textArea);
+
+				const copyButton = document.getElementById("copy-button-" + buttonNumber);
+				copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+				setTimeout(function () {
+					copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+				}, 2000); // Reset the button text after 2 seconds
+			}
+		</script>
+
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

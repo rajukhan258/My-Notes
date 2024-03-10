@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-warning ">
+        <div class="container-fluid  nav justify-content-center ">
+            <p class="h1 ">Arrays</p>
+        </div>
+    </nav>
+
+    <!-- first div -->
+    <div class="container border mt-1 mb-2 ">
+        <p><b>Array</b> is a single variable that is used to store elements of different data types. <b>An array</b>
+            allows you to store several values with the same name and access them by using their index number.</p>
+        <p class="h4 text-danger">1. Declaration of an Array</p>
+        <p>There are basically two ways to declare an array.</p>
+        <ol type="a">
+            <li>Using <b>Array literals</b> </li>
+            <li>Using <b>constructor</b></li>
+        </ol>
+
+
+
+        <!-- Array Literals -->
+        <p class="h5 text-success">A. Using Array literals</p>
+        <p><b>Array literal</b> is the simplest and the most common way to define an array in javascript. <b>Array
+                literal</b> is a list of values enclosed in square brackets (<b>[]</b>).</p>
+        <div class="container bg-secondary bg-opacity-25 rounded p-1">
+            <p class="h5">Example:</p>
+            <pre class="rounded "><code>let empty = [];  // defining empty array
+let numbers = [1, 2, 3, 4, 5];  // defining array with integers
+let strings = [&quot;Hello&quot;, &quot;World&quot;];   // defining array with strings
+let mixed = [1, &quot;Hello&quot;, true, [1, 2, 3], {a: 1, b: 2}];  // defining array with mixed data</code></pre>
+        </div>
+
+
+        <br>
+
+
+        <!-- Constructors -->
+        <p class="h4 text-success">B. Using constructors</p>
+        <p>An <b>array constructor</b> is a function that takes a variable number of arguments and returns an array.
+            The function is called with the keyword <b>new</b> and the array constructor name <b>Array()</b>.</p>
+        <p><b>let arr = new Array();</b>, this creates an array of length <b>0</b>.</p>
+        <div class="container bg-secondary bg-opacity-25 rounded p-1 mb-1">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    
+    let empty = new Array();    // array with 0 length
+    let numbers = new Array(1, 2, 3, 4, 5);    // array with integer
+    let mixed = new Array(1, &quot;Hello&quot;, true, 2.5, [1, 2]);     // mixed array
+    let arry = new Array(4);    //mixed array
+    arry [0] = &quot;Hello&quot;;
+    arry[1] = false;
+    arry[2] = null;
+    arry[3] = undefined;
+&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+
+
+
+
+    <!-- Creating an array using split -->
+    <div class="container border mb-2">
+        <p class="h4 text-danger">2. Create an array using .split() method</p>
+        <p>we can <b>split</b> a string at different positions, and we can change to an <b>array</b>.</p>
+
+        <div class="container bg-secondary bg-opacity-25 rounded p-1 mb-1">
+            <p class="h5">Example</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    let js = 'JavaScript'
+    const charsInJavaScript = js.split('')
+    document.getElementById(&quot;arysplit_1&quot;).innerHTML = `[${charsInJavaScript}]`;
+
+    let companiesString = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
+    const companies = companiesString.split(',')
+    document.getElementById(&quot;arysplit_2&quot;).innerHTML = `[${companies}]`;
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="arySplit()">Run Code</button>
+            <div class="container bg-light mt-1 rounded">
+                <p id="arysplit_1"></p>
+                <p id="arysplit_2"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- length of array -->
+    <div class="container border mb-2">
+        <p class="h5 text-danger">3. Length of an array</p>
+        <p>We can use the <b>length property</b> on an array and it returns the number of elements in the array.</p>
+        <div class="container bg-secondary bg-opacity-25 rounded p-1 mb-1">̥
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    // getting the length of an array
+    let numbers = [1, 2, 3, 4, 5];
+    document.getElementById(&quot;length1&quot;).innerHTML = `Length of Array: &lt;b&gt;${numbers.length}&lt;b/&gt;`;
+    // mixed array
+    let arr = [1, 10.5, &quot;Hello&quot;, true, [1, 2, 3], { a: 1, b: 2 }];
+    document.getElementById(&quot;length2&quot;).innerHTML = `Length of Mixed Array: &lt;b&gt;${arr.length}&lt;/b&gt;`;
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning " onclick="showlength()">Run Code</button>
+            <div class="container bg-light mt-1 rounded">
+                <p id="length1"></p>
+                <p id="length2"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Getting Array value from user -->
+    <div class="container border mb-2">
+        <p class="h4 text-danger">4. Getting Array value from user</p>
+        <div class="container bg-secondary bg-opacity-25 rounded  p-1 mb-1">
+            <p class="h5">Example</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    let arry = new Array(4);   //length already defined
+    for (i = 0; i &lt; arry.length; i++){
+    arry[i] = prompt(`Enter element #${i + 1}:`);
+    }
+    document.getElementById(&quot;getary&quot;).innerHTML = (`arry = [${arry}]`);
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="getarry()">Run Code</button>
+            <div class="container bg-light rounded mt-1 ">
+                <p id="getary"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Accessing array elements -->
+    <div class="container border mb-2">
+        <p class="h4 text-danger">5. Accessing array elements </p>
+        <p class="h5">Using Index</p>
+        <p>We can access any <b>element</b> in an array using its <b>index</b> number. The index number starts from
+            <b>0</b> and goes to the <b>length</b> of the array.
+        </p>
+
+        <div class="container bg-secondary bg-opacity-25 rounded p-1">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    let arr = [1, 10, &quot;Hello&quot;, true, 2.5];
+    // accessing first element
+    document.getElementById(&quot;ary0&quot;).innerHTML = `arr[0] = ${arr[0]}`;
+    // accessing third element
+    document.getElementById(&quot;ary2&quot;).innerHTML = `arr[2] = ${arr[2]}`;
+    // accessing last element
+    document.getElementById(&quot;arylast&quot;).innerHTML = `arr[4] = ${arr[arr.length - 1]}`;
+&lt;/script&gt;</code></pre>
+
+            <button type="button " class="btn btn-warning" onclick="aryaccess()">Run Code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="ary0"></p>
+                <p id="ary2"></p>
+                <p id="arylast"></p>
+            </div>
+        </div>
+
+
+        <br>
+
+
+        <p class="h5">Using Loop</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    function aryloop() {
+    const arr = [1, 10, &quot;Hello&quot;, true, 2.5];
+    document.getElementById(&quot;result&quot;).innerHTML = &quot;&lt;ul&gt;&quot;;
+    for(let i = 0; i &lt; arr.length; i++){
+        document.getElementById(&quot;result&quot;).innerHTML += `&lt;li&gt; arr[${i}] = ${arr[i]} &lt;/li&gt;`;
+    }
+    document.getElementById(&quot;result&quot;).innerHTML += &quot;&lt;/ul&gt;&quot;;
+}
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="aryloop()">Run Code</button>
+            <div class="container bg-light rounded mt-1 ">
+                <pre id="result"></pre>
+            </div>
+        </div>
+
+
+        <br>
+
+
+        <p class="h5">Using Loop 2</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    const fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+    let fLen = fruits.length;
+
+    let text = &quot;&lt;ul&gt;&quot;;
+    for (let i = 0; i &lt; fLen; i++) {
+    text += &quot;&lt;li&gt;&quot; + fruits[i] + &quot;&lt;/li&gt;&quot;;
+    }
+    text += &quot;&lt;/ul&gt;&quot;;
+    document.getElementById(&quot;demo&quot;).innerHTML = text;
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="accessloop()">Run Code</button>
+            <div class="container bg-light rounded mt-1 ">
+                <pre id="demo"></pre>
+            </div>
+        </div>
+
+
+        <br>
+
+
+        <p class="h5">Using forEach loop</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    const myArray = ['Banana', 'Orange', 'Apple'];
+    let text = &quot;&lt;ul&gt;&quot;
+
+    myArray.forEach((element) =&gt; {text += `&lt;li&gt; Element: ${element} &lt;/li&gt;`;});
+
+    text += &quot;&lt;/ul&gt;&quot;;    
+    document.getElementById(&quot;foreachresult&quot;).innerHTML = text;
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="accessthreefruit()">Run Code</button>
+            <div class="container bg-light rounded mt-1 ">
+                <pre id="foreachresult"></pre>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Modifying Arrays -->
+    <div class="container border mb-2">
+        <p class="h4 text-danger">6. Modifying Array elements</p>
+        <p>An <b>array</b> is mutable<b>(modifiable)</b>. Once an array is created, we can <b>modify</b> the contents of
+            the array <b>elements</b>.</p>
+        <p>To modify an array using index, we can directly assign a new value to the desired index.</p>
+        <p class="h5">Updating element</p>
+
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    const numbers = [4, 9, 7, 3, 8];
+    numbers[0] = &quot;Ram&quot;;
+    numbers[2] = 10;
+    numbers[(numbers.length)-1] = true;
+    document.getElementById(&quot;updatetext&quot;).innerHTML = `updated arry = [${numbers}]`;
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="modifyarrays()">Run Code</button>
+            <div class="container bg-light rounded mt-1 ">
+                <p id="updatetext"></p>
+            </div>
+        </div>
+
+
+        <br>
+
+
+        <p class="h5">Deleting element</p>
+        <p>Please note that the <b>`delete`</b> operator in JavaScript is used to remove a property from an object. To
+            <b>remove</b> an element from an array, it's better to use the `<b>splice()</b>` method. However, in this
+            case, we are not removing any elements from the array, but rather modifying them.
+        </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1">
+            <p class="h5">Example:</p>
+            <pre class="rounded"><code>&lt;script&gt;
+    const numbers = [4, 9, 7, 3, 8];
+    delete numbers[0]; //delete first element of the array
+    delete numbers[2]; //delete third element of the array
+    document.getElementById(&quot;deletedtext&quot;).innerHTML = `Updated array = [${numbers}]`;
+&lt;/script&gt;</code></pre>
+            <button type="button" class="btn btn-warning" onclick="deletearrays()">Run Code</button>
+            <div class="container bg-light rounded mt-1 ">
+                <p id="deletedtext"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

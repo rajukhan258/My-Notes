@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variables</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-warning ">
+        <div class="container-fluid nav justify-content-center ">
+            <p class="h1">JS Variables</p>
+        </div>
+    </nav>
+
+
+<div class="container border mt-3 mb-3">
+    <p><b>Variables</b> are containers that can be used to store data like strings, numbers, objects, etc.</p>
+    <p>JavaScript <b>Variables</b> can be declared in 4 ways:</p>
+    <ul>
+        <li>Using var</li>
+        <li>Using let</li>
+        <li>Using const</li>
+        <li>Automatically</li>
+    </ul>
+    <p>All JavaScript <b>variables</b> must be identified with unique names. These unique names are called <b>identifiers</b>. Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).</p>
+
+    <p><b>NOTE: </b>JavaScript identifiers are case-sensitive.</p>
+</div>
+
+
+<div class="container border mb-3">
+    <p class="h2">Variable Naming</p>
+    <p>The general rules for constructing names for variables (unique identifiers) are:</p>
+    <ul>
+        <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+        <li>Names must begin with a letter</li>
+        <li>Since JavaScript treats underscore and dollar sign as a letter, identifiers begining with _ and $ are valid variable names</li>
+        <li>Names are case sensitive (y and Y are different variables)</li>
+        <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+    </ul>
+</div>
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using Var <small class="text-muted">[value can be redeclared]</small></p>
+    <p><b>Var</b> variables can be re-declared and updated within its scope. This became increasingly difficult to debug.</p>
+    <p>Variables declared with <b>var</b> can have a <b>global</b> or <b>local scope</b>. Global scope is for variables declared outside functions, while local scope is for variables declared inside functions.</p>
+    <p class="h5">Example:</p>
+    <Pre>var x = 5; //Declaring Variable
+var x = "Ram";  //Declaring Variable</Pre>  
+</div>
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using let</p>
+    <p>The <b>let</b> keyword was introduced in ES6 (2015)</p>
+    <p>Variables defined with let can be <b>updated</b> but can't be <b>Redeclared</b>.</p>
+    <p>Variables defined with let must be <b>Declared</b> before use</p>
+    <p>Variables defined with let have <b>Block Scope</b>. It means variables declared inside a { } block cannot be accessed from outside the block:</p>
+
+    <p class="h5">Example:</p>
+    <pre>let x = 5; //Declaring Variable
+    x = "Ram"; //Updating Variable (Correct)
+
+    let x = 5; //Declaring Variable
+    let x = "Ram"; //Redeclaring Variable  (ERROR)
+    </pre>
+</div>
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Using Const</p>
+    <p>The <b>const</b> keyword was introduced in ES6 (2015)</p>
+    <p>Variables defined with const can neither be <b>updated</b> nor <b>Redeclared</b></p>
+    <p>Variables defined with const must be <b>Declared</b> before use</p>
+    <p>Variables defined with const have <b>Block Scope</b>. It means variables declared inside a { } block cannot be accessed from outside the block:</p>
+    
+    <p class="h5">Example:</p>
+    <pre>const PI = 3.14159265359;  //Correct
+
+const PI;
+PI = 3.14159265359;  //Incorrect</pre>
+    <p><b>Const</b> can be used to declare:</p>
+    <ul>
+        <li>A new Array</li>
+        <li>A new Object</li>
+        <li>A new Function</li>
+        <li>A new RegExp</li>
+    </ul>
+</div>
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Constant Objects and Arrays</p>
+    <p>The keyword const is a little misleading. It does not define a constant value. It defines a constant reference to a value.</p>
+    <p>Because of this we can NOT:</p>
+    <ul>
+        <li>Reassign a constant value</li>
+        <li>Reassign a constant array</li>
+        <li>Reassign a constant object</li>
+    </ul>
+    <p>But we CAN:</p>
+    <ul>
+        <li>Change the elements of constant array</li>
+        <li>Change the properties of constant object</li>
+    </ul>
+</div>
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Constant Arrays</p>
+    <p>We can change the <b>elements</b> of a constant <b>array</b>:</p>
+    <p class="h5">Example:</p>
+    <pre>//We can create a constant array:
+const Cars = ["Honda", "Volvo, "BMW"];
+
+//But we can NOT Reassign the array directly:
+Cars = ["Toyota", "Volvo", "Audi"];  // ERROR
+
+//We can change an element:
+Cars[0] = "Toyota";
+
+//We can add an element:
+Cars.push("Audi");</pre>
+</div>
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Constant Objects</p>
+    <p>We can change the <b>properties</b> of a constant <b>object</b>:</p>
+    <p class="h5">Example:</p>
+    <pre>// We can create a const object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+//But you can NOT Reassign the object directly:
+car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+
+// We can change a property:
+car.color = "red";
+
+//We can add a property:
+car.owner = "Johnson";</pre>
+</div>
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Points to Remember:</p>
+    <ul>
+        <li>let and const have <b>block scope</b>.</li>
+        <li>let and const can not be <b>redeclared</b>.</li>
+        <li>let and const must be <b>declared</b> before use.</li>
+        <li>let and const does not bind to <b>this</b>.</li>
+        <li>let and const are not <b>hoisted</b>.</li>
+        <li>var does not have to be <b>declared</b>.</li>
+        <li>var is <b>hoisted</b>.</li>
+        <li>var binds to <b>this</b>.</li>
+    </ul>
+</div>
+
+
+
+
+<div class="container border mb-3">
+    <p class="h2">Frequently asked questions</p>
+    <p><b>1. What are variables used for in javascript programs?</b><br><b>Ans:</b> Variables are used to store values in a program to be used later on.</p>
+
+   <p><b>2. How many types of variables are there in JavaScript?<b><br></b>Ans:</b> In JavaScript, you can create 3 types of variables: using const , let , and var statements.</p> 
+
+   <p><b>3. What is a global variable JavaScript?<b><br></b>Ans:</b> Global variables are variables that are accessible in the entire program.</p>
+
+   <p><b>4. What is a local variable JavaScript?<b><br></b>Ans:</b> Local variables are variables that are accessible only in the function where they are declared.</p>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

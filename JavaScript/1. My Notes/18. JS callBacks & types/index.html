@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Callbacks</title>
+
+	<!-- External CSS Libraries -->
+    <!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons Library (Version 1.11.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+    <!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+    <!-- Local CSS File (style.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">JS Callbacks</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<!-- ========== Start Table of content ========== -->
+		<div class="container border rounded border-warning mb-3" id="">
+			<p class="h4 text-danger">Table of Contents:</p>
+			<ol>
+				<li><a href="#callback">What is a callback function?</a></li>
+				<li><a href="#map">javascript map callback function</a></li>
+				<li><a href="#anonymous">Anonymous callback function</a></li>
+				<li><a href="#types">Types of callback function</a></li>
+				<ul>
+					<li>Synchronous callback</li>
+					<li>Asynchronous callback</li>
+				</ul>
+				<li><a href="#callbackarg">Callback as Direct Argument</a></li>
+				<li><a href="#hell">Nested Callback (CallBack Hell & Pyramid of Doom)</a></li>
+			</ol>
+		</div>
+		<!-- ========== End Table of content ========== -->
+
+
+
+
+		<!-- ========== Start callback function ========== -->
+		<div class="container border rounded border-warning mb-3" id="callback">
+			<p class="h4 text-danger">What is a callback function?</p>
+			<p><b><code>Callbacks</code></b> in JavaScript are <b>functions</b> that are passed as arguments to
+				other
+				functions and are executed after a particular task has been completed. They are commonly used in
+				<b><code>asynchronous</code></b> programming to handle actions that can't be completed immediately.
+			</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+	// Function that performs a calculation using a callback
+	function calculate(num1, num2, callbackFunction) {
+		callbackFunction(num1, num2);
+	}
+
+	// Adds two numbers and displays the result
+	function add(a, b) {
+		document.getElementById('callback-output-1').innerHTML = a + b + &quot;&lt;br&gt;&quot;;
+	}
+
+	// Subtracts two numbers and displays the result
+	function subtract(a, b) {
+		document.getElementById('callback-output-1').innerHTML += a - b;
+	}
+
+	// Perform addition using the 'calculate' function with the 'add' callback
+	calculate(5, 3, add);
+	// Perform subtraction using the 'calculate' function with the 'subtract' callback
+	calculate(5, 3, subtract);
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="callback()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="callback-output-1"></p>
+					<!-- <p id="callback-output-2"></p> -->
+				</div>
+			</div>
+			<p>The <mark><b>calculate</b></mark> function takes <mark><b>sum</b></mark> as an argument which becomes a
+				callback function here and then calls it inside the <mark><b>calculate</b></mark> function, and the same
+				happens for <mark><b>subtract</b></mark> function.</p>
+		</div>
+		<!-- ========== End callback function ========== -->
+
+
+
+
+		<!-- === Start javascript map callback function === -->
+		<div class="container border rounded border-warning mb-3" id="map">
+			<p class="h4 text-danger">JavaScript map callback function</p>
+			<p>There are many array methods that use callback functions to perform some task for individual elements of
+				array-like in map, filter, find, etc.</p>
+			<p>The <b>map()</b> method takes a callback function as an argument. </p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code class="language-javascript">&lt;script&gt;
+	let users = ['John', 'Harry', 'Anna'];
+
+	// Function to greet a user
+	function greet(user) {
+		// Appending a greeting to an HTML element with id 'mapcallback-output-1'
+		document.getElementById('mapcallback-output-1').innerHTML += `Hello ${user}. &lt;br&gt;`;
+	}
+
+	// Using forEach to iterate through each user in the 'users' array
+	// Here, 'greet' function is passed as a callback to forEach
+	users.forEach((greet));
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="mapcallback()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="mapcallback-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<div class="container bg-warning-subtle rounded ">
+				<p><b>Note: </b>The function that accepts another function as an argument are known as a
+					<b><code>higher order function</code></b>, i.e. <b>user.map()</b> method used above is higher order
+					function.
+				</p>
+			</div>
+		</div>
+		<!-- === End javascript map callback function === -->
+
+
+
+
+		<!-- ========== Start Anonymous callback function ========== -->
+		<div class="container border rounded border-warning mb-3" id="anonymous">
+			<p class="h4 text-danger">Anonymous callback function</p>
+			<p>It is not necessary to create a function then pass it to the higher order function, you can directly
+				create an <b><code>anonymous function</code></b> replacing the argument position.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(3)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-3"><code class="language-javascript">&lt;script&gt;
+	let users = ['John', 'Harry', 'Anna'];
+
+	// Using map() to iterate over each user in the 'users' array
+	// This function takes an anonymous function as an argument
+	// The anonymous function appends a greeting to an HTML element with the ID 'anonymous-output-1'
+	// However, note that map() returns a new array, but this usage doesn't capture or use the returned array
+	users.map(function (user) {
+		document.getElementById('anonymous-output-1').innerHTML += `Hello ${user}. &lt;br&gt;`;
+	});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="anonymous()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="anonymous-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<p>we passed an anonymous function that takes an individual element as an argument and performs a specified
+				task over it.</p>
+			<p>We can also use the <b>arrow function</b> at this place</p>
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-4"><code class="language-javascript">&lt;script&gt;
+	let users = ['John', 'Harry', 'Anna'];
+
+	users.map((user) =&gt; {
+		document.getElementById('anonymousarrow-output-1').innerHTML += `Hello ${user}. &lt;br&gt;`;
+	});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="anonymousarrow()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="anonymousarrow-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Anonymous callback function ========== -->
+
+
+
+
+
+		<!-- ========== Start Types of callback function ========== -->
+		<div class="container border rounded border-warning mb-3" id="types">
+			<p class="h4 text-danger">Types of callback function</p>
+			<p>The callback function can be executed in both synchronous and asynchronous ways.</p>
+			<ul>
+				<li>Synchronous callback function</li>
+				<li>Asynchronous callback function</li>
+			</ul>
+			<p class="h5 text-danger">Synchronous callback function</p>
+			<p>The <b>callback function</b> is used in <b><code>asynchronous</code></b> programming but all callback
+				function does not execute in a
+				synchronous way. A block of code that executes one by one is <b><code>synchronous</code></b>.</p>
+			<p><b><code>Synchronous callbacks</code></b> are blocking. This means the higher order function finishes its
+				execution only after callbacks have finished its execution.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-4 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(5)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-5"><code class="language-javascript">&lt;script&gt;
+	// Async calculation function
+	function calculate(num1, num2, callbackFunction) {
+		document.getElementById('synco-output-1').innerHTML += &quot;Calculation Started&quot; + &quot;&lt;br&gt;&quot;;
+		callbackFunction(num1, num2);
+		document.getElementById('synco-output-1').innerHTML += &quot;Calculation Ended&quot; + &quot;&lt;br&gt;&quot;;
+	}
+
+	// Add two numbers and display result
+	function add(a, b) {
+		document.getElementById('synco-output-1').innerHTML += a + b + &quot;&lt;br&gt;&quot;;
+	}
+
+	// Subtract two numbers and display result
+	function subtract(a, b) {
+		document.getElementById('synco-output-1').innerHTML += a - b + &quot;&lt;br&gt;&quot;;
+	}
+
+	// Start calculation with 'calculate' function, providing 5, 3 as numbers, and 'add' as the callback
+	calculate(5, 3, add);
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="synco()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="synco-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+			<p class="h5 text-danger">Asynchronous callback function</p>
+			<p>The <b><code>asynchronous callback functions</code></b> are <b>non-blocking</b> means the higher order
+				function does not wait for the execution of the callback function but it make sure of the execution of
+				the callback function on a certain event.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(6)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-6"><code class="language-javascript">&lt;script&gt;
+	// Asynchronous calculation function
+	function calculate(num1, num2, callbackFunction) {
+		// Displaying a message indicating the start of the calculation
+		document.getElementById('asynco-output-1').innerHTML += (&quot;Calculation started &lt;br&gt;&quot;);
+
+		// Simulating asynchronous behavior with setTimeout
+		setTimeout(() =&gt; callbackFunction(num1, num2), 2000);
+
+		// This line executes immediately after setTimeout is triggered, not after the callback execution
+		document.getElementById('asynco-output-1').innerHTML += (&quot;Calculation finished &lt;br&gt;&quot;);
+	}
+
+	// Function to add two numbers and display the result
+	function add(a, b) {
+		document.getElementById('asynco-output-1').innerHTML += (a + b);
+	}
+
+	// Initiating a calculation with calculate() function, providing 5, 3 as numbers, and 'add' as the callback function
+	calculate(5, 3, add);
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="asynco()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="asynco-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Types of callback function ========== -->
+
+
+
+
+
+
+
+		<!-- ========== Start Callback as Direct Argument ========== -->
+		<div class="container border rounded border-warning mb-2" id="callbackarg">
+			<p class="h4 text-danger">Callback as Direct Argument</p>
+			<p><b><code>Callback as direct argument</code></b> is generally preferred due to its readability and ease of
+				understanding. It allows for better control flow and makes the code more maintainable compared to deeply
+				nested callbacks.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(7)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+	// Function to perform asynchronous calculations
+	function calculate(x, y, callback) {
+		// Simulate an asynchronous operation using setTimeout
+		setTimeout(() =&gt; {
+			callback(x, y); // Invoke the callback function after 1 second
+		}, 1000);
+	}
+
+	// Callback function to add two numbers and display the result
+	function Addnum(a, b) {
+		document.getElementById('directarg-output-1').innerHTML += `Add: ${a + b} &lt;br&gt;`;
+	}
+
+	// Callback function to subtract two numbers and display the result
+	function sub(a, b) {
+		document.getElementById('directarg-output-1').innerHTML += `Subtract: ${a - b} &lt;br&gt;`;
+	}
+
+	// passing callback functions as Direct Argument:
+	calculate(5, 5, Addnum); // Perform addition calculation
+	calculate(8, 5, sub);   // Perform subtraction calculation
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="directarg()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="directarg-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Callback as Direct Argument ========== -->
+
+
+
+
+
+
+
+		<!-- ====== Start CallBack Hell and Pyramid of Doom === -->
+		<div class="container border rounded border-warning mb-3" id="hell">
+			<p class="h4 text-danger">Nested Callback (CallBack Hell & Pyramid of Doom)</p>
+			<p><b><code>Nested Callbacks</code></b> involves calling <b>functions inside other functions' callbacks</b>,
+				forming a chain of function calls. Each function executes once the previous one completes using its
+				callback.</p>
+			<p>This pattern can lead to deeply nested code structures known as <b><code>"callback hell"</code></b> or
+				<b><code>"pyramid of doom"</code></b> which might reduce code readability and maintainability,
+				especially when dealing with multiple asynchronous operations.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(8)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-8"><code class="language-javascript">&lt;script&gt;
+	// Function to perform addition asynchronously and execute a callback
+	function add(a, b, callback) {
+		setTimeout(() =&gt; {
+			document.getElementById('nestedcallback-output-1').innerHTML += `Add: ${a + b} &lt;br&gt;`;
+			callback(); // Execute the provided callback function
+		}, 1000);
+	}
+
+	// Function to perform subtraction and execute a callback
+	function subtract(a, b, callback) {
+		document.getElementById('nestedcallback-output-1').innerHTML += `Subtract: ${a - b} &lt;br&gt;`;
+		callback(); // Execute the provided callback function
+	}
+
+	// Function to perform multiplication asynchronously and execute a callback
+	function multiply(a, b, callback) {
+		setTimeout(() =&gt; {
+			document.getElementById('nestedcallback-output-1').innerHTML += `Multiply: ${a * b} &lt;br&gt;`;
+			callback(); // Execute the provided callback function
+		}, 3000);
+	}
+
+	// Function to perform division
+	function divide(a, b) {
+		if (b === 0) {
+			// Display an error message if division by zero is attempted
+			const errorMessage = 'Division not possible';
+			document.getElementById('nestedcallback-output-1').innerHTML += errorMessage;
+		} else {
+			// Display the division result in the specified output element
+			document.getElementById('nestedcallback-output-1').innerHTML += `Divide: ${a / b} `;
+		}
+	}
+
+	// Initiating a nested callback sequence
+	add(2, 4, () =&gt; {
+		subtract(6, 2, () =&gt; {
+			multiply(2, 2, () =&gt; {
+				divide(4, 0); // Attempt division by zero
+			});
+		});
+	});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick=" nested_callback()">Run code</button>
+				<div class="container bg-light rounded mt-1 ">
+					<p id="nestedcallback-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- ====== End CallBack Hell and Pyramid of Doom === -->
+	</main>
+
+
+
+
+
+	<footer>
+		<script src="script.js"></script>
+        <!-- Include Prism.js library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+        <!-- Include Prism.js language specific library (for JavaScript) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+        <!-- Apply Prism to highlight all code blocks on the page -->
+        <script>Prism.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

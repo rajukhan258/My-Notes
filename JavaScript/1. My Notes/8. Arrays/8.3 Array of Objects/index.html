@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Array of Objects</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1" style="z-index: 100;">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Array of Objects</p>
+            <p>An <b>array of objects</b> is a data structure that holds a collection of objects where each object can
+                have multiple properties or key-value pairs. This allows you to store and manage a list of items, each
+                with its own set of attributes.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    const people = [
+        { name: &quot;Alice&quot;, age: 30 },
+        { name: &quot;Bob&quot;, age: 25 },
+        { name: &quot;Charlie&quot;, age: 35 }
+    ];
+    // Accessing and using the array of objects
+    document.getElementById(&quot;output-1&quot;).innerHTML = people[0].name + &quot; &quot; + people[0].age + &quot;&lt;br&gt;&quot; + people[2].name + &quot; &quot; + people[2].age;
+
+    // Iterating through the array of objects
+    people.forEach(function (person) {
+        let display = document.getElementById(&quot;output-2&quot;);
+        display.innerHTML += `Name: ${person.name}, Age: ${person.age} &lt;br&gt;`;
+    });
+
+
+    // Second Example
+    const favoriteFruits = [
+        { name: &quot;Apple&quot;, color: &quot;Red&quot; },
+        { name: &quot;Banana&quot;, color: &quot;Yellow&quot; },
+        { name: &quot;Grapes&quot;, color: &quot;Purple&quot; }
+    ];
+
+    // Accessing and using the array of objects
+    document.getElementById(&quot;output-3&quot;).innerHTML = favoriteFruits[2].color;
+
+    // Iterating through the array of objects
+    let output = &quot;&quot;;
+    function printElements(element) {
+        output += `Name: ${element.name}, color: ${element.color} &lt;br&gt;`;
+    }
+    favoriteFruits.forEach(printElements);
+    document.getElementById(&quot;output-4&quot;).innerHTML = output;
+
+    //short Code:
+    // favoriteFruits.forEach(function (favoriteFruits) {
+    //     let show = document.getElementById(&quot;output-4&quot;);
+    //     show.innerHTML += `Name: ${favoriteFruits.name}, color: ${favoriteFruits.color} &lt;br&gt;`;
+    // })
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="runcode()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="output-1"></p>
+                    <p id="output-2"></p>
+                    <p id="output-3"></p>
+                    <p id="output-4"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <script src="script.js"></script>
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

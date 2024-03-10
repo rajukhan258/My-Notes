@@ -1,0 +1,10 @@
+.nav-background {
+	background: #1a2a6c;
+	background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+	background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+}
+
+ul li a{
+	text-decoration: none;
+	font-weight: 600;
+}

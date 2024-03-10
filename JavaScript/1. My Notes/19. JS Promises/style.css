@@ -1,0 +1,30 @@
+.nav-background {
+	background: #1a2a6c;
+	background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+	background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+}
+
+
+
+  ol li a{
+	/* list-style-type: disc!important; */
+	font-weight: 600;
+	text-decoration: none;
+} 
+
+ol li::marker {
+    font-weight: bold;
+}
+
+ol>p{
+	/* border: 1px solid red; */
+	margin-bottom: 0px;
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+
+ul li{
+	list-style-type: disc;
+}
+

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Dimensional Array</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-warning ">
+            <div class="container-fluid  nav justify-content-center ">
+                <p class="h1 ">Multi Dimensional Array </p>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <div class="container border mt-1 mb-2">
+            <p class="h4 text-danger">1. Creating Multidimensional Array</p>
+            <p>A <b>multidimensional array</b> is an array that has one or more nested arrays. This increases the number
+                of dimensions of the array.</p>
+            <p>The size of internal arrays in javascript can be variable and can be of any type.</p>
+            <p><strong>Ways to create a multidimensional array:</strong></p>
+            <ul>
+                <li>Using array literal</li>
+                <li>Using array constructor</li>
+            </ul>
+            <p class="h5 text-success">A. Using array literal</p>
+            <p><b>Array literal</b> is the simplest and the most common way to define an array in javascript. <b>Array
+                    literal</b> is a list of values enclosed in square brackets (<b>[]</b>).</p>
+            <div class="container bg-secondary bg-opacity-25 rounded p-1">
+                <p class="h5">Example:</p>
+                <pre class="rounded"><code>&lt;script&gt;
+    const myArray = [[1, 2, 3],[4, 5, 6],[7, 8, 9]];
+    const Employee = [
+        [20, 'Pranshu', 'Lucknow'],
+        [21, 'Sameer', 'Vanaras'],
+        [22, 'Kartikey', 'Lakhimpur']
+    ]
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <br>
+
+            <p class="h5 text-success">B. Using array constructor</p>
+            <p><b>Array literal</b> is the simplest and the most common way to define an array in javascript. <b>Array
+                    literal</b> is a list of values enclosed in square brackets (<b>[]</b>).</p>
+            <p><b>Note: </b><mark>Array()</mark> can be called with or without <b>new.</b> Both create a new Array
+                instance.</p>
+
+            <div class="container bg-secondary bg-opacity-25 rounded p-1 mb-1">
+                <p class="h5">Example:</p>
+                <pre class="rounded" style="height: 300px;"><code>&lt;script&gt;
+    var arr = Array([1, 2, 3],[4, 5, 6]);
+
+    // Method 2
+    var arr = Array(2).fill(Array(3));  // 2 &times; 3 array
+        arr[0][1] = 4;  //setting value
+        arr[1][0] = 5;
+        arr[1][1] = 5;
+
+    // Method 3
+    const rows = 4;
+    const cols = 5;
+    let arr = new Array(rows); // Create a multi-dimensional array with the specified dimensions
+    for (var i = 0; i &lt; m; i++) {
+    arr[i] = new Array(cols); // make each element an array
+    }
+&lt;/script&gt;</code></pre>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Getting Array value from user -->
+        <div class="container border mb-2">
+            <p class="h4 text-danger">2. Getting Array from user and Displaying</p>
+            <div class="container bg-secondary bg-opacity-25 rounded p-1 mb-1">
+                <p class="h5">Example:</p>
+                <pre class="rounded" style="height: 300px;"><code>&lt;script&gt;
+    // Get the dimensions of the array from the user
+    let rows = parseInt(prompt(&quot;Enter the number of rows:&quot;));
+    let cols = parseInt(prompt(&quot;Enter the number of columns:&quot;));
+
+    // Create a multi-dimensional array with the specified dimensions
+    let array = new Array(rows);
+    for (let i = 0; i &lt; rows; i++) {
+        array[i] = new Array(cols);
+    }
+
+    // Get the elements from the array
+    for (let i = 0; i &lt; rows; i++) {
+        for (let j = 0; j &lt; cols; j++) {
+            array[i][j] = (prompt(`Enter the element at index (${i}, ${j}):`));
+        }
+    }
+
+    // Display the array
+    let output = &quot;[&quot;;
+    for (let i = 0; i &lt; rows; i++) {
+        output += &quot;[&quot;;
+        for (let j = 0; j &lt; cols; j++) {
+            output += array[i][j];
+            if (j &lt; cols - 1) {
+                output += &quot;, &quot;;
+            }
+        }
+        output += &quot;]&quot;;
+        if (i &lt; rows - 1) {
+            output += &quot;, &quot;;
+        }
+    }
+    output += &quot;]&quot;;
+    document.getElementById(&quot;output&quot;).innerHTML = `Arry = ${output}`;
+&lt;/script&gt;</code></pre>
+                <button type="button" class="btn btn-warning " onclick="getValue()">Run Code</button>
+                <div class="container bg-light mt-1 rounded">
+                    <p id="output"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--  Accessing array elements -->
+        <div class="container border mb-2">
+            <p class="h4 text-danger">3. Accessing array elements</p>
+            <p>A <b>multidimensional</b> array is accessed in the same fashion as a normal array. The only difference is
+                that we need to use two or more indices to access the elements of the <b>nested array</b>.</p>
+            <p class="h5 text-success">Using Index</p>
+            <div class="container bg-secondary bg-opacity-25 rounded mb-1 p-1">
+                <p class="h5">Example</p>
+                <pre class="rounded" style="height: 300px;"><code>&lt;script&gt;
+    let x = [
+    [20, 'Pranshu', 'Lucknow'],
+    [21, 'Sameer', 'Varanasi'],
+    [22, 'Kartikeya', 'Lakhimpur']
+    ];
+    
+    let text = &quot;&lt;pre&gt;&quot;
+    text += `x[0] = [${x[0]}]&lt;br&gt;`;
+    text += `x[1][2] = ${x[1][2]} &lt;br&gt;`;  // third item of the second inner array
+    text += `x[2][1] = ${x[2][1]} `;    // second item of the third inner array
+    text += &quot;&lt;/pre&gt;&quot;;
+
+    document.getElementById(&quot;accessary&quot;).innerHTML = text;
+&lt;/script&gt;</code></pre>
+                <button type="button" class="btn btn-warning" onclick="accessIndex()">Run Code</button>
+                <div class="container bg-light mt-1 rounded">
+                    <p id="accessindex"></p>
+                </div>
+            </div>
+
+
+            <br>
+
+
+            <p class="h5 text-success">Using Loop</p>
+            <div class="container bg-secondary bg-opacity-25 rounded mb-1 p-1">
+                <p class="h5">Example</p>
+                <pre class="rounded" style="height: 300px;"><code>&lt;script&gt;
+    let x = [
+        [20, 'Pranshu', 'Lucknow'],
+        [21, 'Sameer', 'Varanasi'],
+        [22, 'Kartikeya', 'Lakhimpur'],
+        [28, 'Ramkumar', 'Delhi']
+    ];
+
+    let text = &quot;&lt;pre&gt;&quot;
+    for (let i = 0; i &lt; x.length; i++) {
+        for (let j = 0; j &lt; x[i].length; j++) {
+            if (typeof x[i][j] === 'string') {
+                text += `&quot;${x[i][j]}&quot;`;
+            }
+            else {
+                text += `${x[i][j]}`;
+            }
+            text += &quot; &quot;;
+        }
+        text += &quot;\n&quot;;
+    }
+    text += &quot;&lt;/pre&gt;&quot;;
+    document.getElementById(&quot;accessloop&quot;).innerHTML = text;
+&lt;/script&gt;</code></pre>
+                <button type="button" class="btn btn-warning" onclick="accessloops()">Run Code</button>
+                <div class="container bg-light mt-1 rounded">
+                    <p id="accessloop"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- Modifying Arrays  -->
+        <div class="container border mb-2">
+            <p class="h4 text-danger">3. Modifying array elements</p>
+            <p>An <b>array</b> is mutable(<b>modifiable</b>). Once an array is created, we can modify the contents of
+                the array elements.</p>
+            <p>To modify an array using index, we can directly assign a new value to the desired <b>index</b>.</p>
+            <p class="h5 text-success">Updating element</p>
+            <div class="container bg-secondary bg-opacity-25 rounded mb-1 p-1">
+                <p class="h5">Example</p>
+                <pre class="rounded" style="height: 300px;"><code>&lt;script&gt;
+    let x = [
+        [20, 'Pranshu', 'Lucknow'],
+        [21, 'Sameer', 'Varanasi'],
+        [22, 'Kartikeya', 'Lakhimpur'],
+        [28, 'Ramkumar', 'Delhi']
+    ];
+    x[0][1] = &quot;Pranay&quot;;   // change name to Pranay in first element
+    x[2][2] = &quot;Mumbai&quot;;     // change city to Mumbai in third element
+    let text = &quot;&lt;pre&gt;&quot;;
+    for (let i = 0; i &lt; x.length; i++) {
+        for (let j = 0; j &lt; x[i].length; j++) {
+            if (typeof x[i][j] === 'string') {
+                text += `&quot;${x[i][j]}&quot;`;
+            } else {
+                text += x[i][j];
+            }
+            text += &quot; &quot;;
+        }
+        text += &quot;\n&quot;;
+    }
+    text += &quot;&lt;/pre&gt;&quot;;
+    document.getElementById('modify').innerHTML = text;
+&lt;/script&gt;</code></pre>
+                <button type="button" class="btn btn-warning" onclick="modifyArray()">Run Code</button>
+                <div class="container bg-light mt-1 rounded">
+                    <p id="modify"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ========== Start Display array in Table ========== -->
+        <div class="container border mb-2">
+            <p class="h4 text-danger">4. Display array in Table </p>
+            
+            <!-- <p class="h5 text-success">Updating element</p> -->
+            <div class="container bg-secondary bg-opacity-25 rounded mb-1 p-1">
+                <p class="h5">Example</p>
+                <pre class="rounded" style="height: 300px;"><code>&lt;script&gt;
+let clicked = false;
+function createTable() {
+    if (clicked) {
+        return;
+    }
+    let x = [
+        [20, 'Pranshu', 'Lucknow'],
+        [21, 'Sameer', 'Varanasi'],
+        [22, 'Kartikeya', 'Lakhimpur'],
+        [28, 'Ramkumar', 'Delhi']
+    ];
+    let tableDiv = document.getElementById(&quot;tableDiv&quot;);
+    for (let a = 0; a &lt; x.length; a++) {
+        let rowDiv = document.createElement(&quot;div&quot;);
+        rowDiv.className = &quot;row&quot;;
+        for (let b = 0; b &lt; x[a].length; b++) {
+            let cellDiv = document.createElement(&quot;div&quot;);
+            cellDiv.className = &quot;cell&quot;;
+            cellDiv.textContent = x[a][b];
+            rowDiv.appendChild(cellDiv);
+        }
+        tableDiv.appendChild(rowDiv);
+    }
+    clicked = true;
+}
+&lt;/script&gt;</code></pre>
+                <button type="button" class="btn btn-warning" onclick="createTable()">Run Code</button>
+                <div class="container bg-light mt-1 rounded">
+                    <div class="" id="tableDiv"></div>
+                    
+                </div>
+            </div>
+            <!-- ========== End Display array in Table ========== -->
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="script.js"></script>
+    </footer>
+
+
+
+
+</body>
+
+</html>

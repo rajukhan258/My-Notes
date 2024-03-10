@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        ul>li>a {
+            text-decoration: none;
+            /* color: black; */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning ">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1 ">Array Methods</p>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container border mt-1 mb-2">
+            <p><b>Array methods</b> are <b>built-in functions</b> in javascript which has a special task to be performed
+                on an array. These array methods either change the original array or return a new array by modifying it.
+            </p>
+        </div>
+
+
+        <div class="container border mb-2 ">
+            <p class="h4 text-danger">Array Methods List</p>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <p class="h4">Creating and Manipulating Arrays</p>
+                    <ul>
+                        <li><a href="#from">from():</a> Creates a new array from an array-like or iterable object.</li>
+                        <li><a href="#of">of():</a> Creates a new array with a variable number of elements.</li>
+                    </ul>
+                    <p class="h4">Adding/Removing Elements:</p>
+
+                    <ul>
+                        <li><a href="#pop()">pop():</a> Removes the last element and returns an array.</li>
+                        <li><a href="#push()">push():</a> Adds elements to the end of an array.</li>
+                        <li><a href="#shift()">shift():</a> Removes the first element and returns an array.</li>
+                        <li><a href="#unshift()">unshift():</a> Adds elements to the beginning of an array.</li>
+                    </ul>
+                    <p class="h4">Modifying Array Elements:</p>
+
+                    <ul>
+                        <li><a href="#sort()">sort():</a> Sorts the elements of an array in ascending order according to
+                            the character's
+                            Unicode value.</li>
+                        <li><a href="#reverse()">reverse():</a> Reverses the order of elements in an array.</li>
+                        <li><a href="#fill">fill():</a> Changes all elements in an array to a static value.</li>
+                        <li><a href="#copyWithin">copyWithin():</a> Copies a sequence of elements within the array.</li>
+                    </ul>
+
+                    <p class="h4">Combining and Extracting Elements:</p>
+                    <ul>
+                        <li><a href="#concat()">concat():</a> Combines two or more arrays into a new array.</li>
+                        <li><a href="#join()">join():</a> Joins all elements of an array into a string.</li>
+                        <li><a href="#entries">entries():</a> Returns an iterator with key-value pairs for each array
+                            index.</li>
+                        <li><a href="#slice()">slice():</a> Extracts a section of an array and returns it.</li>
+                        <li><a href="#splice()">splice():</a> Changes the content of an array by removing, replacing, or
+                            adding elements.</li>
+                    </ul>
+                    <p class="h4">Flattening Arrays:</p>
+                    <ul>
+                        <li><a href="#flat">flat():</a> Creates a new array with all sub-array elements concatenated
+                            into it.</li>
+                        <li><a href="#flatmap">flatMap():</a> Maps each element using a function, then flattens the
+                            result.</li>
+                    </ul>
+
+                    <p class="h4">Iteration and Transformation:</p>
+                    <ul>
+                        <li><a href="#foreach">forEach():</a> Calls a function for each element in an array.</li>
+                        <li><a href="#map">map():</a> Creates a new array with the results of calling a provided
+                            function on each element.</li>
+                        <li><a href="#filter()">filter():</a> Creates a new array with all elements that pass a test.
+                        </li>
+                        <li><a href="#reduce">reduce():</a> Applies a function against an accumulator and each element
+                            in the array to reduce it to a single value.</li>
+                        <li><a href="#reduceRight">reduceRight():</a> Similar to reduce(), but processes the array from
+                            right to left.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-6 ">
+
+                    <p class="h4">Searching and Checking:</p>
+                    <ul>
+                        <li><a href="#indexOf()">indexOf():</a> Returns the first index at which a specified element can
+                            be found.</li>
+                        <li><a href="#lastindexOf()">lastindexOf():</a> Returns the last index at which a specified
+                            element can be found.</li>
+                        <li><a href="#includes()">includes():</a> Checks if an array contains a specified element.</li>
+                        <li><a href="#isarray()">isarray():</a> Checks if an object is an array.</li>
+                    </ul>
+
+                    <p class="h5">Searching and Finding Elements:</p>
+                    <ul>
+                        <li><a href="#find()">find():</a> Returns the first element in the array that satisfies a
+                            provided testing function.</li>
+                        <li><a href="#findindex()">findIndex():</a> Returns the index of the first element in the array
+                            that satisfies a provided testing function.</li>
+                        <li><a href="#some()">some():</a> Checks if at least one element in the array passes a test.
+                        </li>
+                        <li><a href="#every()">every():</a> Checks if all elements in the array pass a test.</li>
+                    </ul>
+                    <p class="h4">Accessing Array Properties:</p>
+                    <ul>
+                        <li><a href="#keys">keys():</a> Returns an iterator with the keys (indices) of the array.</li>
+                    </ul>
+                    <p class="h4">Value Conversion and Representation:</p>
+                    <ul>
+                        <li><a href="#tostring">toString():</a> Converts an object to a string representation.</li>
+                        <li><a href="#toLocalstring">toLocalString():</a> Converts an object to a string representation
+                            in a locale-specific manner.</li>
+                        <li><a href="#value">value():</a> provides an iterator for accessing and printing all the
+                            elements (values) in the array one by one.</li>
+                        <li><a href="#valueof">valueOf():</a> Returns the primitive value of an object, which may be a
+                            string, number, or boolean, depending on the object type.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ========== Start GOToTOP button ========== -->
+    <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1" style="z-index: 100;"><a
+            href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a></button>
+    <!-- ========== End GOToTOP button ========== -->
+
+
+    <!-- ========== Start from() ========== -->
+    <div class="container border mb-2" id="from">
+        <p class="h4 text-danger">Array.from() array method</p>
+        <p>The <b>Array.from()</b> method is used to create a new array from an iterable object, such as
+            an array-like object or a string. </p>
+        <p>The method takes an optional mapping function as a second argument to transform the elements while creating
+            the new array.</p>
+        <p>The <b>Array.from()</b> method can take three parameters:</p>
+        <ul>
+            <li><b>arraylike: </b>Array-like or iterable object to convert to an array.</li>
+            <li><b>mapFunc:</b>(optional) - Map function that is called on each element.</li>
+            <li><b>thisArg:</b>(optional) - Value to use as this when executing mapFunc.</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-33" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(33)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-33"><code>&lt;script&gt;
+    //1. Converting a String to an Array:
+    const str = &quot;HELLO&quot;;
+    const strArray = Array.from(str);
+    document.getElementById(&quot;from-output-1&quot;).innerHTML = `Str to Array: ${arrprint(strArray)}`;
+
+    //2. Using the Map Function:
+    const numbers = [1, 2, 3, 4];
+    const squaredNumbers = Array.from(numbers, function (indexelement) { return indexelement * indexelement });
+    document.getElementById(&quot;from-output-2&quot;).innerHTML = `from() with map(): ${arrprint(squaredNumbers)}`;
+
+    //3. Using thisArg:
+    const nums = [1, 2, 3, 4];
+    const doubledNumbers = Array.from(nums, function (x) {
+        return x * this.multiplier;
+    }, { multiplier: 2 });
+    document.getElementById(&quot;from-output-3&quot;).innerHTML = `Using thisArg: ${arrprint(doubledNumbers)}`;
+
+    //function to print a string representation of the array,
+    function arrprint(arr) {
+        let output = &quot;[&quot;;
+        for (i = 0; i &lt; arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                output += arrprint(arr[i]);
+            }
+            else if (typeof arr[i] === 'string') {
+                output += `&quot;${arr[i]}&quot;`;
+            }
+            else {
+                output += `${arr[i]}`;
+            }
+            if (i &lt; arr.length - 1) {
+                output += &quot;, &quot;;
+            }
+        }
+        output += &quot;]&quot;;
+        return output;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayfrom()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="from-output-1"></p>
+                <p id="from-output-2"></p>
+                <p id="from-output-3"></p>
+                <!-- <p id="from-output-4"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End from() ========== -->
+
+
+
+    <!-- ========== Start of() ========== -->
+    <div class="container border mb-2" id="of">
+        <p class="h4 text-danger">Array.of() array method</p>
+        <p>The <b>Array.of()</b> method is a built-in JavaScript array method that creates a new array with the elements
+            you
+            pass as <b>arguments</b>. </p>
+        <p>The of() method can take n number of parameters:</p>
+        <ul>
+            <li><b>n</b> specifies the number of elements inside the new array. <b>For Ex:</b> element1, element2, ...,
+                elementN </li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-34" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(34)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-34"><code>&lt;script&gt;
+   //1. Creating an array of numbers:
+    const numbers = Array.of(1, 2, 3, 4, 5);
+    document.getElementById(&quot;of-output-1&quot;).innerHTML = `array of numbers: ${printarr(numbers)}`;
+    //2. Creating an array of strings:
+    const fruits = Array.of(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);
+    document.getElementById(&quot;of-output-2&quot;).innerHTML = `array of strings: ${printarr(fruits)}`;
+    // Creating an array with a 
+    const singleValue = Array.of(42);
+    document.getElementById(&quot;of-output-3&quot;).innerHTML = `single element: ${printarr(singleValue)}`;
+
+    //Creating an empty array:
+    const emptyArray = Array.of();
+    document.getElementById(&quot;of-output-4&quot;).innerHTML = `empty array: ${printarr(emptyArray)}`;
+
+    //common function print the out as array
+    function printarr(arr) {
+        let output = &quot;[&quot;;
+        for (let i = 0; i &lt; arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                output += displayof(arr[i]);
+            } else if (typeof arr[i] === 'string') {
+                output += `&quot;${arr[i]}&quot;`;
+            } else {
+                output += `${arr[i]}`;
+            }
+            if (i &lt; arr.length - 1) {
+                output += &quot;, &quot;;
+            }
+        }
+        output += &quot;]&quot;
+        return output;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayof()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="of-output-1"></p>
+                <p id="of-output-2"></p>
+                <p id="of-output-3"></p>
+                <p id="of-output-4"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End of() ========== -->
+
+
+
+
+    <!-- ========== Start pop() ========== -->
+    <div class="container border mb-2" id="pop()">
+        <p class="h4 text-danger">pop( ) array method</p>
+        <p>The <b>pop()</b> method in javascript removes the last element from the array and returns the remaing
+            elements. If the array is empty, the method returns undefined.</p>
+        <p>The <b>pop()</b> method does not have any parameters.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(3)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    const mixary = [&quot;Ram&quot;, 55, &quot;Mango&quot;, &quot;apple&quot;, 100];
+    mixary.pop();   // Remove the last element from the 'mixary' array using the 'pop' method.
+    let Arytext = &quot;[&quot;   // Initialize a string 'Arytext' with an opening square bracket &quot;[&quot;.
+    for(a = 0; a &lt; mixary.length; a++){  // Loop through each element in the 'mixary' array.
+        if(typeof mixary[a] === `string`){   // Check if the current element is a string.
+            Arytext += `&quot;${mixary[a]}&quot;`;    // If the element is a string, enclose it in double quotes and add it to the 'Arytext' string.
+        }
+        else{
+            Arytext += `${mixary[a]}`;  // If the element is not a string, add it as is to the 'Arytext' string.
+        }
+        Arytext += &quot; &quot;;     // Add a space after each element, regardless of its type.
+    }
+    Arytext += &quot;]&quot;;     // Add a closing square bracket &quot;]&quot; to the 'Arytext' string.
+    document.getElementById(&quot;pop_1&quot;).innerHTML = `After 1 pop = ${Arytext}`;
+
+    mixary.pop();   // Again Remove the last element from the 'mixary' array again using the 'pop' method
+        let Arytext2 = &quot;[&quot;  // Initialize a new string 'Arytext2' with an opening square bracket &quot;[&quot;.
+    for(a = 0; a &lt; mixary.length; a++){     // Loop through each element in the modified 'mixary' array.
+        if(typeof mixary[a] === `string`){   // Check if the current element is a string.
+            Arytext2 += `&quot;${mixary[a]}&quot;`;   // If the element is a string, enclose it in double quotes and add it to the 'Arytext2' string.  
+        }
+        else{
+            Arytext2 += `${mixary[a]}`;     // If the element is not a string, add it as is to the 'Arytext2' string.
+        }
+        Arytext2 += &quot; &quot;;     // Add a space after each element, regardless of its type.
+    }
+    Arytext2 += &quot;]&quot;;    // Add a closing square bracket &quot;]&quot; to the 'Arytext2' string.
+    document.getElementById(&quot;pop_2&quot;).innerHTML = `After 2 pop = ${Arytext2}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arypop()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="pop_1"></p>
+                <p id="pop_2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End pop() ========== -->
+
+
+
+
+    <!-- ========== Start push() ========== -->
+    <div class="container border mb-2" id="push()">
+        <p class="h4 text-danger">push( ) array method</p>
+        <p>The <b>push()</b> method in javascript is used to add one or more elements to the end of the calling array.
+        </p>
+        <p>After adding the elements to the array, the method returns the new length of the array.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(4)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-4"><code>&lt;script&gt;
+    const mixary = [&quot;mango&quot;, &quot;banana&quot;];
+    mixary.push(1000);  // Push the number 1000 to the 'mixary' array.
+    let output = &quot;[&quot;;   // Initialize a string 'output' with an opening square bracket &quot;[&quot;.
+    for (i = 0; i &lt; mixary.length; i++) {   // Loop through each element in the 'mixary' array.
+        if (typeof mixary[i] === `string`) {      // Check if the current element is a string.
+            output += `&quot;${mixary[i]}&quot;`;     // If the element is a string, enclose it in double quotes and add it to the 'output' string.
+        }
+        else {
+            output += `${mixary[i]}`;   // If the element is not a string (a number in this case), add it as is to the 'output' string.
+        }
+        output += &quot;, &quot;; // Add a comma and space after each element.
+    }
+    output += &quot;]&quot;;  // Add a closing square bracket &quot;]&quot; to the 'output' string.
+    document.getElementById('ary_1push').innerHTML = `1 element pushed = ${output}`;
+
+
+    mixary.push(&quot;orange&quot;, 2500);    // Push two more elements (a string and a number) to the 'mixary' array.
+    let output2 = &quot;[&quot;;
+    for (i = 0; i &lt; mixary.length; i++) {   // Initialize a new string 'output2' with an opening square bracket &quot;[&quot;.
+        if (typeof mixary[i] === `string`) {      // Check if the current element is a string.
+            output2 += `&quot;${mixary[i]}&quot;`;        // If the element is a string, enclose it in double quotes and add it to the 'output2' string.
+        }
+        else {
+            output2 += `${mixary[i]}`;      // If the element is not a string (a number in this case), add it as is to the 'output2' string.
+        }
+        output2 += &quot;, &quot;;    // Add a comma and space after each element.
+    }
+    output2 += &quot;]&quot;; // Add a closing square bracket &quot;]&quot; to the 'output2' string.
+    document.getElementById('ary_2push').innerHTML = `2 element pushed = ${output2}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arrpush()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="ary_1push"></p>
+                <p id="ary_2push"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End push() ========== -->
+
+
+
+
+
+    <!-- ========== Start shift() ========== -->
+    <div class="container border mb-2" id="shift()">
+        <p class="h4 text-danger">shift( ) array method</p>
+        <p>Just like the <b>pop()</b>, <b>shift()</b> method also removes the element from the array but instead of
+            removing the last element, it removes the <b>first element</b>.</p>
+        <p>If the array is empty, the method returns undefined.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(5)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-5"><code>&lt;script&gt;
+// Create an array 'a' containing a mix of strings and numbers
+const a = [&quot;mango&quot;, 2000, &quot;apple&quot;, 500, &quot;watermelon&quot;];
+// Remove the first element from the array 'a' (shift it off)
+a.shift();
+// Initialize a variable 'output' to store the transformed array as a string
+let output = &quot;[&quot;;
+// Loop through the elements of array 'a'
+for (i = 0; i &lt; a.length; i++) {
+    // Check if the current element is a string
+    if (typeof a[i] === `string`) {
+        // If it's a string, add it to 'output' enclosed in double quotes
+        output += `&quot;${a[i]}&quot;`;
+    } else {
+        // If it's not a string (a number), add it to 'output' as is
+        output += `${a[i]}`;
+    }
+    // Add a comma and space after each element
+    output += &quot;, &quot;;
+}
+// Complete the 'output' string with a closing square bracket
+output += &quot;]&quot;;
+// Display the modified array as a string in the HTML element with the ID &quot;shift_1&quot;
+document.getElementById(&quot;shift_1&quot;).innerHTML = `After 1 shift = ${output}`;
+
+
+// Remove the first element from array 'a' again
+a.shift();
+// Initialize another variable 'output2' to store the transformed array as a string
+let output2 = &quot;[&quot;;
+// Loop through the elements of the modified array 'a'
+for (i = 0; i &lt; a.length; i++) {
+    // Check if the current element is a string
+    if (typeof a[i] === `string`) {
+        // If it's a string, add it to 'output2' enclosed in double quotes
+        output2 += `&quot;${a[i]}&quot;`;
+    } else {
+        // If it's not a string (a number), add it to 'output2' as is
+        output2 += `${a[i]}`;
+    }
+    // Add a comma and space after each element
+    output2 += &quot;, &quot;;
+}
+// Complete the 'output2' string with a closing square bracket
+output2 += &quot;]&quot;;
+// Display the modified array as a string in the HTML element with the ID &quot;shift_2&quot;
+document.getElementById(&quot;shift_2&quot;).innerHTML = `After 2 shifts = ${output2}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="aryshift()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="shift_1"></p>
+                <p id="shift_2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End shift() ========== -->
+
+
+
+
+
+    <!-- ========== Start unshift() ========== -->
+    <div class="container border mb-2 " id="unshift()">
+        <p class="h4 text-danger">unshift( ) array method</p>
+        <p>Like <b>push()</b> method <b>unshift()</b> method also adds the element to the array but instead of adding it
+            to the ending of the array, it adds it to the beginning.</p>
+        <p>This method returns the new length of the array.</p>
+
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(6)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    // Initialize an array 'fruit' with two string elements
+    const fruit = [&quot;orange&quot;, &quot;watermelon&quot;];
+    // Add an element at the beginning of the 'fruit' array
+    fruit.unshift(&quot;apple&quot;);
+    // Initialize a string 'display' with an opening bracket
+    let display = &quot;[&quot;;
+    // Iterate through the 'fruit' array
+    for (i = 0; i &lt; fruit.length; i++) {
+        // Check the type of each element
+        if (typeof fruit[i] === `string`) {
+            // If it's a string, add it with double quotes
+            display += `&quot;${fruit[i]}&quot;`;
+        } else {
+            // If it's not a string, add it as is
+            display += `${fruit[i]}`;
+        }
+        // Add a comma and space after each element
+        display += &quot;, &quot;;
+    }
+    // Close the 'display' string with a closing bracket
+    display += &quot;]&quot;
+    // Set the content of an HTML element with the id &quot;unshift&quot; to show the modified 'fruit' array
+    document.getElementById(&quot;unshift&quot;).innerHTML = `Unshifted Array: ${display}`;
+
+
+    // Add a numeric value (2500) at the beginning of the 'fruit' array
+    fruit.unshift(2500);
+    // Initialize a string 'display2' with an opening bracket
+    let display2 = &quot;[&quot;;
+    // Iterate through the 'fruit' array again
+    for (i = 0; i &lt; fruit.length; i++) {
+        // Check the type of each element
+        if (typeof fruit[i] === `string`) {
+            // If it's a string, add it with double quotes
+            display2 += `&quot;${fruit[i]}&quot;`;
+        } else {
+            // If it's not a string, add it as is
+            display2 += `${fruit[i]}`;
+        }
+        // Add a comma and space after each element
+        display2 += &quot;, &quot;;
+    }
+    // Close the 'display2' string with a closing bracket
+    display2 += &quot;]&quot;
+    // Set the content of an HTML element with the id &quot;unshift2&quot; to show the modified 'fruit' array
+    document.getElementById(&quot;unshift2&quot;).innerHTML = `Unshifted Array: ${display2}`;
+
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arrunshift()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="unshift"></p>
+                <p id="unshift2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End unshift() ========== -->
+
+
+
+
+
+    <!-- ========== Start sort() ========== -->
+    <div class="container border mb-2 " id="sort()">
+        <p class="h4 text-danger">Sort() array method</p>
+        <p>The <b>sort()</b> method in javascript sort the array element in ascending order according to the character's
+            Unicode value. Means it convert its element to string and sort it by comparing the string in <b>UTF-16</b>
+            code.</p>
+        <p>The sort() method takes in:</p>
+        <ul>
+            <li><b>compareFunction:</b> (optional) - It is used to define a custom sort order. [Specially for number
+                sorting]</li>
+        </ul>
+
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(1)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    const fruit = [&quot;mango&quot;, &quot;banana&quot;, &quot;apple&quot;, &quot;orange&quot;, &quot;watermelon&quot;];
+    fruit.sort();   // sort the array in alphabetical order
+    let text = &quot;[&quot;;    
+    for (let i = 0; i &lt; fruit.length; i++) {    // iterate over the array
+        if (typeof fruit[i] === 'string') {      // check if the element is a string
+            text += `&quot;${fruit[i]}&quot;`;    // if it is a string, add it to the text with quotes
+        } else {
+            text += fruit[i];   // if it is not a string, add it to the text without quotes
+        }
+        text += &quot; &quot;;    // add a space after each element
+    }
+    text += &quot;]&quot;;     // add a closing bracket to the text
+    document.getElementById('sortfruit').innerHTML = text;   // set the innerHTML of the element with the id &quot;sortfruit&quot; to the text
+
+
+    //number sorting
+    const num = [2, 321, 100, 1310, 43];
+    num.sort();     // sort the array in ascending order
+    let textnum = &quot;[&quot;;
+    for (let i = 0; i &lt; num.length; i++) {  // iterate over the array
+        textnum += `${num[i]}, `;    // add each element to the text with a comma and a space
+    }
+    document.getElementById(&quot;sortnumber&quot;).innerHTML = textnum + &quot;]&quot;;    //unexpected result
+
+
+    // Actual number sorting
+    num.sort((firstElement, secondElement) =&gt; {     // Sort the array in ascending order using the arrow function syntax.
+        return firstElement - secondElement;
+    });
+    let actualtext = &quot;[&quot;    // Create a string to store the sorted numbers.
+    for (let i = 0; i &lt; num.length; i++) {  // iterate over the array
+        actualtext += `${num[i]}, `;    // add each element to the text with a comma and a space
+    }
+    actualtext += &quot;]&quot;    // add a closing bracket to the text
+    document.getElementById(&quot;actual_sortnum&quot;).innerHTML = actualtext;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="sorTing()">Run Code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="sortfruit"></p>
+                <p id="sortnumber"></p>
+                <p id="actual_sortnum"></p>
+            </div>
+        </div>
+        <p>By default, the <b>`sort()`</b> method converts the elements to strings and sorts them in alphabetical order.
+            However, since the <b>`num`</b> array contains numbers, the <b>`sort()`</b> method will not work as
+            expected.</p>
+
+        <p>To sort the `num` array in ascending order, a custom compare function is provided as an argument to the
+            <b>`sort()` method</b>. This compare function takes two parameters, <b>`firstElement`</b> and
+            <b>`secondElement`</b>, which represent the elements being compared in the array.
+        </p>
+    </div>
+
+    <!-- ========== End sort() ========== -->
+
+
+
+
+    <!-- ========== Start reverse() ========== -->
+    <div class="container border mb-2" id="reverse()">
+        <p class="h4 text-danger">reverse( ) array method</p>
+        <p>The <b>reverse()</b> method in javascript reverse the array elements from first to last.</p>
+        <p>The reverse() method does not take any parameters.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(2)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    const day = [&quot;monday&quot;, &quot;wednesday&quot;, &quot;friday&quot;, &quot;sunday&quot;];    // Define an array called 'day' containing four string values.
+    day.reverse();  // Reverse the order of elements in the 'day' array.
+    let reversedDay = &quot;[&quot;;  // Initialize a string 'reversedDay' with an opening square bracket &quot;[&quot;.
+    for (i = 0; i &lt; day.length; i++) {  // Loop through each element in the 'day' array.
+        if (typeof day[i] === `string`) {   // Check if the current element is a string.
+            reversedDay += `&quot;${day[i]}&quot;`;   // If the element is a string, enclose it in double quotes and add it to the 'reversedDay' string.
+        }
+        reversedDay += ` `;      // Add a space after each element, regardless of its type.
+    }
+    reversedDay += &quot;]&quot;  // Add a closing square bracket &quot;]&quot; to the 'reversedDay' string.
+    document.getElementById(&quot;reverseDay&quot;).innerHTML = reversedDay;
+
+
+    const num = [1, 2, 3, 4, 5];    // Define an array called 'num' containing five numeric values.     
+    num.reverse();  // Reverse the order of elements in the 'num' array.
+    let reversedNum = &quot;[&quot;;  // Initialize a string 'reversedNum' with an opening square bracket &quot;[&quot;.
+    for (j = 0; j &lt; num.length; j++) {  // Loop through each element in the 'num' array.
+        reversedNum += `${num[j]}, `;   // Add the current element to the 'reversedNum' string, along with a comma and space.    
+    }
+    reversedNum += &quot;]&quot;; // Add a closing square bracket &quot;]&quot; to the 'reversedNum' string.
+    document.getElementById(&quot;reverseNum&quot;).innerHTML = reversedNum;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="reverse()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="reverseDay"></p>
+                <p id="reverseNum"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== End reverse() ========== -->
+
+
+
+
+    <!-- ========== Start fill() ========== -->
+    <div class="container border mb-2" id="fill">
+        <p class="h4 text-danger">fill() array method</p>
+        <p>The <b>fill()</b> method in javascript returns a modified array by filling a specified index with the
+            specified value.</p>
+        <p>The original array is not modified by the <b>fill()</b> method.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-23" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(23)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-23"><code>&lt;script&gt;
+    // Define an array of fruits
+    const fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;, &quot;Guava&quot;, &quot;Pineapple&quot;, &quot;Grapes&quot;];
+    // Use the fill method to modify the array and store it in arr1
+    const arr1 = fruits.fill(&quot;Apple&quot;);
+    // Display the modified arr1 in the first output element
+    document.getElementById(&quot;fill-output-1&quot;).innerHTML = loop(arr1);
+    // Use the fill method to modify the array and store it in arr2
+    const arr2 = fruits.fill(&quot;Mango&quot;, 2);
+    // Display the modified arr2 in the second output element
+    document.getElementById(&quot;fill-output-2&quot;).innerHTML = loop(arr2);
+    // Use the fill method to modify the array and store it in arr3
+    const arr3 = fruits.fill(&quot;Orange&quot;, 4, 6);
+    // Display the modified arr3 in the third output element
+    document.getElementById(&quot;fill-output-3&quot;).innerHTML = loop(arr3);
+
+    // Define a function to format an array as a string
+    function loop(arr) {
+        let text = &quot;[&quot;;
+        for (let i = 0; i &lt; arr.length; i++) {
+            if (typeof arr[i] === 'string') {
+                text += `&quot;${arr[i]}&quot;`;
+            } else {
+                text += `${arr[i]}`;
+            }
+            if (i &lt; arr.length - 1) {
+                text += &quot;, &quot;;
+            }
+        }
+        text += &quot;]&quot;;
+        return text;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayFill()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="fill-output-1"></p>
+                <p id="fill-output-2"></p>
+                <p id="fill-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End fill() ========== -->
+
+
+
+
+    <!-- ========== Start copyWithin() ========== -->
+    <div class="container border mb-2" id="copyWithin">
+        <p class="h4 text-danger">copyWithin() array method</p>
+        <p>The <b>copyWithIn()</b> method in javascript copies a part of the same array within the same calling array.
+        </p>
+        <p>This method modifies elements of the original array but the length of the array is not modified.</p>
+        <p>The <b>copyWithIn()</b> method takes three arguments:</p>
+        <ul>
+            <li><b>The target index</b> (where you want to start pasting the copied elements).</li>
+            <li><b>The start index</b> (from where you want to start copying).</li>
+            <li><b>The end index </b>(where you want to stop copying, but this element won't be included).</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-26" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(26)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-26"><code>&lt;script&gt;
+    const books = [0, 1, 2, 3, 4, 5, 6, 7]; // Original array
+    // Create a copy and apply copyWithin to simulate operations
+    const arr1 = books.slice().copyWithin(2);
+    const arr2 = books.slice().copyWithin(2, 4);
+    const arr3 = books.slice().copyWithin(2, 4, 6);
+    // Common function to Display the results
+    function displayloop(arr) {
+        let output = &quot;[&quot;;
+        for (let element of arr) {
+            if (typeof element === 'string') {
+                output += `&quot;${element}&quot;`;
+            } else {
+                output += `${element}`;
+            }
+            if (arr.indexOf(element) &lt; arr.length - 1) {
+                output += &quot;, &quot;;
+            }
+        }
+        output += &quot;]&quot;;
+        return output;
+    }
+    // Update the HTML content
+    document.getElementById(&quot;copyWithin-output-1&quot;).innerHTML = `books = ${displayloop(books)}`;
+    document.getElementById(&quot;copyWithin-output-2&quot;).innerHTML = `copyWithin(2) = ${displayloop(arr1)}`;
+    document.getElementById(&quot;copyWithin-output-3&quot;).innerHTML = `copyWithin(2, 4) = ${displayloop(arr2)}`;
+    document.getElementById(&quot;copyWithin-output-4&quot;).innerHTML = `copyWithin(2, 4, 6) = ${displayloop(arr3)}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayCopyWithin()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="copyWithin-output-1"></p>
+                <p id="copyWithin-output-2"></p>
+                <p id="copyWithin-output-3"></p>
+                <p id="copyWithin-output-4"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End copyWithin() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start concat() ========== -->
+    <div class="container border mb-2" id="concat()">
+        <p class="h4 text-danger">concat( ) array method</p>
+        <p>The <b>concat()</b> array method in javascript is used to merge 2 or more arrays or values into a single
+            array.</p>
+        <p>The <b>concat()</b> method does not change the original array but returns a new array by merging them.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(7)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    // Method One
+    const one = [&quot;apple&quot;, &quot;banana&quot;];
+    // Concatenate the 'one' array with several values
+    let concat_1 = one.concat(2500, &quot;banana&quot;, 5000);
+    // Initialize a string 'display_1' with an opening bracket
+    let display_1 = &quot;[&quot;;
+    // Iterate through the 'concat_1' array
+    for (let i = 0; i &lt; concat_1.length; i++) {
+        // Check the type of each element
+        if (typeof concat_1[i] === &quot;string&quot;) {
+            // If it's a string, add it with double quotes
+            display_1 += `&quot;${concat_1[i]}&quot;`;
+        } else {
+            // If it's not a string, add it as is
+            display_1 += `${concat_1[i]}`;
+        }
+        // Add a comma and space after each element
+        display_1 += &quot;, &quot;;
+    }
+    // Close the 'display_1' string with a closing bracket
+    display_1 += &quot;]&quot;
+
+    // Set the content of an HTML element with the id &quot;display1&quot; to display 'concat_1'
+    document.getElementById(&quot;display1&quot;).innerHTML = display_1;
+
+
+
+    // Method Second
+    const two = [3000, &quot;orange&quot;, 4000];
+    const three = [true, false];
+    // Concatenate the 'one' array with 'two' and 'three' arrays
+    let concat_2 = one.concat(two, three);
+    // Initialize a string 'display_2' with an opening bracket
+    let display_2 = &quot;[&quot;;
+    // Iterate through the 'concat_2' array
+    for (let i = 0; i &lt; concat_2.length; i++) {
+        // Check the type of each element
+        if (typeof concat_2[i] === &quot;string&quot;) {
+            // If it's a string, add it with double quotes
+            display_2 += `&quot;${concat_2[i]}&quot;`;
+        } else {
+            // If it's not a string, add it as is
+            display_2 += `${concat_2[i]}`;
+        }
+        // Add a comma and space after each element
+        display_2 += &quot;, &quot;;
+    }
+    // Close the 'display_2' string with a closing bracket
+    display_2 += &quot;]&quot;
+    // Set the content of an HTML element with the id &quot;display2&quot; to display 'concat_2'
+    document.getElementById(&quot;display2&quot;).innerHTML = display_2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arrconcat()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="display1"></p>
+                <p id="display2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End concat() ========== -->
+
+
+
+
+    <!-- ========== Start join( ) ========== -->
+    <div class="container border mb-2" id="join()">
+        <p class="h4 text-danger">join() array method</p>
+        <p>The <b>join()</b> method in javascript joins all elements of the array as a string separated by commas or by
+            some specified separator and returns it as a string.</p>
+        <p>The function accepts 1 argument which is a separator. It is optional and its default value is a comma (",").
+        </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(8)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" id="code-block-8"><code>&lt;script&gt;
+    const fruit = [&quot;mango&quot;, 2550, &quot;apple&quot;, 10000, &quot;watermelon&quot;];
+    document.getElementById(&quot;output_1&quot;).innerHTML = fruit.join();   // default separator (,)
+    document.getElementById(&quot;output_2&quot;).innerHTML = fruit.join(&quot; &quot;);    // blank separator
+    document.getElementById(&quot;output_3&quot;).innerHTML = fruit.join(&quot;-&quot;); // custom separator
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arrjoin()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="output_1"></p>
+                <p id="output_2"></p>
+                <p id="output_3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End join( ) ========== -->
+
+
+
+
+    <!-- ========== Start entries() ========== -->
+    <div class="container border mb-2" id="entries">
+        <p class="h4 text-danger">entries() array method</p>
+        <p>The <b>entries()</b> method for arrays returns an iterator object that contains index-value pairs. Each pair
+            is represented as an array.</p>
+        <p>The entries() method does not change the original array but returns a new array iterator object.</p>
+        <p>This iterator can be used to get the next element in the array by calling the <b>next()</b> method on the
+            iterator object.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-101" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(101)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-101"><code>&lt;script&gt;
+    // Example 1: Using entries() Method
+    const fruits = Array.of(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);
+
+    // Get an iterator for the array using the entries() method
+    const iterator = fruits.entries();
+
+    // Display the result of arrdisplay(iterator) in an HTML element with id &quot;entries-output-1&quot;
+    document.getElementById(&quot;entries-output-1&quot;).innerHTML = arrdisplay(iterator);
+
+    // Function to display key-value pairs from the iterator with appropriate formatting
+    function arrdisplay(arr) {
+        let text = &quot;&quot;;
+
+        // Iterate through the iterator using destructuring to get both index and value
+        for (let [index, value] of iterator) {
+            if (typeof value === 'string') {
+                // If the value is a string, format it with double quotes
+                text += `[ ${index}, &quot;${value}&quot;] &lt;br&gt;`;
+            } else {
+                // If the value is not a string, display it as is
+                text += `[ ${index}, ${value}] &lt;br&gt;`;
+            }
+        }
+
+        return text;
+    }
+
+
+
+    //Example 2: Using next() Method in Array Iterator Object
+    const languages = [&quot;Java&quot;, &quot;C&quot;, &quot;C++&quot;, &quot;Python&quot;];
+
+    // Get an iterator for the array using the entries() method
+    let iteratorElement = languages.entries();
+
+    // Display the result of arrdisplayNextValue(iteratorElement) in an HTML element
+    document.getElementById(&quot;entries-output-2&quot;).innerHTML = arrdisplayNextValue(iteratorElement);
+
+    // Function to display key-value pairs from the iterator with appropriate formatting
+    function arrdisplayNextValue(arr) {
+        let text = &quot;&quot;;
+        let result = arr.next();
+
+        while (!result.done) { //read as result.done is not true
+            // Destructure the result into index and value
+            let [index, value] = result.value;
+
+            // Check if the value is a string, and format accordingly
+            if (typeof value === 'string') {
+                text += `[${index}, &quot;${value}&quot;]&lt;br&gt;`;
+            } else {
+                text += `[${index}, ${value}]&lt;br&gt;`;
+            }
+
+            result = arr.next(); // Get the next result
+        }
+
+        return text;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayentries()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="entries-output-1"></p>
+                <p id="entries-output-2"></p>
+                <p id="entries-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End entries() ========== -->
+
+
+
+
+    <!-- ========== Start slice() ========== -->
+    <div class="container border mb-2" id="slice()">
+        <p class="h4 text-danger">slice( ) arry method</p>
+        <p>The <b>slice()</b> method in javascript returns a new array by copying the calling array's elements in new
+            the array.</p>
+        <p>The slice() method accepts 2 arguments:</p>
+        <ul>
+            <li><b>start:</b> It is starting position to copy the element. It is optional, its default value is 0.</li>
+            <li><b>end:</b> It is the ending position to copy the element. It is optional, its default value is the last
+                index of the array.</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-9" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(9)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-9"><code>&lt;script&gt;
+   // Create an array of various data types
+    const fruits = [&quot;banana&quot;, 2023, &quot;lemon&quot;, 5500, &quot;kiwi&quot;, true];
+    // Slice the original array and store the results in variables
+    const sliced1 = fruits.slice();        // Copy the entire array
+    const sliced2 = fruits.slice(2);       // Start from the 3rd element and copy the rest
+    const sliced3 = fruits.slice(2, 4);    // Start from the 3rd element and copy up to the 4th element
+
+    // Define a function 'arrslicedisplay' to format the array
+    function arrslicedisplay(arr) {
+        let text = &quot;[&quot;;
+        // Loop through the elements of the array
+        for (let i = 0; i &lt; arr.length; i++) {
+            if (typeof arr[i] === 'string') {
+                text += `&quot;${arr[i]}&quot;`;  // Enclose string elements in double quotes
+            } else {
+                text += arr[i];  // For non-string elements, append as is
+            }
+            if (i &lt; arr.length - 1) {
+                text += ', ';  // Add a comma and space if it's not the last element
+            }
+        }
+        text += ']';  // Close the array with a closing square bracket
+        return text;  // Return the formatted text
+    }
+    // Display the formatted array in HTML elements
+    document.getElementById(&quot;slice-output-1&quot;).innerHTML = `Orignal array: ` + arrslicedisplay(sliced1);
+    document.getElementById(&quot;slice-output-2&quot;).innerHTML = &quot;Slice(2): &quot; + arrslicedisplay(sliced2);
+    document.getElementById(&quot;slice-output-3&quot;).innerHTML = `Slice(2, 4): `+ arrslicedisplay(sliced3);
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arrslice()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="slice-output-1"></p>
+                <p id="slice-output-2"></p>
+                <p id="slice-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End slice() ========== -->
+
+
+
+
+
+    <!-- ========== Start splice() ========== -->
+    <div class="container border mb-2" id="splice()">
+        <p class="h4 text-danger">splice( ) array method</p>
+        <p>The <b>splice()</b> method in javascript changes the array element by replacing or removing the array element
+            from the array. It can also add elements to the desired index in the array either by keeping or removing the
+            rest elements of the array.</p>
+        <p><b>Syntax:</b> Array.splice( index, remove_count, item_list )</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-10" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(10)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-10"><code>&lt;script&gt;
+    const day = [&quot;monday&quot;, &quot;wednesday&quot;, &quot;friday&quot;, &quot;sunday&quot;];
+    day.splice(1, 0, &quot;tuesday&quot;);
+ 
+    let text = &quot;[&quot;;
+    // Loop through the elements of the array
+    for (let i = 0; i &lt; day.length; i++) {
+        if (typeof day[i] === 'string') {
+            text += `&quot;${day[i]}&quot;`;  // Enclose string elements in double quotes
+        } else {
+            text += day[i];  // For non-string elements, append as is
+        }
+        if (i &lt; day.length - 1) {
+            text += ', ';  // Add a comma and space if it's not the last element
+        }
+    }
+    text += ']';  // Close the array with a closing square
+
+    document.getElementById(&quot;splice-output-1&quot;).innerHTML = `day.splice(1, 0, &quot;tuesday&quot;) = ` + text;
+
+
+    day.splice(4, 1, &quot;saturday&quot;);
+        let text2 = &quot;[&quot;;
+    // Loop through the elements of the array
+    for (let i = 0; i &lt; day.length; i++) {
+        if (typeof day[i] === 'string') {
+            text2 += `&quot;${day[i]}&quot;`;  // Enclose string elements in double quotes
+        } else {
+            text2 += day[i];  // For non-string elements, append as is
+        }
+        if (i &lt; day.length - 1) {
+            text2 += ', ';  // Add a comma and space if it's not the last element
+        }
+    }
+    text2 += ']';  // Close the array with a closing square
+     document.getElementById(&quot;splice-output-2&quot;).innerHTML = `day.splice(4, 1, &quot;saturday&quot;) = ` + text2;
+
+
+
+ day.splice(3, 2);
+    let text3 = &quot;[&quot;;
+    // Loop through the elements of the array
+    for (let i = 0; i &lt; day.length; i++) {
+        if (typeof day[i] === 'string') {
+            text3 += `&quot;${day[i]}&quot;`;  // Enclose string elements in double quotes
+        } else {
+            text3 += day[i];  // For non-string elements, append as is
+        }
+        if (i &lt; day.length - 1) {
+            text3 += ', ';  // Add a comma and space if it's not the last element
+        }
+    }
+    text3 += ']';  // Close the array with a closing square
+
+    document.getElementById(&quot;splice-output-3&quot;).innerHTML = `day.splice(3, 2); = ` + text3;
+
+
+day.splice(-1, 0, &quot;Hello&quot;);
+        let text4 = &quot;[&quot;;
+    // Loop through the elements of the array
+    for (let i = 0; i &lt; day.length; i++) {
+        if (typeof day[i] === 'string') {
+            text4 += `&quot;${day[i]}&quot;`;  // Enclose string elements in double quotes
+        } else {
+            text4 += day[i];  // For non-string elements, append as is
+        }
+        if (i &lt; day.length - 1) {
+            text4 += ', ';  // Add a comma and space if it's not the last element
+        }
+    }
+    text4 += ']';  // Close the array with a closing square
+
+    document.getElementById(&quot;splice-output-4&quot;).innerHTML = `day.splice(-1, 1, &quot;Hello&quot;); = ` + text4;
+
+
+    day.splice(-2, 2);
+        let text5 = &quot;[&quot;;
+    // Loop through the elements of the array
+    for (let i = 0; i &lt; day.length; i++) {
+        if (typeof day[i] === 'string') {
+            text5 += `&quot;${day[i]}&quot;`;  // Enclose string elements in double quotes
+        } else {
+            text5 += day[i];  // For non-string elements, append as is
+        }
+        if (i &lt; day.length - 1) {
+            text5 += ', ';  // Add a comma and space if it's not the last element
+        }
+    }
+    text5 += ']';  // Close the array with a closing square
+
+    document.getElementById(&quot;splice-output-5&quot;).innerHTML = `day.splice(-2, 2, &quot;Hello&quot;); = ` + text5;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="arrsplice()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="splice-output-1"></p>
+                <p id="splice-output-2"></p>
+                <p id="splice-output-3"></p>
+                <p id="splice-output-4"></p>
+                <p id="splice-output-5"></p>
+                <p id="splice-output-6"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End splice() ========== -->
+
+
+
+
+    <!-- ========== Start flat() ========== -->
+    <div class="container border mb-2" id="flat">
+        <p class="h4 text-danger">flat() array method</p>
+        <p>The <b>flat()</b> method is a built-in function in JavaScript that is used to flatten a nested array up to
+            the specified depth, turning it into a one-dimensional (flat) array. </p>
+        <p>The <b>flat()</b> method takes a single parameter:</p>
+        <ul>
+            <li><b>depth:</b> Integer specifying how deep a nested array should be flattened. Its default value is 1.
+            </li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-30" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(30)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-30"><code>&lt;script&gt;
+    //Example 1 - Basic Flattening:
+    const num1 = [1, [2, [3, 4], 5]];
+    const flatarr1 = num1.flat(); //default depth value is 1
+    document.getElementById(&quot;flat-output-1&quot;).innerHTML = `Basic Flattening: ${arrprint(flatarr1)}`;
+
+    //Example 2 - Removing Empty Slots:
+    const num2 = [1, [2, , 3, null], 4];
+    const flatarr2 = num2.flat();
+    document.getElementById(&quot;flat-output-2&quot;).innerHTML = `Removing Empty Slots: ${arrprint(flatarr2)}`;
+
+    //Example 3 - Flattening a 2D Array:
+    const num3 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const flatarr3 = num3.flat();
+    document.getElementById(&quot;flat-output-3&quot;).innerHTML = `Flattening a 2D Array: ${arrprint(flatarr3)}`;
+
+    //Example 4 - Flattening with specified depth:
+    let num4 = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+    const flatarr4 = num4.flat(2);
+    document.getElementById(&quot;flat-output-4&quot;).innerHTML = `Flattening with specified depth: ${arrprint(flatarr4)}`;
+
+    //Example 5 - Flattening All Levels:
+    let num5 = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+    const flatarr5 = num5.flat(Infinity);
+    document.getElementById(&quot;flat-output-5&quot;).innerHTML = `Flattening All Levels: ${arrprint(flatarr5)}`;
+
+    //common loop to print Array with baraces
+    function arrprint(arr) {
+        let output = &quot;[&quot;
+        for (let i = 0; i &lt; arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                output += arrprint(arr[i]);
+            } else if (typeof arr[i] === 'string') {
+                    output += `&quot;${arr[i]}&quot;`;
+                } else {
+                    output += arr[i];
+                }
+            if (i &lt; arr.length - 1) {
+                output += ', ';
+            }
+        }
+        output += ']';
+        return output;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayflat()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="flat-output-1"></p>
+                <p id="flat-output-2"></p>
+                <p id="flat-output-3"></p>
+                <p id="flat-output-4"></p>
+                <p id="flat-output-5"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End flat() ========== -->
+
+
+
+
+    <!-- ========== Start flatMap() ========== -->
+    <div class="container border mb-2" id="flatmap">
+        <p class="h4 text-danger">flatMap() array method</p>
+        <p>The <b>flatMap()</b> method first maps each element of an array using a mapping function, then flattens it
+            into a new array.</p>
+        <p>The flatMap() method can take two parameters:</p>
+        <ul>
+            <li><b>callback:</b>The function to initially execute on each array element. It takes in: <ul>
+                    <li><b>currentValue:</b>The current element being passed from the array.</li>
+                </ul>
+            </li>
+            <li><b>thisArg</b>(optional) Value to use as this when executing callback.</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-31" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(31)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-31"><code>&lt;script&gt;
+    const nums = [1, 2, [3, 4], 5];
+    // flattening the array using flat()
+    let afterflattening = nums.flat(Infinity);
+    // incrementing each element of array using map()
+    const aftermapping = afterflattening.map(function (argument) {
+        return argument + 2;
+    });
+    document.getElementById(&quot;flatMap-output-1&quot;).innerHTML = `flat() and map() executed seperately: ${arrprint(aftermapping)}`;
+
+    //using flatMap()directly
+    const afterFlatMapping = nums.flatMap(function (argument) {
+        if (Array.isArray(argument)) {
+            // Return the modified nested array
+            return argument.map(function (innervalue) {
+                return innervalue + 2;
+            });
+        } else {
+            // Return the modified individual number
+            return argument + 2;
+        }
+    });
+    document.getElementById(&quot;flatMap-output-2&quot;).innerHTML = `flatMap(): ${arrprint(afterFlatMapping)}`;
+
+
+    //Another Example
+    const people = [
+        { name: 'Alice', hobbies: ['reading', 'swimming'] },
+        { name: 'Bob', hobbies: ['painting', 'hiking'] },
+    ];
+    const allHobbies = people.flatMap(function (person) {
+        return person.hobbies
+    });
+    document.getElementById(&quot;flatMap-output-3&quot;).innerHTML = `All Hobbies: ${arrprint(allHobbies)}`;
+
+
+    //function to print a string representation of the array,
+    function arrprint(arr) {
+        let output = &quot;[&quot;
+        for (let i = 0; i &lt; arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                output += arrprint(arr[i]);
+            } else if (typeof arr[i] === 'string') {
+                output += `&quot;${arr[i]}&quot;`;
+            } else {
+                output += arr[i];
+            }
+            if (i &lt; arr.length - 1) {
+                output += ', ';
+            }
+        }
+        output += ']';
+        return output;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayflatmap()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="flatMap-output-1"></p>
+                <p id="flatMap-output-2"></p>
+                <p id="flatMap-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End flatMap() ========== -->
+
+
+
+
+    <!-- ========== Start forEach() ========== -->
+    <div class="container border mb-2" id="foreach">
+        <p class="h4 text-danger">forEach() array method</p>
+        <p>The <b>forEach()</b> method in javascript is used to iterate over each and every element of the array and
+            execute a function for all elements.</p>
+        <p>It accepts a callback function as an argument.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-24" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(24)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-24"><code>&lt;script&gt;
+    // First part
+    const arr = [1, 2, 3, 4, 5];
+    let sum = 0;
+    function square(element) {  // Function to calculate the sum of squares of elements in the array
+        sum += element * element;
+    }
+    arr.forEach(square);    // Use the forEach method to apply the square function to each element
+    // Display the result in the &quot;foreach-output-1&quot; element in the DOM
+    document.getElementById(&quot;foreach-output-1&quot;).innerHTML = `Sum of square of elements = ${sum}`;
+
+
+    // Second part
+    const mix = [1800, &quot;apple&quot;, &quot;Orange&quot;, 3000, true];
+    let output = &quot;&quot;;
+
+    // Function to print elements with or without double quotes
+    function printElements(element, index) {
+        if (typeof element === &quot;string&quot;) {
+            output += `Array Element ${index}: &quot;${element}&quot;&lt;br&gt;`;
+        } else {
+            output += `Array Element ${index}: ${element}&lt;br&gt;`;
+        }
+    }
+    mix.forEach(printElements); // Use the forEach method to apply the printElements function to each element
+    document.getElementById(&quot;foreach-output-2&quot;).innerHTML = output;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayForEach()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="foreach-output-1"></p>
+                <p id="foreach-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End forEach() ========== -->
+
+
+
+
+    <!-- ========== Start map() ========== -->
+    <div class="container border mb-2" id="map">
+        <p class="h4 text-danger">map() array method</p>
+        <p><b>map()</b> creates a new array from calling a function for every array element. It does not execute the
+            function for empty elements. It does not change the original array.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-27" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(27)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-27"><code>&lt;script&gt;
+    const numbers = [65, 10, 12, 4];    // Original array of numbers
+    // Use the map() method to create a new array by multiplying each number by 10
+    const newArr = numbers.map((num) =&gt; num * 10);
+    // Function to create a formatted string representation of an array
+    function displayloop(arr) {
+        return `[${arr.map(element =&gt; (typeof element === 'string' ? `&quot;${element}&quot;` : element)).join(&quot;, &quot;)}]`;
+    }
+    // Display the result in the &quot;map-output-1&quot; element in the DOM
+    document.getElementById(&quot;map-output-1&quot;).innerHTML = `newArr = ${displayloop(newArr)}`;
+
+
+        //Second
+    // Array of objects representing persons with 'firstname' and 'lastname' properties
+    const persons = [
+        { firstname: &quot;Malcom&quot;, lastname: &quot;Reynolds&quot; },
+        { firstname: &quot;Kaylee&quot;, lastname: &quot;Frye&quot; },
+        { firstname: &quot;Jayne&quot;, lastname: &quot;Cobb&quot; }
+    ];
+    // Use map() to create an array of full names by joining 'firstname' and 'lastname'
+    const fullNames = persons.map(item =&gt; `${item.firstname} ${item.lastname}`);
+    // Display the result in the &quot;map-output-2&quot; element in the DOM
+    document.getElementById(&quot;map-output-2&quot;).innerHTML = `Full Names = ${fullNames.join(&quot;, &quot;)}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayMap()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="map-output-1"></p>
+                <p id="map-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End map() ========== -->
+
+
+
+
+    <!-- ========== Start filter() ========== -->
+    <div class="container border mb-2" id="filter()">
+        <p class="h4 text-danger">filter() array method</p>
+        <p>The <b>filter()</b> method in javascript is used to create a new array with the elements of the same array if
+            elements pass a certain condition.</p>
+        <p>The <b>filter()</b> methods accept a callback function as an argument.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-19" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(19)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-19"><code>&lt;script&gt;
+    // Method One
+    const arr1 = [1, 10, 2, 25, 5, 15];
+    function filterNum(num) {   // Function to filter numbers greater than or equal to 10
+        return num &gt;= 10;
+    }
+    const filteredArr = arr1.filter(filterNum); // Use filter() to create a new array with filtered numbers
+    // Display the filtered array using the loop() function
+    document.getElementById(&quot;filter-output-1&quot;).innerHTML = `Filtered Array: ${loop(filteredArr)}`;
+
+
+    //Method Second
+    const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;fig&quot;];
+    // Use filter() to create a new array with filtered fruits
+    const filteredFruits = fruits.filter((elements) =&gt; elements === &quot;banana&quot; || elements === &quot;date&quot; || elements === &quot;fig&quot;);
+    // Display the filtered fruits using the loop() function
+    document.getElementById(&quot;filter-output-2&quot;).innerHTML = `Filtered Fruits: ${loop(filteredFruits)}`;
+
+    // Common function to format an array as a string
+    function loop(arr) {
+        let text = &quot;[&quot;
+        for (i = 0; i &lt; arr.length; i++) {
+            if (typeof arr[i] === `string`) {
+                text += `&quot;${arr[i]}&quot;`;
+            }
+            else {
+                text += `${arr[i]}`;
+            }
+            if (i &lt; arr.length - 1) {
+                text += `, `;
+            }
+        }
+        text += &quot;]&quot;;
+        return text;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayFilter()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="filter-output-1"></p>
+                <p id="filter-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End filter() ========== -->
+
+
+
+
+    <!-- ========== Start reduce() ========== -->
+    <div class="container border mb-2" id="reduce">
+        <p class="h4 text-danger">reduce() array method</p>
+        <p>The <b>reduce()</b> method in javascript reduce the array element to a single value, using a callback
+            function.</p>
+        <p>The reducer callback function accepts the following arguments:</p>
+        <ul>
+            <li><b>accumulator: </b>This variable stores the value returned in the previous execution of the callback,
+                or it holds the initial value in the first iteration. By default, the initial value is 0.</li>
+            <li><b>currentValue: </b>This parameter represents the element currently being processed.</li>
+            <li><b>index: </b>(Optional) It is the index value of the current element in the array.</li>
+        </ul>
+        <p>It's commonly used to perform operations like summing up the elements of an array or finding the maximum
+            value.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-28" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(28)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-28"><code>&lt;script&gt;
+    // Calculate sum of elements in num array
+    const num = [1, 2, 3, 4, 5];
+    const sum = num.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+    }, 0);
+    document.getElementById(&quot;reduce-output-1&quot;).innerHTML = `Sum: ${sum}`;
+
+    // Find max value in num2 array
+    const num2 = [24, 53, 78, 91, 12];
+    const max = num2.reduce((acc, curr) =&gt; Math.max(acc, curr)); //using arrow function
+    document.getElementById(&quot;reduce-output-2&quot;).innerHTML = `Max: ${max}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayReduce()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="reduce-output-1"></p>
+                <p id="reduce-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End reduce() ========== -->
+
+
+
+
+    <!-- ========== Start reduceRight() ========== -->
+    <div class="container border mb-2" id="reduceRight">
+        <p class="h4 text-danger">reduceRight() array method</p>
+        <p>The <b>reduceRight()</b> method in JavaScript is used to reduce an array's elements from right to left,
+            applying a specified function to each element in the array and accumulating a single result. </p>
+        <p>It is very similar to the reduce() method, but it processes the array in the reverse order.</p>
+        <p>The reducer callback function accepts the following arguments:</p>
+        <ul>
+            <li><b>accumulator: </b>The accumulated value so far.</li>
+            <li><b>currentValue: </b>The current element being processed.</li>
+            <li><b>index: </b> (optional): The index of the current element in the array.</li>
+            <li><b>array: </b>(optional): The array on which reduceRight() was called.</li>
+            <li><b>initialValue: </b>(optional): A value that is used as the initial accumulator. If not provided, the
+                first element of the array is used as the initial accumulator.</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-29" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(29)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-29"><code>&lt;script&gt;
+    // Calculate sum of elements in num array
+    const num = [1, 2, 3, 4, 5];
+    const sum = num.reduceRight(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+    }, 0);
+    document.getElementById(&quot;reduceRight-output-1&quot;).innerHTML = `Sum: ${sum}`;
+
+    // Find max value in num2 array
+    const num2 = [24, 53, 78, 91, 12];
+    const max = num2.reduceRight((acc, curr) =&gt; Math.max(acc, curr)); //using arrow function
+    document.getElementById(&quot;reduceRight-output-2&quot;).innerHTML = `Max: ${max}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayReduceRight()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="reduceRight-output-1"></p>
+                <p id="reduceRight-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End reduceRight() ========== -->
+
+
+
+
+    <!-- ========== Start indexOf() method ========== -->
+    <div class="container border mb-2" id="indexOf()">
+        <p class="h4 text-danger">indexOf() array method</p>
+        <p>The <b>indexOf()</b> method in javascript returns the first index of the element passed as an argument. If
+            the value does not exist then returns -1.</p>
+        <p><b>Syntax:</b> arr.indexOf(searchElement, fromIndex)</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-12" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(12)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-12"><code>&lt;script&gt;
+    const names = [&quot;sanjay&quot;, &quot;Aman&quot;, &quot;Rehman&quot;, &quot;Aman&quot;, &quot;Rahul&quot;];
+    // Find and display the index of &quot;Aman&quot; in the array
+    document.getElementById(&quot;indexof-output-1&quot;).innerHTML = `indexOf(&quot;Aman&quot;) = ${names.indexOf(&quot;Aman&quot;)}`;
+    // Find and display the index of &quot;Aman&quot; starting from index 2
+    document.getElementById(&quot;indexof-output-2&quot;).innerHTML = `indexOf(&quot;Aman&quot;, 2) = ${names.indexOf(&quot;Aman&quot;, 2)}`;
+    // Find and display the index of &quot;Neha&quot; in the array (not found, result is -1)
+    document.getElementById(&quot;indexof-output-3&quot;).innerHTML = `indexOf(&quot;Neha&quot;) = ${names.indexOf(&quot;Neha&quot;)}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="showindexof()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="indexof-output-1"></p>
+                <p id="indexof-output-2"></p>
+                <p id="indexof-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End indexOf() method ========== -->
+
+
+
+
+
+    <!-- ========== Start lastIndexOf() method ========== -->
+    <div class="container border mb-2" id="lastindexOf()">
+        <p class="h4 text-danger">lastindexOf() array method</p>
+        <p>The <b>lastIndexOf()</b> method returns the last index of the element passed as an argument in the method. If
+            the value does not exist then returns -1.</p>
+        <p><b>Syntax:</b> arr.lastIndexOf(searchElement, fromIndex)</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-13" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(13)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-13"><code>&lt;script&gt;
+    const name = [&quot;sanjay&quot;, &quot;Aman&quot;, &quot;Rehman&quot;, &quot;Aman&quot;, &quot;Rahul&quot;];
+    // Find and display the lastindex of &quot;Aman&quot; in the array
+    document.getElementById(&quot;lastindexOf-output-1&quot;).innerHTML = `lastindexof(&quot;Aman&quot;) = ${name.lastIndexOf(&quot;Aman&quot;)}`;
+    // Find and display the lastindex of &quot;Aman&quot; starting from index 2. It then moves backward and checks the element at index 1, which is "Aman."
+    document.getElementById(&quot;lastindexOf-output-2&quot;).innerHTML = `lastindexof(&quot;Aman&quot;, 2) = ${name.lastIndexOf(&quot;Aman&quot;, 2)}`;
+    // Find and display the lastindex of &quot;Neha&quot; in the array (not found, result is -1)
+    document.getElementById(&quot;lastindexOf-output-3&quot;).innerHTML = `lastindexof(&quot;Neha&quot;) = ${name.lastIndexOf(&quot;Neha&quot;)}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="showlastindexof()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="lastindexOf-output-1"></p>
+                <p id="lastindexOf-output-2"></p>
+                <p id="lastindexOf-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End lastIndexOf() method ========== -->
+
+
+
+
+    <!-- ========== Start includes() method ========== -->
+    <div class="container border mb-2" id="includes()">
+        <p class="h4 text-danger">includes( ) array methods</p>
+        <p>The <b>includes()</b> method checks if an array contains a specified element or not.</p>
+        <p>The <b>includes()</b> method can take two parameters:</p>
+        <ul>
+            <li><b>searchValue: </b>The value to search for.</li>
+            <li><b>fromIndex (optional): </b>The position in the array at which to begin the search. By default, it is
+                0.</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-14" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(14)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-14"><code>&lt;script&gt;
+    const name = [&quot;sanjay&quot;, &quot;Aman&quot;, &quot;Rehman&quot;, &quot;Aman&quot;, &quot;Rahul&quot;];
+    // Check if the array includes &quot;Aman&quot; (case-sensitive), and display the result
+    document.getElementById(&quot;includes-output-1&quot;).innerHTML = `includes(&quot;Aman&quot;) = ${name.includes(&quot;Aman&quot;)}`;
+    // Check if the array includes &quot;aman&quot; (case-sensitive), and display the result
+    document.getElementById(&quot;includes-output-2&quot;).innerHTML = `includes(&quot;aman&quot;) = ${name.includes(&quot;aman&quot;)}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="showincludes()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="includes-output-1"></p>
+                <p id="includes-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End includes() method ========== -->
+
+
+
+
+    <!-- ========== Start isarray() method ========== -->
+    <div class="container border mb-2" id="isarray()">
+        <p class="h4 text-danger">Array.isArray( ) method</p>
+        <p>The <b>isArray()</b> method in javascript returns <b>true</b> if the passed argument is an array else returns
+            <b>false</b>.
+        </p>
+        <p>It is used to check whether the passed argument is an array or not.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-11" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(11)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-11"><code>&lt;script&gt;
+    // Create an array with elements
+    const arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;];
+    // Check if the variable &quot;arr&quot; is an array and display the result in the HTML element with id &quot;isarray-output-1&quot;
+    document.getElementById(&quot;isarray-output-1&quot;).innerHTML = Array.isArray(arr);
+    // Check if the string &quot;abc&quot; is an array and display the result in the HTML element with id &quot;isarray-output-2&quot;
+    document.getElementById(&quot;isarray-output-2&quot;).innerHTML = Array.isArray(&quot;abc&quot;);
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="checkArray()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="isarray-output-1"></p>
+                <p id="isarray-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End isarray() method ========== -->
+
+
+
+
+    <!-- ========== Start find() ========== -->
+    <div class="container border mb-2" id="find()">
+        <p class="h4 text-danger">find() array method</p>
+        <p>The <b>find()</b> method in javascript is returns the very first value of the array elements which satisfies
+            the provided condition. If nothing is found then <b>undefined</b> is returned.</p>
+        <p>The <b>find()</b> method accepts a callback function where you can define the condition.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-17" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(17)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-17"><code>&lt;script&gt;
+    &lt;script&gt;
+    //method first
+    const arr1 = [1, 2,  4,  2, 1];
+    function checkNumber(num) {
+        return num === 3;
+    }
+    // Use the find() method to find the first element in arr1 that matches the condition
+    const foundNumber = arr1.find(checkNumber);
+        document.getElementById(&quot;find-output-1&quot;).innerHTML = &quot;Found: &quot; + foundNumber;
+    &lt;/script&gt;
+
+
+    // Second Method
+    const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;fig&quot;];
+    // Use the find() method to find the first occurrence of &quot;cherry&quot; in the fruits array
+    const foundWord = fruits.find(word =&gt; word === &quot;cherry&quot;);
+    if (foundWord) {
+        // If &quot;cherry&quot; is found, display &quot;Found: cherry&quot; in HTML
+        document.getElementById(&quot;find-output-2&quot;).innerHTML = `Found: ${foundWord}`;
+    } else {
+        // If &quot;cherry&quot; is not found, display &quot;Not Found&quot; in HTML
+        document.getElementById(&quot;find-output-2&quot;).innerHTML = &quot;Not Found:&quot;;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayfind()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="find-output-1"></p>
+                <p id="find-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End find() ========== -->
+
+
+
+    <!-- ========== Start findindex() ========== -->
+    <div class="container border mb-2" id="findindex()">
+        <p class="h4 text-danger">findIndex() array methods</p>
+        <p>The <b>findIndex()</b> method is the same as <b>find()</b> but it returns the index value of the very first
+            element which satisfies the provided condition.</p>
+        <p>If no such element exists then returns -1.</p>
+        <p>The <b>findIndex()</b> method accepts a callback function where you can define the condition.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-18" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(18)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-18"><code>&lt;script&gt;
+    //method one
+    const arr1 = [1, 10, 2, 25, 5, 15];
+    // Define a function checkNum that checks if a number is greater than 10
+    function checkNum(num) {
+        return num &gt; 10;
+    }
+    // Use the findIndex() method to find the index of the first number greater than 10 in arr1
+    const foundIndex = arr1.findIndex(checkNum);
+    if (foundIndex !== -1) {
+        // If foundIndex is not -1, it means a number greater than 10 was found in the array
+        document.getElementById(&quot;findIndex-output-1&quot;).innerHTML = `Found number greater than 10 at index: ${foundIndex}`;
+    } else {
+        // If foundIndex is -1, it means no number greater than 10 was found in the array
+        document.getElementById(&quot;findIndex-output-1&quot;).innerHTML = &quot;No number greater than 10 found.&quot;;
+    }
+
+
+    // method second
+    const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;fig&quot;];
+
+    // Use the findIndex() method to find the index of &quot;Guava&quot; in the fruits array
+    const foundFruit = fruits.findIndex(word =&gt; word === &quot;Guava&quot;);
+
+    if (foundFruit !== -1) {
+        // If foundFruit is not -1, it means &quot;Guava&quot; was found in the array
+        document.getElementById(&quot;findIndex-output-2&quot;).innerHTML = `Found Guava at index: ${foundFruit}`;
+    } else {
+        // If foundFruit is -1, it means &quot;Guava&quot; was not found in the array
+        document.getElementById(&quot;findIndex-output-2&quot;).innerHTML = &quot;Guava not found.&quot;;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayFindIndex()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="findIndex-output-1"></p>
+                <p id="findIndex-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End findindex() ========== -->
+
+
+
+
+    <!-- ========== Start some() method= ========= -->
+    <div class="container border mb-2" id="some()">
+        <p class="h4 text-danger">some() array method</p>
+        <p>The <b>some()</b> method in JavaScript is used to check if at least one element in an array meets a certain
+            condition by providing a callback function. </p>
+        <P>It returns true if the condition is met by at least one element and false otherwise.</P>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-15" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(15)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-15"><code>&lt;script&gt;
+    // Create an array of ages
+    const totalages = [10, 13, 18, 15, 20];
+    // Define a function to check if an age is greater than or equal to 18
+    function checkAdult(age) {  //here age (parameter)
+        return age &gt;= 18;
+    }
+    // Use the `some()` method to check if there is at least one adult in the array of ages
+    document.getElementById(&quot;some-output-1&quot;).innerHTML = totalages.some(checkAdult);
+
+
+
+    // Create an array of words
+    const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;];
+    // Use the `some()` method to check if there is at least one word with a length greater than 10 characters
+    const hasLongWord = fruits.some((word) =&gt; word.length &gt; 10); //here word (paraemter)
+    // Display the result in the HTML element with id &quot;some-output-2&quot;
+    document.getElementById(&quot;some-output-2&quot;).innerHTML = hasLongWord;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="checksome()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="some-output-1"></p>
+                <p id="some-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End some() method= ========= -->
+
+
+
+
+    <!-- ========== Start every() ========== -->
+    <div class="container border mb-2" id="every()">
+        <p class="h4 text-danger">every() array method</p>
+        <p>The <b>every()</b> method in javascript executes a function for each element in the array and returns true if
+            the function returns true for all elements.</p>
+        <p>The original array is not modified by this method.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-16" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(16)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-16"><code>&lt;script&gt;
+    // Method first
+    const arr1 = [1, 2, 3, 4, 5];   // Create an array arr1 with some numbers
+    // Define a function isEven that checks if a number is even
+    function isEven(num) {
+        return num % 2 === 0;
+    }
+    // Use the every() method to check if every element in arr1 is even and display the result in HTML
+    document.getElementById(&quot;every-output-1&quot;).innerHTML = arr1.every(isEven);
+
+
+    // Method second
+    const arr2 = [22, 42, 86, 100, 4];  // Create another array arr2 with more numbers
+    // Use the every() method to check if every element in arr2 is divisible by 2 (even) and display the result in HTML
+    const isDivisible = arr2.every(eachelement =&gt; eachelement % 2 === 0);
+    document.getElementById(&quot;every-output-2&quot;).innerHTML = isDivisible;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="chekevery()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="every-output-1"></p>
+                <p id="every-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End every() ========== -->
+
+
+
+
+    <!-- ========== Start keys() ========== -->
+    <div class="container border mb-2" id="keys">
+        <p class="h4 text-danger">keys() array method</p>
+        <p>The <b>keys()</b> method is used to extract and return an iterator of the keys (indices) of the array.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-41" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(41)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-41"><code>&lt;script&gt;
+    let languages = [&quot;JavaScript&quot;, &quot;Java&quot;, &quot;C++&quot;, &quot;Python&quot;];
+
+    // Get an iterator for the array keys using the keys() method
+    let iterator = languages.keys();
+
+    // Get a reference to an HTML element with the id &quot;keys-output-1&quot; to display the output
+    let text = document.getElementById(&quot;keys-output-1&quot;);
+
+    // Iterate through the keys using a for...of loop
+    for (let index of iterator) {
+        // Display the index followed by a line break in the HTML element
+        text.innerHTML += index + &quot;&lt;br&gt;&quot;;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="keysFunction()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="keys-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End keys() ========== -->
+
+
+
+
+    <!-- ========== Start tostring() ========== -->
+    <div class="container border mb-2" id="tostring">
+        <p class="h4 text-danger">toString() array function</p>
+        <p>The <b>toString()</b> method in javascript returns a string representing the elements of the array.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-20" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(20)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-20"><code>&lt;script&gt;
+    const arr = [1, &quot;star&quot;, 34, true, 23];
+    document.getElementById(&quot;stringoutput&quot;).innerHTML = arr.toString();
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayToString()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="stringoutput"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End tostring() ========== -->
+
+
+
+    <!-- ========== Start toLocalString() ========== -->
+    <div class="container border mb-2" id="toLocalstring">
+        <p class="h4 text-danger">toLocalString()</p>
+        <p>The <b>toLocaleString()</b> method is used to create a localized string representation of the array. It's
+            primarily used for displaying arrays in a human-readable format, taking into account the user's locale and
+            language preferences.</p>
+        <p>The <b>toLocaleString()</b> method can take two parameters:</p>
+        <ul>
+            <li><b>locales: </b>optional) - A convention or formatting based on particular geography.</li>
+            <li><b>options: </b>(optional) - An object with configuration properties.</li>
+        </ul>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-52" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(52)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-52"><code>&lt;script&gt;
+    // Example 1: Using toLocaleString() Method
+    const mixarr = [1, &quot;HTML&quot;, new Date()];
+    // Use the toLocaleString() method to create a localized string representation
+    let stringFromArray = mixarr.toLocaleString();
+    // Display the localized string in an HTML element with id &quot;toLocalString-output-1&quot;
+    document.getElementById(&quot;toLocalString-output-1&quot;).innerHTML = stringFromArray;
+
+
+    // Example 2: toLocaleString() Method with Parameters
+    let prices = [689, 100, 4577, 56];
+    // Use the toLocaleString() method with parameters to format prices as currency in the &quot;en-US&quot; locale
+    let resultingString = prices.toLocaleString(&quot;en-US&quot;, { style: &quot;currency&quot;, currency: &quot;INR&quot; });
+    // Display the resulting localized string in an HTML element with id &quot;toLocalString-output-2&quot;
+    document.getElementById(&quot;toLocalString-output-2&quot;).innerHTML = resultingString;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="localDisplayToString()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="toLocalString-output-1"></p>
+                <p id="toLocalString-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End toLocalString() ========== -->
+
+
+    <!-- ========== Start value() ========== -->
+    <div class="container border mb-2" id="value">
+        <p class="h4 text-danger">value() array method</p>
+        <p>The <b>value()</b> is an inbuilt method in JavaScript arrays provides an iterator for accessing and printing
+            all the elements (values) in the array one by one.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-21" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(21)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-21"><code>&lt;script&gt;
+    let languages = [&quot;JavaScript&quot;, &quot;Java&quot;, &quot;C++&quot;];
+    let iterratorObject = languages.values();   // Create an Array Iterator object that contains the values of the array
+    let text = &quot;&quot;;  // Initialize an empty string to store the concatenated values with line breaks
+    for(let element of iterratorObject){    // Loop through the iterator and concatenate the values with line breaks
+        text += element+ &quot;&lt;br&gt;&quot;;
+    }
+    document.getElementById(&quot;value-outout-1&quot;).innerHTML = text;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayValue()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="value-outout-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End value() ========== -->
+
+
+
+
+    <!-- ========== Start valueOf() ========== -->
+    <div class="container border mb-2" id="valueof">
+        <p class="h4 text-danger">valueOf() array method</p>
+        <p>The <b>valueOf()</b> method returns the array itself. The <b>valueOf()</b> method does not change the
+            original array.</p>
+        <p><b>fruits. valueOf()</b> returns the same as <b>fruits</b> .</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-22" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(22)"><i class="bi bi-clipboard"></i></button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-22"><code>&lt;script&gt;
+    const fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+    const myarr = fruits.valueOf(); // Create an array by calling .valueOf() 
+    let text = &quot;[&quot;; // Initialize a string to store the concatenated values in an array-like format
+    for (let elements of myarr) {   // Loop through the elements of myarr
+        text += `&quot;${elements}&quot;`;    // Add double quotes around each element
+         // Check if the current element is not the last element in myarr
+        if (myarr.indexOf(elements) &lt; myarr.length - 1) {
+            text += &quot;, &quot;;   // Add a comma and space if it's not the last element
+        }
+    }
+    text += &quot;]&quot;;     // Close the array format with a closing bracket
+    document.getElementById(&quot;valueof-outout-1&quot;).innerHTML = text;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="displayValueof()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="valueof-outout-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End valueOf() ========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="script.js"></script>
+    </footer>
+
+</body>
+
+</html>

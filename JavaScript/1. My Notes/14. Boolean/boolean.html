@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar  p-2 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1 text-white">Booleans</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border rounded border-warning mb-2" id="">
+            <p class="h4 text-danger">Content:</p>
+            <ul>
+                <li><a href="#basics">JAVASCRIPT BOOLEAN</a></li>
+                <li><a href="#Constructor ">Boolean Constructor Function</a></li>
+                <li><a href="#Object">Boolean as Object</a></li>
+                <li><a href="#String">JavaScript String To Boolean</a></li>
+                <li><a href="#property">JavaScript Boolean Properties</a></li>
+                <li><a href="#Methods">JavaScript Boolean Methods</a></li>
+            </ul>
+        </div>
+
+        <div class="container border rounded border-warning mb-2" id="">
+            <p class="h4 text-danger" id="basics">JAVASCRIPT BOOLEAN</p>
+            <p>In JavaScript, <b><code>booleans</code></b> are a primitive data type representing a logical
+                entity—either <b>true</b> or <b>false</b>. They are used for logical operations, conditional statements,
+                and boolean algebra within JavaScript code.</p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    let isTrue = true; // Declaring a boolean variable with value 'true'
+    let isGreater = 10 &gt; 5; // Comparing two numbers - returns 'true'
+
+    document.getElementById('basic-output-1').innerHTML = (isTrue) + &quot;&lt;br&gt;&quot;; // Outputs: true
+    document.getElementById('basic-output-1').innerHTML += (isGreater) + &quot;&lt;br&gt;&quot;; // Outputs: true
+
+    // Using boolean values in conditional statements
+    if (isTrue) {
+        document.getElementById('basic-output-1').innerHTML += (&quot;This will be printed because 'isTrue' is true.&quot;) + &quot;&lt;br&gt;&quot;;
+    } else {
+        document.getElementById('basic-output-1').innerHTML += (&quot;This won't be printed.&quot;) + &quot;&lt;br&gt;&quot;;
+    }
+
+    // Using logical operators
+    let a = true;
+    let b = false;
+
+    document.getElementById('basic-output-1').innerHTML += (a &amp;&amp; b) + &quot;&lt;br&gt;&quot;; // Outputs: false (AND operator)
+    document.getElementById('basic-output-1').innerHTML += (a || b) + &quot;&lt;br&gt;&quot;; // Outputs: true (OR operator)
+    document.getElementById('basic-output-1').innerHTML += (!a) + &quot;&lt;br&gt;&quot;; // Outputs: false (NOT operator)
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="basics()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="basic-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="container border rounded border-warning mb-2" id="">
+            <p class="h4 text-danger" id="Constructor">Boolean Constructor Function</p>
+            <p>The <b><code>Boolean()</code></b> constructor function converts the value passed to it to a boolean
+                value.</p>
+            <p>The <b><code>Boolean()</code></b> function can also convert javascript expressions to boolean values.</p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    var positive = Boolean(true);
+    var negative = Boolean(false);
+    let output = document.getElementById('Constructor-output-1');
+
+    output.innerHTML += (typeof positive) + &quot;&lt;br&gt;&quot;;
+    output.innerHTML += (typeof negative) + &quot;&lt;br&gt;&quot;;
+
+    var x = Boolean(10 &gt; 20);
+    var y = Boolean(15 === 15);
+    var z = Boolean(20 &lt; 30);
+    output.innerHTML += (x) + &quot;, &quot;;
+    output.innerHTML += (y) + &quot;, &quot;;
+    output.innerHTML += (z);
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="Constructor()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="Constructor-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <p><b><em>NOTE:</em></b> If the value passed is <b>0, undefined, null, NaN, empty string, or false,</b> the
+                <b><code>Boolean()</code></b> function will return false and if the value passed is any other value, the
+                <b><code>Boolean()</code></b> function will return true.
+            </p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2.1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2.1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2.1"><code>&lt;script&gt;
+    let result = document.getElementById('const-output-1');
+    result.innerHTML += (&quot;0 is &quot; + Boolean(0)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;1 is &quot; + Boolean(1)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;-15 is &quot; + Boolean(-15)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;1 &lt; 2 is &quot; + Boolean(1 &lt; 2)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;25 === 5*5 is &quot; + Boolean(25 === 5 * 5)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;Any valid string returns &quot; + Boolean(&quot;Some string&quot;)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;Empty string is &quot; + Boolean('')) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;All object returns &quot; + Boolean([])) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;All object returns &quot; + Boolean({})) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;undefined is &quot; + Boolean(undefined)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;null is &quot; + Boolean(null)) + &quot;&lt;br&gt;&quot;;
+    result.innerHTML += (&quot;NaN is &quot; + Boolean(NaN));
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="constructor2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="const-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container border rounded border-warning mb-2" id="">
+            <p class="h4 text-danger" id="Object">Boolean as Object</p>
+            <p>Generally Boolean is a primitive data type when created using literals. Example
+                <b><code>var bool = true</code></b>;.</p>
+            <p>But booleans can be made objects using new keywords. Example
+                <b><code>var boolObj = new Boolean(true)</code></b>;.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    var bool = true; // boolean
+    var boolObj = new Boolean(true); // object
+    document.getElementById('boobj-output-1').innerHTML = (typeof bool) + &quot;&lt;br&gt;&quot;;
+    document.getElementById('boobj-output-1').innerHTML += (typeof boolObj);
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="booleanObject()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="boobj-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container border rounded border-warning mb-2" id="">
+            <p class="h4 text-danger" id="String">JavaScript String To Boolean</p>
+            <p>To convert a string to boolean, we can use the <b><code>Boolean()</code></b> function or you can use the
+                negation operator <b><code>'!'</code></b>.</p>
+
+            <p>Negation (<b><code>'!'</code></b>) operator is used to convert a value to its opposite value. Example
+                <b><code>!true</code></b> will return false and <b><code>!false</code></b> will return true.</p>
+
+            <p>To convert a string to boolean use negation operator it will convert it to boolean but opposite value so
+                use another negation operator to convert it to its original value. Example
+                <b><code>!!'Hello world'</code></b> will return true.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-105" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(105)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-105"><code>&lt;script&gt;
+    var str1 = &quot;Hello world&quot;;
+    var str2 = &quot;&quot;;
+
+    let output = document.getElementById(&quot;string-output-1&quot;);
+    // negation operator
+    output.innerHTML += (!!str1) + &quot;&lt;br&gt;&quot;;
+    output.innerHTML += (!!str2) + &quot;&lt;br&gt;&quot;;
+
+    // Boolean() function
+    output.innerHTML += (Boolean(str1)) + &quot;&lt;br&gt;&quot;;
+    output.innerHTML += (Boolean(str2));
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="boostring()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="string-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container border rounded border-warning mb-2" id="">
+            <p class="h4 text-danger" id="Methods">JavaScript Boolean Methods</p>
+            <ul>
+                <li><b>toString(): </b>converts Boolean into String.</li>
+                <li><b>valueOf(): </b>converts other type into Boolean.</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-106" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(106)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-106"><code>&lt;script&gt;
+&amp;lt;script&amp;gt;
+    let boolValue = true;
+    let boolString = boolValue.toString(); // Converts the boolean value to a string
+    document.getElementById('output-1').innerHTML = (boolString) + &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;
+
+    let boolObject = new Boolean(false);
+    let boolPrimitive = boolObject.valueOf(); // Retrieves the primitive value of the Boolean object
+    document.getElementById('output-1').innerHTML += (boolPrimitive);
+&amp;lt;/script&amp;gt;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="method()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="method-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

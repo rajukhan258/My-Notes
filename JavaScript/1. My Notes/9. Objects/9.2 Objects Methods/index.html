@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        ul li a {
+            text-decoration: none;
+            /* color: red; */
+            font-weight: bold;
+        }
+				pre{
+					max-height:max-content !important;
+				}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Object Methods</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+
+
+
+
+    <!-- ======== Start List of Object Methods: ======== -->
+    <div class="container border mb-2" id="">
+        <p><b><em>Object methods</em></b> are the functions that are stored in properties as function definitions and
+            operate objects to perform a certain task.</p>
+        <p><b><em>Object methods</em></b> is part of the object in the form of a key-value pair.</p>
+        <p class="h4 text-danger">List of Object Methods:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ol>
+                    <li><a href="#assign">Object.assign(target, source1, source2, ...):</a> Used to copy enumerable and
+                        own properties from a
+                        source object to a target object.</li>
+                    <li><a href="#create">Object.create(proto, [propertiesObject]):</a> Used to create a new object with
+                        the specified
+                        prototype object and properties.</li>
+                    <li><a href="#defineProperty">Object.defineProperty(obj, prop, descriptor):</a> Used to describe
+                        some behavioral
+                        attributes of the property.</li>
+                    <li><a href="#defineProperties"> Object.defineProperties()</a> Used to create or configure
+                        multiple object properties.</li>
+
+                    <li><a href="#freeze">Object.freeze(obj):</a> Prevents existing properties from being removed or
+                        modified.</li>
+                    <li><a href="#seal">Object.seal(obj):</a> Prevents new properties from being added and marks all
+                        existing properties as non-configurable.</li>
+                    <li><a href="#getOwnPropertyDescriptor"> Object.getOwnPropertyDescriptor(obj, prop):</a> Returns a
+                        property descriptor for the specified property of the specified object.</li>
+                    <li><a href="#getOwnPropertyDescriptors"> Object.getOwnPropertyDescriptors()</a> Returns all own
+                        property descriptors of a given object.</li>
+                    <li><a href="#getOwnPropertyNames"> Object.getOwnPropertyNames()</a> Returns an array of all
+                        properties (enumerable or not) found.</li>
+                    <li><a href="#getOwnPropertySymbols">Object.getOwnPropertySymbols()</a> Returns the prototype of
+                        the specified object.</li>
+                </ol>
+            </div>
+
+            <div class="col-md-6">
+                <ol start="11">
+                    <li><a href="#getPrototypeOf">Object.getPrototypeOf()</a> Returns the prototype of the specified
+                        object.</li>
+                    <li><a href="#setPrototypeOf">Object.setPrototypeOf()</a> Sets the prototype of a specified
+                        object to another object.</li>
+                    <li><a href="#hasOwnProperty">Object.hasOwnProperty(prop)</a>Used checks if a specific property is
+                        directly present on an object (not inherited from its prototype).</li>
+                    <li><a href="#entries">Object.entries(obj):</a> Returns an array with arrays of the key, value
+                        pairs.</li>
+                    <li><a href="#keys">Object.keys(obj):</a> Returns an array of a given object's own property names.
+                    </li>
+                    <li><a href="#values">Object.values(obj):</a> Returns an array of values.</li>
+                    <li><a href="#is">Object.is(obj1, obj2):</a> Determines whether two values are the same value.</li>
+                    <li><a href="#isExtensible">Object.isExtensible()</a> Determines if an object is extensible</li>
+                    <li><a href="#isFrozen">Object.isFrozen()</a> Determines if an object was frozen.</li>
+                    <li><a href="#isSealed">Object.isSealed()</a> Determines if an object is sealed.</li>
+
+                    <li><a href="#preventExtensions">Object.preventExtensions()</a> Used to prevent any extensions
+                        of an object.</li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End List of Object Methods: ========== -->
+
+
+
+
+
+
+    <!-- ========== Start Object.assign() ========== -->
+    <div class="container border mb-2" id="assign">
+        <p class="h4 text-danger">1. Object.assign() </p>
+        <p><b><em>Object.assign</em></b> is used to copy the values of all countable properties from one or more source
+            objects to a target object. It merges the properties of the source objects into the target object,
+            overwriting the target object's properties if they have the same key. The method <b>returns </b> the
+            modified target object.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(1)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+// Defining target and source objects
+const target = { a: 1, b: 2 };
+const source1 = { b: 3, c: 4 };
+const source2 = { d: 5 };
+// Using Object.assign to merge source objects into the target object
+const result = Object.assign(target, source1, source2);
+
+// Displaying the result and modified target object in the HTML
+document.getElementById(&quot;assign-output-1&quot;).innerHTML = `result = ${printObject(result)}`;
+document.getElementById(&quot;assign-output-2&quot;).innerHTML = `target = ${printObject(target)} //(target object is modified)`;
+
+// Function to print an object in a formatted way
+function printObject(obj) {
+    let output = &quot;{&quot;;
+    let propcount = Object.keys(obj).length;
+    let count = 0;
+
+    for (let prop in obj) {
+        // Checking if the property is an own property of the object
+        if (obj.hasOwnProperty(prop)) {
+            output += `${prop}:`;
+        }
+        // Checking the type of the property value
+        if (typeof obj[prop] === `object`) {
+            // If the value is an object, recursively call printObject
+            output.innerHTML += printObject(obj[prop]);
+        } else if (typeof obj[prop] === `string`) {
+            // If the value is a string, wrap it in double quotes
+            output += `&quot;${obj[prop]}&quot;`;
+        } else {
+            // Otherwise, append the value as is
+            output += obj[prop];
+        } 
+        // Incrementing the count and adding a comma if not the last property
+        count++;
+        if (count &lt; propcount) {
+            output += &quot;, &quot;;
+        }
+    }
+    // Closing the curly brace and returning the formatted output
+    return output + &quot;}&quot;;
+}
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="assing()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="assign-output-1"></p>
+                <p id="assign-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.assign() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start Object.create() ========== -->
+    <div class="container border mb-2" id="create">
+        <p class="h4 text-danger">2. Object.create()</p>
+        <p><b><em>Object.create</em></b> is a method that helps create a new object, using an existing object as a
+            prototype for the new one. It establishes a prototype chain, allowing the new object to inherit properties
+            from the prototype.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(2)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // Creating a prototype object
+    const personPrototype = {
+        greet: function () {
+            return `Hello, ${this.name}.`;
+        }
+    };
+    // Creating a new object with personPrototype as its prototype
+    const newObject = Object.create(personPrototype);
+    // Adding properties to the new object
+    newObject.name = 'John';
+    newObject.age = 30;
+    
+    //Accessing the inherited method from the prototype
+    document.getElementById(&quot;create.output-1&quot;).innerHTML = newObject.greet();
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="objectcreate()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="create.output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.create() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start Object.defineProperty() ========== -->
+    <div class="container border mb-2" id="defineProperty">
+        <p class="h4 text-danger">3. Object.defineProperty(obj, prop, descriptor):</p>
+        <p><b><em>Object.defineProperty</em></b> is a method in JavaScript that allows you to add a new property or
+            modify an existing property on an object with fine-grained control over its behavior. </p>
+        <p>This method is often used to define properties with specific attributes like configurability, enumerability,
+            and writability.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(3)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    //Creating an Object
+    const person = {};
+
+    //Adding a property with specific rules
+    Object.defineProperty(person, &quot;age&quot;, {
+        value: 30,  //The value of the property
+        writable: true, //It can be changed
+        enumerable: true, //It shows up in a loop
+        configurable: false //It can be deleted or have its rules changed 
+    });
+
+    document.getElementById(&quot;defineProperty-output-1&quot;).innerHTML = `&lt;b&gt;Before Update:&lt;/b&gt; person.age = ${person.age}`;
+
+    //Trying to change the peoperty value
+    person.age = 31;    // This works because it's writable
+    document.getElementById(&quot;defineProperty-output-2&quot;).innerHTML = `&lt;b&gt;After Update:&lt;/b&gt; person.age = ${person.age} &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   // This works because it's writable`;
+
+    //Adding another property with different rules changed
+    Object.defineProperty(person, &quot;gender&quot;, {
+        value: &quot;male&quot;,
+        writable: false,   // It cannot be changed
+        enumerable: true,
+        configurable: false     //It cannot be deleted or have its ruled
+    });
+
+    document.getElementById(&quot;defineProperty-output-3&quot;).innerHTML = `&lt;b&gt;Before Update:&lt;/b&gt; person.gender = ${person.gender}`;
+
+    //Trying to change the property value or delete it
+    person.gender = &quot;Female&quot;;   //This won't work
+    delete person.gender;   //This won't work either
+
+    document.getElementById(&quot;defineProperty-output-4&quot;).innerHTML = `&lt;b&gt;After Update:&lt;/b&gt; person.gender = ${person.gender} &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;   //Output: Male (property remains unchanged)`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="defineProperty()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="defineProperty-output-1"></p>
+                <p id="defineProperty-output-2"></p>
+                <p id="defineProperty-output-3"></p>
+                <p id="defineProperty-output-4"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.defineProperty() ========== -->
+
+
+
+
+
+    <!-- ======= Start Object.defineProperties() ========== -->
+    <div class="container border mb-2" id="defineProperties">
+        <p class="h4 text-danger">4. Object.defineProperties()</p>
+        <p><b><em>Object.defineProperties</em></b> is a method in JavaScript that allows you to <b>add or modify
+                multiple properties</b> on an object at once. It provides a way to set rules for each property, such as
+            whether it can be changed, shown in a loop, or deleted.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(4)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+    //creating an Object
+    const person = {};
+    //Adding or modifying multiple properties with specific rules
+    Object.defineProperties(person, {
+        age: {
+            value: 30,   //The value of the property
+            writable: true,     //It can be changed
+            enumerable: true,   //It shows up in a loop
+            configurable: true  //It can be deleted or have its rules changed
+        },
+        gender: {
+            value: &quot;Male&quot;,
+            writable: false,    //It cannot be changed
+            enumerable: true,
+            configurable: false     // It cannot be deleted or have its rules changed
+        }
+    });
+
+    document.getElementById(&quot;defineProperties-output-1&quot;).innerHTML = `&lt;b&gt;Before Update:&lt;/b&gt; person.age = ${person.age}, person.gender = ${person.gender}`;
+
+    //Trying to change the &quot;age&quot; property value
+    person.age = 35;    //This works because its writable
+
+    //Trying to change the &quot;gneder&quot; property value or delete it
+    person.gender = &quot;Female&quot;;  //This won't work
+    delete person.gender;   //This won't work either 
+
+    document.getElementById(&quot;defineProperties-output-2&quot;).innerHTML = `&lt;b&gt;After Update:&lt;/b&gt; person.age = ${person.age}&amp;nbsp;&amp;nbsp;&amp;nbsp;   &lt;em&gt;// property &quot;age&quot; was changed&lt;/em&gt;`;
+    document.getElementById(&quot;defineProperties-output-3&quot;).innerHTML = `&lt;b&gt;Before Update:&lt;/b&gt; person.gender = ${person.gender}&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;em&gt;//property &quot;gender&quot; remains unchanged&lt;/em&gt;`;  
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="defineProperties()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="defineProperties-output-1"></p>
+                <p id="defineProperties-output-2"></p>
+                <p id="defineProperties-output-3"></p>
+                <p id="defineProperties-output-4"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Object.defineProperties() ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.freeze(obj) ========== -->
+    <div class="container border mb-2" id="freeze">
+        <p class="h4 text-danger">5. Object.freeze(obj)</p>
+        <p><b><em>Object.freeze</em></b> is a method in JavaScript that makes an object immutable (unchangeable),
+            preventing the addition, deletion, or modification of its properties.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(5)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-5"><code>&lt;script&gt;
+    // Creating an object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+    // Freezing the object
+    Object.freeze(person);
+
+    // Attempting to modify the object
+    person.age = 31; // This won't work
+    // Attempting to add a new property
+    person.gender = &quot;Male&quot;; // This won't work
+    // Attempting to delete a property
+    delete person.name; // This won't work
+
+    // Getting the HTML element to display the output
+    let output = document.getElementById(&quot;freeze-output-1&quot;);
+    // Initializing the output string
+    output.innerHTML += &quot;{&quot;;
+
+    // Counting the number of properties in the object
+    let propcount = Object.keys(person).length;
+    let count = 0;
+
+    // Iterating over the properties of the frozen object
+    for (let key in person) {
+        // Checking the type of the property value and formatting accordingly
+        if (typeof person[key] === 'string') {
+            output.innerHTML += `${key} : &quot;${person[key]}&quot;`;
+        } else {
+            output.innerHTML += `${key} : ${person[key]}`;
+        }
+        // Incrementing the count and adding a comma if not the last property
+        count++;
+        if (count &lt; propcount) {
+            output.innerHTML += &quot;, &quot;;
+        }
+    }
+    // Closing the curly brace and displaying the formatted object in the HTML
+    output.innerHTML += &quot;}&quot;;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="objectfreeze()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="freeze-output-1"></p>
+                <!-- <p id="freeze-output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.freeze(obj) ========== -->
+
+
+
+
+
+
+    <!-- ========== Start Object.seal(obj) ========== -->
+    <div class="container border mb-2" id="seal">
+        <p class="h4 text-danger">6. Object.seal(obj)</p>
+        <p><b><em>The Object.seal()</em></b> method of JavaScript seals an object which prevents new properties from
+            being added to it and marks all existing properties as non-configurable.</p>
+        <p>This means:</p>
+        <ul>
+            <li>We can't add or remove properties from the object</li>
+            <li>We can't change the attributes of existing properties (such as making them non-writable or configurable)
+            </li>
+        </ul>
+        <p>However, we can still modify the values of existing properties.</p>
+        <p>The <b>Object.sealed()</b> method returns the object which has been sealed.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(6)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    // Sample person object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Sealing the object using Object.seal
+    Object.seal(person);
+
+    // Attempting to add a new property (won't work in strict mode)
+    person.NewPeoperty = &quot;This won't work.&quot;;
+
+    // Attempting to modify the value of an existing property (will work)
+    person.age = 31;
+
+    // Deleting a property (won't work in strict mode)
+    delete person.gender;
+
+    // Displaying the sealed object using the displaytext function
+    document.getElementById(&quot;seal-output-1&quot;).innerHTML = displaytext(person);
+
+    // Function to format the object for display
+    function displaytext(obj) {
+        let text = &quot;{&quot;;
+        for (let key in obj) {
+            if (typeof obj[key] === 'string') {
+                text += `${key}: &quot;${obj[key]}&quot;, `;
+            } else {
+                text += `${key}: ${obj[key]}, `;
+            }
+        }
+        text = text.slice(0, -2);
+        return text + &quot;}&quot;;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="sealedObject()">Run code</button>
+            <div class="container bg-light rounded mt-1">
+                <p id="seal-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.seal(obj) ========== -->
+
+
+
+
+
+
+    <!-- ==== Start Object.getOwnPropertyDescriptor():  ==== -->
+    <div class="container border mb-2" id="getOwnPropertyDescriptor">
+        <p class="h4 text-danger">7. Object.getOwnPropertyDescriptor(obj, prop)</p>
+        <p><b><em>Object.getOwnPropertyDescriptor</em></b> is a method in JavaScript that returns an object describing
+            the configuration of a specific property on an object (or <b>undefined</b> if the property does not exist).
+        </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(7)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    // Creating an object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+    // Getting the property descriptor for the 'age' property
+    const ageDescriptor = Object.getOwnPropertyDescriptor(person, 'age');
+
+    // Getting the HTML element to display the output
+    let output = document.getElementById(&quot;Descriptor-output-1&quot;);
+    // Initializing the output string with an opening curly brace
+    output.innerHTML = &quot;{&lt;br&gt;&quot;;
+
+    // Counting the number of properties in the property descriptor
+    let propcount = Object.keys(ageDescriptor).length;
+    let count = 0;
+
+    // Iterating over the properties of the property descriptor
+    for (let key in ageDescriptor) {
+        // Checking the type of the property value and formatting accordingly
+        if (typeof ageDescriptor[key] === 'string') {
+            output.innerHTML += `${key}: &quot;${ageDescriptor[key]}&quot;`;
+        } else {
+            output.innerHTML += `${key}: ${ageDescriptor[key]}`;
+        }
+        // Incrementing the count and adding a comma and line break if not the last property
+        count++;
+        if (count &lt; propcount) {
+            output.innerHTML += ',&lt;br&gt; ';
+        }
+    }
+    // Adding a line break and closing curly brace to the output
+    output.innerHTML += &quot;&lt;br&gt;}&quot;;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="PropertyDescriptor()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="Descriptor-output-1"></p>
+                <!-- <p id="Descriptor-output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ==== End Object.getOwnPropertyDescriptor():  ==== -->
+
+
+
+
+
+
+    <!-- ===== Start Object.getOwnPropertyDescriptors() ===== -->
+    <div class="container border mb-2" id="getOwnPropertyDescriptors">
+        <p class="h4 text-danger">8. Object.getOwnPropertyDescriptors()</p>
+        <p><b><em>Object.getOwnPropertyDescriptors</em></b> is a method in JavaScript that returns an object containing
+            all own property descriptors of a given object.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(8)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-8"><code>&lt;script&gt;
+    // Creating an object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    }
+
+    // Getting property descriptors for the 'person' object
+    const ageDescriptors = Object.getOwnPropertyDescriptors(person);
+
+    // Displaying the descriptors in an HTML element
+    document.getElementById(&quot;Descriptors-output-1&quot;).innerHTML = display(ageDescriptors);
+
+    // Function to format and display property descriptors
+    function display(obj) {
+        // Counting the number of properties in the object
+        let propcount = Object.keys(obj).length;
+        let count = 0;
+
+        // Initializing the output string with an opening brace
+        let output = &quot;{&lt;br&gt;&quot;;
+
+        // Looping through each property in the object
+        for (let key in obj) {
+            // Adding the property name and an opening brace
+            output += `${key}: {`;
+
+            // Looping through each property of the descriptor
+            for (let prop in obj[key]) {
+                // Checking if the property is 'value' and a string, then formatting accordingly
+                if (prop === 'value' &amp;&amp; typeof obj[key][prop] === 'string') {
+                    output += `${prop}: &quot;${obj[key][prop]}&quot;, `;
+                } else {
+                    output += `${prop}: ${obj[key][prop]}, `;
+                }
+            }
+
+            // Removing the trailing comma and space, adding a closing brace
+            output = output.slice(0, -2); // Remove the trailing comma and space
+            output += &quot;}&quot;;
+
+            // Incrementing the count
+            count++;
+
+            // Adding a comma and line break if there are more properties
+            if (count &lt; propcount) {
+                output += ',&lt;br&gt; ';
+            }
+        }
+
+        // Adding a line break and closing brace
+        output += &quot;&lt;br&gt;}&quot;;
+        return output;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="PropertyDescriptors()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="Descriptors-output-1"></p>
+                <p id="Descriptors-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== End Object.getOwnPropertyDescriptors() ===== -->
+
+
+
+
+
+
+    <!-- ========== Start getOwnPropertyNames() ========== -->
+    <div class="container border mb-2" id="getOwnPropertyNames">
+        <p class="h4 text-danger">9. Object.getOwnPropertyNames()</p>
+        <p><b><em>Object.getOwnPropertyNames()</em></b> is a JavaScript method that returns an array of all property
+            names (including non-enumerable properties) of an object. It does not include properties from the object's
+            prototype chain.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-9" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(9)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-9"><code>&lt;script&gt;
+    // Creating an object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Getting property names of the 'person' object
+    const propertyNames = Object.getOwnPropertyNames(person);
+
+    // Displaying the property names in an HTML element
+    document.getElementById(&quot;PropertyNames-output-1&quot;).innerHTML = displayoutput(propertyNames);
+
+    // Function to format and display property names
+    function displayoutput(arr) {
+        let text = [];
+
+        // Looping through each property name
+        for (let key of arr) {
+            // Checking if the property name is a string, then format accordingly
+            if (typeof key === 'string') {
+                text.push(`&quot;${key}&quot;`);
+            } else {
+                text.push(key);
+            }
+        }
+
+        // Joining the formatted property names with ', ' and enclosing in square brackets
+        return `[${text.join(', ')}]`;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="getOwnPropertyNames()">Run code</button>
+            <div class="container bg-light rounded mt-1">
+                <p id="PropertyNames-output-1"></p>
+                <!-- <p id="PropertyNames-output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End getOwnPropertyNames() ========== -->
+
+
+
+
+
+
+    <!-- ===== Start Object.getOwnPropertySymbols() ===== -->
+    <div class="container border mb-2" id="getOwnPropertySymbols">
+        <p class="h4 text-danger">10. Object.getOwnPropertySymbols()</p>
+        <p><b><em>Object.getOwnPropertySymbols()</em></b> is a JavaScript method that <b>returns an array of all symbol
+                properties</b> found directly upon a given object. It does not include string properties or symbol
+            properties from the object's prototype chain.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-10" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(10)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-10"><code>&lt;script&gt;
+    // Creating an object with symbol properties
+    const person = {
+        [Symbol(&quot;id&quot;)]: 1,
+        [Symbol(&quot;name&quot;)]: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Get an array of all symbol properties from the 'person' object
+    const getallsymbols = Object.getOwnPropertySymbols(person);
+
+    // Display the symbol properties in an HTML element
+    document.getElementById(&quot;Symbols-output-1&quot;).innerHTML = displaySymbolArray(getallsymbols);
+
+    // Function to format and display an array of symbol properties
+    function displaySymbolArray(arr) {
+        let text = [];
+
+        // Looping through each symbol in the array
+        for (let symbol of arr) {
+            // Converting the symbol to a string and adding to the 'text' array
+            text.push(String(symbol));
+        }
+
+        // Joining the formatted symbol strings with ', ' and enclosing in square brackets
+        return &quot;[ &quot; + text.join(&quot;, &quot;) + &quot; ]&quot;;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="getOwnPropertySymbols()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="Symbols-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ===== End Object.getOwnPropertySymbols() ===== -->
+
+
+
+
+
+    <!-- ========== Start Object.getPrototypeOf() ========== -->
+    <div class="container border mb-2" id="getPrototypeOf">
+        <p class="h4 text-danger">11. Object.getPrototypeOf()</p>
+        <p><b><em>Object.getPrototypeOf()</em></b> is a JavaScript method that returns the prototype of the specified
+            object. It allows you to access the prototype of an object, which is the object from which it inherits its
+            properties.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-11" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(11)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-11"><code>&lt;script&gt;
+    // Sample person object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Using Object.getPrototypeOf to get the prototype of the person object
+    const getPrototypePerson = Object.getPrototypeOf(person);
+
+    // Logging the result to the browser console
+    console.log(getPrototypePerson);
+
+    // Displaying a message for the user
+    document.getElementById(&quot;getPrototype-output-1&quot;).innerHTML = `Press F12 to open the console to see the output.`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="getPrototype()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="getPrototype-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.getPrototypeOf() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start START setPrototypeOf()  ========== -->
+    <div class="container border mb-2" id="setPrototypeOf">
+        <p class="h4 text-danger">12. Object.setPrototypeOf()</p>
+        <p><b><em>Object.setPrototypeOf()</em></b> is a method in JavaScript that allows you to set the prototype (i.e.,
+            the internal <b>[[Prototype]]</b> property) of an object to another object or null. This method can be
+            useful for changing the prototype of an existing object, effectively changing its inheritance.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-12" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(12)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-12"><code>&lt;script&gt;
+    // Sample objects
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    const employee = {
+        jobTitle: &quot;Developer&quot;,
+        company: &quot;XYZ Corp&quot;
+    };
+
+    // Setting the prototype of the person object to the employee object
+    Object.setPrototypeOf(person, employee);
+
+    // Displaying the prototype of the person object
+    document.getElementById(&quot;setPrototype-output-1&quot;).innerHTML = displaytext(Object.getPrototypeOf(person));
+
+    // Function to format the prototype object for display
+    function displaytext(obj) {
+        let text = &quot;{&quot;;
+        for (let key in obj) {
+            if (typeof obj[key] === 'string') {
+                text += `${key}: &quot;${obj[key]}&quot;, `;
+            } else {
+                text += `${key}: ${obj[key]}, `;
+            }
+        }
+        text = text.slice(0, -2);
+        return text + &quot;}&quot;;
+    }
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="setPrototype()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="setPrototype-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End START setPrototypeOf()  ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.hasOwnProperty(prop) ========== -->
+    <div class="container border mb-2" id="hasOwnProperty">
+        <p class="h4 text-danger">13. Object.hasOwnProperty(prop)</p>
+        <p><b><em>Object.hasOwnProperty(prop)</em></b> is a method in JavaScript that is used to check whether an object
+            has a specific property as its own property (not inherited from its prototype chain).</p>
+        <p>The method returns a boolean value indicating whether the object has the specified property.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-13" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(13)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-13"><code>&lt;script&gt;
+   // Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Checking if the 'name' property is a direct property of the 'person' object
+    const hasNameProperty = person.hasOwnProperty(&quot;name&quot;);
+
+    // Checking if the 'toString' property is a direct property of the 'person' object
+    // (toString is inherited from the prototype chain, so it should return false)
+    const hasToStringProperty = person.hasOwnProperty(&quot;toString&quot;);
+
+    // Displaying the results
+    document.getElementById(&quot;hasOwnProperty-output-1&quot;).innerHTML = `hasNameProperty: ${hasNameProperty}, &lt;br&gt; hasToStringProperty: ${hasToStringProperty}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="hasOwnProp()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="hasOwnProperty-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.hasOwnProperty(prop) ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.entries(obj):  ========== -->
+    <div class="container border mb-2" id="entries">
+        <p class="h4 text-danger">14. Object.entries(obj)</p>
+        <p><b><em>Object.entries</em></b> is a method in JavaScript that returns an array of a given object's own
+            enumerable property [key, value] pairs. It provides a convenient way to iterate over the properties of an
+            object.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-14" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(14)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-14"><code>&lt;script&gt;
+let entriesloop = false;
+function obejctentries() {
+    if(entriesloop){
+        return;
+    }
+    // The person object with properties
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Getting the HTML element to display the output
+    let output = document.getElementById(&quot;entries-output-1&quot;);
+
+    // Array to store formatted [key, value] pairs as strings
+    let array = [];
+
+    // Iterating over the [key, value] pairs obtained from Object.entries
+    for (let entry of Object.entries(person)) {
+        // Destructuring the entry into key and value
+        let [key, value] = entry;
+
+        // Checking the type of the value and formatting accordingly
+        if (typeof value === `string`) {
+            array.push(`[&quot;${key}&quot;, &quot;${value}&quot;]`);
+        } else {
+            array.push(`[&quot;${key}&quot;, ${value}]`);
+        }
+    }
+
+    // Displaying the formatted array in the HTML
+    output.innerHTML += `[${array}]`;
+    entriesloop = true;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="obejctentries()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="entries-output-1"></p>
+                <p id="entries-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.entries(obj):  ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.keys(obj):  ========== -->
+    <div class="container border mb-2" id="keys">
+        <p class="h4 text-danger">15. Object.keys(obj)</p>
+        <p>
+            <b><em>Object.keys(obj)</em></b> is a method in JavaScript that returns an <b>array</b> of a given object's
+            own enumerable property names, in the same order as they would be iterated over with a <b>for...in</b> loop.
+            It essentially extracts the keys of an object and returns them as an array.
+        </p>
+
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-15" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(15)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-15"><code>&lt;script&gt;
+    // Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Using Object.keys to get an array of property names
+    const keysArray = Object.keys(person);
+
+    //Displaying the results
+    document.getElementById(&quot;keys-output-1&quot;).innerHTML = `[${keysArray.join(&quot;, &quot;)}]`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="keys()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="keys-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.keys(obj):  ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.values(obj): ========== -->
+    <div class="container border mb-2" id="values">
+        <p class="h4 text-danger">16. Object.values(obj)</p>
+        <p><b><em>Object.values(obj)</em></b> is a method in JavaScript that <b>returns an array</b> containing the
+            values of the enumerable properties of an object. The order of the values in the array corresponds to the
+            order in which they appear in the object's property list.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-16" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(16)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-16"><code>&lt;script&gt;
+    //Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+    //Using Object.values to get an array of property values
+    const valuesArray = Object.values(person);
+    //Displaying the results
+    document.getElementById(&quot;values-output-1&quot;).innerHTML = `[${valuesArray.join(&quot;, &quot;)}]`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="values()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="values-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.values(obj): ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.is(obj1, obj2) ========== -->
+    <div class="container border mb-2" id="is">
+        <p class="h4 text-danger">17. Object.is(obj1, obj2)</p>
+        <p>
+            <b><em>Object.is(obj1, obj2)</em></b> is a method in JavaScript that compares two values for equality. It
+            returns true if the values are the same (strictly equal) and false otherwise.
+        </p>
+        <p>This method is similar to the === operator, but it has some differences in the way it treats special values
+            like NaN and -0.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-17" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(17)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-17"><code>&lt;script&gt;
+    // Sample values
+    const Value1 = 5;
+    const Value2 = 5;
+
+    const obj1 = { name: &quot;John&quot; };
+    const obj2 = { name: &quot;John&quot; };
+
+    // Using Object.is to compare values
+    const isEqual1 = Object.is(Value1, Value2);
+    const isEqual2 = Object.is(obj1, obj2);
+
+    // Displaying the results
+    document.getElementById(&quot;is-output-1&quot;).innerHTML = `Are Value1 and Value2 equal? ${isEqual1}&lt;br&gt;Are obj1 and obj2 equal? ${isEqual2}`
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="isObjectIs()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="is-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.is(obj1, obj2) ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.isExtensible() ========== -->
+    <div class="container border mb-2" id="isExtensible">
+        <p class="h4 text-danger">18. Object.isExtensible()</p>
+        <p><b><em>Object.isExtensible(obj)</em></b> is a method in JavaScript that checks whether it's possible to add
+            new properties to an object. It returns a boolean value indicating whether new properties can be added to
+            the object.</p>
+        <p>Object can be made non-extensible using <b>Object.preventExtensions(obj)</b> or by using
+            <b>Object.seal(obj)</b> or <b>Object.freeze(obj)</b>.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-18" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(18)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-18"><code>&lt;script&gt;
+    // Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Checking if the 'person' object is extensible
+    const isExtensible = Object.isExtensible(person);
+
+    // Displaying the result
+    document.getElementById(&quot;isExtensible-output-1&quot;).innerHTML = `Is the &quot;Person&quot; Object Extensible? ${isExtensible}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="isExtensible()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="isExtensible-output-1"></p>
+                <!-- <p id=""></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.isExtensible() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start Object.isFrozen() ========== -->
+    <div class="container border mb-2" id="isFrozen">
+        <p class="h4 text-danger">19. Object.isFrozen()</p>
+        <p><b><em>Object.isFrozen(obj)</em></b> is a method in JavaScript that checks whether an object is frozen. </p>
+        <p>An object is considered frozen if it is not extensible (Object.preventExtensions() has been called on it), and all its properties are non-configurable and non-writable.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-19" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(19)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-19"><code>&lt;script&gt;
+    // Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Freezing the 'person' object
+    Object.freeze(person);
+
+    // Checking if the 'person' object is frozen
+    const isFrozen = Object.isFrozen(person);
+
+    // Displaying the result
+    document.getElementById(&quot;isFrozen-output-1&quot;).innerHTML =
+        `Is the 'person' object frozen? ${isFrozen}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="isFrozen()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="isFrozen-output-1"></p>
+                <!-- <p id="output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Object.isFrozen() ========== -->
+
+
+
+
+
+    <!-- ========== Start Object.isSealed() ========== -->
+            <div class="container border mb-2" id="isSealed">
+            <p class="h4 text-danger">20. Object.isSealed()</p>
+            <p><b><em>Object.isSealed(obj)</em></b> is a method in JavaScript that checks whether an object is sealed.</p>
+            <p>An object is considered sealed if it is not extensible (Object.preventExtensions() has been called on it) and if all its existing properties are non-configurable.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-20 me-3"
+                    onclick="copyToClipboard(20)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-20"><code>&lt;script&gt;
+    // Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Sealing the 'person' object
+    Object.seal(person);
+
+    // Checking if the 'person' object is sealed
+    const isSealed = Object.isSealed(person);
+
+    // Displaying the result
+    document.getElementById(&quot;isSealed-output-1&quot;).innerHTML =
+        `Is the 'person' object sealed? ${isSealed}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="isSealed()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="isSealed-output-1"></p>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+        </div>
+    <!-- ========== End Object.isSealed() ========== -->
+
+
+
+
+
+
+    <!-- ====== Start Object.preventExtensions() ====== -->
+            <div class="container border mb-2" id="preventExtensions">
+            <p class="h4 text-danger">21. Object.preventExtensions()</p>
+            <p><b><em>Object.preventExtensions(obj)</em></b> is a method in JavaScript that prevents an object from being extended, meaning new properties cannot be added to it. </p>
+            <p>However, it doesn't affect the properties or their attributes that the object already has.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-21" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(21)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-21"><code>&lt;script&gt;
+    // Sample object
+    const person = {
+        name: &quot;John&quot;,
+        age: 30,
+        gender: &quot;Male&quot;
+    };
+
+    // Preventing extensions on the 'person' object
+    Object.preventExtensions(person);
+
+    // Attempting to add a new property to the 'person' object
+    person.newProperty = &quot;This won't work.&quot;;
+
+    // Displaying the result
+    document.getElementById(&quot;preventExtensions-output-1&quot;).innerHTML =
+        `Is the 'person' object extensible? ${Object.isExtensible(person)}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="preventExtensions()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="preventExtensions-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+    <!-- ====== End Object.preventExtensions() ====== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

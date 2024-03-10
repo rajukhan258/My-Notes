@@ -1,0 +1,15 @@
+#tableDiv {
+    display: table;
+    border-collapse: collapse;
+    width: auto;
+}
+
+#tableDiv .row {
+    display: table-row;
+}
+
+#tableDiv .cell {
+    display: table-cell;
+    border: 1px solid black;
+    padding: 5px;
+}

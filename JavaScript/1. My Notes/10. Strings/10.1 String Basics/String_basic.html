@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Basics</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <style>
+        ul li a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">String Basics</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Javascript String</p>
+            <p><b><em>Javascript string</em></b> is a sequence of characters. It can be used to represent text, numbers,
+                and other information. Example "Hello World", "1234", "true", "null", etc.</p>
+
+            <ul>
+                <li><a href="#Creating a string">Creating a string</a></li>
+                <li><a href="#Multiline String">Multiline String</a></li>
+                <li><a href="#Length Of String">Length Of String</a></li>
+                <li><a href="#Accessing characters in string"> Accessing characters in string</a></li>
+                <li><a href="#
+Escape Character in Javascript">
+                        Escape Character in Javascript</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <!-- ========== Start Creating String ========== -->
+        <div class="container border mb-3" id="Creating a string">
+            <p class="h4 text-danger">1. Creating a string</p>
+            <p>A string can be created by using:</p>
+            <ul>
+                <li>string literals</li>
+                <li>using a <em>String()</em> constructor</li>
+            </ul>
+            <p class="h5 text-success">a. string literals</p>
+            <p>It is the simplest way to create a string. Enclose the text content in <b>single quotes (')</b>,
+                <b>double quotes (")</b>, or <b>backticks (`)</b>.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Single quotes
+    let str1 = 'String from single quotes';
+    // Double quotes
+    let str2 = &quot;String from Double quotes&quot;;
+    // Backticks
+    let str3 = `String from Backticks`;
+
+    document.getElementById(&quot;literal-output-1&quot;).innerHTML = `typeof str1: ${typeof str1} &lt;br&gt; typeof str1: ${typeof str2} &lt;br&gt; typeof str1: ${typeof str3}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="literal()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="literal-output-1"></p>
+                    <!-- <p id="literal-output-2"></p> -->
+                </div>
+            </div>
+
+            <p class="h5 text-success">b. using a String() constructor</p>
+            <p><b><em>String() constructor</em></b> is used to create a string object. It takes one argument, which is
+                converted to a string.</p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // String object
+    let stringConstructor = String('Hello World');
+
+    document.getElementById(&quot;constructor-output-1&quot;).innerHTML = typeof stringConstructor;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Constructor()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="constructor-output-1"></p>
+                    <!-- <p id="literal-output-2"></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Creating String ========== -->
+
+
+
+
+        <!-- ========== Start Multiline String ========== -->
+        <div class="container border mb-3" id="Multiline String">
+            <p class="h4 text-danger">2. Multiline String</p>
+            <p>A <b><em>multiline string</em></b> is a string that spans multiple lines.</p>
+            <p>The easiest way to create a multiline string is by using <b><em>backticks</em></b>.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    // Creating a multiline string using backticks
+    let webstack = `Languages:
+        *HTML
+        *CSS
+        *JavaScript`;
+    // Displaying the multiline string in an HTML element
+    document.getElementById(&quot;Multiline-output-1&quot;).innerHTML = webstack;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Multiline()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Multiline-output-1"></p>
+                    <!-- <p id="Multiline-output-2"></p> -->
+                </div>
+            </div>
+
+            <p>We can also use quotes to create a multi-line string by adding <b>\ (backslash)</b> before the line
+                break.</p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(4)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+    // Creating a multiline string using escape characters
+    let webStack = &quot;Languages: \
+  * HTML \
+  * Javascript \
+  * CSS &quot;;
+    // Displaying the multiline string in an HTML element
+    document.getElementById(&quot;Multiline2-output-1&quot;).innerHTML = webStack;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Multiline2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Multiline2-output-1"></p>
+                    <!-- <p id="Multiline-output-2"></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Multiline String ========== -->
+
+
+
+
+        <!-- ========== Start Length Of String ========== -->
+        <div class="container border mb-3" id="Length Of String">
+            <p class="h4 text-danger">3. Length Of String</p>
+            <p>String has many properties. To get the length of a string we have a property called
+                <b><em>length</em></b>. It returns the number of characters in the string.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(5)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-5"><code>&lt;script&gt;
+    let str = &quot;Hello World&quot;;
+
+    //getting length
+    let length = str.length;
+
+    // Displaying output in an HTML element
+    document.getElementById(&quot;Length-output-1&quot;).innerHTML = length;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="lengthOfString()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Length-output-1"></p>
+                    <!-- <p id="Length-output-2"></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Length Of String ========== -->
+
+
+
+
+        <!-- ===== Start Accessing characters in string ===== -->
+        <div class="container border mb-3" id="Accessing characters in string">
+            <p class="h4 text-danger">4. Accessing characters in string</p>
+            <p>To access a character in a string, you can use square bracket notation just like an array. The index of
+                the character is the position of the character in the string.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(6)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    let str = &quot;Hello World!&quot;;
+
+    // accessing characters
+    let char1 = str[0];
+    let char2 = str[6];
+
+    // Displaying output in an HTML element
+    document.getElementById(&quot;Accessing-output-1&quot;).innerHTML = `index 0: ${char1}&lt;br&gt; index 5: ${char2}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Accessing()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Accessing-output-1"></p>
+                    <p id="Accessing-output-2"></p>
+                </div>
+            </div>
+        </div>
+        <!-- ===== End Accessing characters in string ===== -->
+
+
+
+
+
+        <!-- =+== Start Escape Character in Javascript =+== -->
+        <div class="container border mb-3" id="Escape Character in Javascript">
+            <p class="h4 text-danger">5. Escape Character in Javascript</p>
+            <p><b><em>Escape characters</em></b> in JavaScript are special characters that help you include tricky
+                characters inside a string, like creating new lines or tabs, that are hard to type directly. They use
+                <b>backslashes</b> to give a special meaning to the next character in the string.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(7)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    // Using escape character \&quot; to include double quotes inside the string
+    let ocean = &quot;Color of \&quot;ocean\&quot; is Blue.&quot;;
+
+    // Displaying output in an HTML element
+    document.getElementById(&quot;Escape-output-1&quot;).innerHTML = ocean;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="escape()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Escape-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+<p>Escape Characters and Their Representations</p>
+            <table class="table table-bordered  ">
+                <thead>
+                    <tr class="table-danger">
+                        <th scope="col">To Display</th>
+                        <th scope="col">Write</th>
+                        <th scope="col">Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>double quote ( " )</td>
+                        <td> \"</td>
+                        <td>"</td>
+
+                    </tr>
+                    <tr>
+                        <td>single quote ( ' )</td>
+                        <td>\'</td>
+                        <td>'</td>
+
+                    </tr>
+                    <tr>
+                        <td>backslash ( \ )</td>
+                        <td> \\</td>
+                        <td>@\</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <p>Here are more commonly used <b>escape characters</b> in javascript:</p>
+
+            <table class="table table-bordered  ">
+                <thead>
+                    <tr class="table-primary">
+                        <th scope="col">Character</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>\n</td>
+                        <td>New Line (used in the string to create a new line)</td>
+                    </tr>
+                    <tr>
+                        <td>\t</td>
+                        <td>Horizontal Tab (used in the string to create a tab)</td>
+                    </tr>
+                    <tr>
+                        <td>\b</td>
+                        <td>backspace</td>
+                    </tr>
+                    <tr>
+                        <td>\f</td>
+                        <td>form feed</td>
+                    </tr>
+                    <tr>
+                        <td>\v</td>
+                        <td>Verticle tab</td>
+                    </tr>
+                    <tr>
+                        <td>\xXX</td>
+                        <td>Unicode character. Example: `\x23`</td>
+                    </tr>
+                    <tr>
+                        <td>\uXXXX</td>
+                        <td>A Unicode symbol. Example: `\u00A5`</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- =+== End Escape Character in Javascript =+== -->
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

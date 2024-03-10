@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Break & Continue</title>
+
+	<!-- External CSS Libraries -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+<body>
+	<header>
+		<nav class="navbar  p-2  mb-1 header-background">
+			<div class="container-fluid nav justify-content-center ">
+				<p class="h1 text-white">JS Break & Continue</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+
+
+
+	<main>
+		<!-- ========== Start Basics ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p>The <b><code>break</code></b> and the <b><code>continue</code></b> statements are the only JavaScript
+				statements that can "jump out of" a code block.</p>
+
+			<ul>
+				<li><a href="#Break">The Break Statement</a></li>
+				<li><a href="#continue">The Continue Statement</a></li>
+				<li><a href="#label">The label Statement</a></li>
+			</ul>
+		</div>
+		<!-- ========== End Basics ========== -->
+
+
+
+
+
+		<!-- ====== Start THE Break Statement ====== -->
+		<div class="container border rounded border-warning mb-5" id="Break">
+			<p class="h4 text-danger">The Break Statement</p>
+			<p>The <b><code>break</code></b> statement is used to terminates or jump out of the current <b>loops</b> as
+				well
+				as the <b>switch statement</b>.</p>
+			<p>The syntax of the break statement is as follows:</p>
+			<pre><code>break [label];</code></pre>
+			<ul>
+				<li>Here, the <b><code>label</code></b> is <b>optional</b>. The <b><code>break</code></b> statement,
+					without
+					a label reference, can only be used to <b>jump out of a loop or a switch</b>.</li>
+				<li>With a label reference, the break statement can be used to <b>jump out of any code block</b>.</li>
+			</ul>
+
+
+			<!-- ==== Start Example 1: break in for loop ===== -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example 1: break in for loop</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    for (let i = 0; i &lt; 10; i++) {
+        let text = (document.getElementById('forbreak-output-1'));
+        if (i == 5) {
+            text.innerHTML += `loop break at i = ${i} `;
+            break;
+        }
+        text.innerHTML += (i) + '&lt;br&gt;';
+    }
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="forbreak()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="forbreak-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<!-- ==== End Example 1: break in for loop ===== -->
+
+
+
+			<!-- ==== Start Example 2: break in while loop ===== -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example 2: break in while loop</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    let count = 0;
+    let text = document.getElementById('whilebreak-output-1');
+    while (count &lt; 10) {
+        if (count == 5) {
+            text.innerHTML += (`loop break at sum = ${count}`);
+            break;
+        }
+        text.innerHTML += count + &quot;&lt;br&gt;&quot;;
+        count += 1;
+    }
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="whilebreak()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="whilebreak-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<!-- ==== End Example 2: break in while loop ===== -->
+
+
+
+			<!-- ==== Start Example 3: break in switch statement ==== -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example 3: break in switch statement</p>
+				<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(3)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    let x = 2;
+    switch (x) {
+        case 1:
+            document.getElementById('switchbreak-output-1').innerHTML = &quot;x = 1, did not match&quot;;
+            break;
+        case 2:
+            document.getElementById('switchbreak-output-1').innerHTML = &quot;x = 2, matched. the break statement terminates the switch statement when x is equal to 2.&quot;;
+            break;
+        case 3:
+            document.getElementById('switchbreak-output-1').innerHTML = &quot;x = 1, did not match&quot;;
+            break;
+        default:
+            document.getElementById('switchbreak-output-1').innerHTML = &quot;Nothing Matched&quot;
+    }
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="switchbreak()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="switchbreak-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<!-- ==== End Example 3: break in switch statement ==== -->
+		</div>
+		<!-- ====== End THE Break Statement ====== -->
+
+
+
+
+
+
+		<!-- ========== Start The continue Statement ========== -->
+		<div class="container border rounded border-warning mb-2" id="continue">
+			<p class="h4 text-danger">The Continue Statement</p>
+			<p>The <b><code>continue</code></b> statement is used to skip the current iteration of the loop, if a
+				specified condition occurs and jump to the next iteration.</p>
+			<p>The syntax of the continue statement is as follows:</p>
+			<pre><code>continue [label];</code></pre>
+
+			<ul>
+				<li>Here, the <b><code>label</code></b> is <b>optional</b>. The continue statement (<b>with or without a
+						label</b> reference) can only be <b>used to skip one loop iteration</b>.</li>
+			</ul>
+
+
+			<!-- === Start Example 1: continue in for loop === -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example 1: continue in for loop
+				</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+let hasCodeRun = false;
+function forcont() {
+    if (hasCodeRun) {
+        return;
+    }
+    for (let i = 1; i &lt; 20; i++) {
+        if (i % 2 != 0) {
+            continue;
+        }
+        document.getElementById('forcont-output-1').innerHTML += `${i}, `;
+    }
+    document.getElementById('forcont-output-1').innerHTML += `&lt;br&gt; The &lt;b&gt;&lt;code&gt;continue&lt;/code&gt;&lt;/b&gt; statement skip at odd numbers and prints the even numbers`;
+    hasCodeRun = true;
+}
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="forcont()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="forcont-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<!-- === End Example 1: continue in for loop === -->
+
+
+
+
+			<!-- === Start Example 2: continue in while loop === -->
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example 2: continue in while loop</p>
+				<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(5)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-5"><code>&lt;script&gt;
+    let i = 0;
+    let text = document.getElementById('whcont-output-1');
+    while (i &lt; 20) {
+        if (i % 2 === 0 &amp;&amp; i % 4 === 0) {
+            i++; // Increment 'i' to avoid an infinite loop
+            continue; // Skips the current iteration when i divisible by both 2 and 4
+        }
+        text.innerHTML += (i) + &quot;, &quot;;
+        i++;
+    }
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="whconti()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="whcont-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+			<!-- === End Example 2: continue in while loop === -->
+
+
+
+
+
+
+		</div>
+		<!-- ========== End The continue Statement ========== 
+		-->
+
+
+
+
+
+		<!-- ========== Start The label Statement ========== -->
+		<div class="container border rounded border-warning mb-2" id="label">
+			<p class="h4 text-danger">The label Statement</p>
+			<p>The <b><code>label</code></b> statement is used to create a label for a block of code. Labeled code
+				represents a block of code where the label name is used to identify the block of code.</p>
+
+			<p>The syntax of the label statement is as follows:</p>
+			<pre><code>label_name:
+      // Single or Multiple Code
+      // Statements</code></pre>
+			<p>A <b><code>label</code></b> can be used to <b><code>break</code></b> or <b><code>continue</code></b> the
+				block of code.</p>
+			<pre><code>break label_name;
+continue label_name;</code></pre>
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example 1: Using Labels with Nested Loops</p>
+				<button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(8)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-8"><code>&lt;script&gt;
+    outerLoop: for (let i = 0; i &lt; 3; i++) {
+        innerLoop: for (j = 0; j &lt; 3; j++) {
+            if (i === 1 &amp;&amp; j === 1) {
+                break outerLoop;
+            }
+            document.getElementById('labelbreak-output-1').innerHTML += `i = ${i}, j = ${j} &lt;br&gt;`;
+        }
+    }
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="labelbreak()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="labelbreak-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5 ps-0 pe-4">Example 2: Using Labels to Skip Iterations in a Nested Loop</p>
+				<button id="copy-button-9" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(9)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-9"><code>&lt;script&gt;
+    outerLoop: for (let i = 0; i &lt; 3; i++) {
+        innerLoop: for (j = 0; j &lt; 3; j++) {
+            if (i === 1 &amp;&amp; j === 1) {
+                continue outerLoop;
+            }
+            document.getElementById('labelcont-output-1').innerHTML += `i = ${i}, j = ${j} &lt;br&gt;`;
+        }
+    }
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="labelcont()">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="labelcont-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+		</div>
+		<!-- ========== End The label Statement ========== -->
+
+
+
+
+
+
+	</main>
+
+
+
+
+
+	<footer>
+		<script src="script.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

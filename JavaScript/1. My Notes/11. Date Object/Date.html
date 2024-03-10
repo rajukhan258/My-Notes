@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <style>
+        ol li::marker {
+            /* list-style: none; */
+            font-weight: bold;
+            /* color: #1369eb; */
+        }
+
+        ol li a {
+            text-decoration: none;
+            font-weight: bold;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Date Object</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <!-- ========== Start Definitions ========== -->
+        <div class="container border mb-3" id="">
+            <p class="h4 text-danger">Date and it's Mehods</p>
+            <p><b><em>JavaScript Date</em></b> is an object that represents a date and time in the JavaScript
+                programming language. It provides methods to fetch time, date, month, day, year and lots of other
+                properties.</p>
+            <p>A <b>JavaScript Date</b> object is a point in time, represented as the number of milliseconds since
+                midnight <b>January 1, 1970 UTC</b>.</p>
+            <p>JavaScript Date objects are always in local time even though they are stored in UTC.</p>
+
+            <ol>
+                <li><a href="#Create A Date Object">Create A Date Object</a></li>
+                <li><a href="#Javascript Date Methods">Javascript Date Methods</a></li>
+            </ol>
+        </div>
+        <!-- ========== End Definitions ========== -->
+
+
+
+
+
+        <!-- ========== Start Create A Date Object ========== -->
+        <div class="container border mb-2" id="Create A Date Object">
+            <p class="h4 text-danger">1. Create A Date Object</p>
+            <p>The <b><em>Date object</em></b> in javascript is created using the Date() constructor with different
+                arguments. It returns a Date object.</p>
+            <p>There are 4 different ways to create Date object in javascript.</p>
+            <ol>
+                <li><a href="#new Date()">new Date()</a></li>
+                <li><a href="#new Date(milliseconds)">new Date(milliseconds)</a></li>
+                <li><a href="#new Date(dateString)">new Date(dateString)</a></li>
+                <li><a href="#new Date(year, month, day, hours, minutes, seconds, milliseconds)">new Date() with
+                        Parameters</a></li>
+            </ol>
+
+
+            <!-- ========== Start new Date() ========== -->
+            <p class="h5 text-success" id="new Date()">1. new Date()</p>
+            <p>The <b><em>new Date()</em></b> method creates a new Date object representing the current date and time.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Creating a new Date object representing today's date
+    let today = new Date();
+
+    // Displaying the current date on the HTML element
+    document.getElementById(&quot;newdate-output-1&quot;).innerHTML = today;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="newdate()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="newdate-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End new Date() ========== -->
+
+
+            <!-- ====== Start new Date(milliseconds) ====== -->
+            <p class="h5 text-success" id="new Date(milliseconds)">2. new Date(milliseconds)</p>
+            <p><b><em>new Date(milliseconds)</em></b> method return date and time passed after given milliseconds
+                elapsed from midnight <b>1 January 1970 UTC</b>.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // 0 seconds after midnight 1 January 1970 UTC
+    let date = new Date(0);
+    document.getElementById(&quot;milliseconds-output-1&quot;).innerHTML = date;
+    // 01 january, 1970 UTC + 100000000000milliseconds
+    date = new Date(100000000000);
+    document.getElementById(&quot;milliseconds-output-2&quot;).innerHTML = date;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="milliseconds()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="milliseconds-output-1"></p>
+                    <p id="milliseconds-output-2"></p>
+                </div>
+            </div>
+            <!-- ====== End new Date(milliseconds) ====== -->
+
+
+
+
+            <!-- ====== Start new Date(dateString) ====== -->
+            <p class="h5 text-success" id="new Date(dateString)">3. new Date(dateString)</p>
+            <p><b><em>new Date(dateString)</em></b> method takes a string argument and returns a <b>Date object</b>
+                representing the date and time specified by the string.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    // Creating date object from date string
+    let date = new Date(&quot;05 05, 1996 17:00:00&quot;);
+    document.getElementById(&quot;dateString-output-1&quot;).innerHTML = date;
+
+    // another string format
+    date = new Date(&quot;November 11, 1997 01:00:00&quot;)
+    document.getElementById(&quot;dateString-output-2&quot;).innerHTML = date;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="milliseconds()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="dateString-output-1"></p>
+                    <p id="dateString-output-2"></p>
+                </div>
+            </div>
+            <!-- ====== End new Date(dateString) ====== -->
+
+
+
+
+            <!-- === Start new Date(year, month, day, hours, minutes, seconds, milliseconds) === -->
+            <p class="h5 text-success" id="new Date(year, month, day, hours, minutes, seconds, milliseconds)">4. new
+                Date() with Parameters</p>
+            <p>The <b><em>new Date(year, month, day, hours, minutes, seconds, milliseconds)</em></b> function in
+                JavaScript takes up to <b>seven parameters</b>:
+            <ul>
+                <li> year and month are <b>compulsory</b></li>
+                <li>while the others (day, hours, minutes, seconds, milliseconds) are optional</li>
+            </ul>
+            All parameters must follow the same order as listed.</p>
+            <p class="h6">Let's look at all the 7 parameters:</p>
+            <ul>
+                <li><b>year:</b>It is an integer value that represents the year. The value passed for the year should be
+                    full. example 2012 not 12. 2 digit year will be represented as 19xx</li>
+                <li><b>month:</b>It is integer value from 0 to 11 representing January(0) to December(11)</li>
+                <li><b>day:</b>It is an integer value representing a date. It should be from 1 to 31</li>
+                <li><b>hours:</b>It is an integer that represents an hour on a 24-hour scale</li>
+                <li><b>minutes:</b>It is an integer value that represents the minute</li>
+                <li><b>second:</b>It is an integer value that represents second</li>
+                <li><b>milliseconds:</b>It is an integer value that represents milliseconds</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-2 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(4)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+    // using all parameters
+    let date1 = new Date(2010, 6, 21, 9, 15, 55, 250)
+
+    //// leaving milliseconds
+    let date2 = new Date(2010, 6, 21, 9, 15, 55);
+
+    // leaving seconds
+    let date3 = new Date(2010, 6, 21, 9, 15);
+
+    // leaving minutes
+    let date4 = new Date(2010, 6, 21, 9);
+
+    // leaving hours
+    let date5 = new Date(2010, 6, 21);
+
+    // only year and month
+    let date6 = new Date(2010, 6);
+
+    // if you think of removing month too
+    // then year will be treated as milliseconds
+    // remember this => new Date(milliseconds)
+
+    document.getElementById(&quot;output-1&quot;).innerHTML = `${date1}&lt;br&gt;${date2} &lt;br&gt; ${date3} &lt;br&gt; ${date4} &lt;br&gt; ${date5} &lt;br&gt; ${date6}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="parametersDate()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="param-output-1"></p>
+                </div>
+            </div>
+
+            <p><b><em><mark>NOTE: </mark>
+                    </em></b>Year and Month are compulsary. If month is Removed too, year will be treated as
+                milliseconds.
+                <br>remember this => new Date(milliseconds)
+            </p>
+
+            <!-- === End new Date(year, month, day, hours, minutes, seconds, milliseconds) === -->
+        </div>
+        <!-- ========== End Create A Date Object ========== -->
+
+
+
+
+
+
+
+
+        <!-- ===== Start  Javascript Date Methods ===== -->
+        <div class="container border mb-2" id="Javascript Date Methods">
+            <p class="h4 text-danger">2. Javascript Date Methods</p>
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <ol>
+                        <li><a href="#toDateString">toDateString(): </a> Returns the date portion of the Date object as
+                            a human-readable string.</li>
+                        <li><a href="#getFullYear">getFullYear(): </a>Returns the year (four digits) for the specified
+                            date.</li>
+                        <li><a href="#getMonth">getMonth(): </a>Returns the month (0-11) for the specified date, where 0
+                            is January and 11 is December.</li>
+                        <li><a href="#getDay">getDay(): </a>Returns the day of the week (0-6) for the specified date,
+                            where 0 is Sunday and 6 is Saturday.</li>
+                        <li><a href="#getDate">getDate(): </a>Returns the day of the month (1-31) for the specified
+                            date.</li>
+
+                        <li><a href="#getHours">getHours(): </a>Returns the hour (0-23) for the specified date.</li>
+                        <li><a href="#getMinutes">getMinutes(): </a>Returns the minutes (0-59) for the specified date.
+                        </li>
+                        <li><a href="#getSeconds">getSeconds(): </a>Returns the milliseconds (0-999) for the specified
+                            date.</li>
+                        <li><a href="#getMilliseconds">getMilliseconds(): </a> Returns the milliseconds (0-999) for the
+                            specified date.</li>
+                        <li><a href="#getTime">getTime(): </a>returns the number of milliseconds since January 1, 1970,
+                            for a given Date object, indicating its position in time relative to the Unix Epoch.</li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <ol start="11">
+                        <li><a href="#setFullYear">setFullYear(): </a>Sets the year for the specified date.</li>
+                        <li><a href="#setMonth">setMonth(): </a>Sets the month (0-11) for the specified date.</li>
+                        <li><a href="#setDate">setDate(): </a>Sets the day of the month (1-31) for the specified
+                            date.</li>
+
+                        <li><a href="#setHours">setHours(): </a>Sets the hour (0-23) for the specified date.</li>
+                        <li><a href="#setMinutes">setMinutes(): </a>Sets the minutes (0-59) for the specified date.
+                        </li>
+                        <li><a href="#setSeconds">setSeconds(): </a>Sets the seconds (0-59) for the specified date.
+                        </li>
+                        <li><a href="#setMilliseconds">setMilliseconds(): </a>Sets the milliseconds (0-999) for the
+                            specified date.</li>
+
+
+
+                        <li><a href="#setTime">setTime(): </a>Sets the time for a Date object based on the number of milliseconds since January 1, 1970.</li>
+                        <li><a href="#datenow">Date.now(): </a>Returns the number of milliseconds elapsed since January 1, 1970, 00:00:00 UTC for the current time.</li>
+                        <li><a href="#getTimezoneOffset">getTimezoneOffset(): </a>Returns the time zone difference, in minutes, between the current local time and UTC (Coordinated Universal Time). Positive values indicate time zones west of UTC, and negative values indicate time zones east of UTC.</li>
+                    </ol>
+                </div>
+            </div>
+
+
+
+
+            <!-- ========== Start toDateString() ========== -->
+            <p class="h5 text-success" id="toDateString">1. toDateString(): </p>
+            <p>The <b><em>toDateString()</em></b> method in JavaScript is used to retrieve the date portion of a Date
+                object as a human-readable string without including the time or timezone information. </p>
+            <p>It returns a string representation of the date in the format that depends on the implementation and the
+                browser.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(5)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-5"><code>&lt;script&gt;
+    // Create a new Date object representing the current date and time
+    const today = new Date();
+
+    // Get the date portion as a string
+    const dateStr = today.toDateString();
+    document.getElementById(&quot;toDateString-output-1&quot;).innerHTML = dateStr;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="dateString() ">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="toDateString-output-1"></p>
+                    <!-- <p id="toDateString-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End toDateString() ========== -->
+
+
+
+
+            <!-- ========== Start getFullYear():  ========== -->
+            <p class="h5 text-success" id="getFullYear">2. getFullYear(): </p>
+            <p>The <b><em>getFullYear()</em></b> method in JavaScript is used to retrieve the year (as a four-digit
+                number) from a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(7)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Get the full year
+    const year = today.getFullYear();
+    document.getElementById(&quot;getfullyear-output-1&quot;).innerHTML = year;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getfullyear()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getfullyear-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End getFullYear():  ========== -->
+
+
+
+
+            <!-- ========== Start getMonth():  ========== -->
+            <p class="h5 text-success" id="getMonth">3. getMonth(): </p>
+            <p>The <b><em>getMonth()</em></b> method in JavaScript is used to retrieve the month from a Date object.
+            </p>
+            <p>It returns the month as a zero-based index, where January is represented as 0, February as 1, and so on,
+                until December, which is represented as 11.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(8)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-8"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Get the month
+    const month = today.getMonth();
+    document.getElementById(&quot;getmonth-output-1&quot;).innerHTML = month;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getmonth()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getmonth-output-1"></p>
+                    <p id="getmonth-output-2"></p>
+                </div>
+            </div>
+            <!-- ========== End getMonth():  ========== -->
+
+
+
+
+            <!-- ========== Start  getDay():  ========== -->
+            <p class="h5 text-success" id="getDay">4. getDay(): </p>
+            <p>The <b><em>getDay()</em></b> method in JavaScript retrieves the day of the week from a Date object as a
+                zero-based index, where Sunday is represented as 0, Monday as 1, and so on, until Saturday, which is
+                represented as 6.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-9" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(9)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-9"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Get the day of the week
+    const day = today.getDay();
+
+    // Output the day of the week
+    document.getElementById(&quot;getday-output-1&quot;).innerHTML = day;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getday()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getday-output-1"></p>
+                    <!-- <p id="getday-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End  getDay():  ========== -->
+
+
+
+
+
+            <!-- ========== Start getDate():  ========== -->
+            <p class="h5 text-success" id="getDate">5. getDate(): </p>
+            <p>The <b><em>getDate()</em></b> method in JavaScript is used to retrieve the day of the month (a number
+                from 1 to 31) from a Date object.</p>
+            <p>It does not return the day of the week, but rather the numerical day within the month.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(6)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Get the day of the month
+    const dayOfMonth = today.getDate();
+    document.getElementById(&quot;getDate-output-1&quot;).innerHTML = dayOfMonth;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getdate()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getDate-output-1"></p>
+                    <!-- <p id="getDate-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End getDate():  ========== -->
+
+
+
+
+
+            <!-- ========== Start getHours():  ========== -->
+            <p class="h5 text-success" id="getHours">6. getHours() </p>
+            <p>The <b><em>getHours()</em></b> method in JavaScript is used to retrieve the hour (from 0 to 23) from a
+                Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-10" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(10)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-10"><code>&lt;script&gt;
+    const today = new Date()
+    
+   // Get the hour
+    const Hours = today.getHours()
+
+    // Output the hour
+    document.getElementById(&quot;gethours-output-1&quot;).innerHTML = Hours;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="gethours()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="gethours-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End getHours():  ========== -->
+
+
+
+
+            <!-- ========== Start getMinutes():  ========== -->
+            <p class="h5 text-success" id="getMinutes">7. getMinutes(): </p>
+            <p>The <b><em>getMinutes()</em></b> method in JavaScript is used to retrieve the minutes (from 0 to 59) from
+                a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-11" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(11)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-11"><code>&lt;script&gt;
+    const today = new Date()
+    
+   // Get the Minute
+    const minute = today.getMinutes()
+
+    // Output the Minute
+    document.getElementById(&quot;getminutes-output-1&quot;).innerHTML = minute;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getminutes()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getminutes-output-1"></p>
+                    <!-- <p id="getminutes-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End getMinutes():  ========== -->
+
+
+
+
+            <!-- ========== Start getSeconds():  ========== -->
+            <p class="h5 text-success" id="getSeconds">8. getSeconds(): </p>
+            <p>The <b><em>getSeconds()</em></b> method in JavaScript is used to retrieve the seconds (from 0 to 59) from
+                a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-12" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(12)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-12"><code>&lt;script&gt;
+    const today = new Date()
+    
+   // Get the Second
+    const seconds = today.getSeconds()
+
+    // Output the Second
+    document.getElementById(&quot;getseconds-output-1&quot;).innerHTML = seconds;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getseconds()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getseconds-output-1"></p>
+                    <!-- <p id="getseconds-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End getSeconds():  ========== -->
+
+
+
+
+            <!-- ======= Start getMilliseconds():  ======= -->
+            <p class="h5 text-success" id="getMilliseconds">9. getMilliseconds(): </p>
+            <p>The <b>getMilliseconds()</b> method in JavaScript is used to retrieve the milliseconds (from 0 to 999)
+                from a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-13" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(13)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-13"><code>&lt;script&gt;
+    const today = new Date();
+    
+   // Get the milliseconds
+    const milliseconds = today.getMilliseconds();
+
+    // Output the milliseconds
+    document.getElementById(&quot;getmilliseconds-output-1&quot;).innerHTML = milliseconds;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="getmilliseconds()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="getmilliseconds-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ======= End getMilliseconds():  ======= -->
+
+
+
+
+            <!-- ========== Start getTime():  ========== -->
+            <p class="h5 text-success" id="getTime">10. getTime(): </p>
+            <p>The <b><em>getTime()</em></b> method in JavaScript is used to get the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC (commonly referred to as Unix Epoch time).</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-15" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(15)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-15"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Get the time in milliseconds since Epoch
+    const timeInMillis = today.getTime();
+    document.getElementById(&quot;gettime-output-1&quot;).innerHTML = timeInMillis;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="gettime()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="gettime-output-1"></p>
+                    <!-- <p id="setfullyear-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End getTime():  ========== -->
+
+
+
+
+            <!-- ========== Start setFullYear():  ========== -->
+            <p class="h5 text-success" id="setFullYear">11. setFullYear(): </p>
+            <p>The <b><em>setFullYear()</em></b> method in JavaScript is used to set the year for a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-25" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(25)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-25"><code>&lt;script&gt;
+    const today = new Date();
+
+     // Set the year to 2030
+    today.setFullYear(2030);
+
+    // Output the updated date after setting the year
+    document.getElementById(&quot;setfullyear-output-1&quot;).innerHTML = `Year is set to: ${today.toDateString()}.`
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="setfullyear()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="setfullyear-output-1"></p>
+                    <!-- <p id="setfullyear-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End setFullYear():  ========== -->
+
+
+
+
+            <!-- ========== Start setMonth():  ========== -->
+            <p class="h5 text-success" id="setMonth">12. setMonth(): </p>
+            <p>The <b><em>setMonth()</em></b> method in JavaScript is used to set the month (from 0 for January to 11
+                for December) for a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-19" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(19)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-19"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Set the month to 11
+    today.setMonth(11);
+
+    // Output the updated month after setting the minutes
+    document.getElementById(&quot;setmonths-output-1&quot;).innerHTML = `Month is set to: ${today.getMonth()}.`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="setmonths()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="setmonths-output-1"></p>
+                    <!-- <p id="setmonths-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End setMonth():  ========== -->
+
+
+
+
+            <!-- ========== Start setDate():  ========== -->
+            <p class="h5 text-success" id="setDate">13. setDate(): </p>
+            <p>The <b><em>setDate()</em></b> method in JavaScript is used to set the day of the month (from 1 to 31) for
+                a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-14" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(14)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-14"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Set the day of the month to the 15th
+    today.setDate(15);
+
+    // Output the updated date after setting the day
+    document.getElementById(&quot;setdate-output-1&quot;).innerHTML = `Today's date is set to: ${today.toDateString()}.`
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="setdate()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="setdate-output-1"></p>
+                    <!-- <p id="setdate-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End setDate():  ========== -->
+
+
+
+
+            <!-- ========== Start setHours():  ========== -->
+            <p class="h5 text-success" id="setHours">14. setHours(): </p>
+            <p>The <b><em>setHours()</em></b> method in JavaScript is used to set the hour (from 0 to 23) for a Date
+                object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-16" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(16)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-16"><code>&lt;script&gt;
+    const today = new Date();
+
+    // // Set the hour to 10 AM
+    today.setHours(10);
+
+    // Output the updated date after setting the hour
+    document.getElementById(&quot;sethours-output-1&quot;).innerHTML = `Hour is set to: ${today.getHours()} AM.`
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="sethours()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="sethours-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End setHours():  ========== -->
+
+
+
+
+            <!-- ========== Start setMinutes():  ========== -->
+            <p class="h5 text-success" id="setMinutes">15. setMinutes(): </p>
+            <p><b><em>The setMinutes()</em></b> method in JavaScript is used to set the minutes (from 0 to 59) for a
+                Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-18" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(18)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-18"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Set the minutes to 59
+    today.setMinutes(59);
+
+    // Output the updated date after setting the minutes
+    document.getElementById(&quot;setminutes-output-1&quot;).innerHTML = `Minutes is set to: ${today.getMinutes()}.`
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="setminutes()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="setminutes-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End setMinutes():  ========== -->
+
+
+
+
+            <!-- ========== Start setSeconds():  ========== -->
+            <p class="h5 text-success" id="setSeconds">16. setSeconds(): </p>
+            <p> The <b><em>setSeconds()</em></b> method in JavaScript is used to set the seconds (from 0 to 59) for a
+                Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-36" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(36)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-36"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Set the month to 11
+    today.setSeconds(59);
+
+    // Output the updated month after setting the minutes
+    document.getElementById(&quot;setseconds-output-1&quot;).innerHTML = `Seconds is set to: ${today.getSeconds()}.`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="setseconds()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="setseconds-output-1"></p>
+                    <!-- <p id="setseconds-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End setSeconds():  ========== -->
+
+
+
+
+
+            <!-- ======= Start setMilliseconds():  ======= -->
+            <p class="h5 text-success" id="setMilliseconds">17. setMilliseconds(): </p>
+            <p>The <b><em>setMilliseconds()</em></b> method in JavaScript is used to set the milliseconds (from 0 to
+                999) for a Date object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-37" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(37)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-37"><code>&lt;script&gt;
+    const today = new Date();
+
+    // Set the milliseconds to 500
+    today.setMilliseconds(500);
+
+    // Output the updated date after setting the milliseconds
+    document.getElementById(&quot;setmilliseconds-output-1&quot;).innerHTML = `Milliseconds is set to: ${today.getMilliseconds()}.`
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="setmilliseconds()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="setmilliseconds-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ======= End setMilliseconds():  ======= -->
+
+
+
+
+
+
+        <!-- ========== Start setTime() ========== -->
+            <p class="h5 text-success" id="setTime">18. setTime()</p>
+<p><b><em>The setTime()</em></b> method in JavaScript is used to set the time for a Date object based on the number of milliseconds since January 1, 1970 (Epoch time).</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-38" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(38)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-38"><code>&lt;script&gt;
+    const today = new Date();
+  // Set the time based on milliseconds (here: November 21, 2023)
+    today.setTime(1700581478572);
+    document.getElementById(&quot;settime-output-1&quot;).innerHTML = today.getTime();
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="settime() ">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="settime-output-1"></p>
+                    <!-- <p id="toDateString-output-2"></p> -->
+                </div>
+            </div>
+        <!-- ========== End setTime() ========== -->
+
+
+
+
+
+
+        <!-- ========== Start Date.now() ========== -->
+            <p class="h5 text-success" id="datenow">19. Date.now() </p>
+            <p><b><em>Date.now()</em></b> is a static method of the Date object in JavaScript, used to get the current timestamp in milliseconds since January 1, 1970, 00:00:00 UTC (Unix Epoch time).</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-39" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(39)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-39"><code>&lt;script&gt;
+    // Get the current timestamp in milliseconds
+    const currentTime = Date.now();
+    // Display it as a string
+    document.getElementById(&quot;datenow-output-1&quot;).innerHTML = currentTime;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="datenow() ">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="datenow-output-1"></p>
+                    <!-- <p id="toDateString-output-2"></p> -->
+                </div>
+            </div>
+        <!-- ========== End Date.now() ========== -->
+
+
+
+
+        <!-- ========== Start getTimezoneOffset() ========== -->
+            <p class="h5 text-success" id="getTimezoneOffset">20.  getTimezoneOffset()</p>
+            <p>The <b><em>getTimezoneOffset()</em></b> method in JavaScript returns the time zone offset, in minutes, between the current local time and Coordinated Universal Time (UTC).</p>
+            <p>The <b><em>getTimezoneOffset()</em></b> method calculates the difference, in minutes, between the local time zone and UTC. It returns a positive value if the local time zone is behind UTC (west of UTC) and a negative value if it's ahead of UTC (east of UTC).</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-40" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(40)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-40"><code>&lt;script&gt;
+    const today = new Date();   // Create a new Date object representing the current date and time
+
+    // Get the time zone offset in minutes
+    const offsetInMinutes = today.getTimezoneOffset();
+    document.getElementById(&quot;zoneOffset-output-1&quot;).innerHTML = offsetInMinutes;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="timezoneoffset() ">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="zoneOffset-output-1"></p>
+                    <!-- <p id="toDateString-output-2"></p> -->
+                </div>
+            </div>
+        <!-- ========== End getTimezoneOffset() ========== -->
+        </div>
+        <!-- ===== End  Javascript Date Methods ===== -->
+
+    </main>
+
+
+
+    <footer>
+        <script src="script.js"></script>
+
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

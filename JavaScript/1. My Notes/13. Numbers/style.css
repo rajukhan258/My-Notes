@@ -1,0 +1,25 @@
+.bg-warning {
+    background: #1a2a6c;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+}
+
+#test {
+    width: 500px;
+    height: 300px;
+    border: 1px solid red;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffd230, #e2b029);
+    /* box-shadow:  20px 20px 60px #d5a726,
+             -20px -20px 60px #ffe134; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+ul li a{
+    text-decoration: none;
+    font-weight: bold;
+}

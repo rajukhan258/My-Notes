@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">Objects</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1" style="z-index: 100;">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <!-- ========== Start Definition & Example ========== -->
+        <div class="container border mb-2" id="">
+            <p class="h4 text-danger">Contents:</p>
+            <ul>
+                <li><a href="#basics">Basics/ Definition</a></li>
+                <li><a href="#Declaring_Objects">Creating / Declaring Objects</a></li>
+                <li><a href="#thiskeyword"><b><em>this</em></b> keyword in javascript object</a></li>
+                <li><a href="#Accessing_properties">Accessing properties of Object</a></li>
+                <li><a href="#modify_objects">Modifying Objects</a></li>
+                <li><a href="#Looping_Object">Looping through an Object</a></li>
+                <!-- <li></li> -->
+            </ul>
+            <p class="h4 text-danger" id="basics">1. Basics/ Definition</p>
+            <p>A Javascript <b>object</b> is a collection of properties and methods. It is a way to group data together
+                and store it in a structured way.</p>
+            <p>The data in objects are stored in <b>key-value pairs</b>. Where each key-value pair is called a
+                <b>property</b>. The <b>key</b> is the name of the property and the <b>value</b> is the value of the
+                property.
+            </p>
+            <p>The key of an object is a string while the value can be any data type, including another object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    //Simple Object
+    var person = {
+        firstName: &quot;John&quot;,
+        lastName: &quot;Doe&quot;,
+        age: 50
+    };
+
+    // nested object
+    const student = {
+        name: 'John',
+        age: 20,
+        marks: {
+            science: 70,
+            math: 75
+        }
+    }
+
+    document.getElementById(&quot;Ex-output-1&quot;).innerHTML = `Person Datatype: ${typeof person}`;
+    document.getElementById(&quot;Ex-output-2&quot;).innerHTML = `student Datatype: ${typeof student}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="objectEx()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Ex-output-1"></p>
+                    <p id="Ex-output-2"></p>
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Definition & Example ========== -->
+
+
+
+
+        <!-- ========== Start Object Declaration ========== -->
+        <div class="container border mb-2" id="Declaring_Objects">
+            <p class="h4 text-danger">2. Creating / Declaring Objects</p>
+            <p><b>Objects</b> can be created in many different ways.</p>
+            <ul>
+                <li>javascript object literal</li>
+                <li>javascript Object.create method</li>
+                <li>javascript object constructor</li>
+                <li>object using class</li>
+            </ul>
+
+
+            <!-- ========== Start using Object Literals ========== -->
+            <p class="h5 text-success">1. Using Object Literal</p>
+            <p>The easiest way to create a JavaScript object is by using <b>object literals</b>, which a comma separated
+                key-value pair enclosed in curly braces (<b>{}</b>) assigned to a variable.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // Creating an empty object called 'countires'
+    let countires = {};
+
+    // Creating an object called 'person' with properties
+    let person = {
+        // Adding properties to the 'person' object
+        firstName: &quot;John&quot;,
+        lastName: &quot;Doe&quot;,
+        age: 50
+    };
+
+    // Creating an object called 'student' with nested properties
+    const student = {
+        name: 'John',
+        age: 20,
+        marks: {
+            science: 70,
+            math: 75
+        }
+    }
+
+    // Displaying the data types of the objects in the HTML
+    document.getElementById(&quot;Object_Literal-output-1&quot;).innerHTML = `countires Datatype: ${typeof countires}`;
+    document.getElementById(&quot;Object_Literal-output-2&quot;).innerHTML = `Person Datatype: ${typeof person}`;
+    document.getElementById(&quot;Object_Literal-output-3&quot;).innerHTML = `student Datatype: ${typeof student}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Object_Literal()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="Object_Literal-output-1"></p>
+                    <p id="Object_Literal-output-2"></p>
+                    <p id="Object_Literal-output-3"></p>
+                </div>
+            </div>
+            <!-- ========== End using Object Literals ========== -->
+
+
+
+            <!-- ========== Start Using Object.create method========== -->
+            <p class="h5 text-success">2. Using Object.create method</p>
+            <p>The <b>Object.create()</b> method is used to create an object from an existing object. It creates a new
+                object with the same properties as the existing object.</p>
+            <p>It uses an existing object as a prototype of the newly created object</p>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>Object.create(object);</code></pre>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    // Create an object named 'person' with properties and a method
+    let person = {
+        firstName: &quot;Steve&quot;,
+        lastName: &quot;Jobs&quot;,
+        fullName: function () {
+            return `My name is ${this.firstName} ${this.lastName}.`;
+        }
+    }
+
+    // Create a new object named 'newPerson' based on 'person' using Object.create
+    let newPerson = Object.create(person);
+    // Modify properties of 'newPerson'
+    newPerson.firstName = &quot;John&quot;;
+    newPerson.lastName = &quot;Smith&quot;;
+    // Display the full name of 'newPerson' using the method from 'person'
+    document.getElementById(&quot;Object_create-output-1&quot;).innerHTML = newPerson.fullName();
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Object_create()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Object_create-output-1"></p>
+                    <!-- <p id=""></p> -->
+                </div>
+            </div>
+            <!-- ========== End Using Object.create method ========== -->
+
+
+
+
+            <!-- ========== Start Object Constructor ========== -->
+            <p class="h5 text-success">3. Using Object constructor</p>
+            <p>The <b>object constructor</b> is a function that is used to create an object. It is defined using the
+                <mark><b>new</b></mark>keyword.
+            </p>
+
+            <p>Steps to create an object using the object constructor:</p>
+            <ul>
+                <li>Create a Javascript <b>function</b> that will be used to create an object.</li>
+                <li>The function should have a <b>parameter</b> that is the object properties.</li>
+                <li>Now use the <b>new</b> keyword with the function to create an object.</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(4)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+// Constructor function to create person objects
+    function person(firstname, lastname, age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+    }
+    // Create an instance of person1
+    let person1 = new person(&quot;Steve&quot;, &quot;Jobs&quot;, 25);
+    // Display the properties of person1
+    document.getElementById(&quot;Object-Constructor-output-1&quot;).innerHTML = printObjectProperties(person1);
+
+    // Create another instance of person2
+    let person2 = new person(&quot;John&quot;, &quot;Smith&quot;, 35);
+    // Display the properties of person2
+    document.getElementById(&quot;Object-Constructor-output-2&quot;).innerHTML = printObjectProperties(person2);
+
+    // Function to print object properties as a formatted string
+    function printObjectProperties(obj) {
+        let outputHTML = '{';
+        for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                outputHTML += `${prop}: `;
+                if (typeof obj[prop] === 'string') {
+                    outputHTML += `&quot;${obj[prop]}&quot;`;
+                } else {
+                    outputHTML += obj[prop];
+                }
+                if (prop !== &quot;age&quot;) {
+                    outputHTML += &quot;, &quot;;
+                }
+            }
+        }
+        outputHTML += '}';
+        return outputHTML;
+    }
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Object_Constructor()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Object-Constructor-output-1"></p>
+                    <p id="Object-Constructor-output-2"></p>
+                </div>
+            </div>
+
+            <p>The <b>prototype</b> property is used to add methods to an object that is shared by all the objects
+                created using the function.</p>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(5)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-5"><code>&lt;script&gt;
+    // Constructor function to create Person objects
+    function Person(firstname, lastname) {
+        // Assigning properties to the object
+        this.firstName = firstname;
+        this.lastName = lastname;
+    }
+
+    // Adding a method to the prototype of Person
+    Person.prototype.getFullName = function() {
+        // Method to get the full name
+        return `Hello, I am ${this.firstName} ${this.lastName}.`;
+    };
+
+    // Creating instances of the Person object
+    const person1 = new Person(&quot;Allen&quot;, &quot;Walker&quot;);
+    const person2 = new Person(&quot;Elon&quot;, &quot;Musk&quot;);
+
+    // Displaying the output for person1 and person2
+    document.getElementById(&quot;prototype-output-1&quot;).innerHTML = person1.getFullName();
+    document.getElementById(&quot;prototype-output-2&quot;).innerHTML = person2.getFullName();
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="Object_prototype()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="prototype-output-1"></p>
+                    <p id="prototype-output-2"></p>
+                </div>
+            </div>
+            <!-- ========== End Object Constructor ========== -->
+
+
+
+
+            <!-- ========== Start Object Using Class ========== -->
+            <p class="h5 text-success">4. Object Using Class </p>
+            <p><b>Class</b> was introduced in ES6. The <b>class</b> is used to create an object constructor. It is
+                defined using the <mark><b>class</b></mark> keyword.</p>
+            <p>There is a syntax difference between the class and the consturctor.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(6)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    // Class definition for creating Person objects
+    class Person {
+        // Constructor method to initialize object properties
+        constructor(fname, lname) {
+            this.firstName = fname;
+            this.lastName = lname;
+        }
+        // Method to get the full name of the person
+        fullName() {
+            return `My name is ${this.firstName} ${this.lastName}.`;
+        }
+    }
+    // Creating an instance of the Person class
+    let person1 = new Person(&quot;John&quot;, &quot;Smith&quot;);
+
+    // Displaying the output for person1
+    document.getElementById(&quot;Class-output-1&quot;).innerHTML = person1.fullName();
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick=" using_class()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="Class-output-1"></p>
+                    <p id=""></p>
+                </div>
+            </div>
+            <!-- ========== End Object Using Class ========== -->
+        </div>
+        <!-- ========== End Object Declaration ========== -->
+
+
+
+
+
+<!-- ========== Start this keyword ========== -->
+        <div class="container border mb-2" id="thiskeyword">
+            <p class="h4 text-danger">3. <b><em>this</em></b> keyword in javascript object</p>
+            <p><b><em>this</em></b> keyword in an object represents the object itself. It is used to access the properties of the object. When we say <b><em>this.propertyName</em></b> it means <b><em>object.propertyName</em></b>.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-11" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3" onclick="copyToClipboard(11)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-11"><code>&lt;script&gt;
+    var number = {
+        num1: 10,
+        num2: 15,
+        // Method to calculate the sum of num1 and num2
+        sum: function () {
+            // 'this' refers to the current object, so this.num1 and this.num2 access the properties of the object
+            return this.num1 + this.num2;
+        }
+    }
+    // Get the output element by ID
+    document.getElementById(&quot;this-output-1&quot;).innerHTML = `number.sum = ${number.sum()}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="thiskeyword()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="this-output-1"></p>
+                    <!-- <p id="this-output-2"></p> -->
+                </div>
+            </div>
+        </div>
+<!-- ========== End this keyword ========== -->
+
+
+
+
+        <!-- ========== Start Accessing properties of Object ========== -->
+        <div class="container border mb-2" id="Accessing_properties">
+            <p class="h4 text-danger">4. Accessing properties of Object</p>
+            <p>There are two ways to access the properties of an object.</p>
+            <ul>
+                <li>Using the <b>dot</b> operator.</li>
+                <li>Using the <b>bracket</b> operator.</li>
+            </ul>
+            <p class="h5 text-success">1. dot operator</p>
+            <p>Using the <b>dot operator</b>the properties of an object can be accessed by writing the object name
+                followed by a <b>dot</b> and the <b>property name</b>.</p>
+            <p>The dot operator is most commonly used to access the properties of an object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(7)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    // Simple Object
+    var person = {
+        // Properties of the person object
+        firstName: &quot;John&quot;,
+        lastName: &quot;Doe&quot;,
+        age: 50
+    };
+    // Nested object (student object)
+    const student = {
+        // Properties of the student object
+        name: 'John',
+        age: 20,
+        marks: {
+            // Nested marks object with properties
+            science: 70,
+            math: 75
+        }
+    }
+    // Displaying the output for accessing properties using dot notation
+    document.getElementById(&quot;dot-output-1&quot;).innerHTML = `person.firstName = ${person.firstName}`;
+    document.getElementById(&quot;dot-output-2&quot;).innerHTML = `student.marks.math = ${student.marks.math}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="dot_operator()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="dot-output-1"></p>
+                    <p id="dot-output-2"></p>
+                </div>
+            </div>
+
+
+
+            <p class="h5 text-success">2. bracket operator</p>
+            <p>The <b>bracket operator</b> accesses the properties of an object by writing the object name followed by
+                the <b>bracket</b> and the <b>property name</b> as a string.</p>
+            <p><b>NOTE: </b><tt>If you want to access the value of a property whose name is a variable or property
+                    name is a space separated string, then you can use the bracket operator.</tt></p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-7.1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(7.1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-7.1"><code>&lt;script&gt;
+    const student = {
+        // Properties of the student object
+        &quot;f name&quot;: 'John',
+        age: 20,
+        marks: {
+            // Nested marks object with properties
+            science: 70,
+            math: 75
+        }
+    }
+    // Example 1: Accessing property with a variable
+    let propertyName = &quot;marks&quot;;
+    let NestedpropertyName = &quot;math&quot;;
+    let propertyValue = student[propertyName][NestedpropertyName];
+    document.getElementById(&quot;bracket-output-1&quot;).innerHTML = `student[${propertyName}][${NestedpropertyName}] = ${propertyValue}`;
+
+    // // Example 2: Accessing property with a space-separated string
+    let spaceSeparatedPropertyName = &quot;f name&quot;;
+    let spaceSeparatedPropertyValue = student[spaceSeparatedPropertyName];
+    document.getElementById(&quot;bracket-output-2&quot;).innerHTML = `student[${spaceSeparatedPropertyName}] = ${spaceSeparatedPropertyValue}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="backet_operator() ">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="bracket-output-1"></p>
+                    <p id="bracket-output-2"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== End Accessing properties of Object ========== -->
+
+
+
+
+        <!-- ========== Start Modifying objects ========== -->
+        <div class="container border mb-2" id="modify_objects">
+            <p class="h4 text-danger">5. Modifying Objects</p>
+            <p class="h5 text-success">1. Adding properties to an Object</p>
+            <p>We can add a new property to an existing <b>object</b> simply by object name followed by a dot and the
+                property name and assigning the value to the property.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(8)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-8"><code>&lt;script&gt;
+    // Student object with properties
+    const student = {
+        fname: 'John',
+        age: 20,
+        marks: {
+            science: 70,
+            math: 75
+        }
+    };
+
+    // Displaying the object before modifications
+    document.getElementById(&quot;added-output-1&quot;).innerHTML = `&lt;b&gt;Before:&lt;/b&gt; ${printObjectProperties(student)}`;
+
+    // Modifying the student object by adding new properties
+    student["lname"] = &quot;Smith&quot;;  //using bracket notation
+    student.marks.computer = 90;    //using dot notation
+
+    // Displaying the object after modifications
+    document.getElementById(&quot;added-output-2&quot;).innerHTML = `&lt;b&gt;After:&lt;/b&gt; ${printObjectProperties(student)}`;
+
+    // Displaying output as formatted string
+    function printObjectProperties(obj) {
+        let outputHTML = &quot;{&quot;;
+        let propCount = Object.keys(obj).length;
+
+        let count = 0;
+        for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                outputHTML += `${prop}: `;
+                // Checking if the property is an object (nested object)
+                if (typeof obj[prop] === 'object') {
+                    outputHTML += printObjectProperties(obj[prop]);
+                }
+                // Handling string properties
+                else if (typeof obj[prop] === 'string') {
+                    outputHTML += `&quot;${obj[prop]}&quot;`;
+                }
+                // Handling other types of properties
+                else {
+                    outputHTML += `${obj[prop]}`;
+                }
+                count++;
+                if (count &lt; propCount) {
+                    outputHTML += &quot;, &quot;;
+                }
+            }
+        }
+        outputHTML += &quot;}&quot;;
+        return outputHTML;
+    }
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="add_property()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="added-output-1"></p>
+                    <p id="added-output-2"></p>
+                </div>
+            </div>
+
+
+            <p class="h5 text-success">2. Deleting properties from an Object</p>
+            <p>We can delete a property from an object by using the <b>delete</b> operator.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-8.1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(8.1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-8.1"><code>&lt;script&gt;
+    // Student object with properties
+    const student = {
+        fname: 'John',
+        lname: `smith`,
+        age: 20,
+        marks: {
+            science: 70,
+            math: 75,
+            computer: 90
+        }
+    };
+
+    // Displaying the object before modifications
+    document.getElementById(&quot;deleted-output-1&quot;).innerHTML = `&lt;b&gt;Before:&lt;/b&gt; ${printObjectProperties(student)}`;
+
+    // Modifying the student object by deleting properties
+    delete student[&quot;lname&quot;];    //using bracket notation
+    delete student.marks.computer;  //using dot notation
+
+    // Displaying the object after modifications
+    document.getElementById(&quot;deleted-output-2&quot;).innerHTML = `&lt;b&gt;After:&lt;/b&gt; ${printObjectProperties(student)}`;
+
+    // Displaying output as formatted string
+    function printObjectProperties(obj) {
+        let outputHTML = &quot;{&quot;;
+        let propCount = Object.keys(obj).length;
+
+        let count = 0;
+        for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                outputHTML += `${prop}: `;
+                // Checking if the property is an object (nested object)
+                if (typeof obj[prop] === 'object') {
+                    outputHTML += printObjectProperties(obj[prop]);
+                }
+                // Handling string properties
+                else if (typeof obj[prop] === 'string') {
+                    outputHTML += `&quot;${obj[prop]}&quot;`;
+                }
+                // Handling other types of properties
+                else {
+                    outputHTML += `${obj[prop]}`;
+                }
+                count++;
+                if (count &lt; propCount) {
+                    outputHTML += &quot;, &quot;;
+                }
+            }
+        }
+        outputHTML += &quot;}&quot;;
+        return outputHTML;
+    }
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="delete_property()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="deleted-output-1"></p>
+                    <p id="deleted-output-2"></p>
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Modifying objects ========== -->
+
+
+
+
+        <!-- ========== Start Looping objects ========== -->
+        <div class="container border mb-2" id="Looping_Object">
+            <p class="h4 text-danger">6. Looping through an Object</p>
+            <p class="h5 text-success">1. Using for...in loop</p>
+            <p>The <b>for...in</b> loop access the properties of an object by iterating through the object.</p>
+            <p>The <b>for...in</b> loop <b>iterates through the keys</b> of the car object. In each iteration, the variable key holds the current key, and we can use it to access the corresponding values or perform other operations.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-9" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(9)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-9"><code>&lt;script&gt;
+    let forinloopHasRun = false;
+    function forinloop() {
+        if (forinloopHasRun) {
+            return;
+        }
+    // Car object with properties
+    const car = {
+        name: &quot;Ford&quot;,
+        color: &quot;Black&quot;,
+        model: &quot;Avenger&quot;
+    }
+    // Loop through the keys of the 'car' object using 'for...in'
+    for (let key in car) {
+        // Get the output element by ID
+        let output = document.getElementById(&quot;forIn-output-1&quot;);
+        // Display the current key
+        output.innerHTML += `${key}: `;
+        // Check the type of the property value
+        if (typeof car[key] === 'string') {
+            // If the property value is a string, enclose it in double quotes
+            output.innerHTML += `&quot;${car[key]}&quot;&lt;br&gt;`;
+        } else {
+            // If the property value is not a string, display it as is
+            output.innerHTML += `${car[key]}&lt;br&gt;`;
+        }
+    }
+    // Set the flag to true to indicate that the loop has run
+    forinloopHasRun = true;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="forinloop()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="forIn-output-1"></p>
+                    <!-- <p id=""></p> -->
+                </div>
+            </div>
+
+
+            <p class="h5 text-success">2. Using Object.keys() loop</p>
+            <p>The <b>Object.keys()</b> method is used to <b>extract the keys of an object</b> and <b>create an array</b> containing those keys. This array can then be iterated using various loop constructs. The <b>Object.keys()</b> loop is particularly useful to perform operations based on the keys of an object in a predictable order.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-9.1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(9.1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-9.1"><code>&lt;script&gt;
+    // A flag to track whether the objectkeys function has already run
+    let objectkeysloopHasRun = false;
+    // Function to demonstrate looping through keys of an object using Object.keys()
+    function objectkeys() {
+    // Check if the function has already run, if yes, return to prevent re-execution
+    if (objectkeysloopHasRun) {
+        return;
+    }
+    // Car object with properties
+    let car = {
+        name: &quot;Ford&quot;,
+        color: &quot;Black&quot;,
+        model: &quot;Avenger&quot;
+    }
+    // Get the output element by ID
+    let output = document.getElementById(&quot;objectkeys-output-1&quot;);
+    output.innerHTML += &quot;[&quot;;
+    // Loop through the keys of the 'car' object using Object.keys()
+    for (let key of Object.keys(car)) {
+        // Check the type of the key (string or not)
+        if (typeof key === 'string') {
+            // If the key is a string, enclose it in double quotes and wrap it in an array
+            output.innerHTML += `&quot;${Array.of(key)}&quot;`;
+        } else {
+            // If the key is not a string, wrap it in an array
+            output.innerHTML += `${Array.of(key)}`;
+        }
+        // Check if it's not the last key ('model') to append a comma
+        if (key !== [...Object.keys(car)].pop()) {
+            output.innerHTML += &quot;, &quot;;
+        }
+    }
+    // Close the array and set the flag to true to indicate that the function has run
+    output.innerHTML += &quot;]&quot;;
+    objectkeysloopHasRun = true;
+
+    // Display the length of keys in another output element
+    let output2 = document.getElementById(&quot;objectkeys-output-2&quot;);
+    output2.innerHTML += `length = ${Object.keys(car).length}`;
+}
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="objectkeys()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="objectkeys-output-1"></p>
+                    <p id="objectkeys-output-2"></p>
+                </div>
+            </div>
+
+
+
+            <p class="h5 text-success">3. Using Object.values() loop</p>
+            <p>The <b>Object.values()</b> method returns an array containing the values of the properties, Which gives us direct access to the values of the object.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-9.2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(9.2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-9.2"><code>&lt;script&gt;
+    // A flag to track whether the objectvalues function has already run
+    let objectvaluesLoopHasRun = false;
+    // Function to demonstrate looping through values of an object using Object.values()
+    function objectvalues() {
+    // Check if the function has already run, if yes, return to prevent re-execution
+    if (objectvaluesLoopHasRun) {
+        return;
+    }
+    // Car object with properties
+    let car = {
+        name: &quot;Ford&quot;,
+        color: &quot;Black&quot;,
+        model: &quot;Avenger&quot;
+    }
+    // Get the output element by ID
+    let output = document.getElementById(&quot;objectvalue-output-1&quot;);
+    output.innerHTML += &quot;[&quot;;
+    // Loop through the values of the 'car' object using Object.values()
+    for (let value of Object.values(car)) {
+        // Check the type of the value (string or not)
+        if (typeof value === 'string') {
+            // If the value is a string, enclose it in double quotes and wrap it in an array
+            output.innerHTML += `&quot;${Array.of(value)}&quot;`;
+        } else {
+            // If the value is not a string, wrap it in an array
+            output.innerHTML += Array.of(value);
+        }
+        // Check if the current value is not the last one to append a comma
+        if (value !== [...Object.values(car)].pop()) {
+            output.innerHTML += ', ';
+        }
+    }
+    // Close the array and set the flag to true to indicate that the function has run
+    output.innerHTML += &quot;]&quot;;
+    objectvaluesLoopHasRun = true;
+}
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="objectvalues()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="objectvalue-output-1"></p>
+                    <p id="objectvalue-output-2"></p>
+                </div>
+            </div>
+
+
+
+            <p class="h5 text-success">4. Using Object.entries() loop</p>
+            <p>The <b>Object.entries()</b> method returns an array of a given object's property names and values.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-9.3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(9.3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-9.3"><code>&lt;script&gt;
+    // A flag to track whether the objectentries function has already run
+    let objectentriesloopHasRun = false;
+    // Function to demonstrate looping through entries of an object using Object.entries()
+    function objectentries() {
+    // Check if the function has already run, if yes, return to prevent re-execution
+    if (objectentriesloopHasRun) {
+        return;
+    }
+    // Car object with properties
+    let car = {
+        name: &quot;Ford&quot;,
+        color: &quot;Black&quot;,
+        model: &quot;Avenger&quot;
+    }
+    // Get the output element by ID
+    let output = document.getElementById(&quot;objectentries-output-1&quot;);
+    // An array to store formatted key-value pairs
+    let array = [];
+    // Loop through the entries of the 'car' object using Object.entries()
+    for (let entry of Object.entries(car)) {
+        // Destructure the entry into key and value
+        let [key, value] = entry;
+        // Check the type of the value (string or not)
+        if (typeof value === 'string') {
+            // If the value is a string, enclose it in double quotes in the formatted string
+            array.push(`[&quot;${key}&quot;, &quot;${value}&quot;]`);
+        } else {
+            // If the value is not a string, include it as is in the formatted string
+            array.push(`[&quot;${key}&quot;, ${value}]`);
+        }
+    }
+    // Display the array content in the output element
+    output.innerHTML += `[${array}]`;
+    // Set the flag to true to indicate that the function has run
+    objectentriesloopHasRun = true;
+}
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning" onclick="objectentries()">Run code</button>
+
+                <div class="container bg-light rounded mt-1">
+                    <p id="objectentries-output-1"></p>
+                    <!-- <p id=""></p> -->
+                </div>
+            </div>
+
+        </div>
+        <!-- ========== End Looping objects ========== -->
+    </main>
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

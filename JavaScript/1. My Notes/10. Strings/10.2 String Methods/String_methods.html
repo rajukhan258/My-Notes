@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <style>
+        Ol li a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark p-0 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1">String Methods</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+
+    <!-- ========== Start contents: ========== -->
+    <div class="container border mb-2" id="">
+ 
+        <div class="row">
+            <p class="h5 text-danger">List of String Methods:</p>
+            <div class="container col-md-6">
+                <ol>
+                    <li><a href="#toLowerCase">str.toLowerCase(): </a>converts all characters in a string to lowercase,
+                        creating a new string without altering the original.</li>
+                    <li><a href="#toUpperCase">str.toUpperCase(): </a>converts all characters in a string to uppercase,
+                        creating a new string without altering the original.</li>
+                    <!-- <li><a href="#capitalize">str.capitalize()</a></li> -->
+                    <li><a href="#includes">str.includes(): </a>checks if a string contains a specified substring,
+                        returning true or false accordingly.</li>
+                    <li><a href="#startsWith">str.startsWith(): </a>checks if a string starts with a specified
+                        substring, returning true or false accordingly.</li>
+                    <li><a href="#endsWith">str.endsWith(): </a>checks if a string ends with a specified substring,
+                        returning true or false accordingly.</li>
+                    <li><a href="#search">str.search(): </a>searches for a specified substring within a string and
+                        returns
+                        the index of the first occurrence, or -1 if not found.</li>
+                    <li><a href="#indexOf">str.indexOf(): </a>finds the index of the first occurrence of a specified
+                        substring within a string, returning the index or -1 if not found.</li>
+                    <li><a href="#lastIndexOf">str.lastIndexOf(): </a>finds the index of the last occurrence of a
+                        specified substring within a string, returning the index or -1 if not found.</li>
+                    <li><a href="#match">str.match(): </a>retrieves all matches when matching a string against a regular
+                        expression, returning an array of matches or null if no matches are found.</li>
+                    <li><a href="#replace">str.replace(): </a>finds a specified substring (or pattern) within a string
+                        and replaces it with another substring, returning the modified string.</li>
+                    <li><a href="#trim">str.trim(): </a>removes leading and trailing whitespace from a string, returning
+                        a new string with the whitespace removed without altering the original string.</li>
+
+                </ol>
+            </div>
+            <div class="container col-md-6">
+                <ol start="12">
+                    <li><a href="#charAt">str.charAt(): </a>retrieves and returns a specific character from a string
+                        based on its index position, starting from 0.</li>
+                    <li><a href="#charCodeAt">str.charCodeAt(): </a>fetches the Unicode value of a character at a
+                        particular index within a string.</li>
+                    <li><a href="#fromCharCode">string.fromCharCode():</a> generates a string from one or more Unicode
+                        values by representing the characters corresponding to those Unicode values.</li>
+                    <li><a href="#concat">str.concat(): </a>combines strings together, creating a new string with the
+                        content of the original strings appended in the order they are provided.</li>
+                    <li><a href="#split">str.split(): </a>divides a string into an array of substrings based on a
+                        specified separator and returns a new array.</li>
+                    <li><a href="#repeat">str.repeat(): </a>duplicates a string by the number of times specified,
+                        creating and returning a new string with the repeated content.</li>
+                    <li><a href="#slice">str.slice(): </a>extracts a section of a string and returns a new string
+                        without altering the original, defined by the specified start and end indices.</li>
+                    <li><a href="#substr">str.substr(): </a>extracts a substring of a specified length starting from a
+                        specified index within a string, returning a new string without changing the original.</li>
+                    <li><a href="#substring">str.substring(): </a>retrieves a substring between specified indices within
+                        a string, providing a new string without altering the original content.</li>
+                    <li><a href="#toString">str.toString(): </a>Calling .toString() on a string in JavaScript returns
+                        the string itself; for non-string types (like numbers, booleans, or objects), it generates and
+                        returns a new string representation of that value.</li>
+                    <li><a href="#valueOf">str.valueOf(): </a>retrieves and returns the primitive value of a String
+                        object, which is the string itself.</li>
+                    <!-- <li><a href="#count">str.count()</a></li> -->
+                    <!-- <li><a href=""></a></li>
+                        <li><a href=""></a></li> -->
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End contents: ========== -->
+
+
+
+
+
+    <!-- ========== Start str.toLowerCase() ========== -->
+    <div class="container border mb-2" id="toLowerCase">
+        <p class="h4 text-danger">1. str.toLowerCase()</p>
+        <p><b><em>str.toLowerCase()</em></b> is a method used to convert all the characters in a string to lowercase.
+        </p>
+        <p>It returns a new string with all the characters converted to their lowercase equivalents.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(1)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Declare a variable 'myString' and assign the string &quot;Hello, World!&quot; to it
+    let myString = &quot;Hello, World!&quot;;
+
+    // Apply the toLowerCase() method to 'myString' to convert it to lowercase
+    let lowerCaseString = myString.toLowerCase();
+
+    // Set the inner HTML of an element with the ID 'toLowerCase-output-1' to the lowercase string
+    document.getElementById(&quot;toLowerCase-output-1&quot;).innerHTML = lowerCaseString;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="toLowerCase()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="toLowerCase-output-1"></p>
+                <!-- <p id="output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.toLowerCase() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.toUpperCase() ========== -->
+    <div class="container border mb-2" id="toUpperCase">
+        <p class="h4 text-danger">2. str.toUpperCase()</p>
+        <p><b><em>str.toUpperCase()</em></b> is a method used to convert all the characters in a string to uppercase.
+        </p>
+        <p>It returns a new string with all the characters converted to their uppercase equivalents.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(2)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // Declare a variable 'myString' and assign the string &quot;Hello, World!&quot; to it
+    let myString = &quot;Hello, World!&quot;;
+
+    // Apply the toUpperCase() method to 'myString' to convert it to uppercase
+    let upperCaseString = myString.toUpperCase();
+
+    // Set the inner HTML of an element with the ID 'toUperCase-output-1' to the uppercase string
+    document.getElementById(&quot;toUperCase-output-1&quot;).innerHTML = upperCaseString;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="toUpperCase()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="toUperCase-output-1"></p>
+                <!-- <p id="output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.toUpperCase() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.includes() ========== -->
+    <div class="container border mb-2" id="includes">
+        <p class="h4 text-danger">3. str.includes()</p>
+        <p><b><em>str.includes()</em></b> is a method used to check if a string contains another specified string. It
+            returns <b>true</b> if the string contains the specified substring, otherwise <b>false</b>.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(3)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    // Initial string
+    let myString = &quot;Hello World&quot;;
+
+    // Check if 'myString' includes &quot;Hello&quot;
+    let checkHello = myString.includes(&quot;Hello&quot;);
+
+    // Check if 'myString' includes &quot;Goodbye&quot;
+    let checkGoodbye = myString.includes(&quot;Goodbye&quot;);
+
+    // Display results in HTML elements
+    document.getElementById(&quot;includes-output-1&quot;).innerHTML = `includes &quot;Hello&quot;: ${checkHello}`;
+    document.getElementById(&quot;includes-output-2&quot;).innerHTML = `includes &quot;Goodbye&quot;: ${checkGoodbye}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="includes()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="includes-output-1"></p>
+                <p id="includes-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.includes() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.startsWith() ========== -->
+    <div class="container border mb-2" id="startsWith">
+        <p class="h4 text-danger">4. str.startsWith()</p>
+        <p><b><em>str.startsWith()</em></b> is a method used to check if a string starts with a specified substring.
+        </p>
+        <p>It returns true if the string begins with the specified characters, otherwise false.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(4)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+    // Define the string
+    let myString = &quot;Hello World!&quot;;
+
+    // Check if 'myString' starts with &quot;He&quot; and &quot;Hi&quot;
+    let startsWithHello = myString.startsWith(&quot;He&quot;);
+    let startsWithHi = myString.startsWith(&quot;Hi&quot;);
+
+    // Display the results in HTML elements
+    document.getElementById(&quot;startsWith-output-1&quot;).innerHTML = `Starts With &quot;Hello&quot;: ${startsWithHello}`;
+    document.getElementById(&quot;startsWith-output-2&quot;).innerHTML = `Starts with &quot;Hi&quot;: ${startsWithHi}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="startsWith()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="startsWith-output-1"></p>
+                <p id="startsWith-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.startsWith() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.endsWith() ========== -->
+    <div class="container border mb-2" id="endsWith">
+        <p class="h4 text-danger">5. str.endsWith()</p>
+        <p><b><em>str.endsWith()</em></b> is a method used to check if a string ends with a specified substring.</p>
+        <p>It returns true if the string ends with the specified characters, otherwise false.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(5)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-5"><code>&lt;script&gt;
+    // Define the string
+    let myString = &quot;Hello, World!&quot;;
+
+    // Check if 'myString' ends with &quot;rld!&quot; and &quot;Planet!&quot;
+    let endsWithWorld = myString.endsWith(&quot;rld!&quot;);
+    let endsWithPlanet = myString.endsWith(&quot;Planet!&quot;);
+
+    // Display the results in HTML elements
+    document.getElementById(&quot;endsWith-output-1&quot;).innerHTML = endsWithWorld;
+    document.getElementById(&quot;endsWith-output-2&quot;).innerHTML = endsWithPlanet;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="endsWith()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="endsWith-output-1"></p>
+                <p id="endsWith-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.endsWith() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.search() ========== -->
+    <div class="container border mb-2" id="search">
+        <p class="h4 text-danger">6. str.search()</p>
+        <p><b><em>str.search()</em></b> is a method used to search for a specified substring within a string.</p>
+        <p>It returns the index of the first occurrence of the substring within the string. If the substring is not
+            found, it returns -1.</p>
+        <p><b>indexOf()</b> is simpler and primarily used for basic substring searches, while <b>search()</b> is more
+            flexible due to its ability to use regular expressions for pattern-based searches.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(6)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    // Define the string
+    let myString = &quot;Hello, World!&quot;;
+
+    // Search for &quot;World&quot; and &quot;Universe&quot; within 'myString'
+    let searchResult1 = myString.search(&quot;World&quot;);
+    let searchResult2 = myString.search(&quot;Universe&quot;);
+
+    // Display the search results in HTML elements
+    document.getElementById(&quot;search-output-1&quot;).innerHTML = `Index of world: ${searchResult1}`;
+    document.getElementById(&quot;search-output-2&quot;).innerHTML = `Index of Universe: ${searchResult2} (not found)`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="search()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="search-output-1"></p>
+                <p id="search-output-2"></p>
+                <p id="search-output-3"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.search() ========== -->
+
+
+
+
+    <!-- ========== Start str.indexOf() ========== -->
+    <div class="container border mb-2" id="indexOf">
+        <p class="h4 text-danger">7. str.indexOf()</p>
+        <p><b><em>str.indexOf()</em></b> is a method used to find the index of the first occurrence of a specified
+            substring within a string. </p>
+        <p>It returns the index of the first occurrence of the substring or -1 if the substring is not found.</p>
+        <p><b>indexOf()</b> is simpler and primarily used for basic substring searches, while <b>search()</b> is more
+            flexible due to its ability to use regular expressions for pattern-based searches.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(7)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    // Define the string
+    let myString = &quot;Hello, World!&quot;;
+
+    // Find the index of &quot;World&quot; and &quot;Universe&quot; within 'myString'
+    let indexWorld = myString.indexOf(&quot;World&quot;);
+    let indexUniverse = myString.indexOf(&quot;Universe&quot;);
+    
+    // Display the indices in HTML elements
+    document.getElementById(&quot;indexOf-output-1&quot;).innerHTML = indexWorld;
+    document.getElementById(&quot;indexOf-output-2&quot;).innerHTML = indexUniverse;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="indexOf()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="indexOf-output-1"></p>
+                <p id="indexOf-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.indexOf() ========== -->
+
+
+
+
+    <!-- ========== Start str.lastIndexOf() ========== -->
+    <div class="container border mb-2" id="lastIndexOf">
+        <p class="h4 text-danger">8. str.lastIndexOf()</p>
+        <p><b><em>str.lastIndexOf()</em></b> is a method used to find the index of the last occurrence of a specified
+            substring within a string.</p>
+        <p>It returns the index of the last occurrence of the substring or -1 if the substring is not found.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(8)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-8"><code>&lt;script&gt;
+    let myString = &quot;Hello, World!&quot;;
+
+    //Find the last occurrence of each character
+    let lastIndexL = myString.lastIndexOf(&quot;l&quot;);
+    let lastIndexM = myString.lastIndexOf(&quot;M&quot;);
+
+    // Display the indices in HTML elements
+    document.getElementById(&quot;lastIndexOf-output-1&quot;).innerHTML = `last Index Of &quot;l&quot;: ${lastIndexL}`;
+    document.getElementById(&quot;lastIndexOf-output-2&quot;).innerHTML = `last Index Of &quot;M&quot;: ${lastIndexM}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="lastIndexOf()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="lastIndexOf-output-1"></p>
+                <p id="lastIndexOf-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.lastIndexOf() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start str.match() ========== -->
+    <div class="container border mb-2" id="match">
+        <p class="h4 text-danger">9. str.match()</p>
+        <p><b><em>str.match()</em></b> is a method used to retrieve the matches when matching a string against a regular
+            expression.</p>
+        <p>It <b>returns an array</b> containing the matches found or null if no matches are found.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-9" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(9)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-9"><code>&lt;script&gt;
+    let myString = &quot;The rain in Spain falls mainly in the plain&quot;;
+
+    // Using match() with a regular expression to find all occurrences of 'ain'
+    let matchResult = myString.match(/ain/g);
+
+    // Display the match results in HTML elements
+    document.getElementById(&quot;match-output-1&quot;).innerHTML = `[${matchResult.join(&quot;, &quot;)}]`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="match()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="match-output-1"></p>
+                <p id="match-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.match() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.replace() ========== -->
+    <div class="container border mb-2" id="replace">
+        <p class="h4 text-danger">10. str.replace()</p>
+        <p><b><em>str.replace()</em></b> is a method used to replace a specified substring (or a pattern defined by a
+            regular expression) within a string with another substring.</p>
+        <p>It returns a new string with the specified substring (or a pattern defined by a regular expression) replaced
+            by another substring. It does not modify the original string.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-10" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(10)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-10"><code>&lt;script&gt;
+    let myString = &quot;Hello, World!&quot;;
+    
+    // Replace &quot;World&quot; with &quot;Guys&quot; in 'myString'
+    let replacedString = myString.replace(&quot;World&quot;, &quot;Guys&quot;);
+
+    // Replace all occurrences of &quot;ello&quot; with &quot;i&quot; using a regular expression in 'myString'
+    let replaceString2 = myString.replace(/ello/g, &quot;i&quot;);
+
+    // Display the replaced strings in HTML elements
+    document.getElementById(&quot;replace-output-1&quot;).innerHTML = replacedString;
+    document.getElementById(&quot;replace-output-2&quot;).innerHTML = replaceString2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="replace()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="replace-output-1"></p>
+                <p id="replace-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.replace() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.trim() ========== -->
+    <div class="container border mb-2" id="trim">
+        <p class="h4 text-danger">11. str.trim()</p>
+        <p><b><em>str.trim()</em></b> is a method used to remove whitespace characters (spaces, tabs, newlines, etc.)
+            from both the beginning and the end of a string.</p>
+        <p>It returns a new string with the leading and trailing whitespace removed.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-11" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(11)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-11"><code>&lt;script&gt;
+    // Define the string with leading and trailing spaces
+    let myString = &quot;   Hello, World!   &quot;;
+
+    // Remove leading and trailing spaces from 'myString'
+    let trimmedString = myString.trim();
+
+    // Display the trimmed string in an HTML element
+    document.getElementById(&quot;trim-output-1&quot;).innerHTML = trimmedString;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="trim()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="trim-output-1"></p>
+                <p id="trim-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.trim() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.charAt() ========== -->
+    <div class="container border mb-2" id="charAt">
+        <p class="h4 text-danger">12. str.charAt()</p>
+        <p><b><em>str.charAt()</em></b> is a method in JavaScript used to retrieve a character from a string based on
+            its index position.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-12" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(12)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-12"><code>&lt;script&gt;
+    let myString = &quot;Hello, World!&quot;;
+
+    // Retrieves the character at index 7 (W)
+    let character = myString.charAt(7);
+
+    // Display the character in an HTML element
+    document.getElementById(&quot;charAt-output-1&quot;).innerHTML = `Character at Index 4: ${character}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="charAt()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="charAt-output-1"></p>
+                <p id="charAt-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.charAt() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start str.charCodeAt() ========== -->
+    <div class="container border mb-2" id="charCodeAt">
+        <p class="h4 text-danger">13. str.charCodeAt()</p>
+        <p><b><em>str.charCodeAt()</em></b> is a method in JavaScript used to retrieve the Unicode value of a character
+            at a specific index within a string. </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-13" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(13)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-13"><code>&lt;script&gt;
+    let myString = &quot;Hello, World!&quot;;
+
+    // Retrieves the Unicode value at index 7 (W)
+    let charCode = myString.charCodeAt(7);
+
+    // Display Uni-Code in an HTML element
+    document.getElementById(&quot;charCodeAt-output-1&quot;).innerHTML = `Uni-Code for character at Index 7: ${charCode}`;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="charCodeAt()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="charCodeAt-output-1"></p>
+                <p id="charCodeAt-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.charCodeAt() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.fromCharCode() ========== -->
+    <div class="container border mb-2" id="fromCharCode">
+        <p class="h4 text-danger">14. String.fromCharCode()</p>
+        <p><b><em>String.fromCharCode()</em></b> is a method in JavaScript used to create a string from a sequence of
+            Unicode values. </p>
+        <p>It takes one or more Unicode values and returns a string representing the characters corresponding to those
+            Unicode values.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-14" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(14)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-14"><code>&lt;script&gt;
+    // Creates a string from Unicode value 65 (A)
+    let char1 = String.fromCharCode(65);
+
+    // Creates a string from Unicode values for &quot;Hello&quot;
+    let char2 = String.fromCharCode(72, 101, 108, 108, 111);
+
+    // Display output in an HTML element
+    document.getElementById(&quot;fromCharCode-output-1&quot;).innerHTML = char1;
+    document.getElementById(&quot;fromCharCode-output-2&quot;).innerHTML = char2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="fromCharCode()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="fromCharCode-output-1"></p>
+                <p id="fromCharCode-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.fromCharCode() ========== -->
+
+
+
+
+    <!-- ========== Start str.concat() ========== -->
+    <div class="container border mb-2" id="concat">
+        <p class="h4 text-danger">15. str.concat()</p>
+        <p><b><em>str.concat()</em></b> is a method in JavaScript used to concatenate (join together) two or more
+            strings and <b>return a new string</b> that contains the combined text of the original strings.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-15" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(15)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-15"><code>&lt;script&gt;
+    let str1 = &quot;Hello &quot;;
+    let str2 = &quot;Guys! &quot;;
+    let str3 = &quot;How are you?&quot;;
+
+    let concat1 = str1.concat(str2);    // Concatenates str1 and str2
+    let concat2 = str1.concat(str2, str3);  // Concatenates str1, str2 and str3
+
+    // Display output in an HTML element
+    document.getElementById(&quot;concat-output-1&quot;).innerHTML = concat1;
+    document.getElementById(&quot;concat-output-2&quot;).innerHTML = concat2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="concat()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="concat-output-1"></p>
+                <p id="concat-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.concat() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.split() ========== -->
+    <div class="container border mb-2" id="split">
+        <p class="h4 text-danger">Heading</p>
+        <p><b><em>str.split()</em></b> is a method in JavaScript used to split a string into an array of substrings
+            based on a specified separator and returns the new array.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-16" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick=" copyToClipboard(16)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-16"><code>&lt;script&gt;
+    // Original sentences
+    let sentence = &quot;This is a sample sentence.&quot;;
+    let anotherSentense = &quot;The octopus boldly explores.&quot;;
+
+    // Splitting the sentences into arrays based on different criteria
+    let words = sentence.split(&quot; &quot;);
+    let words2 = anotherSentense.split(&quot;o&quot;);
+
+    // Displaying the results in HTML elements
+    document.getElementById(&quot;split-output-1&quot;).innerHTML = words;
+    document.getElementById(&quot;split-output-2&quot;).innerHTML = words2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="split()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="split-output-1"></p>
+                <p id="split-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.split() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.repeat() ========== -->
+    <div class="container border mb-2" id="repeat">
+        <p class="h4 text-danger">17. str.repeat()</p>
+        <p><b><em>str.repeat()</em></b> is a method in JavaScript used to create a new string by repeating the original
+            string a specified number of times.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-17" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(17)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-17"><code>&lt;script&gt;
+    let str = &quot;Hello &quot;;
+
+    // Repeats the string &quot;Hello &quot; three times
+    let repeatedString = str.repeat(3);
+
+    // Displaying the results in HTML elements
+    document.getElementById(&quot;repeat-output-1&quot;).innerHTML = repeatedString;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="repeat()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="repeat-output-1"></p>
+                <p id="repeat-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.repeat() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.slice() ========== -->
+    <div class="container border mb-2" id="slice">
+        <p class="h4 text-danger">18. str.slice()</p>
+        <p><b><em>str.slice()</em></b> is a method in JavaScript used to extract a portion of a string and return it as
+            a new string without modifying the original string. </p>
+        <p>It takes two parameters:
+        <ul>
+            <li>the starting index (inclusive)</li>
+            <li>the ending index (exclusive) </li>
+        </ul>
+        </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-18" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(18)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-18"><code>&lt;script&gt;
+    let str = &quot;Hello, World!&quot;;
+
+    // Extracts characters from from given indeces
+    let slicedString = str.slice(7);
+    let slicedString2 = str.slice(0, 5);
+
+    // Displaying the results in HTML elements
+    document.getElementById(&quot;slice-output-1&quot;).innerHTML = slicedString;
+    document.getElementById(&quot;slice-output-2&quot;).innerHTML = slicedString2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="slice()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="slice-output-1"></p>
+                <p id="slice-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.slice() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.substr() ========== -->
+    <div class="container border mb-2" id="substr">
+        <p class="h4 text-danger">19. str.substr()</p>
+        <p><b><em>str.substr()</em></b> is a method in JavaScript used to extract a portion of a string and return it as
+            a new string without modifying the original string.</p>
+        <p>It takes two parameters:
+        <ul>
+            <li>the starting index</li>
+            <li>the length of characters to be extracted</li>
+        </ul>
+        </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-19" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(19)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-19"><code>&lt;script&gt;
+    let str = &quot;Hello, World!&quot;;
+
+    // Starts at index 7 and extracts 5 characters
+    let substr = str.substr(7, 5);
+
+    // Displaying the results in HTML elements
+    document.getElementById(&quot;substr-output-1&quot;).innerHTML = substr;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="substr()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="substr-output-1"></p>
+                <p id="substr-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.substr() ========== -->
+
+
+
+
+
+
+    <!-- ========== Start str.substring(): ========== -->
+    <div class="container border mb-2" id="substring">
+        <p class="h4 text-danger">20. str.substring()</p>
+        <p><b><em>str.substring()</em></b> is a method in JavaScript used to extract a portion of a string and return it
+            as a new string without modifying the original string.</p>
+        <p>It takes two parameters:
+        <ul>
+            <li>the starting index</li>
+            <li>the ending index (optional & exclusive)</li>
+        </ul>
+        </p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-20" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(20)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-20"><code>&lt;script&gt;
+    let str = &quot;Hello, World!&quot;;
+
+    // Extracts characters from index 
+    let subString1 = str.substring(1);
+    let subString2 = str.substring(7, 12);
+
+    // Displaying the results in HTML elements
+    document.getElementById(&quot;substring-output-1&quot;).innerHTML = subString1;
+    document.getElementById(&quot;substring-output-2&quot;).innerHTML = subString2;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="substring()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="substring-output-1"></p>
+                <p id="substring-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.substring(): ========== -->
+
+
+
+
+
+    <!-- ========== Start str.toString() ========== -->
+    <div class="container border mb-2" id="toString">
+        <p class="h4 text-danger">21. str.toString()</p>
+        <p><b><em>str.toString()</em></b> is a method in JavaScript used to convert a string to its string
+            representation. While strings are already represented as strings, this method is available for consistency
+            with other data types that have a toString() method. </p>
+        <p>In JavaScript, calling <b>.toString()</b> on a string doesn't create a new string; it simply returns the
+            string itself. However, for non-string types like numbers, booleans, or objects, invoking .toString()
+            generates and returns a new string representation of that value.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-21" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(21)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-21"><code>&lt;script&gt;
+    // Assigns a numeric value to the variable num
+    let num = 42;
+
+    // Converts the numeric value to its string representation
+    let stringRepresentation = num.toString();
+
+    // Displays the string representation in an HTML element
+    document.getElementById(&quot;toString-output-1&quot;).innerHTML = stringRepresentation;
+&lt;/script&gt; </code></pre>
+            <button class="btn btn-warning" onclick="tostring()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="toString-output-1"></p>
+                <!-- <p id="toString-output-2"></p> -->
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.toString() ========== -->
+
+
+
+
+
+    <!-- ========== Start str.valueOf() ========== -->
+    <div class="container border mb-2" id="valueOf">
+        <p class="h4 text-danger">22. str.valueOf()</p>
+        <p><b><em>str.valueOf()</em></b> is a method in JavaScript used to retrieve the primitive value of a string
+            object. This method returns the primitive string value of a String object, which is the string itself.</p>
+        <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+            <p class="h5">Example</p>
+            <button id="copy-button-22" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                onclick="copyToClipboard(22)">
+                <i class="bi bi-clipboard"></i>
+            </button>
+            <pre class="rounded" style="max-height: 350px;" id="code-block-22"><code>&lt;script&gt;
+    let strObject = new String(&quot;Hello&quot;);
+
+    // Retrieves the primitive value of the String object
+    let primitiveValue = strObject.valueOf();
+
+    // Displays the string representation in an HTML element
+    document.getElementById(&quot;valueOf-output-1&quot;).innerHTML = primitiveValue;
+&lt;/script&gt;</code></pre>
+            <button class="btn btn-warning" onclick="valueof()">Run code</button>
+
+            <div class="container bg-light rounded mt-1">
+                <p id="valueOf-output-1"></p>
+                <p id="valueOf-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End str.valueOf() ========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script>
+            // Function to copy text to the clipboard
+            function copyToClipboard(buttonNumber) {
+                const codeBlock = document.getElementById("code-block-" + buttonNumber);
+                const textToCopy = codeBlock.textContent;
+
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                textArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(textArea);
+
+                const copyButton = document.getElementById("copy-button-" + buttonNumber);
+                copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+                setTimeout(function () {
+                    copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+                }, 2000); // Reset the button text after 2 seconds
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

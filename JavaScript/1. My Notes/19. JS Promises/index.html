@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Promises</title>
+
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Local CSS File (style.css) -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Custom CSS Styles -->
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">JS Promises</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+
+
+	<main>
+		<!-- ========== Start Table of content ========== -->
+		<div class="container border rounded border-warning mb-3" id="">
+			<p class="h4 text-danger">Table of Contents:</p>
+			<ol>
+				<li><a href="#Definitions">Definitions:</a></li>
+				<li><a href="#Promise Creation using constructor">Promise Creation using constructor:</a></li>
+				<li><a href="#Promise states">Promise states & Properties</a></li>
+
+
+				<li><a href="#Promise Methods">Promise Methods:</a></li>
+
+
+				<li><a href="#Chaining Promises">Promise Chaining & Error Handling:</a></li>
+
+				<!-- <li><a href="#Creating Custom Promises">Creating Custom Promises: </a></li> -->
+			</ol>
+		</div>
+		<!-- ========== End Table of content ========== -->
+
+
+
+
+
+
+		<!-- ========== Start JS Promise Definition ========== -->
+		<div class="container border rounded border-warning mb-3" id="Definitions">
+			<p class="h4 text-danger">Definitions:</p>
+			<p>JavaScript <b><code>Promises</code></b> are objects that represent the eventual completion or failure of
+				an <b>asynchronous</b> operation, and its resulting value.</p>
+			<p>OR</p>
+			<p>A <b><code>Promise</code></b> is a JavaScript object that links <b>producing code</b> and <b>consuming
+					code</b>.</p>
+			<p><b>Where:</b></p>
+			<ul>
+				<li><b><code>Producing Code: </code></b>Creates asynchronous tasks wrapped in a Promise for future
+					execution.</li>
+				<li><b><code>Consuming Code: </code></b>Manages the results or errors of a Promise using .then() and
+					.catch() methods.</li>
+			</ul>
+		</div>
+		<!-- ========== End JS Promise Definition ========== -->
+
+
+
+
+
+
+		<!-- ==== Start Promise Creation using constructor: ==== -->
+		<div class="container border rounded border-warning mb-3" id="Promise Creation using constructor">
+			<p class="h4 text-danger">Promise Creation using constructor:</p>
+			<p>To create a promise object, we use the <b><code>Promise()</code></b> constructor.</p>
+			<p>The <b><code>Promise() constructor</code></b> takes a function as an argument. The function also accepts two
+				functions <b>resolve()</b> and <b>reject()</b>.</p>
+			<p>If the promise returns successfully, the <b><code>resolve()</code></b> function is called. And, if an error
+				occurs, the <b><code>reject()</code></b> function is called.</p>
+			<p class="mb-1"><b>Promise Syntax:</b></p>
+			<pre class="rounded"><code>let promise = new Promise(function(resolve, reject){
+  // Asynchronous operations or tasks are performed here
+});</code></pre>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example Using Callback</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+// Async function 'doSomething' with a callback
+function doSomething(callback) {
+	// Simulate a 1s delay before callback execution
+	setTimeout(() =&gt; {
+		const error = false; // Simulated no error
+		const skills = ['HTML', 'CSS', 'JS']; // Simulated data
+
+		// Call provided callback with error and skills
+		callback(error, skills);
+	}, 1000);
+}
+
+// Callback for handling 'doSomething' results/errors
+function forcallback(error, result) {
+	// Handle error or display result in HTML
+	if (error) {
+		// Display error in specified HTML element
+		return document.getElementById('callback-output-1').innerHTML = error;
+	} else {
+		// Display skills in specified HTML element
+		return document.getElementById('callback-output-1').innerHTML = result.join(&quot;, &quot;);
+	}
+}
+
+// Skills array
+const skills = ['HTML', 'CSS', 'JS'];
+
+// Click event listener for HTML element
+document.getElementById('runcode').addEventListener('click', () =&gt; {
+	// Trigger 'doSomething' with 'forcallback' as callback
+	doSomething(forcallback);
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="runcode">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="callback-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example Using Promise</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code class="language-javascript">&lt;script&gt;
+function doPromise() {
+	return new Promise((resolve, reject) =&gt; {
+		setTimeout(() =&gt; {
+			if (skill.length &gt; 0) {
+				resolve(skill); // Resolve the Promise with 'skill' array
+			} else {
+				reject('Something wrong has happened'); // Reject with an error message
+			}
+		}, 1000);
+	});
+}
+
+
+// Array containing skills
+const skill = ['HTML', 'CSS', 'JS'];
+// Adding a click event listener to an HTML element
+document.getElementById('runpromise').addEventListener('click', () =&gt; {
+
+	// Using the 'doPromise' Promise
+	doPromise()
+		.then((value) =&gt; {
+			document.getElementById('promise-output-1').innerHTML = (value).join(&quot;, &quot;)
+		})
+		.catch((error) =&gt; {
+			document.getElementById('promise-output-1').innerHTML = (error)
+		});
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="runpromise">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="promise-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+		</div>
+		<!-- ==== End Promise Creation using constructor: ==== -->
+
+
+
+
+
+		<!-- ========== Start promise states & Properties ========== -->
+		<div class="container border rounded border-warning mb-3" id="Promise states">
+			<p class="h4 text-danger">States of a Promise:</p>
+			<p>A <b><code>JavaScript Promise</code></b> object can be:</p>
+			<ul>
+				<li><b>Pending: </b>Initial state when the Promise is created and hasn't completed yet.</li>
+				<li><b>Fulfilled: </b>The operation has completed successfully, and the Promise has a resolved value.
+				</li>
+				<li><b>Rejected: </b>The operation failed, and the Promise has a reason for the failure.</li>
+			</ul>
+
+			<p class="h5 text-danger">Properties of Promise Object :</p>
+			The <b><code>Promise</code></b> object supports two properties: <b>state</b> and <b>result</b>.
+			<div class="col-md-6">
+				<table class="table table-bordered text-center border-warning table-striped">
+					<thead>
+						<tr>
+							<th class="table-warning">promise.state</th>
+							<th class="table-warning">promise.result</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>pending</td>
+							<td>undefined</td>
+						</tr>
+						<tr>
+							<td>fulfilled</td>
+							<td>a result value</td>
+						</tr>
+						<tr>
+							<td>rejected</td>
+							<td>an error object</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>We cannot access the Promise properties <b>state</b> and <b>result</b>. We must use a Promise method to
+				handle promises.</p>
+		</div>
+		<!-- ========== End promise states & Properties ========== -->
+
+
+
+
+
+
+		<!-- ========== Start Promise Methods ========== -->
+		<div class="container border rounded border-warning mb-3" id="Promise Methods">
+			<p class="h4 text-danger">Promise Methods:</p>
+			<p><b><code>Promise</code></b> objects represent a value that might not be available yet, but will be resolved at
+				some point in the future, or possibly rejected with a reason for failure. They provide a way to deal with
+				asynchronous operations in a more organized and manageable way in JavaScript.</p>
+			<p>There are various methods available to the Promise object.</p>
+			<p class="mb-0"><b><code>Promise Creation:</code></b></p>
+			<ul>
+				<li><b>resolve(value): </b>Returns a new Promise object that is resolved with the given value.</li>
+				<li><b>reject(reason): </b>Returns a new Promise object that is rejected for the given reason.</li>
+			</ul>
+			<p class="mb-0"><b><code>Promise Transformation and Chaining:</code></b></p>
+			<ul>
+				<li><b>then(): </b>Handling the fulfillment of a promise.</li>
+				<li><b>catch(): </b>Handling any errors that might occur in a promise chain.</li>
+				<li><b>finally(): </b>Executing code regardless of the promise's outcome (whether resolved or
+					rejected).</li>
+			</ul>
+
+			<p class="mb-0"><b><code>Multiple Promise Handling:</code></b></p>
+			<ul>
+				<li><b>Promise.all(iterable): </b>Waits for all promises to be resolved or any one to be rejected.</li>
+				<li><b>Promise.allSettled(iterable): </b>Waits until all promises are either resolved or rejected.</li>
+				<li><b>Promise.any(iterable): </b>Returns the promise value as soon as any one of the promises is fulfilled.
+				</li>
+				<li><b>Promise.race(iterable): </b>Wait until any of the promises is resolved or rejected.</li>
+			</ul>
+
+<p class="h5 text-primary mb-0">Promise.all</p>
+<p>
+<b><code>Promise.all()</code></b> is a JavaScript method that takes an array of promises as an input and returns a single promise. This promise resolves when all the promises in the input array have resolved, or rejects immediately if any of the promises reject.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Promise.all (Example)</p>
+				<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(3)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-3"><code class="language-javascript">&lt;script&gt;
+// Simulated weather API functions
+function fetchTemperature(){
+	return new Promise((resolve) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Temperature: 25 Deg');
+		}, 2000);
+	});
+}
+
+function fetchHumidity(){
+	return new Promise((resolve) =&gt; {
+		//simulate API call delay
+		setTimeout(() =&gt; {
+			resolve('Humidity: 70%');
+		}, 1500);
+	});
+}
+
+function fetchWindSpeed(){
+	return new Promise((resolve, reject) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Wind Speed: 25km/h');
+		}, 1000);
+	});
+}
+
+//Adding event listener
+document.getElementById(&quot;promiseall&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+//Using Promise.all to fetch weather data concurrently
+Promise.all([fetchTemperature(), fetchHumidity(), fetchWindSpeed()])
+.then((result) =&gt; {
+	document.getElementById(&quot;promiseall-output-1&quot;).innerHTML = (`Weather data fetched: ${result.join(&quot;, &quot;)}`);
+})
+.catch((error) =&gt; {
+	document.getElementById(&quot;promiseall-output-1&quot;).innerHTML = (`Failed to fetch Weather data: ${error}`);
+})
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="promiseall">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="promiseall-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+<p class="h5 text-primary mb-0">Promise.allSettled</p>
+<p><b><code>Promise.allSettled()</code></b> is a method in JavaScript that takes an array of promises and returns a single promise. This promise settles (fulfills) only when all the promises in the input array have settled, regardless of whether they've resolved or rejected.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Promise.allSettled (Example)</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-4"><code class="language-javascript">&lt;script&gt;
+function fetchWindSpeed(){
+	return new Promise((resolve, reject) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Wind Speed: 25km/h');
+		}, 1000);
+	});
+}
+function fetchPrecipitation() {
+	return new Promise((resolve, reject) =&gt; {
+		//Simulating API call delay
+		setTimeout(() =&gt; {
+			reject('Couldnot fetch Precipitation');
+		}, 2500);
+	});
+}
+
+function fetchCloudCover() {
+	return new Promise((resolve) =&gt; {
+		//Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Cloud Cover: 40%');
+		}, 1800);
+	});
+}
+// Adding an event listener to ID 'promiseallsettled' 
+document.getElementById('promiseallsettled').addEventListener('click', () =&gt; {
+  // Executing Promise.allSettled() 
+  Promise.allSettled([fetchWindSpeed(), fetchPrecipitation(), fetchCloudCover()])
+    .then((result) =&gt; {
+      // Loop through the results of allSettled promises
+      for (let i = 0; i &lt; result.length; i++) {
+        // Check if the current promise was rejected, update its value if so
+        if (result[i].status === &quot;rejected&quot;) {
+          result[i].value = &quot;Error fetching Data&quot;;
+        }
+        // Display the status and value (resolved data or error message) on the webpage
+        document.getElementById(&quot;promiseallsettled-output-1&quot;).innerHTML += `Status: ${result[i].status}, &amp;nbsp;  Value: ${result[i].value} &lt;br&gt;`;
+      }
+    })
+    .catch((error) =&gt; {
+      // Display any error that might occur during promise execution
+      document.getElementById(&quot;promiseallsettled-output-1&quot;).innerHTML = (error);
+    });
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="promiseallsettled">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="promiseallsettled-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+<p class="h5 text-primary mb-0">Promise.any </p>
+<p><b><code>Promise.any()</code></b> is a JavaScript method that takes an array of promises and returns a single promise. This promise fulfills as soon as one of the promises in the array fulfills. If all promises in the array reject, then it rejects with an AggregateError.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Promise.any (Example)</p>
+				<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(5)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-5"><code class="language-javascript">&lt;script&gt;
+// Simulated weather API functions
+function fetchTemperature() {
+	return new Promise((resolve) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Temperature: 25 Deg');
+		}, 2000);
+	});
+}
+
+function fetchWindSpeed() {
+	return new Promise((resolve, reject) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Wind Speed: 25km/h');
+		}, 1000);
+	});
+}
+
+function fetchCloudCover() {
+	return new Promise((resolve) =&gt; {
+		//Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Cloud Cover: 40%');
+		}, 1800);
+	});
+}
+
+// Adding an event listener to ID 'promiseany' 
+document.getElementById('promiseany').addEventListener('click', () =&gt; {
+  // Executing Promise.any() 
+  Promise.any([fetchTemperature(), fetchWindSpeed(), fetchCloudCover()])
+    .then((result) =&gt; { 
+				document.getElementById('promiseany-output-1').innerHTML = (result);
+      }
+    )
+    .catch((error) =&gt; {
+      // Display any error that might occur during promise execution
+    document.getElementById('promiseany-output-1').innerHTML = (error);
+    });
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="promiseany">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="promiseany-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+<p class="h5 text-primary mb-0">Promise.race </p>
+<p><b><code>Promise.race()</code></b> is a method used with arrays of promises in JavaScript. It returns a single promise that settles (either fulfills or rejects) as soon as the first promise in the given array settles.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Promise.race (Example)</p>
+				<button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(6)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-6"><code class="language-javascript">&lt;script&gt;
+// Simulated weather API functions
+function fetchTemperature() {
+	return new Promise((resolve) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Temperature: 25 Deg');
+		}, 2000);
+	});
+}
+
+function fetchWindSpeed() {
+	return new Promise((resolve, reject) =&gt; {
+		// Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Wind Speed: 25km/h');
+		}, 1000);
+	});
+}
+
+function fetchCloudCover() {
+	return new Promise((resolve) =&gt; {
+		//Simulating API call delay
+		setTimeout(() =&gt; {
+			resolve('Cloud Cover: 40%');
+		}, 1800);
+	});
+}
+
+// Adding an event listener to ID 'promiseany' 
+document.getElementById('promiserace').addEventListener('click', () =&gt; {
+	// Executing Promise.race() 
+	Promise.race([fetchTemperature(), fetchWindSpeed(), fetchCloudCover()])
+		.then((result) =&gt; {
+			document.getElementById('promiserace-output-1').innerHTML = (result);
+		}
+		)
+		.catch((error) =&gt; {
+			// Display any error that might occur during promise execution
+			document.getElementById('promiserace-output-1').innerHTML = (error);
+		});
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="promiserace">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="promiserace-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Promise Methods ========== -->
+
+
+
+
+
+
+		<!-- ========== Start Chaining Promises: ========== -->
+		<div class="container border rounded border-warning mb-3" id="Chaining Promises">
+			<p class="h4 text-danger">Promise Chaining & Error Handling:</p>
+			<p><b><code>Promise chaining</code></b> is a technique used in JavaScript to manage multiple asynchronous
+				operations one after another. It involves using the <b>.then()</b> method on a Promise to execute subsequent
+				asynchronous tasks in a sequential manner.</p>
+			<p>The <b>.catch()</b> method is used with the callback when the promise is rejected or if an error occurs.</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(7)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-7"><code class="language-javascript">&lt;script&gt;
+//orderDetails
+const order = {
+	product: 'Laptop',
+	quantity: 8,
+	price: 1200,
+}
+
+// Simulated asynchronous functions for processing an online order
+function verifyStock(orderDetails) {
+	return new Promise((resolve, reject) =&gt; {
+		setTimeout(() =&gt; {
+			// Simulating checking stock availability
+			if (orderDetails.quantity &lt;= 10) {
+				document.getElementById('chain-output-1').innerHTML += `Stock Verified. &lt;br&gt;`;
+				resolve(orderDetails);
+			} else {
+				reject('Insufficient stock.');
+			}
+		}, 1000);
+	});
+}
+
+
+function processpayment(orderDetails) {
+	return new Promise((resolve) =&gt; {
+		setTimeout(() =&gt; {
+			// Simulating payment processing
+			document.getElementById('chain-output-1').innerHTML += `payment processed successfully. &lt;br&gt;`;
+			resolve(orderDetails);
+		}, 1500);
+	});
+}
+
+
+function shipOrder(orderDetails) {
+	return new Promise((resolve) =&gt; {
+		setTimeout(() =&gt; {
+			// Simulating order shipping
+			document.getElementById('chain-output-1').innerHTML += 'Order shipped. &lt;br&gt;';
+			resolve(`Order for ${orderDetails.quantity} ${orderDetails.product} shipped`);
+		}, 2000);
+	});
+}
+
+document.getElementById('runchain').addEventListener('click', () =&gt; {
+	// Processing the order using Promise chaining
+	verifyStock(order)
+		.then(processpayment)
+		.then(shipOrder)
+		.then((successMessage) =&gt; {
+			document.getElementById('chain-output-1').innerHTML += `${successMessage} &lt;br&gt;`; // Final success message after order processing
+		})
+		.catch((error) =&gt; {
+			document.getElementById('chain-output-1').innerHTML += ('Error occured:', error); // Handling errors in the chain
+		});
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="runchain">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="chain-output-1"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End Chaining Promises: ========== -->
+
+	</main>
+
+
+
+
+
+	<footer>
+		<script src="script.js"></script>
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

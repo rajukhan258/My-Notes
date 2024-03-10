@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS DOM Get Set Attribute</title>
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Local CSS File (style.css) -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Custom CSS Styles -->
+	<style>
+		.nav-background {
+			background: #1a2a6c;
+			background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+			background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">JS DOM Get Set Attribute</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">JS DOM Get Set Attribute</p>
+			<p>When the browsers load HTML and generate DOM object from it, then most standard HTML attributes automatically
+				become properties of the DOM objects.</p>
+			<p>For example, if the tag is <b><code>'&lt;p title=&quot;paragraph title&quot;&gt;,</code></b> then the DOM
+				object has <b><code>'thisParagraph.title = "paragraph title"`</code></b>.</p>
+			<p>Every attribute of an element does not become DOM object property, only the standard attribute of the element
+				becomes DOM object property.</p>
+			<p>Javascript provides some methods to access and manage such attributes. We can use 4 different javascript method
+				to handle attributes within the DOM.</p>
+			<ol>
+				<li><b><code>hasAttribute()</code></b></li>
+				<li><b><code>getAttribute()</code></b></li>
+				<li><b><code>setAttribute()</code></b></li>
+				<li><b><code>removeAttribute()</code></b></li>
+			</ol>
+		</div>
+
+
+		<!-- ========== Start has Attribute() ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">1. hasAttribute()</p>
+			<p>The <b><code>element.hasAttribute()</code></b> method is a javascript method to check whether a specific
+				element has a specific attribute or not. It returns a <b><code>boolean</code></b> value.</p>
+			<div class="d-none test">
+				<h2>"hasAttribute" method is used to check whether an attribute exist or not.</h2>
+				<p name="my paragraph">This is a paragraph.</p>
+			</div>
+			<pre class="rounded"><code class="language-javascript">&lt;div class=&quot;d-none test&quot;&gt;
+	&lt;h2&gt;&quot;hasAttribute&quot; method is used to check whether an attribute exist or not.&lt;/h2&gt;
+	&lt;p name=&quot;my paragraph&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;		
+	document.querySelector('#hasattrbtn').addEventListener(&quot;click&quot;, () =&gt; {
+	const element = document.querySelector('.test p');
+	if (element.hasAttribute('name')) {
+		alert(&quot;Yes 'name' attribute exist!&quot;);
+	}
+	else {
+		alert(&quot;No 'name' attribute doesn't exist!&quot;);
+	}
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="hasattrbtn">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="hasattr"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End has Attribute() ========== -->
+
+
+
+
+
+		<!-- ========== Start get Attribute ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">2. getAttribute()</p>
+			<p>The <b><code>getAttribute()</code></b> method is used to get the attribute value from any DOM element. This
+				method returns the value of the attribute specified if the attribute doesn't exist then value returned is
+				<b><code>null</code></b> or <b><code>""</code></b> (empty string).
+			</p>
+
+			<div class="d-none test2">
+				<h2>"hasAttribute" method is used to check whether an attribute exist or not.</h2>
+				<p class="my paragraph">This is a paragraph.</p>
+			</div>
+
+			<pre class="rounded"><code class="language-javascript">&lt;div class=&quot;d-none test2&quot;&gt;
+	&lt;h2&gt;&quot;hasAttribute&quot; method is used to check whether an attribute exist or not.&lt;/h2&gt;
+	&lt;p class=&quot;my paragraph&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code class="language-javascript">&lt;script&gt;
+document.querySelector('#getattrbtn').addEventListener('click', () =&gt; {
+	const target = document.querySelector('.test2 p');
+	const classValue = target.getAttribute('class');
+	if (classValue) {
+		document.querySelector('#output-getattr').innerText = classValue;
+	}
+	else {
+		document.querySelector('#output-getattr').innerText = &quot;not Found!&quot;;
+	}
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="getattrbtn">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-getattr"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End get Attribute ========== -->
+
+
+
+
+
+		<!-- ========== Start set Attribute ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">3. setAttribute()</p>
+			<p>The <b><code>setAttribute()</code></b> method is used to set new attribute and its value to the DOM element. If
+				the attribute already exists then the value of the attribute is updated with the new value.</p>
+
+			<p class="h6">Syntax</p>
+			<pre class="rounded"><code class="language-javascript">element.getAttribute(name, value);</code></pre>
+			<p>This method takes 2 argument name and value.</p>
+			<div class="d-none test3">
+				<h2>"hasAttribute" method is used to check whether an attribute exist or not.</h2>
+				<p class="my paragraph">This is a paragraph.</p>
+			</div>
+
+			<pre class="rounded"><code class="language-javascript">&lt;div class=&quot;d-none test3&quot;&gt;
+	&lt;h2&gt;&quot;hasAttribute&quot; method is used to check whether an attribute exist or not.&lt;/h2&gt;
+	&lt;p class=&quot;my paragraph&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(3)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-3"><code class="language-javascript">&lt;script&gt;				
+	document.querySelector('#setAttrbtn').addEventListener('click', () =&gt; {
+	const target = document.querySelector('.test3 p')
+	const newAttribute = target.setAttribute('newAttirbute', 'para');
+	// const showAttr = target.getAttribute('newAttirbute');
+	const target2 = document.querySelector('.test3')
+	// document.querySelector('#output-setAttr').innerHTML = showAttr;
+	alert(target2.innerHTML);
+		});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="setAttrbtn">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-setAttr"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End set Attribute ========== -->
+
+
+
+
+
+		<!-- ========== Start remove Attribute ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">4. removeAttribute()</p>
+			<p>The <b><code>removeAttribute()</code></b> method is used to remove the attribute with the specific name from
+				the element.</p>
+
+			<div class="d-none test4">
+				<h2>"hasAttribute" method is used to check whether an attribute exist or not.</h2>
+				<p class="newPara">This is a paragraph.</p>
+			</div>
+
+			<pre class="rounded"><code class="language-javascript">&lt;div class=&quot;d-none test4&quot;&gt;
+	&lt;h2&gt;&quot;hasAttribute&quot; method is used to check whether an attribute exist or not.&lt;/h2&gt;
+	&lt;p class=&quot;newPara&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-4"><code class="language-javascript">&lt;script&gt;						
+	document.querySelector('#removeattrbtn').addEventListener('click', () =&gt; {
+	const target = document.querySelector('.test4 p')
+	const newAttribute = target.removeAttribute('class');
+	// const showAttr = target.getAttribute('newAttirbute');
+	const target2 = document.querySelector('.test4')
+	// document.querySelector('#output-setAttr').innerHTML = showAttr;
+	alert(target2.innerHTML);
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="removeattrbtn">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-removeattr"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+		<!-- ========== End remove Attribute ========== -->
+	</main>
+
+
+
+
+	<footer>
+		<script>
+			// Function to copy text to the clipboard
+			function copyToClipboard(buttonNumber) {
+				const codeBlock = document.getElementById("code-block-" + buttonNumber);
+				const textToCopy = codeBlock.textContent;
+
+				const textArea = document.createElement("textarea");
+				textArea.value = textToCopy;
+				document.body.appendChild(textArea);
+
+				textArea.select();
+				document.execCommand("copy");
+
+				document.body.removeChild(textArea);
+
+				const copyButton = document.getElementById("copy-button-" + buttonNumber);
+				copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+				setTimeout(function () {
+					copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+				}, 2000); // Reset the button text after 2 seconds
+			}
+		</script>
+
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+
+
+
+
+	<script>
+		// has Attribute
+		document.querySelector('#hasattrbtn').addEventListener("click", () => {
+			const element = document.querySelector('.test p');
+			if (element.hasAttribute('name')) {
+				document.querySelector('#hasattr').innerHTML = "Yes 'name' attribute exist!";
+			}
+			else {
+				document.querySelector('#hasattr').innerHTML = "No 'name' attribute doesn't exist!";
+			}
+		});
+		// has Attribute
+
+
+
+		// get Attribute
+		document.querySelector('#getattrbtn').addEventListener('click', () => {
+			const target = document.querySelector('.test2 p');
+			const classValue = target.getAttribute('class');
+			if (classValue) {
+				document.querySelector('#output-getattr').innerText = classValue;
+			}
+			else {
+				document.querySelector('#output-getattr').innerText = "not Found!";
+			}
+		});
+		// get Attribute
+
+
+
+
+		//set Attribute
+		document.querySelector('#setAttrbtn').addEventListener('click', () => {
+			const target = document.querySelector('.test3 p')
+			const newAttribute = target.setAttribute('newAttirbute', 'para');
+			// const showAttr = target.getAttribute('newAttirbute');
+			const target2 = document.querySelector('.test3')
+			// document.querySelector('#output-setAttr').innerHTML = showAttr;
+			alert(target2.innerHTML);
+		});
+		//set Attribute
+
+
+
+
+		//remove Attribute
+		document.querySelector('#removeattrbtn').addEventListener('click', () => {
+			const target = document.querySelector('.test4 p')
+			const newAttribute = target.removeAttribute('class');
+			// const showAttr = target.getAttribute('newAttirbute');
+			const target2 = document.querySelector('.test4')
+			// document.querySelector('#output-setAttr').innerHTML = showAttr;
+			alert(target2.innerHTML);
+		});
+		//remove Attribute
+
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>

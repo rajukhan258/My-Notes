@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript DOM Manipulation</title>
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Local CSS File (style.css) -->
+	<!-- <link rel="stylesheet" href="style.css"> -->
+
+	<!-- Custom CSS Styles -->
+	<style>
+		.nav-background {
+			background: #1a2a6c;
+			background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+			background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">JavaScript DOM Manipulation</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<!-- ===== Start DOM Manipulation in javascript ===== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">JavaScript DOM Manipulation</p>
+			<p><b><code>DOM Manipulation</code></b> is the process of changing the content and structure of the DOM (document
+				object model). The DOM can be modified by adding, removing, or modifying elements and their attributes.</p>
+			<p>JavaScript DOM manipulation includes any of the following:</p>
+			<ul>
+				<li>Creating a new element</li>
+				<li>Attaching/appending a new element to the DOM</li>
+				<li>Removing an old element from the DOM</li>
+				<li>Replacing an element with another element</li>
+				<li>Changing the location of the element in the document</li>
+				<li>Making changes in existing elements by adding style or by adding content</li>
+				<li>Adding a new attribute to the element</li>
+				<li>Removing an attribute from the element</li>
+				<li>Changing the value of an attribute</li>
+				<li>Changing the events on the DOM</li>
+			</ul>
+		</div>
+		<!-- ====== End DOM Manipulation in javascript ===== -->
+
+
+
+
+
+		<!-- ========== Start JavaScript DOM Manipulation Methods ========== -->
+		<div class="container border rounded border-warning mb-2" id="">
+			<p class="h4 text-danger">JavaScript DOM Manipulation Methods</p>
+			<p>To make some changes in DOM or to modify the DOM elements we need some methods given by JavaScript to do so.
+			</p>
+			<div class="row">
+				<div class="contaner col-md-6 mb-0">
+					<ol>
+						<li><a href="#Creating new element">Creating new element</a></li>
+						<li><a href="#Appending new element">Appending new element</a></li>
+						<li><a href="#Removing element">Removing element</a></li>
+						<li><a href="#Replacing element">Replacing element</a></li>
+					</ol>
+				</div>
+				<div class="contaner col-md-6 mt-0">
+					<ol start="5">
+						<li><a href="#Changing style">Changing style</a></li>
+						<li><a href="#Adding attribute">Adding attribute</a></li>
+						<li><a href="#Removing attribute">Removing attribute</a></li>
+						<li><a href="#Adding event listener">Adding event listener</a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<!-- ========== End JavaScript DOM Manipulation Methods ========== -->
+
+
+		<!-- ========== Start 1. Create Element In JavaScript ========== -->
+		<div class="container border rounded border-warning mb-2" id="Creating new element">
+			<p class="h4 text-danger">1. Create Element In JavaScript</p>
+			<p>To create a new element in the DOM, we need to use the <b><code>document.createElement()</code></b> method and
+				pass the name of the element as an argument.</p>
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">// capital letter
+var element = document.createElement('IMG');
+
+// lower case
+var element = document.createElement('div');
+
+// mixed case
+var element = document.createElement('TaBlE');
+
+// all of the above are valid code</code></pre>
+			<div class="container-fluid bg-warning rounded">
+				<p><b>Note:</b> The element created by the createElement() method does not automatically attach to the document,
+					we have to explicitly append elements to the document.</p>
+			</div>
+		</div>
+		<!-- ========== End 1. Create Element In JavaScript ========== -->
+
+
+
+		<!-- ========== Start Appending new element ========== -->
+		<div class="container border rounded border-warning mb-2" id="Appending new element">
+			<p class="h4 text-danger">2. Appending Element Using JavaScript</p>
+			<p>To make the created element a part of the document we have to explicitly attach it to the document using some
+				methods.</p>
+			<ul>
+				<li><b><code>append(): </code></b>It appends the <b>Node objects</b> or <b>DOMString object</b> to the parent
+					element.</li>
+				<li><b><code>appendChild(): </code></b>t can append only <b>Node objects</b> to the parent element.</li>
+			</ul>
+			<div id="parent" class="d-none">
+				<p>This is first child.</p>
+			</div>
+			<button class="d-none" onclick="addChild()">Add Child</button>
+			<pre class="rounded" style="max-height: 350px;" id=""><code class="language-javascript">&lt;div id=&quot;parent&quot; &gt;
+	&lt;p&gt;This is first child.&lt;/p&gt;
+&lt;/div&gt;
+&lt;button onclick=&quot;addChild()&quot;&gt;Add Child&lt;/button&gt;</code></pre>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">function addchild(){
+	const parent = document.getElementById('parent');
+	const child = document.createElement('p');
+	child.innerHTML = 'This is second child';
+	parent.append(child);
+	alert(parent.innerHTML);
+}</code></pre>
+				<button class="btn btn-warning fw-bold" onclick="addchild()">Add child</button>
+			</div>
+		</div>
+		<!-- ========== End Appending new element ========== -->
+
+
+
+
+<!-- ========== Start 3. Remove Element From DOM ========== -->
+        <div class="container border rounded border-warning mb-2" id="Removing element">
+            <p class="h4 text-danger">3. Remove Element From DOM</p>
+						<p>The <b><code>removeChild()</code></b> method is used to remove the child element from the parent element. The reference of the child element is passed as an argument to the method.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;"
+                    id="code-block-1"><code class="language-javascript"></code></pre>
+                <button class="btn btn-warning fw-bold" onclick="">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="output-1"></p>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+        </div>
+<!-- ========== End 3. Remove Element From DOM ========== -->
+
+	</main>
+
+
+
+
+
+	<footer>
+		<script>
+			// Function to copy text to the clipboard
+			function copyToClipboard(buttonNumber) {
+				const codeBlock = document.getElementById("code-block-" + buttonNumber);
+				const textToCopy = codeBlock.textContent;
+
+				const textArea = document.createElement("textarea");
+				textArea.value = textToCopy;
+				document.body.appendChild(textArea);
+
+				textArea.select();
+				document.execCommand("copy");
+
+				document.body.removeChild(textArea);
+
+				const copyButton = document.getElementById("copy-button-" + buttonNumber);
+				copyButton.innerHTML = `<i class="bi bi-clipboard-check-fill"></i>`;
+				setTimeout(function () {
+					copyButton.innerHTML = `<i class="bi bi-clipboard"></i>`;
+				}, 2000); // Reset the button text after 2 seconds
+			}
+		</script>
+
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+
+	<script>
+		//  Appending new element
+		function addchild() {
+			const parent = document.getElementById('parent');
+			const child = document.createElement('p');
+			child.innerHTML = 'This is second child';
+			parent.append(child);
+			alert(parent.innerHTML);
+		}
+		//  Appending new element
+	</script>
+</body>
+
+</html>

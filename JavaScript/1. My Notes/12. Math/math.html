@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar  p-2 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1 text-white">Math Object </p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="container border rounded border-warning mb-2" id="">
+            <p><b><em>Math</em></b> is a <b><em>built-in object</em></b> which has many <b><em>properties and
+                        methods</em></b> that are used to deal with mathematical constants and functions like PI, sin,
+                cos, etc.</p>
+            <ul>
+                <li><a href="#properties">Math Object Properties</a></li>
+                <li><a href="#methods">Math Object methods</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <!-- ====== Start Math Object Properties ======= -->
+        <div class="container border rounded border-warning mb-3" id="properties">
+            <p class="h4 text-danger">Math Object Properties (Constants)</p>
+            <p>The syntax for any Math property is : <em>Math.property</em>. JavaScript provides 8 mathematical
+                constants that can be accessed as Math properties:</p>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <ol>
+                        <li><a href="#pi">Math.PI: </a>Returns the value of mathematical constant PI</li>
+                        <li><a href="#e">Math.E: </a>Returns Euler's constant (base of natural logarithm)</li>
+                        <li><a href="#ln2">Math.LN2: </a>Returns the value of the natural logarithm of 2 (approx 0.693)
+                        </li>
+                        <li><a href="#ln10">Math.LN10</a>Returns the value of the natural logarithm of 10 (approx 2.302)
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <ol start="5">
+                        <li><a href="#log2e">Math.LOG2E: </a>Returns the value of base 2 logarithm of e (approx 1.443)
+                        </li>
+                        <li><a href="#log10e">Math.LOG10E: </a>Returns the value of base 10 logarithm of e (approx
+                            0.434)</li>
+                        <li><a href="#sqrt1_2">Math.SQRT1_2: </a> Returns the value of the square root of 1/2 (approx
+                            0.707)</li>
+                        <li><a href="#sqrt2">Math.SQRT2: </a>Returns the value of the square root of 2 (approx 1.414)
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- ========== Start Math.PI  ========== -->
+            <p class="h5 text-success" id="pi">1. Math.PI</p>
+            <p><b><em>PI</em></b> is a static property of the Math object. It returns the value of mathematical PI (π).
+            </p>
+            <p>It's a commonly used constant in mathematics and programming for calculations involving circles and
+                spheres.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    // Storing the value of Math.PI in a variable called pi
+    const pi = Math.PI;
+    // Displaying the value of pi in an HTML element
+    document.getElementById(&quot;pi-output-1&quot;).innerHTML = `PI = ${pi}`;
+
+    // Initializing the radius of the circle
+    let radius = 5;
+    // Calculating the area of the circle
+    let area = pi * radius * radius;
+
+    // Displaying the calculated area in an HTML element
+    document.getElementById(&quot;pi-output-2&quot;).innerHTML = `Area of circle = ${area}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="pi()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="pi-output-1"></p>
+                    <p id="pi-output-2"></p>
+                </div>
+            </div>
+            <!-- ========== End Math.PI  ========== -->
+
+
+
+
+            <!-- ========== Start Math.E  ========== -->
+            <p class="h5 text-success" id="e">2. Math.E</p>
+            <p><b><em>E</em></b> is a static property of the Math object. It returns the value of mathematical constant
+                E (2.718281828459045). Used as <b><em>Math.E</em></b>.</p>
+            <p>Value of E is used in logarithm function, probability, etc.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // Storing the value of Math.E in a variable called e
+    const e = Math.E;
+
+    // Displaying the output in an HTML element
+    document.getElementById('e-output-1').innerHTML = e;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="e()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="e-output-1"></p>
+                    <!-- <p id="e-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.E  ========== -->
+
+
+
+
+            <!-- ========== Start Math.LN2 ========== -->
+            <p class="h5 text-success" id="ln2">3. Math.LN2</p>
+            <p><b><em>LN2</em></b> is a static property of a Math object. It returns the value of the natural logarithm
+                of 2 (approx 0.693).</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+    // Storing the value of Math.LN2 in a variable called ln2
+    const ln2 = Math.LN2;
+
+    // Displaying the output in an HTML element
+    document.getElementById('ln2-output-1').innerHTML = ln2;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="ln2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="ln2-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.LN2 ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.LN10 ========== -->
+            <p class="h5 text-success" id="ln10">4. Math.LN10</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(4)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-4"><code>&lt;script&gt;
+    // Storing the value of Math.LN10 in a variable called ln10
+    const ln10 = Math.LN10;
+
+    // Displaying the output in an HTML element
+    document.getElementById('ln10-output-1').innerHTML = ln10;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="ln10()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="ln10-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.LN10 ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.LOG2E ========== -->
+            <p class="h5 text-success" id="log2e">5. Math.LOG2E </p>
+            <p>
+                <e><em>LOG2E</em></e> is also a static property of a Math object. It returns the value of base 2
+                logarithm of e (approx 1.443).
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(5)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-5"><code></code></pre>
+                <button class="btn btn-warning fw-bold" onclick="log2e()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="log2e-output-1"></p>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+            <!-- ========== End Math.LOG2E ========== -->
+
+
+
+
+
+
+            <!-- ========== Start Math.LOG10E ========== -->
+            <p class="h5 text-success" id="log10e">6. Math.LOG10E</p>
+            <p><b><em>LOG10E</em></b> means base 10 logarithm of e (log10e). It is a static property of Math object. It
+                returns a value approx 0.434.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(6)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-6"><code>&lt;script&gt;
+    // Storing the value of Math.LOG10E in a variable called log10e
+    let log10e = Math.LOG10E;
+
+    // Displaying the output in an HTML element
+    document.getElementById('log10e-output-1').innerHTML = log10e;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="log10e()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="log10e-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.LOG10E ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.SQRT1_2 ========== -->
+            <p class="h5 text-success" id="sqrt1_2">7. Math.SQRT1_2</p>
+            <p>To get the value of the square root of 1/2 (√½), use the <b><em>SQRT1_2</em></b> property of the Math
+                object. It returns a value of approx 0.707.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(7)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-7"><code>&lt;script&gt;
+    // Storing the value of Math.SQRT1_2 in a variable called sqrt1_2
+    const sqrt1_2 = Math.SQRT1_2;
+
+    // Displaying the output in an HTML element
+    document.getElementById('sqrt1_2-output-1').innerHTML = sqrt1_2;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="sqrt1_2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="sqrt1_2-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.SQRT1_2 ========== -->
+
+
+
+
+
+
+            <!-- ========== Start Math.SQRT2 ========== -->
+            <p class="h5 text-success" id="sqrt2">8. Math.SQRT2</p>
+            <p>To get the value of square root of 2 (√2), use <b><em>SQRT2</em></b> property of Math object. It returns
+                a value approx 1.414.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-8" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(8)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-8"><code>&lt;script&gt;
+    // Storing the value of Math.SQRT2 in a variable called sqrt2
+    const sqrt2 = Math.SQRT2;
+
+    // Displaying the output in an HTML element
+    document.getElementById('sqrt2-output-1').innerHTML = sqrt2;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="sqrt2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="sqrt2-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.SQRT2 ========== -->
+        </div>
+        <!-- ========== End Math Object Properties ========== -->
+
+
+
+
+
+        <!-- ========== Start Math Object methods ========== -->
+        <div class="container border rounded border-warning mb-2" id="methods">
+            <p class="h4 text-danger">Math Object methods</p>
+            <p>Unlike Array, Object and date Objects, it doesn't have <b><em>constructors</em></b>.</p>
+            <p>All the methods and properties of Math are <b>static</b>, meaning we can directly use methods and
+                properties without creating objects. example Math.PI, Math.sin(x) etc. </p>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <ol>
+                        <li><a href="#round">Math.round(): </a>Rounds a number to the nearest integer.</li>
+                        <li><a href="#floor">Math.floor(): </a>Rounds a number down to the nearest integer.</li>
+                        <li><a href="#ceil">Math.ceil(): </a>Rounds a number up to the nearest integer.</li>
+                        <li><a href="#abs">Math.abs(): </a>Returns the absolute value of a number.</li>
+                        <li><a href="#sign">Math.sign(x): </a>Returns the sign of a number, indicating whether the
+                            number is positive, negative, or zero.</li>
+                        <li><a href="#random">Math.random(): </a>Returns a pseudo-random number between 0 (inclusive)
+                            and 1 (exclusive).</li>
+                        <li><a href="#trunc">Math.trunc(): </a>Returns the integer part of a number by removing any
+                            fractional digits.</li>
+                        <li><a href="#max">Math.max(x, y, ...n): </a>Returns the largest of zero or more numbers.</li>
+                        <li><a href="#min">Math.min(x, y, ...n): </a>Returns the smallest of zero or more numbers.</li>
+                        <li><a href="#pow">Math.pow(): </a>Returns the base to the exponent power.</li>
+
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <ol start="11">
+                        <li><a href="#sqrt">Math.sqrt(): </a>Returns the square root of a number.</li>
+                        <li><a href="#cbrt">Math.cbrt(): </a>Returns the cube root of a number.</li>
+                        <li><a href="#log">Math.log(): </a>Returns the natural logarithm (base e) of a number.</li>
+                        <li><a href="#log10">Math.log10(): </a>Returns the base 10 logarithm of a number.</li>
+                        <li><a href="#log2">Math.log2(): </a>Returns the base 2 logarithm of a number.</li>
+                        <li><a href="#sin">Math.sin(): </a>Returns the sine of a number.</li>
+                        <li><a href="#cos">Math.cos(): </a>Returns the cosine of a number.</li>
+                        <li><a href="#tan">Math.tan(): </a>Returns the tangent of a number.</li>
+                        <li><a href="#asin">Math.asin(): </a>Returns the arcsine (in radians) of a number.</li>
+                        <li><a href="#acos">Math.acos(): </a>Returns the arccosine (in radians) of a number.</li>
+                        <li><a href="#atan">Math.atan(): </a>Returns the arctangent (in radians) of a number.</li>
+                        <li><a href="#atan2">Math.atan2(): </a>Returns the arctangent of the quotient of its arguments.
+                        </li>
+                        <!-- <li><a href="#"></a></li>
+                        <li><a href="#"></a></li> -->
+                    </ol>
+                </div>
+            </div>
+
+
+            <!-- ========== Start Math.round() ========== -->
+            <p class="h5 text-success" id="round">1. Math.round()</p>
+            <p><b><em>Math.round()</em></b> is a method in JavaScript's Math object used to round a number to the
+                nearest integer. The rounding is based on standard mathematical rounding rules:</p>
+            <ul>
+                <li>If the decimal part of the number is 0.5 or greater, <b><em>Math.round()</em></b> will round the
+                    number up to the next integer.</li>
+                <li>If the decimal part is less than 0.5, <b><em>Math.round()</em></b> will round the number down to the
+                    previous integer.</li>
+            </ul>
+
+            <p><b><mark>NOTE: </mark></b>
+            <ul>
+                <li><b><em>Math.round()</em></b> does not modify the original number; it returns a new integer value
+                    based on the rounding rules.</li>
+                <li>If the number is exactly halfway between two integers (e.g., 2.5), <b><em>Math.round()</em></b> will
+                    round to the nearest even number (this is known as "round half to even" or "bankers' rounding"). For
+                    example, <b><em>Math.round(2.5)</em></b> results in 2, and <b><em>Math.round(3.5)</em></b> results
+                    in 4.</li>
+            </ul>
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-101" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(101)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-101"><code>&lt;script&gt;
+    // Perform rounding operations on different numbers
+    let roundOff1 = Math.round(3.2);
+    let roundOff2 = Math.round(3.8);
+    let roundOff3 = Math.round(-3.2);
+    let roundOff4 = Math.round(-3.8);
+    let roundOff5 = Math.round(2.5);
+    let roundOff6 = Math.round(3.5);
+
+    // Display the results in HTML element
+    document.getElementById('round-output-1').innerHTML = `${roundOff1} &lt;br&gt; ${roundOff2} &lt;br&gt;${roundOff3} &lt;br&gt;${roundOff4} &lt;br&gt;${roundOff5} &lt;br&gt;${roundOff6}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="round()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="round-output-1"></p>
+                    <!-- <p id="round-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.round() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.floor() ========== -->
+            <p class="h5 text-success" id="floor">2. Math.floor()</p>
+            <p><b><em>Math.floor()</em></b> is a method in JavaScript's Math object used to round a number down to the
+                nearest integer that is less than or equal to the given number. It essentially truncates the decimal
+                part of a number, returning the largest integer less than or equal to the number itself.</p>
+            <p>It doesn't modify the original number; it returns a new integer value.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-102" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(102)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-102"><code>&lt;script&gt;
+    // Perform floor operations on different numbers
+    const floor1 = Math.floor(3.2);
+    const floor2 = Math.floor(3.8);
+    const floor3 = Math.floor(-3.2);
+    const floor4 = Math.floor(-3.8);
+    const floor5 = Math.floor(Math.PI);
+
+    // Display the results in HTML element
+    document.getElementById('floor-output-1').innerHTML = `${floor1} &lt;br&gt; ${floor2} &lt;br&gt;${floor3} &lt;br&gt;${floor4} &lt;br&gt;${floor5}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="floor()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="floor-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.floor() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.ceil() ========== -->
+            <p class="h5 text-success" id="ceil">3. Math.ceil()</p>
+            <p><b><em>Math.ceil()</em></b> is a method in JavaScript's <b>Math</b> object used to round a number up to
+                the nearest integer that is greater than or equal to the given number. It effectively rounds the number
+                to the next higher integer.</p>
+            <p>It doesn't modify the original number; it returns a new integer value based on the rounding of the number
+                to the next higher integer.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-103" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(103)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-103"><code>&lt;script&gt;
+    // Perform ceil operations on different numbers
+    const ceil1 = Math.ceil(3.2);
+    const ceil2 = Math.ceil(3.8);
+    const ceil3 = Math.ceil(-3.2);
+    const ceil4 = Math.ceil(-3.8);
+    const ceil5 = Math.ceil(Math.PI);
+
+    // Display the results in HTML element
+    document.getElementById('ceil-output-1').innerHTML = `${ceil1} &lt;br&gt; ${ceil2} &lt;br&gt;${ceil3} &lt;br&gt;${ceil4} &lt;br&gt;${ceil5}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="ceil()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="ceil-output-1"></p>
+                    <!-- <p id="ceil-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.ceil() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.abs() ========== -->
+            <p class="h5 text-success" id="abs">4. Math.abs()</p>
+            <p><b><em>Math.abs()</em></b> is a method in JavaScript's <b>Math</b> object used to retrieve the absolute
+                value of a number, effectively returning the magnitude of the number regardless of its sign (positive or
+                negative).</p>
+            <p>It doesn't modify the original number; it returns a new value representing the absolute value.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-104" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(104)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-104"><code>&lt;script&gt;
+    // Perform abs operations on different numbers
+    const abs1 = Math.abs(5);
+    const abs2 = Math.abs(-8);
+    const abs3 = Math.abs(0);
+
+    // Display the results in HTML element
+    document.getElementById('abs-output-1').innerHTML = `${abs1} &lt;br&gt; ${abs2} &lt;br&gt;${abs3}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="abs()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="abs-output-1"></p>
+                    <!-- <p id="abs-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.abs() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.sign(x) ========== -->
+            <p class="h5 text-success" id="sign">5. Math.sign(x)</p>
+            <p><b><em>Math.sign(x)</em></b> is a method in JavaScript's <b>Math</b> object used to determine the sign of
+                a number x and return a value indicating whether the number is positive, negative, or zero.</p>
+            <ul>
+                <li>For positive numbers, <b>Math.sign()</b> returns <b>1</b>.</li>
+                <li>For negative numbers, <b>Math.sign()</b> returns <b>-1</b>.</li>
+                <li>For zero, <b><em>Math.sign()</em></b> returns <b>0</b>.</li>
+                <li>It doesn't modify the original number; it returns a value representing the sign of the number.</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-105" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(105)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-105"><code>&lt;script&gt;
+    // Perform sign operations on different numbers
+    const sign1 = Math.sign(5);
+    const sign2 = Math.sign(-8);
+    const sign3 = Math.sign(0);
+
+    // Display the results in HTML element
+    document.getElementById('sign-output-1').innerHTML = `${sign1} &lt;br&gt; ${sign2} &lt;br&gt;${sign3}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="sign()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="sign-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.sign(x) ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.random() ========== -->
+            <p class="h5 text-success" id="random">6. Math.random()</p>
+            <p><b><em>Math.random()</em></b> is a method in JavaScript's <b>Math</b> object that generates and returns a
+                random number in the range from <b>0</b> up to, but not including, <b>1</b>.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-106" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(106)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-106"><code>&lt;script&gt;
+    // random number between 0 - 1
+    let random0To1 = Math.random();
+
+    // random number between 0 - 10
+    let random0To10 = Math.floor(Math.random() * 10);
+
+    // random number from 1 - 10
+    let random1To10 = Math.floor(Math.random() * 10) + 1;
+
+    // random number between 15 - 25 formulae Math.floor(Math.random() * (max - min) + min)
+    let random15To25 = Math.floor(Math.random() * (25 - 15) + 15);
+
+    // Display the results in HTML element
+    document.getElementById(&quot;random-output-1&quot;).innerHTML = `Random number b/w 0-1 = ${random0To1} &lt;br&gt; Random number b/w 0-10 = ${random0To10} &lt;br&gt; Random number from 1-10 = ${random1To10} &lt;br&gt; Random number b/w 15-25 = ${random15To25}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="random()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="random-output-1"></p>
+                    <!-- <p id="random-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.random() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.trunc() ========== -->
+            <p class="h5 text-success" id="trunc">7. Math.trunc()</p>
+            <p><b><em>Math.trunc()</em></b> is a method in JavaScript's <b>Math</b> object used to remove the decimal
+                part of a number, effectively truncating the number towards zero and returning the integer part.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-107" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(107)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-107"><code>&lt;script&gt;
+    // Perform trunc operations on different numbers
+    const trunc1 = Math.trunc(5.6);
+    const trunc2 = Math.trunc(-8.2);
+    const trunc3 = Math.trunc(0.5);
+
+    // Display the results in HTML element
+    document.getElementById('trunc-output-1').innerHTML = `${trunc1} &lt;br&gt; ${trunc2} &lt;br&gt;${trunc3}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="trunc()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="trunc-output-1"></p>
+                    <!-- <p id="trunc-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.trunc() ========== -->
+
+
+
+
+
+            <!-- ====== Start Math.max(x, y, ...n) ====== -->
+            <p class="h5 text-success" id="max">8. Math.max(x, y, ...n)</p>
+            <p><b><em>Math.max(x, y, ...n)</em></b> is a method in JavaScript's <b>Math</b> object used to find the
+                maximum value among a series of numbers or numeric expressions provided as arguments.</p>
+            <p>It doesn't modify the original numbers; it only returns the maximum value among the provided arguments.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-108" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(108)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-108"><code>&lt;script&gt;
+    // Calculate the maximum value among given numbers
+    let max1 = Math.max(5, 2.5, 8, 10.2);
+    let max2 = Math.max(-3, -9, -1, -5);
+
+    // Create an array of numbers
+    let arry = [1, 2, 3, 4, 5, 6];
+    // Find the maximum value in the array using spread syntax
+    let maxArry = Math.max(...arry);
+
+    // Display the results in an HTML element
+    document.getElementById('max-output-1').innerHTML = `max1 = ${max1}&lt;br&gt; max2 = ${max2}&lt;br&gt; maxArry = ${maxArry}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="max()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="max-output-1"></p>
+                    <!-- <p id="max-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ====== End Math.max(x, y, ...n) ====== -->
+
+
+
+
+
+            <!-- ====== Start Math.min(x, y, ...n) ====== -->
+            <p class="h5 text-success" id="min">9. Math.min(x, y, ...n)</p>
+            <p><b><em>Math.min(x, y, ...n)</em></b> is a method in JavaScript's <b>Math</b> object used to find the
+                minimum value among a series of numbers or numeric expressions provided as arguments.</p>
+            <p>It doesn't modify the original numbers; it only returns the minimum value among the provided arguments.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-109" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(109)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-109"><code>&lt;script&gt;
+    // Calculate the minimum value among given numbers
+    let min1 = Math.min(5, 2.5, 8, 10.2);
+    let min2 = Math.min(-3, -9, -1, -5);
+
+    // Create an array of numbers
+    let arry = [1, 2, 3, 4, 5, 6];
+    // Find the minimum value in the array using spread syntax
+    let minArry = Math.min(...arry);
+
+    // Display the results in an HTML element
+    document.getElementById('min-output-1').innerHTML = `min1 = ${min1}&lt;br&gt; min2 = ${min2}&lt;br&gt; minArry = ${minArry}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="min()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="min-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ====== End Math.min(x, y, ...n) ====== -->
+
+
+
+
+
+            <!-- ========== Start Math.pow() ========== -->
+            <p class="h5 text-success" id="pow">10. Math.pow()</p>
+            <p><b><em>Math.pow()</em></b> is a method in JavaScript's <b>Math</b> object used to raise a base number to
+                an exponent power.</p>
+            <p><b><em>Math.pow()</em></b> takes two arguments: <b>base</b> (the base number) and <b>exponent</b> (the
+                power to which the base is raised). Both <b>base</b> and <b>exponent</b> can be positive, negative, or
+                zero.</p>
+            <p>If the exponent is <b>0</b>, the result will always be <b>1</b>, regardless of the base.</p>
+            <p>If the exponent is a fraction or decimal, <b><em>Math.pow()</em></b> can be used to calculate roots or
+                fractional powers. For example, <b>Math.pow(16, 0.5)</b> calculates the square root of <b>16</b>,
+                resulting in <b>4</b>.</p>
+            <p>In modern JavaScript, the exponentiation operator (<b>**</b>) is also available for the same purpose and
+                often used for its simplicity. For instance, <b>2 ** 3</b> is equivalent to <b>Math.pow(2, 3)</b> and
+                returns <b>8</b>.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-110" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(110)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-110"><code>&lt;script&gt;
+    // Calculate powers using Math.pow() and the exponentiation operator
+    let pow1 = Math.pow(2, 3);
+    let pow2 = Math.pow(2, -3);
+    let pow3 = Math.pow(16, 0.5);
+    let pow4 = Math.pow(10, 0);
+    let pow5 = 2 ** 3;
+
+    // Display the results in an HTML element
+    document.getElementById('pow-output-1').innerHTML = `${pow1}&lt;br&gt;${pow2}&lt;br&gt;${pow3}&lt;br&gt;${pow4}&lt;br&gt;${pow5}`
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="pow()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="pow-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.pow() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.sqrt() ========== -->
+            <p class="h5 text-success" id="sqrt">11. Math.sqrt()</p>
+            <p><b><em>Math.sqrt()</em></b> is a method in JavaScript's <b>Math</b> object used specifically to calculate
+                the square root of a given number.</p>
+            <p>It returns the positive square root of the provided number.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-111" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(111)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-111"><code>&lt;script&gt;
+    // Calculate square roots and store the results in variables
+    let a = Math.sqrt(0);
+    let b = Math.sqrt(1);
+    let c = Math.sqrt(9);
+    let d = Math.sqrt(64);
+    let e = Math.sqrt(-9);
+
+    // Display the results in an HTML element
+    document.getElementById(&quot;sqrt-output-1&quot;).innerHTML = a + &quot;&lt;br&gt;&quot; + b + &quot;&lt;br&gt;&quot; + c + &quot;&lt;br&gt;&quot; + d + &quot;&lt;br&gt;&quot; + e;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="sqrt()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="sqrt-output-1"></p>
+                    <!-- <p id="sqrt-output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.sqrt() ========== -->
+
+
+
+
+            <!-- ========== Start Math.cbrt() ========== -->
+            <p class="h5 text-success" id="cbrt">12. Math.cbrt()</p>
+            <p><b><em>Math.cbrt()</em></b> is a method in JavaScript's <b>Math</b> object used to calculate the cube
+                root of a given number.</p>
+            <p>It returns the cube root of the provided number.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-112" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(112)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-112"><code>&lt;script&gt;
+    // Calculate cube roots and store the results in variables
+    let a = Math.cbrt(0);
+    let b = Math.cbrt(1);
+    let c = Math.cbrt(27);
+    let d = Math.cbrt(8);
+    let e = Math.cbrt(-8);
+
+    // Display the results in an HTML element
+    document.getElementById(&quot;cbrt-output-1&quot;).innerHTML = a + &quot;&lt;br&gt;&quot; + b + &quot;&lt;br&gt;&quot; + c + &quot;&lt;br&gt;&quot; + d + &quot;&lt;br&gt;&quot; + e;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="cbrt()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="cbrt-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.cbrt() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.log() ========== -->
+            <p class="h5 text-success" id="log">13. Math.log()</p>
+            <p><b><em>Math.log()</em></b> is a method in JavaScript's <b>Math</b> object used to calculate the natural
+                logarithm (base e) of a given number.</p>
+            <p><b>Logarithms</b> are the inverse operation to exponentiation.</p>
+            <p>How many times must we multiply <b>Math.E</b> to get <b>10</b>?</p>
+            <p>In the expression <b>log(10)</b>, the function calculates the natural logarithm. This asks: "To what
+                power must
+                <b><em>e</em></b> be raised to give <b>10</b>?" The answer is approximately 2.30259, as
+                <b><em>e</em><sup>2.30259</sup> ≈ 10</b>.
+            </p>
+            <p>For positive numbers, it returns the natural logarithm of the given value.</p>
+            <ul>
+                <li>Return <b>NaN</b> (Not a Number) for <b>negative numbers</b>, as there's no valid logarithm for
+                    negative values.</li>
+                <li><b>-Infinity</b> for <b>zero</b>, as the logarithm of zero to any base is negative infinity</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-113" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(113)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-113"><code>&lt;script&gt;
+    // Calculate natural logarithms for various numbers and store the results in variables
+    let a = Math.log(2.7183);
+    let b = Math.log(10);
+    let c = Math.log(1);
+    let d = Math.log(0);
+    let e = Math.log(-1);
+
+    // Display the results in an HTML element
+    document.getElementById(&quot;log-output-1&quot;).innerHTML =
+        a + &quot;&lt;br&gt;&quot; + b + &quot;&lt;br&gt;&quot; + c + &quot;&lt;br&gt;&quot; + d + &quot;&lt;br&gt;&quot; + e;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="log()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="log-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.log() ========== -->
+
+
+
+
+            <!-- ========== Start Math.log10() ========== -->
+            <p class="h5 text-success" id="log10">14. Math.log10()</p>
+            <p><b><em>Math.log10()</em></b> is a method in JavaScript's <b>Math</b> object used to calculate the base 10
+                logarithm of a given number.</p>
+            <p><b>Logarithms</b> are the inverse operation to exponentiation.</p>
+            </p>
+            <p>How many times must we multiply <b>10</b> to get <b>1000</b>? </p>
+            <p>In the expression <b>log10(100)</b>, the base is <b>10</b>. This asks: "To what power must 10 be raised
+                to give 100?"
+                The answer is 2, as <b>10<sup>2</sup> = 100</b>.</p>
+            <ul>
+                <li><b>NaN</b> (Not a Number) for <b>negative numbers</b>, as there's no valid logarithm for negative
+                    values.</li>
+                <li><b>-Infinity</b> for <b>zero</b>, as the logarithm of zero to any base is negative infinity.</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-114" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(114)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-114"><code>&lt;script&gt;
+    // Calculate base 10 logarithms for various numbers and store the results in variables
+    let a = Math.log10(100);
+    let b = Math.log10(1000);
+    let c = Math.log10(1);
+    let d = Math.log10(0);
+    let e = Math.log10(-1);
+    let f = Math.log10(0.01);
+
+    // Display the results in an HTML element
+    document.getElementById(&quot;log10-output-1&quot;).innerHTML =
+        a + &quot;&lt;br&gt;&quot; + b + &quot;&lt;br&gt;&quot; + c + &quot;&lt;br&gt;&quot; + d + &quot;&lt;br&gt;&quot; + e + &quot;&lt;br&gt;&quot; + f;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="log10()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="log10-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.log10() ========== -->
+
+
+
+
+            <!-- ========== Start Math.log2() ========== -->
+            <p class="h5 text-success" id="log2">15. Math.log2()</p>
+            <p><b><em>Math.log2()</em></b> is a built-in <b>Math</b> object in JavaScript function that calculates the
+                logarithm of a number to the base 2. </p>
+            <p><b>Logarithms</b> are the inverse operation to exponentiation.</p>
+            <p>How many times must we multiply <b>2</b> to get <b>8</b>?</p>
+            <p>In the expression <b>log2(8)</b>, the base is <b>2</b>. This asks: "To what power must 2 be raised to
+                give 8?" The answer is 3, as <b>2<sup>3</sup> = 8</b>. Therefore, <b>log2(8) equals 3</b>.</p>
+            <ul>
+                <li>Returns <b>NaN</b> (Not a Number) for <b>negative numbers</b> as there's no valid logarithm for
+                    negative values.</li>
+                <li><b>-Infinity</b> for <b>zero</b>, as the logarithm of zero to any base is negative infinity.</li>
+            </ul>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-115" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(115)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-115"><code>&lt;script&gt;
+    // Calculating logarithms to base 2 for various numbers
+    let a = Math.log2(8);
+    let b = Math.log2(64);
+    let c = Math.log2(1);
+    let d = Math.log2(0);
+    let e = Math.log2(-10);
+
+    // Display the results in an HTML element
+    document.getElementById(&quot;log2-output-1&quot;).innerHTML =
+        a + &quot;&lt;br&gt;&quot; + b + &quot;&lt;br&gt;&quot; + c + &quot;&lt;br&gt;&quot; + d + &quot;&lt;br&gt;&quot; + e;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="log2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="log2-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.log2() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.sin() ========== -->
+            <p class="h5 text-success" id="sin">16. Math.sin()</p>
+            <p><b><em>Math.sin()</em></b> is a JavaScript function that calculates the sine of an angle given in
+                <b>radians</b>.
+            </p>
+            <p><b>Math.sin()</b> expects input in <b>radians</b>. To convert degrees to radians, use</p>
+            <pre class="rounded"><code>let degToRedian = degrees * Math.PI/180;</code></pre>
+            <p>For an angle of <b>π/6 radians</b> (which represents 30 degrees), <b>sin(π/6)</b> returns <b>0.5</b>
+                because the <b>sine of π/6 radians is 0.5</b>. </p>
+            <p>The <b>Math.sin()</b> method returns a number between <b>-1</b> and <b>1</b>. <b>NaN</b> if the parameter
+                is not numeric.</p>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-116" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(116)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-116"><code>&lt;script&gt;
+    // Function to calculate sine in radians from degrees
+    function calculatesine(degrees) {
+        let sine = Math.sin(degrees * Math.PI / 180);    // Convert degrees to radians and calculate sine
+        return sine; // Return the sine value
+    }
+
+    const angles = [0, 1, 30, 45, 60, 90, 120, 180, 360];   // Array of angles in degrees
+
+    // Iterate through each angle and calculate sine
+    angles.forEach(function (angle) {
+        const sineValue = calculatesine(angle);   // Calculate sine for the current angle
+
+        // Display the sine value for each angle in an HTML element
+        document.getElementById(&quot;sin-output-1&quot;).innerHTML +=
+            `sine of ${angle} degrees: ${sineValue} &lt;br&gt;`
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="sin()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="sin-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+
+
+            <!-- ========== End Math.sin() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.cos() ========== -->
+            <p class="h5 text-success" id="cos">17. Math.cos()</p>
+            <p><b><em>Math.cos()</em></b> is a JavaScript function that calculates the cosine of an angle given in
+                radians.</p>
+            <p><b>Math.cos()</b> expects input in <b>radians</b>. To convert degrees to radians, use</p>
+            <pre class="rounded"><code>let degToRedian = degrees * Math.PI/180;</code></pre>
+            <p>For an angle of <b>π/3</b> radians (which represents 60 degrees), <b>cos(π/3)</b> returns <b>0.5</b>
+                because the <b>cosine of π/3 radians is 0.5</b>.</p>
+            <p>The <b>Math.cos()</b> method returns a number between <b>-1</b> and <b>1</b>. <b>NaN</b> if the parameter
+                is not numeric.</p>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-117" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(117)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-117"><code>&lt;script&gt;
+    // Function to calculate cosine in radians from degrees
+    function calculateCosine(degrees) {
+        let cosine = Math.cos(degrees * Math.PI / 180);    // Convert degrees to radians and calculate cosine
+        return cosine; // Return the cosine value
+    }
+
+    const angles = [0, 1, 30, 45, 60, 90, 120, 180, 360];   // Array of angles in degrees
+
+    // Iterate through each angle and calculate cosine
+    angles.forEach(function (angle) {
+        const cosineValue = calculateCosine(angle);   // Calculate cosine for the current angle
+
+        // Display the cosine value for each angle in an HTML element
+        document.getElementById(&quot;cos-output-1&quot;).innerHTML +=
+            `Cosine of ${angle} degrees: ${cosineValue} &lt;br&gt;`
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="cos()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="cos-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.cos() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.tan() ========== -->
+            <p class="h5 text-success" id="tan">18. Math.tan()</p>
+            <p><b><em>Math.tan()</em></b> is a JavaScript function that calculates the tangent of an angle given in
+                radians. </p>
+            <p><b>Math.tan()</b> expects input in <b>radians</b>. To convert degrees to radians, use</p>
+
+            <pre class="rounded"><code>let degToRedian = degrees * Math.PI/180;</code></pre>
+            <p>For an angle of <b>π/4</b> radians (which represents 45 degrees), tan(π/6) returns approximately 1
+                because the tangent of <b>π/4 radians is approximately 1</b>.</p>
+            <p>The <b>Math.tan()</b> method returns a number between <b>-1</b> and <b>1</b>. <b>NaN</b> number is empty
+                or not numeric.</p>
+
+            <p>Based on sine and cosine:</p>
+            <code><pre>Math.tan(x) = Math.sin(x) / Math.cos(x).</pre></code>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-118" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(118)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-118"><code>&lt;script&gt;
+    // Function to calculate tangent in radians from degrees
+    function calculateTangent(degrees) {
+        let tangent = Math.tan(degrees * Math.PI / 180);    // Convert degrees to radians and calculate tangent
+        return tangent; // Return the tangent value
+    }
+
+    const angles = [0, 1, 30, 45, 60, 90, 120, 180, 360];   // Array of angles in degrees
+
+    // Iterate through each angle and calculate tangent
+    angles.forEach(function (angle) {
+        const tangentValue = calculateTangent(angle);   // Calculate tangent for the current angle
+
+        // Display the tangent value for each angle in an HTML element
+        document.getElementById(&quot;tan-output-1&quot;).innerHTML +=
+            `Tangent of ${angle} degrees: ${tangentValue} &lt;br&gt;`
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="tan()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="tan-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.tan() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.asin() ========== -->
+            <p class="h5 text-success" id="asin">19. Math.asin()</p>
+            <p><b><em>Math.asin()</em></b> is a JavaScript function that calculates the arcsine (inverse sine) of a
+                number, returning an angle between -PI/2 to PI/2 radians.</p>
+            <p>For a sine value of 0.5, <b>asin(0.5) returns approximately 0.5236</b> radians because the arcsine of 0.5
+                is approximately π/6 radians.</p>
+            <ul>
+                <li><b>Math.asin()</b> expects input values between <b>-1</b> and <b>1</b>, representing valid sine
+                    values. </li>
+                <li>The function returns values in radians within the range <b>[-π/2, π/2]</b>. <b>NaN</b> if the
+                    parameter is not numeric or outside the range of -1 to 1.</li>
+            </ul>
+            <p>To convert an <b>angle in radians to degrees</b>, the formula is:</p>
+            <pre><code>radians * 180 / Math.PI</code></pre>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-119" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(119)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-119"><code>&lt;script&gt;
+    function calculateArcsine(radians) {
+        // Calculate arcsine in radians
+        let anglesInRadian = Math.asin(radians);
+
+        // Convert to degrees   
+        let degrees = anglesInRadian * 180 / Math.PI;   
+        return degrees;
+    }
+    // Array of values between -1 and 1 in radians
+    const radianAngles = [-1, -0.5, 0, 0.5, 1]; 
+
+    radianAngles.forEach(function (value) {
+        // Calculate arcsine for the current value
+        const arcsineValue = calculateArcsine(value);
+
+        document.getElementById(&quot;asin-output-1&quot;).innerHTML += `Arcsine of ${value}: ${arcsineValue} degrees.&lt;br&gt;`;
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="asin()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="asin-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.asin() ========== -->
+
+
+
+
+
+            <!-- ========== Start Math.acos() ========== -->
+            <p class="h5 text-success" id="acos">20. Math.acos()</p>
+            <p><b><em>Math.acos()</em></b> is a JavaScript function that calculates the arccosine (inverse cosine) of a
+                number, returning an angle between 0 to PI radians. </p>
+            <p>For a cosine value of 0.5, <b>acos(0.5)</b> returns approximately <b>1.0472 radians</b> because the
+                <b>arccosine of 0.5 is approximately π/3 radians</b>.
+            </p>
+            <ul>
+                <li><b>Math.acos()</b> expects input values between <b>-1</b> and <b>1</b>, representing valid cosine
+                    values. </li>
+                <li>The function returns values in radians within the range <b>[0, π]</b>. <b>NaN</b> if the parameter
+                    is not numeric or outside the range of -1 to 1.</li>
+            </ul>
+            <p>To convert an <b>angle in radians to degrees</b>, the formula is:</p>
+            <pre><code>radians * 180 / Math.PI</code></pre>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-120" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(120)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-120"><code>&lt;script&gt;
+    function calculateArccosine(radians) {
+        // Calculate arccosine in radians
+        let anglesInRadian = Math.acos(radians); 
+
+        // Convert to degrees  
+        let degrees = anglesInRadian * 180 / Math.PI;   
+        return degrees;
+    }
+    // Array of values between -1 and 1 in radians
+    const radianAngles = [-1, -0.5, 0, 0.5, 1];    
+
+    radianAngles.forEach(function (value) {
+        // Calculate arccosine for the current value
+        const arccosineValue = calculateArccosine(value); 
+        
+        document.getElementById(&quot;acos-output-1&quot;).innerHTML += `Arcsine of ${value}: ${arccosineValue} degrees.&lt;br&gt;`;
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="acos()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="acos-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.acos() ========== -->
+
+
+
+
+            <!-- ========== Start Math.atan() ========== -->
+            <p class="h5 text-success" id="atan">21. Math.atan()</p>
+            <p><b><em>Math.atan()</em></b> is a JavaScript function that calculates the arctangent (inverse tangent) of
+                a number, returning an angle between -PI/2 and PI/2 radians. </p>
+            <p>For a tangent value of 1, <b>atan(1)</b> returns approximately <b>0.7854 radians</b> because the
+                <b>arctangent of 1</b> is approximately <b>π/4 radians</b>.
+            </p>
+
+            <ul>
+                <li><b>Math.atan()</b> expects input values ranging from <b>negative infinity</b> to <b>positive
+                        infinity</b>, representing valid tangent values.</li>
+                <li>The function returns values in radians within the range <b>[-π/2, π/2]. NaN</b> if the number is
+                    empty or not numeric.</li>
+            </ul>
+            <p>To convert an <b>angle in radians to degrees</b>, the formula is:</p>
+            <pre><code>radians * 180 / Math.PI</code></pre>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-121" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(121)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-121"><code>&lt;script&gt;
+    function calculateArctangent(radians) {
+        // Calculate arctangent in radians
+        let anglesInRadian = Math.atan(radians);
+
+        // Convert to degrees
+        let degrees = anglesInRadian * 180 / Math.PI;
+        return degrees;
+    }
+    // Array of values between -1 and 1 in radians
+    const radianAngles = [Math.E, -1, -0.5, 0, 0.5, 1];
+
+    radianAngles.forEach(function (value) {
+        const arctangentValue = calculateArctangent(value); // Calculate arctangent for the current value
+        document.getElementById(&quot;atan-output-1&quot;).innerHTML += `atan of ${value}: ${arctangentValue} degrees.&lt;br&gt;`;
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="atan()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="atan-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.atan ========== -->
+
+
+
+
+            <!-- ========== Start Math.atan2() ========== -->
+            <p class="h5 text-success" id="atan2">22. Math.atan2()</p>
+            <p>The <b><em>Math.atan2()</em></b> method returns the arctangent of the quotient of its arguments, as a
+                numeric value between <b>PI</b> and <b>-PI</b> radians.</p>
+            <p><b><code>Note:</code></b> With <b>atan2()</b>, the <b>y</b> coordinate is passed as the <b>first
+                    argument</b> and the <b>x</b> coordinate is passed as the <b>second argument</b>.</p>
+            <p>For x = 1 and y = 1, <b>atan2(1, 1)</b> returns approximately <b>0.7854 radians</b> because the
+                arctangent of the quotient y/x (1/1) is approximately <b>π/4 radians</b>.</p>
+            <ul>
+                <li>It takes two arguments: <b>Math.atan2(y, x)</b></li>
+                <li>The function returns values in radians within the range <b>[-π, π]</b>, representing the angle from
+                    the positive x-axis to the point (x, y).</li>
+                <li>Returns <b>NaN</b> if the values are empty or not numeric.</li>
+            </ul>
+            <p>To convert an <b>angle in radians to degrees</b>, the formula is:</p>
+            <pre><code>radians * 180 / Math.PI</code></pre>
+            <div class="table-responsive col-md-6">
+                <table class="table table-striped table-bordered border-warning table-sm text-center">
+                    <thead>
+                        <tr class="table-warning align-middle ">
+                            <th>Angle (Degrees)</th>
+                            <th>Angle in terms of PI</th>
+                            <th>Angle in Radians</th>
+                        </tr>
+                        <tr class="table-success align-middle ">
+                            <th>degToRedian = degrees * Math.PI/180;</th>
+                            <th>degToRedian = Angle in terms of PI</th>
+                            <th>degToRedian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0°</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1°</td>
+                            <td>Math.PI/180</td>
+                            <td>0.0175</td>
+                        </tr>
+                        <tr>
+                            <td>15°</td>
+                            <td>Math.PI/12</td>
+                            <td>0.262</td>
+                        </tr>
+                        <tr>
+                            <td>30°</td>
+                            <td>Math.PI/6</td>
+                            <td>0.52</td>
+                        </tr>
+                        <tr>
+                            <td>45°</td>
+                            <td>Math.PI/4</td>
+                            <td>0.79</td>
+                        </tr>
+                        <tr>
+                            <td>60°</td>
+                            <td>Math.PI/3</td>
+                            <td>1.05</td>
+                        </tr>
+                        <tr>
+                            <td>90°</td>
+                            <td>Math.PI/2</td>
+                            <td>1.57</td>
+                        </tr>
+                        <tr>
+                            <td>120°</td>
+                            <td>(2*Math.PI)/3</td>
+                            <td>2.09</td>
+                        </tr>
+                        <tr>
+                            <td>180°</td>
+                            <td>Math.PI</td>
+                            <td>3.14</td>
+                        </tr>
+                        <tr>
+                            <td>360°</td>
+                            <td>Math.PI*2</td>
+                            <td>6.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-122" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(122)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-122"><code>&lt;script&gt;
+    function calculateArctan2(y, x) {
+        let angleInRadian = Math.atan2(y, x);   // Calculate arctangent using x and y coordinates
+        let degrees = angleInRadian * 180 / Math.PI;   // Convert to degrees
+        return degrees;
+    }
+
+    const coordinates = [
+        { x: 1, y: 1 },
+        { x: -1, y: -1 },
+        { x: 0, y: 1 },
+        { x: 1, y: 0 },
+        { x: -1, y: 0 },
+        { x: 0, y: -1 }
+    ];    // Array of coordinate objects
+
+    coordinates.forEach(function (coord) {
+        const arctan2Value = calculateArctan2(coord.y, coord.x); // Calculate arctan2 for the current coordinates
+
+        document.getElementById(&quot;atan2-output-1&quot;).innerHTML += `Arctan2 of (${coord.x}, ${coord.y}): ${arctan2Value} degrees &lt;br&gt;`;
+    });
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="atan2()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="atan2-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+            <!-- ========== End Math.atan2 ========== -->
+
+
+        </div>
+        <!-- ========== End Math Object methods ========== -->
+    </main>
+
+
+
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>

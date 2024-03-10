@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exception Handling</title>
+
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Light Theme (Version 1.23.0) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> -->
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Custom CSS Styles -->
+	<style>
+		.nav-background {
+			background: #1a2a6c;
+			background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+			background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c) !important;
+		}
+
+		ul li a {
+			text-decoration: none;
+			font-weight: 600;
+		}
+	</style>
+	<!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">Exception Handling</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<div class="container border rounded border-warning mb-3" id="">
+			<ul>
+				<li><a href="#Definition">Definition</a></li>
+				<li><a href="#Exception">Exception Handling Statements</a></li>
+				<li><a href="#Types">Types of Error</a></li>
+				<li><a href="#Error">Error Objects</a></li>
+			</ul>
+		</div>
+
+
+
+		<div class="container border rounded border-warning mb-3" id="Definition">
+			<p class="h4 text-danger">Definition</p>
+			<p><b><code>Exception handling</code></b> in JavaScript involves the use of <b><code> try-catch-finally</code></b>
+				blocks
+				to manage errors that may occur during the execution of code. This mechanism allows you to gracefully handle and
+				recover from errors without causing the script to stop abruptly.</p>
+			<p class="h5 text-success">Syntax:</p>
+			<pre class="rounded"><code class="language-javascript">try {
+  // code that may throw an error
+} catch (err) {
+  // code to be executed if an error occurs
+} finally {
+  // code to be executed regardless of an error occurs or not
+}
+</code></pre>
+		</div>
+
+
+
+
+		<div class="container border rounded border-warning mb-3" id="Exception">
+			<p class="h4 text-danger">Exception Handling Statements</p>
+			<p>JavaScript provides an <b><code>error-handling</code></b> mechanism to catch runtime errors using
+				<b><code>try-catch-finally</code></b> block.
+			</p>
+			<p>An <b><code>exception</code></b> is thrown whenever an error occurs. An exception can be a <b>string</b>,
+				<b>number</b>, <b>Boolean</b>, or an <b>Object</b>.
+			</p>
+			<ul>
+				<li><b>try block: </b>Encloses the code that might throw an exception. If an error occurs within this block, it
+					gets "caught" and triggers the catch block.</li>
+				<li><b>catch block: </b>Catches and handles any error that occurs within the corresponding try block. It
+					specifies how to handle the caught error. The error variable holds information about the error.</li>
+				<li><b>finally block: </b>It's an optional block that follows a try...catch block. The code within the finally
+					block executes irrespective of whether an error occurs or not.</li>
+				<li><b>throw statement: </b> allows us to throw our custom exceptions. When throw statement is executed, the
+					statements present after it will not execute. The control will directly pass to the catch block.</li>
+			</ul>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-1"><code class="language-javascript">&lt;script&gt;
+document.getElementById('Exception Handling').addEventListener('click', () =&gt; {
+	const age = document.getElementById('age').value;
+	try{
+		if(isNaN(age) || age === ''){
+    document.getElementById('output-1').innerHTML = 'Please enter your age.';
+		}else if(age &lt; 18){
+			throw new Error('Not Eligible');
+		}else{
+			document.getElementById('output-1').innerHTML = 'You are Eligible for voting.'
+		}
+	} catch (error){
+		document.getElementById('output-1').innerHTML = error;
+	} finally{
+		document.getElementById('output-2').innerHTML = `Your Age: ${age}`;
+	}
+});
+&lt;/script&gt;</code></pre>
+				<label>Enter Your Age:<input type="number" id="age" /></label>
+				<button class="btn btn-warning fw-bold" id="Exception Handling">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-1" class="m-0"></p>
+					<p id="output-2"></p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="container border rounded border-warning mb-3" id="Types">
+			<p class="h4 text-danger">Types of Error</p>
+			<p>While coding, there can be three types of errors in the code:</p>
+			<ul>
+				<li><b>Syntax Error: </b>When a user makes a mistake in the pre-defined syntax of a programming language, a
+					syntax error may appear.</li>
+				<li><b>Runtime Error: </b>When an error occurs during the execution of the program, such an error is known as
+					Runtime error. The codes which create runtime errors are known as <b><code>Exceptions</code></b>. Thus,
+					exception handlers are used for handling runtime errors.</li>
+				<li><b>Logical Error:</b>An error which occurs when there is any logical mistake in the program that may not
+					produce the desired output, and may terminate abnormally. Such an error is known as Logical error.</li>
+			</ul>
+		</div>
+
+
+
+
+
+
+		<div class="container border rounded border-warning mb-2" id="Error">
+			<p class="h4 text-danger">Error Objects</p>
+			<p><b><code>Error</code></b> objects are thrown when runtime errors occur. The following are the different type of
+				<b><code>Error</code></b>.
+			</p>
+
+
+			<table class="table table-striped table-bordered border-primary">
+				<thead>
+					<tr class="table-primary">
+						<th>Error Name</th>
+						<th>Error Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>RangeError</td>
+						<td>Error that occurs when a numeric variable or parameter is outside of its valid range.</td>
+					</tr>
+					<tr>
+						<td>ReferenceError</td>
+						<td>Error that occurs when de-referencing an invalid reference, i.e; A ReferenceError is thrown if we use a
+							variable that has not been declared.</td>
+					</tr>
+					<tr>
+						<td>SyntaxError</td>
+						<td>Error that occurs while parsing code in eval() method.</td>
+					</tr>
+					<tr>
+						<td>TypeError</td>
+						<td>Error that occurs when a variable or parameter is not of a valid type.</td>
+					</tr>
+					<tr>
+						<td>URIError</td>
+						<td>Error that occurs when encoded URI() or decodeURI() are passed invalid parameters. (Uniform Resource
+							Identifier)</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>All mentioned objects above contain the following properties:</p>
+			<div class="table-responsive col-md-6">
+				<table class="table table-striped table-bordered border-dark justify-content-start">
+					<thead>
+						<tr class="table-danger">
+							<th>Peoperty</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td>Returns the error name</td>
+						</tr>
+						<tr>
+							<td>message</td>
+							<td>Returns the error message.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example: RangeError</p>
+				<p>You cannot set the number of significant digits of a number to 500:</p>
+				<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(2)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;" id="code-block-2"><code class="language-javascript">&lt;script&gt;
+document.getElementById('btn-2').addEventListener('click', () =&gt; {
+    // Initializing a variable 'num' with the value 1
+    let num = 1;
+
+    // Trying to set the number of significant digits of 'num' to 500
+    try {
+        num.toPrecision(500); // This line might throw an error
+    } catch (error) {
+        // Displaying an error message 
+        document.getElementById('output-3').innerHTML = `Oops, ${error.name}`;
+    }
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="btn-2">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-3"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example: ReferenceError</p>
+				<p>You cannot use the value of a non-existing variable:</p>
+				<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(4)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-4"><code class="language-javascript">&lt;script&gt;
+document.getElementById('btn-4').addEventListener('click', () =&gt; {
+	// Initializing a variable 'x' with the value 5
+	let x = 5;
+
+	try {
+		// Trying to perform an operation where 'y' is not defined
+		x = y + 1; // This line might throw a ReferenceError
+	} catch (err) {
+		// Displaying the error name 
+		document.getElementById(&quot;output-4&quot;).innerHTML = err.name;
+	}
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="btn-4">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-4"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example: SyntaxError</p>
+				<p>You cannot evaluate code that contains a syntax error:</p>
+				<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(5)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-5"><code class="language-javascript">&lt;script&gt;
+document.getElementById('btn-5').addEventListener('click', () =&gt; {
+	try {
+		// Trying to evaluate a string with a syntax error using the eval() function
+		eval(&quot;'Hello&quot;); // This line might throw a SyntaxError
+	} catch (err) {
+		// Displaying the error name 
+		document.getElementById(&quot;output-5&quot;).innerHTML = err.name;
+	}
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="btn-5">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-5"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example: TypeError</p>
+				<p>You cannot convert a number to upper case:</p>
+				<button id="copy-button-6" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(6)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-6"><code class="language-javascript">&lt;script&gt;
+document.getElementById('btn-6').addEventListener('click', () =&gt; {
+	// Initializing a variable 'num' with the value 1
+	let num = 1;
+
+	try {
+		// Trying to call the toUpperCase() method on a number
+		num.toUpperCase(); // This line might throw a TypeError
+	} catch (err) {
+		// Displaying the error name
+		document.getElementById(&quot;output-6&quot;).innerHTML = err.name;
+	}
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="btn-6">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-6"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+
+
+
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+				<p class="h5">Example: URIError</p>
+				<p>Some characters cannot be URI decoded:</p>
+				<button id="copy-button-7" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(7)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-7"><code class="language-javascript">&lt;script&gt;
+document.getElementById('btn-7').addEventListener('click', () =&gt; {
+	try {
+		// Trying to decode an invalid URI using the decodeURI() function
+		decodeURI(&quot;%%%&quot;); // This line might throw an URIError
+	} catch (err) {
+		// Displaying the error name 
+		document.getElementById(&quot;output-7&quot;).innerHTML = err.name;
+	}
+});
+&lt;/script&gt;</code></pre>
+				<button class="btn btn-warning fw-bold" id="btn-7">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-7"></p>
+					<!-- <p id="output-2"></p> -->
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+
+
+
+	<footer>
+		<script src="style.js"></script>
+
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

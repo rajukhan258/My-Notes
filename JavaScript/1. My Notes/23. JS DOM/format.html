@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS DOM</title>
+	<!-- Bootstrap CSS (Version 5.3.0) fundamental styling and components  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<!-- Bootstrap Icons Library (Version 1.11.1) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Prism Code Highlighter - Dark Theme (Version 1.0.0) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-one-dark@1.0.0/prism-onedark.min.css">
+
+	<!-- Local CSS File (style.css) -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar  p-2 nav-background mb-1">
+			<div class="container-fluid nav justify-content-center">
+				<p class="h1 text-white">JS DOM</p>
+			</div>
+		</nav>
+		<button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+			style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+			<a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+		</button>
+	</header>
+
+	<main>
+		<div class="container border rounded border-warning mb-3" id="">
+			<ul>
+				<li><a href="#DOMDefinition">DOM (Document Object Model)</a></li>
+				<li><a href="#Nodes & It's Types">Nodes & It's Types</a></li>
+				<li><a href="#Targeting DOM Objects">Methods for Targeting DOM Objects:</a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+
+
+
+
+		<!-- *****************  Start DOM Definition ****************-->
+		<div class="container border rounded border-warning mb-3" id="DOMDefinition">
+			<p class="h4 text-danger">DOM (Document Object Model)</p>
+
+			<p>The <b><code>W3C Document Object Model</code></b> (DOM) is a platform and language-neutral interface that
+				allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+			</p>
+
+			<p class="mb-0">The W3C DOM standard is separated into 3 different parts:</p>
+			<ul>
+				<li>Core DOM - standard model for all document types</li>
+				<li>XML DOM - standard model for XML documents</li>
+				<li>HTML DOM - standard model for HTML documents</li>
+			</ul>
+
+			<p class="h5 mb-0">HTML DOM:</p>
+			<p>The <b><code>DOM</code></b> stands for <b>Document Object Model</b>, it is an interface that allows developers
+				to interact and control the Elements of the web. It represents an HTML document as a tree of
+				<b><code>Nodes</code></b>. It provides functions that allow you to add, remove, and modify parts of the document
+				effectively.
+			</p>
+
+			<div class="container mb-1 d-flex justify-content-center">
+				<div class="row d-flex">
+					<div class="col text-center">
+						<img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="" srcset=""
+							class="img-fluid border rounded d-block">
+						<caption class=""><strong>Img: </strong>The HTML DOM Tree of Objects</caption>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- *****************  END DOM Definition ****************-->
+
+
+
+		<!-- *****************  Start Nodes & It's Types ****************-->
+		<div class="container border rounded border-warning mb-3" id="Nodes & It's Types">
+			<p class="h4 text-danger">Nodes & It's Types</p>
+			<p><b><code>Nodes</code></b> are individual components or entities that collectively construct the hierarchical
+				structure of an HTML document.</p>
+
+			<p class="mb-0">The DOM comprises different types of nodes:</p>
+			<ul>
+				<li><b>Element Nodes: </b>Element nodes are themselves called objects in DOM. It comprises most of the DOM which
+					holds other data like text and attributes. Example p, h1, h2, ul, li etc. The element nodes may have other
+					elements nested inside it which are known as children of that element.</li>
+				<li><b>Attribute Nodes: </b>Attribute nodes are attached to the element node and add extra information to the
+					element. Example title attribute, class attribute etc.</li>
+				<li><b>Text Node: </b>ext nodes are contents of the elements and have no children like element nodes.</li>
+			</ul>
+
+			<p> Each <b><code>node</code></b> in the DOM tree is identified by a <b>node type</b>. JavaScript uses integer
+				numbers to determine the node
+				types. Each type of node has a different way to access.</p>
+
+			<div class="table-responsive col-lg-6">
+				<table class="table table-bordered border-Light table-sm table-hover">
+					<thead class="bg-info">
+						<tr class="table-dark">
+							<th>Constant</th>
+							<th>Value</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>node.ELEMENT_NODE</td>
+							<td class="text-center ">1</td>
+							<td>An Element node like <b><code>&lt;p&gt;</code></b> or <b><code>&lt;img&gt</code></b></td>
+						</tr>
+						<tr>
+							<td>node.ATTRIBUTE_NODE</td>
+							<td class="text-center ">2</td>
+							<td>An attribute of an element</td>
+						</tr>
+						<tr>
+							<td>node.TEXT_NODE</td>
+							<td class="text-center ">3</td>
+							<td>The text inside an element</td>
+						</tr>
+						<tr>
+							<td>node.COMMENT_NODE</td>
+							<td class="text-center ">8</td>
+							<td>Any comment node like <span class="text-success">&lt;!--commment--&gt;</span></td>
+						</tr>
+						<tr>
+							<td>node.DOCUMENT_NODE</td>
+							<td class="text-center ">9</td>
+							<td>A document node</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="mb-0">A <b><code>node</code></b> has two important properties:</p>
+			<ul>
+				<li>nodeName</li>
+				<li>nodeValue</li>
+			</ul>
+		</div>
+		<!-- *****************  END Nodes & It's Types ****************-->
+
+
+
+		<!-- *********** Start Target DOM Objects  ***********-->
+		<div class="container border rounded border-warning mb-3" id="Targeting DOM Objects">
+			<p class="h4 text-danger" id="sampleId-1">Methods for Targeting DOM Objects:</p>
+
+			<ol>
+				<!-- li firtst -->
+				<li><b>getElementById(): </b>Targets an element with a specific ID.</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Copy the Code and Paste it in console to check output</p>
+					<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(1)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-1"><code class="language-Javascript">// Get element by ID
+const targerId = document.getElementById('sampleId-1');
+</code></pre>
+				</div>
+
+				<!-- li second -->
+				<li><b>getElementsByClassName(): </b>Selects multiple elements by their class name.</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Copy the Code and Paste it in console to check output</p>
+					<button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(2)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-2"><code class="language-javascript">// Get element by ClassName
+const targetClass = document.getElementsByClassName('text-danger');
+</code></pre>
+				</div>
+
+				<!-- li third -->
+				<li><b>getElementsByTagName(): </b>Grabs elements by their tag name.</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Copy the Code and Paste it in console to check output</p>
+					<button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(3)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-3"><code class="language-javascript">// Get element by TagName
+const targetTagName = document.getElementsByTagName('p');
+</code></pre>
+				</div>
+
+				<!-- li forth -->
+				<li><b>querySelector(css selector): </b>Retrieves the first element that matches the specified CSS selector.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Copy the Code and Paste it in console to check output</p>
+					<button id="copy-button-4" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(4)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-4"><code class="language-javascript">// Using querySelector
+const selectTag = document.querySelector('p');
+const selectClass = document.querySelector('.text-danger');
+const selectId = document.querySelector('#sampleId-1');
+const AdvSelect = document.querySelector('#DOMDefinition p');
+</code></pre>
+				</div>
+
+				<!-- li fifth -->
+				<li><b>querySelectorAll(css selector):</b>Returns a NodeList of all elements matching a specified CSS selector.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Copy the Code and Paste it in console to check output</p>
+					<button id="copy-button-5" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(5)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-5"><code class="language-javascript">// Using querySelectorAll
+const selectAllTag = document.querySelectorAll('p');
+const selectAllClass = document.querySelectorAll('.text-danger');
+const selectAllId = document.querySelectorAll('#sampleId-1');
+const AdvAllSelect = document.querySelectorAll('#DOMDefinition p');
+</code></pre>
+				</div>
+			</ol>
+
+			<p class="h4 text-danger">Other Targeting Methods:</p>
+			<div class="container row">
+				<div class="container col">
+					<ul class="mb-0">
+						<li>document</li>
+						<li>document.all</li>
+						<li>document.documentElement</li>
+						<li>document.head</li>
+						<li>document.title</li>
+						<li>document.body</li>
+						<li>document.images</li>
+					</ul>
+				</div>
+				<div class="container col">
+					<ul>
+						<li>document.anchors</li>
+						<li>document.links</li>
+						<li>document.forms</li>
+						<li>document.doctype</li>
+						<li>document.URL</li>
+						<li>document.baseURI</li>
+						<li>document.domain</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- ********** END Target DOM Objects *********-->
+
+
+
+
+		<!-- ************  Start Get Methods *******-->
+		<div class="container border rounded border-warning mb-3" id="">
+			<p class="h4 text-danger">DOM Get Methods:</p>
+			<ol>
+				<!-- li one -->
+				<li><b>innerText: </b>Represents the visible text content of an element.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-14" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(14)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-14"><code class="language-javascript">&lt;div id=&quot;myDiv&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+  let textContent = document.getElementById('myDiv').innerText;
+  console.log(textContent); // Output: Hello, World!
+&lt;/script&gt;</code></pre>
+				</div>
+
+				<!-- li two -->
+				<li><b>innerHTML: </b>Represents the HTML content within an element.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-15" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(15)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-15"><code class="language-javascript">&lt;div id=&quot;myDiv&quot;&gt;&lt;strong&gt;Hello, World!&lt;/strong&gt;&lt;/div&gt;
+&lt;script&gt;
+  let htmlContent = document.getElementById('myDiv').innerHTML;
+  console.log(htmlContent); // Output: &lt;strong&gt;Hello, World!&lt;/strong&gt;
+&lt;/script&gt;</code></pre>
+				</div>
+
+				<!-- li three -->
+				<li><b>getAttribute: </b>Retrieves the value of the specified attribute of an element.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Eample</p>
+					<button id="copy-button-16" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(16)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-16"><code class="language-javascript">&lt;a id=&quot;myLink&quot; href=&quot;https://example.com&quot;&gt;Click Here&lt;/a&gt;
+&lt;script&gt;
+  let hrefValue = document.getElementById('myLink').getAttribute('href');
+  console.log(hrefValue); // Output: https://example.com
+&lt;/script&gt;</code></pre>
+				</div>
+
+				<!-- li four -->
+				<li><b>getAttributeNode: </b>Returns the specified attribute node of an element.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-17" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(17)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-17"><code class="language-javascript">&lt;input id=&quot;myInput&quot; type=&quot;text&quot; value=&quot;Hello&quot;&gt;
+&lt;script&gt;
+  let typeAttribute = document.getElementById('myInput').getAttributeNode('type');
+  console.log(typeAttribute); // Output: Attr { name: &quot;type&quot;, value: &quot;text&quot;, ... }
+	let name = document.getElementById('myInput').getAttributeNode('type').name;
+	let value = document.getElementById('myInput').getAttributeNode('type').value;
+&lt;/script&gt;</code></pre>
+				</div>
+
+				<!-- li five -->
+				<li><b>Attributes: </b>Represents a collection of all attributes of an element.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-18" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(18)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-18"><code class="language-javascript">&lt;img id=&quot;myImage&quot; src=&quot;image.jpg&quot; alt=&quot;My Image&quot;&gt;
+&lt;script&gt;
+  let attributes = document.getElementById('myImage').attributes;
+  console.log(attributes); // Output: NamedNodeMap { 0: src, 1: alt, 2: id, ... }
+	let name = document.getElementById('myImage').attributes[1].name;
+	let value = document.getElementById('myImage').attributes[2].value;
+&lt;/script&gt;</code></pre>
+				</div>
+			</ol>
+		</div>
+		<!-- ************  END Get Methods *******-->
+
+
+
+
+		<!-- **********  Start Set Methods   *********-->
+		<div class="container border rounded border-warning mb-3" id="">
+			<p class="h4 text-danger">DOM Set Methods:</p>
+			<ol>
+				<!-- li one -->
+				<li><b>innerText: </b>Represents the text content of an element, excluding any child elements and their content.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-20" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(20)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-20"><code class="language-javascript">&lt;div id=&quot;myDiv&quot;&gt;
+  &lt;h1&gt;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;script&gt;
+	document.getElementById('myDiv').innerText = "Hi!"
+  let textContent = document.getElementById('myDiv').innerText;
+  console.log(textContent); // Output: &quot;Hi!&quot;
+&lt;/script&gt;</code></pre>
+				</div>
+
+
+				<!-- li two -->
+				<li><b>innerHTML: </b>Represents the HTML content within an element, including any child elements and their
+					content.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-21" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(21)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-21"><code class="language-javascript">&lt;div id=&quot;myDiv&quot;&gt;
+  &lt;strong&gt;Hello, &lt;em&gt;World&lt;/em&gt;!&lt;/strong&gt;
+&lt;/div&gt;
+&lt;script&gt;
+document.getElementById('myDiv').innerHTML = &quot;&lt;h1&gt;Hello World&lt;/h1&gt;&quot;;
+  let htmlContent = document.getElementById('myDiv').innerHTML;
+  console.log(htmlContent); // Output: &quot;&lt;h1&gt;Hello World&lt;/h1&gt;&quot;
+&lt;/script&gt;</code></pre>
+				</div>
+
+
+				<!-- li three -->
+				<li><b>setAttribute: </b>Sets the value of the specified attribute on the element.
+				</li>
+
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-22" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(22)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-22"><code class="language-javascript">&lt;div id=&quot;myDiv&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+  document.getElementById('myDiv').setAttribute('class', 'highlight');
+  document.getElementById('myDiv').setAttribute('style', 'background-color: red; color: white;');
+ 	console.log(document.getElementById('myDiv'));
+ // Output: &lt;div id=&quot;myDiv&quot; style=&quot;background-color: red; color: white;&quot; class=&quot;highlight&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;/script&gt;</code></pre>
+				</div>
+
+
+				<!-- li four -->
+				<li><b>Attribute: </b>Represents a specific attribute of an HTML element.
+				</li>
+
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-23" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(23)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-23"><code class="language-javascript">&lt;div id=&quot;myDiv&quot; style=&quot;background-color: red; color: white;&quot; class=&quot;highlight&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+  let a = document.getElementById('myDiv').attributes[1].value;
+  console.log(a); //output: background-color: red; color: white;
+  let b = document.getElementById('myDiv').attributes[0].value = &quot;container&quot;;
+  console.log(b); //output: container;
+&lt;/script&gt;</code></pre>
+				</div>
+
+
+				<!-- li five -->
+				<li><b>removeAttribute: </b>Removes the specified attribute from the element.
+				</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h6">Example</p>
+					<button id="copy-button-24" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(24)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" id="code-block-24"><code class="language-javascript">&lt;div id=&quot;myDiv&quot; class=&quot;highlight&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+  document.getElementById('myDiv').removeAttribute('class');
+&lt;/script&gt;</code></pre>
+				</div>
+			</ol>
+		</div>
+		<!-- ********* END Set Methods ********-->
+
+
+
+
+		<!-- *********  Start CSS styling Methods    ********-->
+		<div class="container border rounded border-warning mb-3" id="">
+			<p class="h4 text-danger">DOM CSS styling Methods</p>
+			<ol>
+				<!--  li one -->
+				<li><b>style: </b>Provides access to inline styles of an element.</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h5">Example</p>
+					<button id="copy-button-25" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(25)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" style="max-height: 350px;" id="code-block-25"><code class="language-javascript">&lt;div id=&quot;myDiv&quot; style=&quot;color: red; font-size: 18px;&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+	//Getting the value of the 'color' property
+	document.getElementById('myDiv').style.color; // Output: &quot;red&quot;
+	//Setting the value of the 'font-size'
+	document.getElementById('myDiv').style.fontSize = &quot;italic bold 20px Arial&quot;; // Output: &quot;italic bold 20px Arial&quot;
+	document.getElementById(&quot;myDiv&quot;).style.border = &quot;1px solid red&quot;; //Adding css property and value
+&lt;/script&gt;</code></pre>
+				</div>
+				<!-- li two -->
+				<li><b>className: </b>Gets or sets the value of the class attribute of an element.</li>
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h5">Example</p>
+					<button id="copy-button-26" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(26)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" style="max-height: 350px;" id="code-block-26"><code class="language-javascript">&lt;div id=&quot;myDiv&quot; class=&quot;highlight&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+  let divElement = document.getElementById('myDiv');
+  console.log(divElement.className); // Output: &quot;highlight&quot;
+  divElement.className = 'red-text'; // Change class name
+&lt;/script&gt;</code></pre>
+				</div>
+				<!-- li three -->
+				<li><b>classList: </b>Provides methods to add, remove, toggle, or check for the presence of classes on an
+					element.</li>
+
+				<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+					<p class="h5">Example</p>
+					<button id="copy-button-27" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+						onclick="copyToClipboard(27)">
+						<i class="bi bi-clipboard"></i>
+					</button>
+					<pre class="rounded" style="max-height: 350px;" id="code-block-27"><code class="language-javascript">&lt;div id=&quot;myDiv&quot; class=&quot;highlight&quot;&gt;Hello, World!&lt;/div&gt;
+&lt;script&gt;
+  let divElement = document.getElementById('myDiv');
+  divElement.classList.add('bold'); // Add a class
+  divElement.classList.remove('highlight'); // Remove a class
+  console.log(divElement.classList.contains('bold')); // Output: true
+	console.log(divElement.classList); //Output:  "bold xyz bold" (order matters)
+&lt;/script&gt;</code></pre>
+				</div>
+			</ol>
+		</div>
+		<!-- **********  END CSS styling Methods    *********-->
+
+
+
+		<!-- **********  Start DOM EventListners   ********-->
+		<div class="container border rounded border-warning mb-3" id="">
+			<p class="h4 text-danger">DOM EventListners</p>
+			<div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+				<p class="h5">Example</p>
+				<button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+					onclick="copyToClipboard(1)">
+					<i class="bi bi-clipboard"></i>
+				</button>
+				<pre class="rounded" style="max-height: 350px;"
+					id="code-block-1"><code class="language-javascript"></code></pre>
+				<button class="btn btn-warning fw-bold" id="">Run code</button>
+
+				<div class="container bg-light rounded mt-1 ">
+					<p id="output-1"></p>
+					<p id="output-2"></p>
+				</div>
+			</div>
+		</div>
+		<!-- **********  END DOM EventListners *********-->
+		<!-- **********  Start ********-->
+		<!-- **********  END *********-->
+		<!-- **********  Start ********-->
+		<!-- **********  END *********-->
+		<!-- **********  Start ********-->
+		<!-- **********  END *********-->
+		<!-- **********  Start ********-->
+		<!-- **********  END *********-->
+	</main>
+
+
+
+
+
+	<footer>
+		<script src="script.js"></script>
+
+		<!-- Include Prism.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+		<!-- Include Prism.js language specific library (for JavaScript) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+
+		<!-- Apply Prism to highlight all code blocks on the page -->
+		<script>Prism.highlightAll();</script>
+	</footer>
+</body>
+
+</html>

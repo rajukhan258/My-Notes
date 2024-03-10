@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
+</head>
+
+
+
+
+
+<body>
+    <nav class="navbar navbar-dark bg-warning ">
+        <div class="container-fluid  nav justify-content-center ">
+            <p class="h1 ">Functions</p>
+        </div>
+    </nav>
+
+
+    <div class="container border mt-3 mb-3 ">
+        <p>A JavaScript function is defined with the <b>function</b> keyword, followed by a <b>name</b>, followed by
+            parentheses <b>()</b>.
+        </p>
+        <p>Function <b>parameters</b> are listed inside the parentheses () in the function definition.</p>
+        <p>Function <b>arguments</b> are the <b>values</b> received by the function when it is invoked. The code inside
+            the function will execute when "something" <b>invokes</b> (calls) the function:</p>
+        <ul>
+            <li>When an event occurs (when a user clicks a button)</li>
+            <li>When it is invoked (called) from JavaScript code</li>
+            <li>Automatically (self invoked)</li>
+        </ul>
+
+        <p class="h2">Demo JavaScript Function</p>
+        <p id="demo">A Paragraph.</p>
+        <button type="button" class="btn btn-primary" onclick="myFunction()">Try it</button>
+        <br><br>
+        <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+    &lt;script&gt;
+        function myFunction() {
+            document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;
+        }
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+
+
+
+    <div class="container border mb-3">
+        <p class="h2">Functions With Parameters</p>
+        <p>The actual values that are passed in the function are known as <b>arguments</b> while the variable that is
+            declared in the function is known as a <b>parameter</b>.</p>
+        <p>A function can take multiple parameters separated by comma.
+        <p>Click the following button to call the function</p>
+        <form>
+            <button type="button" class="btn btn-warning" onclick="getValues()">Enter Parameters</button>
+        </form>
+        <p>Use different parameters inside the function and then try...<br>For Example: sayHello('Ram', 10),
+            sayHello('Mohan', 12)</p>
+
+        <pre><code>&lt;form&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot; onclick=&quot;getValues()&quot;&gt;Enter Parameters&lt;/button&gt;
+&lt;/form&gt;
+&lt;script&gt;
+    function getValues() {
+        var name = prompt(&quot;Please enter a name as Parameter-1:&quot;, &quot;Zara&quot;);
+        var age = prompt(&quot;Please enter age as parameter-2:&quot;, &quot;7&quot;);
+        sayHi(name, age);
+    }
+
+    function sayHi(name, age) {
+        document.write(name + &quot; is &quot; + age + &quot; years old.&quot;);
+    }
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+
+
+
+
+    <div class="container border mb-3">
+        <h2>Functions With Return Value</h2>
+        <p>A JavaScript function can have an optional return statement. This is required if you want to return a value
+            from a function. This statement should be the last statement in a function.</p>
+        <form>
+            <button type="button" class="btn btn-info" onclick="getValues2()">Enter Parameters</button>
+        </form><br>
+        <pre><code>&lt;form&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot; onclick=&quot;getValues2()&quot;&gt;Enter Parameters&lt;/button&gt;
+&lt;/form&gt;
+&lt;script&gt;
+    function getValues2() {
+        var fname = prompt(&quot;Please enter your name:&quot;, &quot;Zara&quot;);
+        var lname = prompt(&quot;Please enter your age:&quot;, &quot;Ali&quot;);
+        let full = sayHello(fname, lname);
+        document.write(full);
+    }
+
+    function sayHello(fname, lname) {
+        return &quot;Hello&quot; + &quot; &quot; + fname + &quot; &quot; + lname;
+    }
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+
+    
+
+
+    <div class="container border  mb-3 ">
+        <p class="h2">Complete Turorial on Functions</p>
+        <div class="mb-2" style="aspect-ratio: 16/9; height: 250px;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9sZC3cCAUng"
+                title="Exploring Functions in JavaScript | Lecture 06" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
+
+        //Function with Parameters
+        function getValues() {
+            var name = prompt("Please enter a name as Parameter-1:", "Zara");
+            var age = prompt("Please enter age as parameter-2:", "7");
+            sayHi(name, age);
+        }
+
+        function sayHi(name, age) {
+            document.write(name + " is " + age + " years old.");
+        }
+
+
+
+        //Function with return value       
+
+        function getValues2() {
+            var fname = prompt("Please enter your name:", "Zara");
+            var lname = prompt("Please enter your age:", "Ali");
+            let full = sayHello(fname, lname);
+            document.write(full);
+        }
+
+        function sayHello(fname, lname) {
+            return "Hello" + " " + fname + " " + lname;
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

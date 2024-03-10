@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers</title>
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+    <!-- Custom CSS Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar  p-2 bg-warning mb-1">
+            <div class="container-fluid nav justify-content-center">
+                <p class="h1 text-white">Number Object</p>
+            </div>
+        </nav>
+        <button type="button" class="btn btn-link position-fixed bottom-0 end-0 btn-lg px-1"
+            style="z-index: 100; filter: drop-shadow(1px 1px 1px #000000);">
+            <a href="#top"><i class="bi bi-airplane-engines-fill plane-color" style="color: darkorange"></i></a>
+        </button>
+    </header>
+
+    <main>
+
+        <!-- ========== Start contents ========== -->
+        <div class="container border rounded border-warning mb-3" id="">
+            <p class="h4 text-danger">Content:</p>
+            <ul>
+                <li><a href="#introduction">JavaScript Number</a></li>
+                <li><a href="#Ways to define">Ways to define numbers in javaScript</a></li>
+                <!-- <li><a href="#Ways to write">Ways to write a number in Javascript</a></li>s -->
+                <li><a href="#Properties">Javascript Number Properties</a></li>
+                <li><a href="#methods">Javascript Number methods</a></li>
+            </ul>
+        </div>
+        <!-- ========== End contents ========== -->
+
+
+
+
+
+        <!-- ========== Start Introduction ========== -->
+        <div class="container border rounded border-warning mb-3" id="introduction">
+
+            <p class="h4 text-danger">JavaScript Number</p>
+            <p>In javascript, the <b><code>Number</code></b> is a primitive data type. It represents all numerical
+                values like:</p>
+            <ul>
+                <li><b>Integer: </b>2, 5, 18, 100, 55, etc</li>
+                <li><b>Float: </b>1.0, 2.5, 8.4503, 245.50, etc</li>
+                <li><b>Exponential: </b>.23e5, 1.23e-5, etc</li>
+                <li><b>Binary: </b>0b1010, 0b1111, etc</li>
+                <li><b>Octal: </b>0o7, 0o77, 0o777, etc</li>
+                <li><b>Hexadecimal: </b>0xFF, 0xFFF, 0xFFFF, etc</li>
+            </ul>
+            <p>JavaScript numbers are always stored as double precision floating point numbers. This format stores
+                numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52
+                to 62, and the sign in bit 63:</p>
+            <p><b><mark><code>NOTE:-</code></mark></b>
+            <ul>
+                <li><b><code>Number</code></b> can only keep precision of 17 digits.</li>
+                <li>The largest number that can be stored in a double-precision floating-point number is
+                    <b>1.7976931348623157E+308 ≈ 1.8E+308</b>
+                </li>
+            </ul>
+            </p>
+        </div>
+        <!-- ========== End Introduction ========== -->
+
+
+
+
+
+        <!-- ========== Start Defining Numbers ========== -->
+        <div class="container border rounded border-warning mb-3" id="Ways to define">
+            <p class="h4 text-danger">Ways to define numbers in javaScript</p>
+            <p>There are two ways to define <b><code>Numbers</code></b> in javascript</p>
+            <ul>
+                <li><a href="#literals ">Number literals</a></li>
+                <li><a href="#Constructor ">Number Constructor</a></li>
+            </ul>
+            <p class="h5 text-success" id="literals">1. Number literals</p>
+            <p>In JavaScript, <b><code>number literals</code></b> are representations of numerical values directly
+                within the code. They can be written as integers, floating-point numbers, or using special notations
+                like exponential form.</p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-1" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(1)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-1"><code>&lt;script&gt;
+    //Integer Literals:
+    let integerLiteral = 42; // Integer number literal
+    let negativeLiteral = -10; // Negative integer literal
+    let binaryLiteral = 0b1010; // Binary number literal (0b prefix)
+    let octalLiteral = 0o777; // Octal number literal (0o prefix)
+    let hexadecimalLiteral = 0xFF; // Hexadecimal number literal (0x prefix)
+
+    //Floating-Point Literals:
+    let floatLiteral = 3.14; // Floating-point number literal
+    let anotherFloat = -0.01; // Negative floating-point number literal
+    let exponentialLiteral = 6.022e23; // Scientific notation (exponential form)
+
+    //Special Values:
+    let infinity = Infinity; // Represents infinity
+    let negInfinity = -Infinity; // Represents negative infinity
+    let notANumber = NaN; // Represents &quot;Not-a-Number&quot; value (results from invalid operations)
+
+    //Exponential Notation:
+    let bigNumber = 1.5e6; // 1.5 * 10^6 (1.5 million)
+    let smallNumber = 2.5e-3; // 2.5 * 10^-3 (0.0025)
+
+    document.getElementById('define-output-1').innerHTML =
+        `integerLiteral = 42;    DateType: ${typeof integerLiteral}&lt;br&gt;
+negativeLiteral = -10;    DateType: ${typeof negativeLiteral}&lt;br&gt;
+binaryLiteral = 0b1010;    DateType: ${typeof binaryLiteral}&lt;br&gt;
+octalLiteral = 0o777;    DateType: ${typeof octalLiteral}&lt;br&gt;
+hexadecimalLiteral = 0xFF; ${typeof hexadecimalLiteral}&lt;br&gt;
+floatLiteral = 3.14;    DateType: ${typeof floatLiteral}&lt;br&gt;
+anotherFloat = -0.01;    DateType: ${typeof anotherFloat}&lt;br&gt;
+exponentialLiteral = 6.022e23;    DateType: ${typeof exponentialLiteral}&lt;br&gt;
+infinity = Infinity;    DateType: ${typeof infinity}&lt;br&gt;
+negInfinity = -Infinity;    DateType: ${typeof negInfinity}&lt;br&gt;
+notANumber = NaN;    DateType: ${typeof notANumber}&lt;br&gt;
+bigNumber = 1.5e6;    DateType: ${typeof bigNumber}&lt;br&gt;
+smallNumber = 2.5e-3;    DateType: ${typeof smallNumber}`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="literals()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 " style="max-height: 180px; overflow:auto">
+                    <p id="define-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+
+            <p class="h5 text-success" id="Constructor">2. Number Constructor</p>
+            <p>In JavaScript, the <b><code>Number constructor</code></b> is a built-in function used to create number
+                <b>objects</b>. It can be used with or without the new keyword to create number objects from numeric
+                values or strings.
+            </p>
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-2" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(2)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-2"><code>&lt;script&gt;
+    // Creating a number object from a numeric value
+    let num1 = Number(42);
+
+    // Creating a number object from a string
+    let num2 = Number(&quot;3.14&quot;);
+
+    // Trying to create a number object from an invalid string
+    let invalidNum = Number(&quot;hello&quot;);
+
+    // Creating a number object using the new keyword
+    let numObj1 = new Number(10);
+
+    // Creating a number object from a string using new
+    let numObj2 = new Number(&quot;99&quot;);
+
+    document.getElementById('Constructor-output-1').innerHTML =
+        `num1 = Number(42); ${typeof num1}&lt;br&gt;
+num2 = Number(&quot;3.14&quot;); ${typeof num2}&lt;br&gt;
+invalidNum = Number(&quot;hello&quot;); ${typeof invalidNum}&lt;br&gt;
+numObj1 = new Number(10); ${typeof numObj1}&lt;br&gt;
+numObj2 = new Number(&quot;99&quot;); ${typeof numObj2}&lt;br&gt;`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="Constructors()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="Constructor-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Defining Numbers ========== -->
+
+
+
+
+
+        <!-- ===== Start Javascript Number Properties ====== -->
+        <div class="container border rounded border-warning mb-3" id="Properties">
+            <p class="h4 text-danger">Javascript Number Properties</p>
+            <p>In JavaScript, the <b><code>Number object</code></b> has several <b>properties</b> that
+                provideinformation about numbers and mathematical constants. </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li><b>Number.MAX_VALUE: </b>Represents the maximum numeric value that can be represented in
+                            JavaScript.</li>
+                        <li><b>Number.MIN_VALUE: </b>Represents the smallest positive numeric value greater than zero
+                            that can be represented in JavaScript.</li>
+                        <li><b>Number.NaN: </b>Represents a value that is "Not-a-Number."</li>
+                        <li><b>Number.NEGATIVE_INFINITY: </b>Represents negative infinity, returned on overflow.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li><b>Number.POSITIVE_INFINITY:</b>Represents positive infinity, returned on overflow.</li>
+                        <li><b>Number.MIN_SAFE_INTEGER: </b>Minimum safe integer in javascript is -(253 - 1)</li>
+                        <li><b>Number.MAX_SAFE_INTEGER: </b>Maximum safe integer in javascript is 253 - 1</li>
+                        <li><b>Number.EPSILON: </b>Represents the difference between 1 and the smallest floating-point
+                            number greater than 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-1 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-3" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(3)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-3"><code>&lt;script&gt;
+document.getElementById('prop-output-1').innerHTML = `
+Number.EPSILON: ${Number.EPSILON}&lt;br&gt;
+Number.MAX_VALUE: ${Number.MAX_VALUE}&lt;br&gt;
+Number.MAX_SAFE_INTEGER: ${Number.MAX_SAFE_INTEGER}&lt;br&gt;
+Number.MIN_VALUE: ${Number.MIN_VALUE}&lt;br&gt;
+Number.MIN_SAFE_INTEGER: ${Number.MIN_SAFE_INTEGER}&lt;br&gt;
+Number.NaN: ${Number.NaN}&lt;br&gt;
+Number.NEGATIVE_INFINITY: ${Number.NEGATIVE_INFINITY}&lt;br&gt;
+Number.POSITIVE_INFINITY: ${Number.POSITIVE_INFINITY}
+`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="prop()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="prop-output-1"></p>
+                    <!-- <p id="write-output-2"></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- ===== End Javascript Number Properties ====== -->
+
+
+
+
+
+
+        <!-- ========== Start Javascript Number methods ========== -->
+        <div class="container border rounded border-warning mb-2" id="methods">
+            <p class="h4 text-danger">Javascript Number methods</p>
+            <p>JavaScript's <b><code>Number object</code></b> comes with several built-in <b>methods</b> that facilitate
+                working with numbers, performing operations, and accessing specific numerical information.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li><b>Number.isNaN(): </b>Checks if a value is NaN.</li>
+                        <li><b>Number.isFinite(): </b>Checks if a value is a finite number.</li>
+                        <li><b>Number.isInteger(): </b>Checks if a value is an integer.</li>
+                        <li><b>Number.isSafeInteger(): </b>Checks if a value is a safe integer within a specified range.
+                        </li>
+                        <li><b>Number.parseFloat(): </b>Parses a string argument and returns a floating-point number.
+                        </li>
+                        <li><b>Number.parseInt(): </b>Parses a string argument and returns an integer.</li>
+                        <li><b>Number.toExponential(): </b>Returns a string representing the number in exponential
+                            notation.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+
+                        <li><b>Number.toFixed(): </b>Returns a string representing the number in fixed-point notation
+                            with a specified number of digits.</li>
+                        <li><b>Number.toLocaleString(): </b>Returns a string representing the number using the local
+                            language format.</li>
+                        <li><b>Number.toPrecision(): </b>Returns a string representing the number to a specified
+                            precision in fixed or exponential notation.</li>
+                        <li><b>Number.toString(): </b>Returns a string representing the specified number object.</li>
+                        <li><b>Number.valueOf(): </b>Returns the primitive value of a Number object.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <p class="h5 text-success" id="isNaN">1. Number.isNaN()</p> -->
+            <div class="container bg-secondary bg-opacity-25 p-1 rounded mb-3 position-relative">
+                <p class="h5">Example</p>
+                <button id="copy-button-101" class="btn btn-link position-absolute top-0 end-0 p-0 mt-1 me-3"
+                    onclick="copyToClipboard(101)">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <pre class="rounded" style="max-height: 350px;" id="code-block-101"><code>&lt;script&gt;
+   let myNumber = 24.12345;
+    let parsedFloat = Number.parseFloat(&quot;3.14 meters&quot;); // Parse a float from a string
+    let parsedInt = Number.parseInt(&quot;10&quot;);  // Parse an integer from a string
+    let numAsString = myNumber.toString(); // Convert the number to a string
+    let numValue = myNumber.valueOf(); // Get the primitive value of the number
+
+    document.getElementById('methods-output-1').innerHTML = `
+Number.isNaN(myNumber): ${Number.isNaN(myNumber)}&lt;br&gt;
+Number.isFinite(myNumber): ${Number.isFinite(myNumber)}&lt;br&gt;
+Number.isInteger(myNumber): ${Number.isInteger(myNumber)}&lt;br&gt;
+Number.isSafeInteger(myNumber): ${Number.isSafeInteger(myNumber)}&lt;br&gt;
+Number.parseFloat(&quot;3.14 meters&quot;): ${parsedFloat}&lt;br&gt;
+Number.parseInt(&quot;10&quot;): ${parsedInt}&lt;br&gt;
+myNumber.toExponential(2): ${myNumber.toExponential(2)}&lt;br&gt;
+myNumber.toFixed(2): ${myNumber.toFixed(2)}&lt;br&gt;
+myNumber.toLocaleString(): ${myNumber.toLocaleString()}&lt;br&gt;
+myNumber.toPrecision(4): ${myNumber.toPrecision(4)}&lt;br&gt;
+myNumber.toString(): ${numAsString}&lt;br&gt;
+myNumber.valueOf(): ${numValue}
+`;
+&lt;/script&gt;</code></pre>
+                <button class="btn btn-warning fw-bold" onclick="methods()">Run code</button>
+
+                <div class="container bg-light rounded mt-1 ">
+                    <p id="methods-output-1"></p>
+                    <!-- <p id="output-2"></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Javascript Number methods ========== -->
+    </main>
+
+
+
+    <footer>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </footer>
+</body>
+
+</html>
