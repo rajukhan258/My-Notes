@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word wrap and word-break</title>
+    <style>
+        h2{
+            text-align: center;
+            background-color: brown;
+        }
+        #box2{
+            width: 400px;
+            border: 2px solid black;
+            word-wrap: break-word;
+        }
+        #box{
+            width: 400px;
+            border: 2px solid black;
+            word-wrap: normal;
+        }
+        #box3{
+            width: 400px;
+            border: 2px solid black;
+            word-break: keep-all;
+        }
+        #box4{
+            width: 400px;
+            border: 2px solid black;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h2>Word-wrap & Word-break</h2>
+    <b>word-wrap: normal</b>
+    <div id="box">
+        Lorem ipsum dolor sit amet consectetur sit ametsit amet <b>llllllllllllllllllllllllooooooooooooooooooooonnnnnnnnnnnnnnnnnnnnnggggggggggggggggggggggggg</b> possimus fugit temporibus sint ratione blanditiis ex quos provident, laboriosam accusantium commodi explicabo iure assumenda, molestiae tempora odit aspernatur laudantium eligendi.
+    </div>
+<br>
+    <b>word-wrap: break-word</b>
+    <div id="box2">
+        Lorem ipsum dolor sit amet consectetur sit ametsit amet <b>llllllllllllllllllllllllooooooooooooooooooooonnnnnnnnnnnnnnnnnnnnnggggggggggggggggggggggggg</b> possimus fugit temporibus sint ratione blanditiis ex quos provident, laboriosam accusantium commodi explicabo iure assumenda, molestiae tempora odit aspernatur laudantium eligendi.
+    </div>
+<br>
+    <b>word-break: keep-all</b>
+    <div id="box3">
+        Lorem ipsum dolor sit amet consectetur sit ametsit amet <b></b>llllllllllllllllllllllllooooooooooooooooooooonnnnnnnnnnnnnnnnnnnnnggggggggggggggggggggggggg</b> possimus fugit tempors <b>singfgfnt</b> ratione blanditiis ex quos provident, laboriosam <b>accusantium</b> commodi explicabo iure assumenda, molestiae <b>temporaodsdcscscsit</b> aspernatur laudantium eligendi.
+    </div>
+
+    <br>
+    <b>word-break: break-all</b>
+    <div id="box4">
+        Lorem ipsum dolor sit amet consectetur sit ametsit amet <b></b>llllllllllllllllllllllllooooooooooooooooooooonnnnnnnnnnnnnnnnnnnnnggggggggggggggggggggggggg</b> possimus fugit tempors <b>singfgfnt</b> ratione blanditiis ex quos provident, laboriosam <b>accusantium</b> commodi explicabo iure assumenda, molestiae <b>temporaodsdcscscsit</b> aspernatur laudantium eligendi.
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Mode</title>
+    <style>
+        h2{
+            text-align: center;
+            background-color: rgb(5, 115, 240);
+        }
+        #box{
+            width: 400px;
+            border: 2px solid black;
+            writing-mode: vertical-rl;
+        }
+        #box2{
+            width: 400px;
+            border: 2px solid black;
+            writing-mode: vertical-lr;
+        }
+        #box3{
+            width: 400px;
+            border: 2px solid black;
+            writing-mode: sideways-rl;
+        }
+        #box4{
+            width: 400px;
+            border: 2px solid black;
+            writing-mode: sideways-lr;
+        }
+    </style>
+</head>
+<body>
+    <h2>Writing Mode</h2>
+    <h3>Writing Mode Values</h3>
+    <ul>
+        <li>horizontal-tb (default)</li>
+        <li>Vertical-rl</li>
+        <li>Vertical-lr</li>
+        <li>sideways-rl <b>(works in Fire-fox)</b></li>
+        <li>sideways-lr <b>(works in Fire-fox)</b></li>
+    </ul>
+
+<h3>1. writing-mode: vertical-rl;</h3>
+<div id="box">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quibusdam  accusamus neque ducimus! Voluptate nam illo voluptatem cum expedita animi commodi temporibus non, quos earum, aliquam architecto porro deserunt, iure ea quod consequuntur omnis provident corporis veritatis maiores? Laborum hic inventore sequi sapiente aspernatur quo totam praesentium impedit quae vel!
+</div>
+
+<h3>2. writing-mode: vertical-lr;</h3>
+<div id="box2">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quibusdam  accusamus neque ducimus! Voluptate nam illo voluptatem cum expedita animi commodi temporibus non, quos earum, aliquam architecto porro deserunt, iure ea quod consequuntur omnis provident corporis veritatis maiores? Laborum hic inventore sequi sapiente aspernatur quo totam praesentium impedit quae vel!
+</div>
+
+<h3>3. writing-mode: sideways-rl;</h3>
+<div id="box3">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quibusdam  accusamus neque ducimus! Voluptate nam illo voluptatem cum expedita animi commodi temporibus non, quos earum, aliquam architecto porro deserunt, iure ea quod consequuntur omnis provident corporis veritatis maiores? Laborum hic inventore sequi sapiente aspernatur quo totam praesentium impedit quae vel!
+</div>
+
+<h3>4. writing-mode: sideways-lr;</h3>
+<div id="box4">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quibusdam  accusamus neque ducimus! Voluptate nam illo voluptatem cum expedita animi commodi temporibus non, quos earum, aliquam architecto porro deserunt, iure ea quod consequuntur omnis provident corporis veritatis maiores? Laborum hic inventore sequi sapiente aspernatur quo totam praesentium impedit quae vel!
+</div>
+
+
+
+</body>
+</html>

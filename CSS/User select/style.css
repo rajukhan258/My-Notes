@@ -1,0 +1,36 @@
+h1{
+    background-color: brown;
+    text-align: center;
+}
+h2{
+    background-color: orange;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: antiquewhite;
+    border: 1px solid  salmon;
+    margin-left: 30px;
+    padding:10px;
+    user-select: None;
+}
+
+.box1{
+    width: 300px;
+    height: 300px;
+    background-color: antiquewhite;
+    border: 1px solid  salmon;
+    margin-left: 30px;
+    padding:10px;
+    user-select: Text;
+}
+
+.box2{
+    width: 300px;
+    height: 300px;
+    background-color: antiquewhite;
+    border: 1px solid  salmon;
+    margin-left: 30px;
+    padding:10px;
+    user-select: all;
+}
