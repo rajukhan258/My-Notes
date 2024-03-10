@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+}
+.container{
+    /* border:1px solid yellow; */
+    background-color:#eee;
+    border:1px solid grey;
+    width:80%;
+    height:601px;
+    margin:0 auto;
+    background-image: url(pic1.png);
+}
+
+/* svg{
+    position:relative;
+    left: 120px;
+    width:76%;
+    height:580px;
+    border:1px solid red;
+    margin-left: 20px;
+} */
+#rectangle{
+    fill:url(#effect);
+}
+
+
+
