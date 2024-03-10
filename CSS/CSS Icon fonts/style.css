@@ -1,0 +1,115 @@
+    /* *{
+        margin: 0;
+        padding: 0;
+    } */
+    h1{
+        background-color: brown;
+        text-align: center;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:rgb(0, 0, 0);
+        margin: 0;
+        padding: 0;
+    }
+    #wrapper{
+        /* border: 2px solid red; */
+        width: 1000px;
+        background-color:white;
+        margin: 0 auto;
+    }
+    #header{
+        background-color: crimson;
+        height: 100px;
+        color: white; 
+    }
+    #header h1{
+        padding: 30px 0px 0px 20px;
+        
+    }
+    #menu{
+        background-color: lightsalmon;
+    }
+    #menu ul{
+        margin: 0;
+        padding: 0;
+    }
+    #menu li{
+        display: inline-block;
+    }
+    #menu li a{
+        display: block;
+        padding: 5px 15px;
+        margin-left: 0;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    #menu li a:hover{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+    #content{
+        width: 800px;
+        float: left;
+        min-height: 500px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    #sidebar{
+        background-color: rgb(202, 207, 202);
+        width: 200px;
+        min-height: 500px;
+        float: right;
+    }
+    #sidebar li a{
+        text-decoration: none;
+        color: rgb(18, 18, 18);
+        line-height: 30px;
+    }
+    #footer{
+        background-color: crimson;
+        clear: both;
+        padding: 5px 10px;
+        text-align: right;
+    }
+    @media screen and (max-width:1020px){
+        #wrapper{
+        width: 800px;
+    }
+    #content{
+        width: 80%;
+    }
+    #sidebar{
+        width: 20%;
+    }
+}
+    @media screen and (max-width:810px){
+        #wrapper{
+         width: 500px;
+    } 
+
+    #content{
+        width: 70%;
+    }
+    #sidebar{
+        width: 28%;
+    }
+    }
+
+    @media screen and (max-width:510px){
+        #wrapper{
+        width: auto;
+    } 
+    #content{
+        width: 100%;
+        float: none;
+    }
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+    h1{
+        padding: 30px 0px 0px 20px;
+        text-align: center;
+    }
+    }
