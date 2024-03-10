@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Transitions</h1>
+<div id="box1">
+    <h2>Transition Properties</h2>
+    <ul>
+        <li>Transition (shorthand)</li>
+        <li>Transition-property</li>
+        <li>Transition-duration</li>
+        <li>Transition-delay</li>
+        <li>Transition-timing-function</li>
+    </ul>
+</div>
+
+<h3>Transition-Property</h3>
+<div id="common">
+<div id="box2"></div>
+    <pre><b>Code Used</b> #box2{
+        width: 150px;
+        height: 100px;
+        background: pink;
+        <b>transition-property: width, background;</b>
+    }
+    #box2:hover{
+        width: 300px;
+        background: red;
+    }</pre>
+
+</div>
+
+<h3>Transition-Duration</h3>
+<div id="common">
+<div id="box3"></div>
+    <pre><b>Code Used</b> #box3{
+        border: 1px solid blue;
+        width: 150px;
+        height: 100px;
+        background: pink;
+        transition-property: width, height, background ;
+        transition-duration: 4s, 2s;
+        }
+        #box3:hover{
+        width: 300px;
+        background: rgb(21, 79, 227);
+        height: 110px;
+        }
+    </pre>
+</div>
+
+
+
+<h3>Transition-Timing-Function</h3>
+<div id="common2">
+    <div id="table">
+<table>
+    <tr>
+        <th>Unit</th>
+        <th>Descrition</th>
+    </tr>
+    <tr>
+        <td>Ease</td>
+        <td>Slow start, then fast, then end slowly</td>
+    </tr>
+    <tr>
+        <td>Linear</td>
+        <td>Same speed from Start to End</td>
+    </tr>
+    <tr>
+        <td>Ease-in</td>
+        <td>Slow start</td>
+    </tr>
+    <tr>
+        <td>Ease-0ut</td>
+        <td>slow end</td>
+    </tr>
+    <tr>
+        <td>Ease-in-out</td>
+        <td>slow start and end</td>
+    </tr>
+
+    <tr>
+        <td>step-start</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Step-end</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>steps()4,end</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Cubic-bezier</td>
+        <td>Lets youo define your own Values</td>
+    </tr>
+</table>
+</div>
+<div id="side"><br><br>
+    <div id="ease">Ease</div>
+    <div id="Linear">Linear</div>
+    <div id="Ease-in">Ease-in</div>
+    <div id="Ease-out">Ease-out</div>
+    <div id="Ease-in-out">Ease-in-out</div>
+    <div id="step-start">step-start</div>
+    <div id="step-end">Step-end</div>
+    <div id="step4">step4</div>
+    <div id="Cubic-bezier">Cubic-bezier</div>
+</div>
+</div>
+
+<h3>Transition-delay</h3>
+<div id="common">
+<div id="box5"></div>
+    <pre><b>Code Used</b>       #box5{
+        border: 1px solid blue;
+        width: 150px;
+        height: 100px;
+        background: pink;
+        transition: width, height, background 4s, 2s ;
+        transition-delay: 2s;
+
+        }
+        #box5:hover{
+        width: 300px;
+        background: rgb(21, 79, 227);
+        height: 110px;
+        } 
+    </pre>
+</div>
+
+<h3>Transition(Shorthand)</h3>
+<div id="common">
+<div id="box4"></div>
+    <pre><b>Code Used</b> #box4{
+        border: 1px solid blue;
+        width: 150px;
+        height: 100px;
+        background: pink;
+        <b>  transition: width, height 4s, 2s linear 2s ;</b>
+
+        }
+        #box3:hover{
+        width: 300px;
+        background: rgb(21, 79, 227);
+        height: 110px;
+        }
+    </pre>
+    <hr>
+    <pre>sequence: 1. transition-property
+        2. transition-duration
+        3. Transition-timing-function
+        4. transition-delay
+    </pre>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

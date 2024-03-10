@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text-Overflow</title>
+<style>
+    h2{
+        text-align: center;
+        background-color: rgb(8, 156, 254);
+    }
+    #box{
+        width:400px;
+        border: 2px solid black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #box2{
+        width:400px;
+        border: 2px solid black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: "etc";
+        /* text-overflow: "[.....]"; works on Firefox*/
+    }
+</style>
+</head>
+<body>
+    <h2>Text-Overflow</h2>
+    <h3>Text- Overflow Values</h3>
+    <ul>
+        <li>Clip (default)</li>
+        <li>Ellipsis</li>
+        <li>string</li>
+    </ul>
+
+    <b>text-overflow: ellipsis</b>
+    <div id="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit a iure quaerat nam accusantium, velit ea. Harum est laborum ea doloremque porro iusto odio, quis omnis, vel, facilis ipsam. Praesentium aut expedita sit maxime autem quos ipsa eaque, molestias iste totam non esse aspernatur dolores dolorum harum unde obcaecati qui?
+    </div>
+<br/>
+    <b>text-overflow: string (works on Firefox)</b>
+    /* text-overflow: "[etc.]"; works on Firefox*/
+    <div id="box2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit a iure quaerat nam accusantium, velit ea. Harum est laborum ea doloremque porro iusto odio, quis omnis, vel, facilis ipsam. Praesentium aut expedita sit maxime autem quos ipsa eaque, molestias iste totam non esse aspernatur dolores dolorum harum unde obcaecati qui?
+    </div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform 2D</title>
+    <link rel="stylesheet" href="style2d.css">
+</head>
+<body>
+    <h1>Transform 2D</h1>
+    <h2>Transform 2D Values</h2>
+    <ul>
+        <li>None (default)</li>
+        <li>rotate(angle)</li>
+        <li>translate(x,y)</li>
+        <li>translate(x)</li>
+        <li>translate(y)</li>
+        <li>scale(x,y)</li>
+        <li>scale(x)</li>
+        <li>scale(y)</li>
+        <li>skew(x-angle, y-angle)</li>
+        <li>skewX(angle)</li>
+        <li>skewY(angle)</li>
+        <li>matrix(n,n,n,n,n)</li>
+    </ul>
+    <h2>Transform Origin and values</h2>
+    <p>Transform-origin: X Y</p>
+    <ul>
+        <li>left top</li>
+        <li>left bottom</li>
+        <li>right top</li>
+        <li>right top</li>
+        <li>20% 30%</li>
+    </ul>
+    <h3>rotate(angle)</h3>
+    <div id="rotate">Hello</div>
+    <Pre>#rotate{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        margin-left: 100px;
+        transform-origin: right top;
+    }
+    #rotate:hover{
+        transform: rotate(30deg); // values can be Negative
+    }</Pre>
+
+    <h3>skewX(angle)</h3>
+    <div id="skewx">Hello</div>
+    <Pre>#skewx{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        margin-left: 100px;
+    }
+    #skewx:hover{
+        transform: skewX(30deg); 
+    }</Pre>
+
+    <h3>skewY(angle)</h3>
+    <div id="skewy">Hello</div>
+    <Pre>#skewy{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        margin-left: 100px;
+    }
+    #skewy:hover{
+        transform: skewy(30deg); 
+    }</Pre>
+
+    <h3>skew(x-angle, y-angle)</h3>
+    <div id="skewxy">Hello</div>
+    <Pre>#skewxy{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        margin-left: 100px;
+    }
+    #skewxy:hover{
+        transform: skew(30deg, 20deg); 
+    }</Pre>
+
+    <h3>Translate (x,y)</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <div id="translatexy">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#translatexy{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+
+    }
+    #translatexy:hover{
+        transform: translate(30px, -60px); 
+    }</Pre>
+
+    <h3>TranslateX()</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <div id="translatex">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#translatex{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+    }
+    #translatex:hover{
+        transform: translatex(60px); 
+    }</Pre>
+
+    <h3>TranslateY()</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <div id="translatey">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#translatey{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+    }
+    #translatey:hover{
+        transform: translatey(60px); 
+    }</Pre>
+
+    <h3>Scale(X, Y)</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <div id="scalexy">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#scalexy{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        transform-origin:left top;
+        transform: scale(1);
+        transition-property: transform;
+        transition-duration: 2s;
+    }
+    #scalexy:hover{
+        transform: scale(2); 
+    }</Pre>
+
+    <h3>ScaleX()</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <div id="scalex">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#scalex{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        transform-origin: top left;
+    }
+    #scalex:hover{
+        transform: scaleX(2);
+    }</Pre>
+
+    <h3>ScaleY()</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <div id="scaley">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#scaley{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        transform-origin: top left;
+    }
+    #scaley:hover{
+        transform: scaley(2);
+    }</Pre>
+
+    <h3>Matrix(n,n,n,n,n)</h3>
+    <p>Matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) </p>
+    <div id="matrix">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#matrix{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        transform-origin: top left;
+    }
+    #matrix:hover{
+        transform: matrix(1, -0.3, 0, 1, 0, 0 );
+    }</Pre>
+
+    <h3>Transform Shorthand</h3>
+    <p>Matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) </p>
+    <div id="trnsshort">Hello</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odio nobis debitis, error tempora earum ab quaerat optio dignissimos repudiandae assumenda, sequi dolorem ad sunt nam consequuntur architecto </p>
+    <Pre>#trnsshort{
+        width: 150px;
+        height: 100px;
+        background: lightseagreen;
+        transform-origin: top left;
+    }
+    #trnsshort:hover{
+        transform: rotate(30deg) scale(2) skew(30deg);
+    }</Pre>
+</body>
+</html>

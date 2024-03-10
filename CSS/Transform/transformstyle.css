@@ -1,0 +1,31 @@
+h1{
+    background-color: brown;
+    text-align: center;
+}
+h2{
+    background-color: orange;
+}
+div{
+    text-align: center;
+    box-sizing: border-box;
+ 
+}
+
+.parent{
+    width: 200px;
+    height: 150px;
+    background-color: lightslategray;
+    /* border: 1px solid red; */
+    margin: 100px 0 70px 100px;
+    perspective: 800px;
+    transform: rotateY(30deg);
+    transform-style: preserve-3d;
+    
+}
+#box{
+    width: 200px;
+    height: 150px;
+     background: pink; 
+     transform: rotateX(60deg);
+    
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform-Style</title>
+    <link rel="stylesheet" href="transformstyle.css">
+</head>
+<body>
+    <h1>Transform style </h1>
+    <h2>Transform style Values</h2>
+    <ul>
+        <li>Flat (Deafult)</li>
+        <li>Preserve 3d</li>
+    </ul>
+
+<div class="parent">
+    <div id="box">HELLO</div>
+</div>
+
+<pre><b>CODE USED</b>
+    .parent{
+        width: 200px;
+        height: 150px;
+        background-color: lightslategray;
+        /* border: 1px solid red; */
+        margin: 100px 0 70px 100px;
+        perspective: 800px;
+        transform: rotateY(30deg);
+        transform-style: preserve-3d;
+        
+    }
+    #box{
+        width: 200px;
+        height: 150px;
+         background: pink; 
+         transform: rotateX(60deg);
+        
+    }</pre>
+
+</body>
+</html>

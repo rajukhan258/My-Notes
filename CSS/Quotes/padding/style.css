@@ -1,0 +1,59 @@
+#one{
+    background-color: lightblue;
+   
+}
+
+.cls1{
+    border: 1px solid black;
+    background-color: rgb(217, 244, 64);
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+  }
+
+
+
+  #Two{
+    background-color: lightblue;
+}
+
+.cls2{
+    border: 1px solid black;
+    background-color: rgb(217, 244, 64);
+    padding: 25px 50px 75px 100px;
+  }
+
+
+  #Three{
+    background-color: lightblue;
+}
+
+.cls3{
+    border: 1px solid black;
+    background-color: rgb(217, 244, 64);
+    padding: 25px 50px 75px;
+  }
+
+
+  #Four{
+    background-color: lightblue;
+}
+
+.cls4{
+    border: 1px solid black;
+    background-color: rgb(217, 244, 64);
+    padding: 25px 50px;
+  }
+
+
+
+  #Five{
+    background-color: lightblue;
+}
+
+.cls5{
+    border: 1px solid black;
+    background-color: rgb(217, 244, 64);
+    padding: 25px;
+  }

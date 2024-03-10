@@ -1,0 +1,83 @@
+h1{
+    background: rgb(15, 226, 195);
+    text-align: center;
+}
+
+h2{
+    background: rgb(221, 49, 78);
+}
+h3{
+    background: rgb(243, 154, 45);
+}
+
+.base{
+    width: 150px;
+    height: 125px;
+    background: grey;
+}
+#rotatex{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform: rotateX(50deg);
+    float: left;
+}
+#perspective{
+    width: 150px;
+    height: 150px;
+    background: rgb(234, 104, 104);
+    transform-origin: 50% 50%;
+    transform: perspective(800px) rotateX(50deg);
+    float: left;
+}
+#ext{
+    
+    height: 550px;
+}
+    
+#rotatey{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform-origin: top left;
+    transform: perspective(800px) rotateY(50deg);
+    float: left;
+}
+#rotatez{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform: perspective(800px) rotateZ(60deg);
+    float: left;
+}
+#translatez{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform: perspective(800px) rotatey(60deg) translatez(100px);
+    float: left;
+}
+
+#translate3d{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform: perspective(800px) rotatey(60deg) translate3d(50px, 20px, 80px);
+    float: left;
+}
+
+#scaleZ{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform: perspective(800px) scaleZ(5) rotatex(60deg) ;
+    float: left;
+}
+
+#scale3d{
+    width: 150px;
+    height: 125px;
+    background: rgb(234, 104, 104);
+    transform: perspective(800px) scale3d(1, 1, 3) rotatex(60deg) ;
+    float: left;
+}

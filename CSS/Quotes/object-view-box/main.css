@@ -1,0 +1,30 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: rgb(2, 145, 155);
+    padding: 10px;
+    text-align: center;
+}
+img, p{
+    padding: 10px;
+}
+
+
+
+
+
+img{
+    width: 400px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-view-box: inset(20% 30% 10% 50%)
+    /* top right bottom left */
+}

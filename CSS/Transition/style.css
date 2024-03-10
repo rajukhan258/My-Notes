@@ -1,0 +1,206 @@
+h1{
+    background-color: rgb(0, 169, 169);
+    text-align: center;
+}
+h3{
+    background-color: rgb(244, 163, 0);
+}
+#common{
+    border: 1px solid blue;
+    clear: both;
+}
+#box2{
+    border: 1px solid blue;
+width: 150px;
+height: 100px;
+background: pink;
+transition-property: width, background;
+}
+#box2:hover{
+width: 300px;
+background: red;
+}
+
+#box3{
+    border: 1px solid blue;
+    width: 150px;
+    height: 100px;
+    background: pink;
+    transition-property: width, height, background ;
+    transition-duration: 4s, 2s;
+    }
+    #box3:hover{
+    width: 300px;
+    background: rgb(21, 79, 227);
+    height: 110px;
+    }
+
+    #box4{
+        border: 1px solid blue;
+        width: 150px;
+        height: 100px;
+        background: pink;
+        transition: width, height 4s, 2s linear 2s ;
+
+        }
+        #box4:hover{
+        width: 300px;
+        background: rgb(21, 79, 227);
+        height: 110px;
+        } 
+        table{
+            width: 100%;
+            /* border-spacing: 2px 10px; */
+        } 
+        
+        table, tr, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+       tr:nth-child(even){
+        background: rgb(222, 222, 222);
+       }
+       #common2{
+        border: 1px solid blue;
+        height: 350px;
+        /* display: inline; */
+        /* clear: both; */
+    }
+       #table{
+     float: left;
+        width: 30%;
+        /* display: inline; */
+       }
+       #side{
+        border: 1px solid rgb(255, 6, 6);
+        /* float: right; */
+        width: 69%;
+        height: 300px;
+        box-sizing: border-box;
+        margin-left: 31%;
+        /* display: inline; */
+        
+       }
+
+       #ease{
+        width: 150px;
+        height: 30px;
+        background: pink;
+        transition: width, background 2s, 2s;
+        transition-timing-function: ease;
+       }
+       #ease:hover{
+        width: 600px;
+        background: rgb(230, 155, 55);
+       }
+
+       #Linear{
+        width: 150px;
+        height: 30px;
+        background: rgb(112, 165, 234);
+        transition: width, background 2s, 2s;
+        transition-timing-function: linear;
+       }
+       #Linear:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+
+       #Ease-in{
+        width: 150px;
+        height: 30px;
+        background: pink;
+        transition: width, background 2s, 2s;
+        transition-timing-function: ease-in;
+       }
+       #Ease-in:hover{
+        width: 600px;
+        background: rgb(230, 155, 55);
+       }
+
+       #Ease-out{
+        width: 150px;
+        height: 30px;
+        background: rgb(112, 165, 234);
+        transition: width, background 2s, 2s;
+        transition-timing-function: ease-out;
+       }
+       #Ease-out:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+       #Ease-in-out{
+        width: 150px;
+        height: 30px;
+        background: pink;
+        transition: width, background 2s, 2s;
+        transition-timing-function: ease-in-out;
+       }
+       #Ease-in-out:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+
+       #step-start{
+        width: 150px;
+        height: 30px;
+        background: rgb(112, 165, 234);
+        transition: width, background 2s, 2s;
+        transition-timing-function: step-start;
+       }
+       #step-start:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+
+       #step-end{
+        width: 150px;
+        height: 30px;
+        background: pink;
+        transition: width, background 1s, 1s;
+        transition-timing-function: step-end;
+       }
+       #step-end:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+
+       #step4{
+        width: 150px;
+        height: 30px;
+        background: rgb(112, 165, 234);
+        transition: width, background 1s, 1s;
+        transition-timing-function: steps(4,start);
+       }
+       #step4:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+
+       #Cubic-bezier{
+        width: 150px;
+        height: 30px;
+        background: pink;
+        transition: width, background 1s, 1s;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+       #Cubic-bezier:hover{
+        width: 600px;
+        background: rgb(247, 54, 54);
+       }
+
+       #box5{
+        border: 1px solid blue;
+        width: 150px;
+        height: 100px;
+        background: pink;
+        transition: width, height, background 4s, 2s ;
+        transition-delay: 2s;
+
+        }
+        #box5:hover{
+        width: 300px;
+        background: rgb(21, 79, 227);
+        height: 110px;
+        } 

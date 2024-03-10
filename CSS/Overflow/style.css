@@ -1,0 +1,42 @@
+h1{
+    background-color: orange;
+    text-align: center;
+}
+
+/* box */
+
+#box{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(252, 5, 5);
+    overflow: hidden;
+}
+
+#box2{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(252, 5, 5);
+    overflow: scroll;
+}
+
+#auto{
+    display: flex;
+    border: 1px solid black;
+
+
+}
+
+#box3{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(252, 5, 5);
+    overflow: auto;
+    margin: 10px;
+}
+
+#box4{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(252, 5, 5);
+    overflow: visible;
+}

@@ -1,0 +1,134 @@
+h1{
+    background: rgb(15, 226, 195);
+    text-align: center;
+}
+
+h2{
+    background: rgb(221, 49, 78);
+}
+h3{
+    background: rgb(243, 154, 45);
+}
+
+#rotate{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    margin-left: 100px;
+    transform-origin: right top;
+}
+#rotate:hover{
+    transform: rotate(30deg);
+}
+
+#skewx{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    margin-left: 100px;
+}
+#skewx:hover{
+    transform: skewX(30deg);
+}
+
+#skewy{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    margin-left: 100px;
+}
+#skewy:hover{
+    transform: skewy(30deg); 
+}
+
+#skewxy{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    margin-left: 100px;
+}
+#skewxy:hover{
+    transform: skew(30deg, 20deg); 
+}
+
+#translatexy{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+
+}
+#translatexy:hover{
+    transform: translate(30px, -60px); 
+}
+
+#translatex{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+
+}
+#translatex:hover{
+    transform: translatex(60px); 
+}
+
+#translatey{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+}
+#translatey:hover{
+    transform: translatey(60px); 
+}
+
+#scalexy{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    transform-origin: top left;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+#scalexy:hover{
+    transform: scale(2);
+}
+
+#scalex{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    transform-origin: top left;
+}
+#scalex:hover{
+    transform: scaleX(2);
+}
+
+#scaley{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    transform-origin: top left;
+}
+#scaley:hover{
+    transform: scaley(2);
+}
+
+#matrix{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    transform-origin: top left;
+}
+#matrix:hover{
+    transform: matrix(1, -0.3, 0, 1, 0, 0 );
+}
+
+#trnsshort{
+    width: 150px;
+    height: 100px;
+    background: lightseagreen;
+    transform-origin: top left;
+}
+#trnsshort:hover{
+    transform: rotate(30deg) scale(2) skew(30deg);
+}

@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position property</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>The position property</h2>
+    <p>The position property specifies the type of positioning method used for an element.<br>left, right, top, bottom, z-index- These properties will not work without Position property</p>
+        
+        <p><b>There are five different position values:</b></p>
+
+<!-- STATIC -->
+         <h3>1. Static</h3>
+         <p>Static positioned elements are not affected by the top, bottom, left, and right properties. HTML elements are positioned static by default.</p>
+
+         <div class="static">
+            This div element has <b>position: static; border: 3px solid #73AD21; width:80%; </b> It will not respond  the top, bottom, left, and right properties.
+        </div>
+
+<!-- END STATIC -->
+
+
+<br>
+<br>
+
+
+<!-- RELATIVE -->
+<h3>2. Relative</h3>
+<p>An element with position: relative; is positioned relative to its normal position.</p>
+
+<div class="relative">
+    This div element has <b>position: relative; left: 30px; top:15px;
+        border: 3px solid #73AD21;</b> It will take top and left space from previous element
+    </div>
+
+<!-- END RELATIVE -->
+
+
+<br>
+<br>
+
+
+<!-- FIXED -->
+<h3>3. Fixed</h3>
+<p>An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.</p>
+
+<p><b>The div is fixed at the top right corner.</b></p>
+
+<div class="fixed">
+    This div element has position: fixed; top: 0;
+    right: 0;
+    </div>
+
+
+<!-- END FIXED -->
+
+
+<br>
+<br>
+
+
+<!-- Absolute -->
+<h3>4. Absolute</h3>
+<p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).<br><br>
+
+    However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.<br><br>
+    
+    <b>Note:</b> Absolute positioned elements are removed from the normal flow, and can overlap elements.</p>
+
+    <div class="rrelative">This div element has <b>position: relative;  width: 80%;
+        height: 200px;
+        border: 3px solid #73AD21;</b>
+        <div class="absolute">This div element has <b>position: absolute;  top: 80px;
+            right: 10px;
+            width: 50%;
+            height: 100px;
+            border: 3px solid #73AD21;</b></div>
+      </div>
+
+<!-- Absolute -->
+
+
+<br>
+<br>
+
+
+<!-- Sticky -->
+<h3>5. Sticky</h3>
+<p>An element with position: sticky; is positioned based on the user's scroll position.<br><br>
+
+    A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).</p>
+
+    <p>Try to <b>scroll</b> inside this frame to understand how sticky positioning works.</p>
+
+<div class="sticky">This div element has <b>position: sticky; top: 0;
+    padding: 5px;
+    width:80%;
+    border: 2px solid #4CAF50;</b></div>
+
+<div style="padding-bottom:20px">
+  <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+  <p>Scroll back up to remove the stickyness.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</div>
+
+
+<!-- END Sticky -->
+
+<br><br>
+
+
+
+
+<h3>6. Inset (shorthand for top, right, bottom, and left)</h3>
+    <p>The inset property is a shorthand property for setting the top, right, bottom,
+        and left properties of an element at the same time.
+        </p>
+<div class="inset">This div element has <b>position: relative; inset: 100px 150px 100px 10px;;</b></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quibusdam minus eius ipsa eum facere, officiis, ea corrupti mollitia labore nisi blanditiis expedita, et inventore rerum quisquam eos sint reprehenderit asperiores. Dolore blanditiis esse ipsam ex quos perspiciatis, placeat veritatis? Dicta autem commodi inventore magnam iste eius odio quasi sequi excepturi in quod, totam quia reiciendis! Tenetur quas vitae porro, voluptate quos, consequuntur excepturi temporibus, illo officia distinctio perspiciatis! Deleniti dolorum veritatis eveniet? Animi sunt earum laborum fugit quam dolores autem dolorum facere eum! Doloremque maxime adipisci sit culpa? Sed nulla quas sunt earum quia vitae ex neque laborum atque?
+</p>
+
+<ul>
+    <li>inset</li>
+    <li>inset-block: 20px; 40px;  //used for top and bottom gap only. single value is used for both top and bottom</li>
+    <li>inset-inline: 20px 40px;  //unsed for left and right gap. single value can be used for both left and bottom</li>
+    <li>inset-block-start: 50px;  // used for top gap only</li>
+    <li>inset-block-end: 50px;  // used for bottom gap only</li>
+    <li>inset-inline-start: 50px;  // used for left gap only</li>
+    <li>inset-inline-end: 50px;  // used for  right gap only</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
