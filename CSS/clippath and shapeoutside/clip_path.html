@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Clip-Path</title>
+    <style>
+        h1{
+            background-color: brown;
+            text-align: center;
+        }
+      #circle{
+        width: 300px;
+        border: 1px solid black;
+        clip-path: circle(40% at 50% 50%);
+        /* 40% radius,  50% x-asix,  50% y-axis */
+      }
+      #ellipse{
+        width: 300px;
+        border: 1px solid black;
+        clip-path: ellipse(10% 40% at 50% 50%);
+        /* 10% vertical radius, 40% horizontal radius, 50% x-asix  50% y-axis */
+      }
+      #inset{
+        width: 300px;
+        border: 1px solid black;
+        clip-path: inset(25% 40% 34% 10%);
+        /* top, right, bottom, left */
+      }
+      #polygon{
+        width: 300px;
+        border: 1px solid black;
+        clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+        /* (x y, x y, x y) of P1, p2, p3 */
+      }
+      #rhombus{
+        width: 300px;
+        border: 1px solid black;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+      img{
+        width: 100%;
+
+      }
+    </style>
+</head>
+<body>
+    <h1>CSS Clip-Path</h1>
+    <h2>Css Clip-Path Values</h2>
+    <ul>
+        <li>Circle</li>
+        <li>Ellipse</li>
+        <li>Inset</li>
+        <li>Polygon</li>
+    </ul>
+    <br>
+    <b>NOTE:</b><p>Bennett Feely website can be used to get codes and coodinates for different shapes.
+    <a href="https://bennettfeely.com/clippy/" target="_blank">Click Here</a></p>
+
+    <b>Circle</b>
+    <div id="circle">
+    <img src="pic2.jpg" alt="img"/>
+    </div>
+    <pre>      #circle{
+      width: 300px;
+      border: 1px solid black;
+      clip-path: circle(40% at 50% 50%);
+      /* 40% radius,  50% x-asix,  50% y-axis */
+    }</pre>
+
+    <b>Ellipse</b>
+    <div id="ellipse">
+    <img src="pic2.jpg" alt="img"/>
+    </div>
+    <pre>      #ellipse{
+      width: 300px;
+      border: 1px solid black;
+      clip-path: ellipse(10% 40% at 50% 50%);
+      /* 10% vertical radius, 40% horizontal radius, 50% x-asix  50% y-axis */
+    }</pre>
+
+    <b>Inset</b>
+    <div id="inset">
+    <img src="pic2.jpg" alt="img"/>
+    </div>
+    <pre>      #inset{
+      width: 300px;
+      border: 1px solid black;
+      clip-path: inset(25% 40% 34% 10%);
+      /* top, right, bottom, left */
+    }</pre>
+
+    <b>Polygon</b>
+    <div id="polygon">
+    <img src="pic2.jpg" alt="img"/>
+    </div>
+    <pre>      #polygon{
+      width: 300px;
+      border: 1px solid black;
+      clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+      /* (x y, x y, x y) of P1, p2, p3 */
+    }</pre>
+
+    <b>rhombus</b>
+    <div id="rhombus">
+    <img src="pic2.jpg" alt="img"/>
+    </div>
+    <pre>       #rhombus{
+      width: 300px;
+      border: 1px solid black;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }</pre>
+</body>
+</html>

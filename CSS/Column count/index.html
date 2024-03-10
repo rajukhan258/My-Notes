@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column count</title>
+    <style>
+        h2{
+            text-align: center;
+            background-color: aqua;
+        }
+        #box{
+            width: 1000px;
+            border: 2px solid black;
+            column-count: 3;
+            column-gap: 50px;
+            column-rule-width: 5px;
+            column-rule-style: double;
+            /* style = solid/dotted/dashed/double/groove */
+            column-rule-color: brown;
+        }
+        #box2{
+            width: 1000px;
+            border: 2px solid black;
+            column-width: 200px;
+             column-gap: 50px;
+            column-rule-width: 5px;
+            column-rule-style: double;
+            /* style = solid/dotted/dashed/double/groove */
+            column-rule-color: brown;
+        }
+h4{
+   column-span: all; 
+}
+
+    </style>
+</head>
+<body>
+    <h2>Column count</h2>
+    <h3>Column Properties</h3>
+    <ul>
+        <li>column-count</li>
+        <li>column-gap</li>
+        <li>column-rule</li>
+        <li>column-rule-width</li>
+        <li>column-rule-style</li>
+        <li>column-rule-color</li>
+        <li>column-width</li>
+        <li>column-fill</li>
+        <li>column-span</li>
+        <li>column</li>
+    </ul>
+
+    <div id="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorum itaque adipisci quibusdam repellat ad molestias doloremque ratione officia Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, consequatur officia. Officia inventore, dolorem doloribus ullam fugit itaque eligendi. Atque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, necessitatibus.
+    </div>
+    <br>
+    <b>Column-rule shorthand</b><br>column-rule: 5px double red;
+
+    <div id="box2"><h4>subheading here subheading heresubheading here</h4>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorum itaque adipisci quibusdam repellat ad molestias doloremque ratione officia Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, consequatur officia. Officia inventore, dolorem doloribus ullam fugit itaque eligendi. Atque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, necessitatibus.
+    </div>
+
+
+
+</body>
+</html>

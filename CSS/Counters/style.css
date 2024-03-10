@@ -1,0 +1,36 @@
+h1{
+    background-color: brown;
+    text-align: center;
+}
+h2{
+    /* text-align: center; */
+    background-color: bisque;
+}
+
+body{
+    counter-reset: my-counter 0;
+    counter-reset: section 0;
+    }
+
+h3::before{
+    content: "Chapter " counter(my-counter, upper-alpha) " : ";
+    counter-increment: my-counter 1;
+    color: brown;
+    background-color: blanchedalmond;
+}  
+
+h4::before{
+    color: green;
+    content: "Section " counter(section) " : ";
+    counter-increment: section 1;
+}
+
+h4{
+    counter-reset: subsection 0;
+}
+
+h5::before{
+    color: red;
+    content:  counter(section) "."counter(subsection) " : ";
+    counter-increment: subsection 1;
+}

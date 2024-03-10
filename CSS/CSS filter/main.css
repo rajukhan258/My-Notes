@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: rgb(2, 145, 155);
+    padding: 10px;
+    text-align: center;
+}
+h2{
+    padding: 30px 0 0 10px;
+}
+
+
+
+
+
+
+.container{
+    /* border: 2px solid red; */
+    padding: 15px;
+    display: flow-root;
+    border-bottom: 1px solid black;
+}
+
+ol{
+    margin-left: 30px;
+}
+
+
+
+
+
+div .pic{
+    /* border: 2px solid black; */
+    width: 40%;
+    height: 300px;
+}
+.container .pic1{
+    float: left;
+}
+.container .pic2{
+    float:right
+}
+.pic img{
+    width: 100%;
+    height: 299px;
+    object-fit: fill;
+}
+
+
+
+
+
+
+#filter1{
+    filter: blur(4px);
+}
+
+#filter2{
+    filter: brightness(200%);
+    /* 100% for Default 
+        less than 100% for darkness
+        more than 100% for brightness*/
+}
+
+#filter3{
+    filter: contrast(200%);
+    /* 100% for Default 
+        less than 100% for dullness
+        more than 100% for contrast*/
+}
+
+#filter4{
+    filter: drop-shadow(5px 15px 10px blue);
+    /* 5px for x-axis & can be negative
+        15px for y-axis & can be negative
+        10px for blur
+        blue for color*/
+}
+
+#filter5{
+    filter: grayscale(80%);
+    /* 0% for default
+        range 0% to 100%
+        100% for grey*/
+}
+
+#filter6{
+    filter: hue-rotate(80deg);
+     /* range 0deg to 360deg
+        0% for default value*/
+}
+
+#filter7{
+    filter: invert(90%);
+        /* 0% for Default 
+        range 0% to 100%*/
+}
+
+#filter8{
+    filter: opacity(40%);
+    /* range 0% to 100%
+        0% for transparent
+        100% for opaque (default) */
+}
+
+#filter9{
+    filter: saturate(300%);
+        /* 100% for Default 
+        less than 100% for unsaturate
+        more than 100% for saturate*/
+}
+
+#filter10{
+    filter: sepia(100%);
+        /* 0% for default
+        range 0% to 100%
+        100% for sepia*/
+}
+
+#filter11{
+    filter: url();
+    /* No action taken as of now 
+        Need to write code*/
+}
+
+#filter12{
+    filter: blur(2px) drop-shadow(16px 16px 20px red) invert(75%) saturate(300%) ;
+    /* Multiple values */
+}

@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: rgb(2, 145, 155);
+    padding: 10px;
+    text-align: center;
+}
+h2{
+    padding: 30px 0 0 10px;
+}
+
+ol{
+    margin-left: 30px;
+}
+
+
+
+
+
+
+
+
+.container{
+    /* border: 2px solid red; */
+    padding: 15px;
+    display: flow-root;
+    border-bottom: 1px solid black;
+}
+
+.sub-container{
+    /* border: 2px solid black; */
+    float: left;
+
+    background-image: url(../images/nature.JPG);
+    background-size: cover;
+    height: 300px;
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+div .filter-container{
+    border: 2px solid #fff;
+    background-color: #ffffff58;
+    height: 150px;
+    width: 50%;
+}
+
+div .code-container{
+    /* border: 2px solid green; */
+    /* height: 280px; */
+    width: 40%;
+    float: right;
+}
+
+img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+#filter-container2{
+    backdrop-filter: blur(3px);
+    /* default value = 0px*/
+}
+
+#filter-container3{
+    backdrop-filter: brightness(200%);
+    background-color: transparent;
+    /* 100% for Default 
+        less than 100% for darkness
+        more than 100% for brightness*/
+}
+
+#filter-container4{
+    backdrop-filter: contrast(300%);
+    /* 100% for Default 
+        less than 100% for dullness
+        more than 100% for contrast*/
+}
+
+#filter-container5{
+    backdrop-filter: drop-shadow(30px 10px 4px #4444dd);   
+     /* 5px for x-axis & can be negative
+        15px for y-axis & can be negative
+        10px for blur
+        blue for color*/
+}
+
+#filter-container6{
+    backdrop-filter: grayscale(80%);
+    background-color: transparent;
+    /* 0% for default
+        range 0% to 100%
+        100% for grey*/
+}
+
+#filter-container7{
+    backdrop-filter: hue-rotate(80deg);
+     /* range 0deg to 360deg
+        0% for default value*/
+}
+
+#filter-container8{
+    backdrop-filter: invert(90%);
+        /* 0% for Default 
+        range 0% to 100%*/
+}
+
+#filter-container9{
+    backdrop-filter: opacity(50%);
+    /* range 0% to 100%
+        0% for transparent
+        100% for opaque (default) */
+}
+
+#filter-container10{
+    backdrop-filter: saturate(300%);
+        /* 100% for Default 
+        less than 100% for unsaturate
+        more than 100% for saturate*/
+}
+
+#filter-container11{
+    backdrop-filter: sepia(100%);
+    background-color: transparent;
+        /* 0% for default
+        range 0% to 100%
+        100% for sepia*/
+}
+
+
+#filter-container12{
+    backdrop-filter: blur(1px) saturate(100%) sepia(50%);
+    /* Multiple values */
+}

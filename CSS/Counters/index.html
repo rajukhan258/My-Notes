@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS counters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CSS counters</h1>
+    <h2>Counter Properties</h2>
+    <ul>
+        <li>Counter-reset</li>
+        <li>Counter()</li>
+        <li>Counter-increment</li>    
+    </ul>
+
+    <h2>Rule</h2>
+    <pre>
+        Counter-reset: my-counter1;
+        Counter()
+            Content: Counter(my counter);
+        Counter-increment: my-counter 4;                
+    </pre>
+
+   <h2>Result and used code</h2>
+   <h3>Lorem ipsum dolor sit amet.</h3>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias sed, suscipit dolorem accusantium vel similique!</p>
+   <h3>Lorem ipsum dolor sit amet.</h3>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias sed, suscipit dolorem accusantium vel similique!</p>
+   <h3>Lorem ipsum dolor sit amet.</h3>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias sed, suscipit dolorem accusantium vel similique!</p>
+   <h3>Lorem ipsum dolor sit amet.</h3>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias sed, suscipit dolorem accusantium vel similique!</p>
+
+    <pre><b>CODE USED: </b>
+        body{
+            counter-reset: my-counter 0;
+            }
+        
+        h3::before{
+            content: "Chapter " counter(my-counter, upper-alpha) " : ";
+            counter-increment: my-counter 1;
+            color: brown;
+            background-color: blanchedalmond;
+        } 
+    </pre>
+
+<h2>Sub Heading</h2>
+<h4>HTML and CSS</h4>
+<h5>HTML Tutorial</h5>
+<h5>CSS Tutorial</h5>
+<h5>Bootstrap Tutorial</h5>
+<hr>
+<h4>Javascript</h4>
+<h5>Javascript Tutorial</h5>
+<h5>JQuery Tutorial</h5>
+<h5>JSON Tutorial</h5>
+<hr>
+<h4>Server side</h4>
+<h5>SQL Tutorial</h5>
+<h5>PHP Tutorial</h5>
+
+<pre><b>CODE USED: </b>
+    body{
+       
+        counter-reset: section 0;
+        }
+        
+    h4::before{
+        color: green;
+        content: "Section " counter(section) " : ";
+        counter-increment: section 1;
+    }
+    
+    h4{
+        counter-reset: subsection 0;
+    }
+    
+    h5::before{
+        color: red;
+        content:  counter(section) "."counter(subsection) " : ";
+        counter-increment: subsection 1;
+    }
+</pre>
+</body>
+</html>
