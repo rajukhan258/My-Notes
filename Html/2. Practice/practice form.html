@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM Practice</title>            
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Basic details</legend>
+            <label>Name:</label> <input type="text" placeholder="Enter Full Name" required/>
+<br/><br/>
+            <label>Gender:</label> <input type="radio" name="gender" id="male" value="male"/><label for="male">Male</label>  <input type="radio" name="gender" id="female" value="female"/><label for="female">Female</label>
+<br/><br/>
+
+            <label>Address:</label> <textarea rows="3" columns="5"></textarea>
+<br/><br/>
+            <label>City:</label> <select name="city" >
+                <option value="">Delhi</option>
+                <option value="">Haryana</option>
+                <option value="">Noida</option>
+                <option value="">Punjab</option>
+                <option value="">Maisor</option>
+            </select>
+<br/><br/>
+            <label>Hobby:</label> <input type="checkbox" name="" value="cri" id="cricket"><label for="cricket">Cricket</label><input type="checkbox" name="" value="hoc" id="hockey"><label for="hockey">Hockey</label><input type="checkbox" name="" value="bad" id="badminton"><label for="badminton">Badminton</label>
+<br><br>
+            <input type="submit" name="btnsubmit">
+            <input type="reset" name="btnreset">
+
+
+        </fieldset>
+    </form>
+</body>
+</html>

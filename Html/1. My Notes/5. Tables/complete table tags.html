@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table and it's Attributes</title>
+</head>
+<body>
+
+<!--Complete Table tags and properties-->
+
+    <table border="1" width="80%" bgcolor="white" align="center" cellspacing="0px" cellpadding="10px"> <!--Align= center / right / left(Default)-->
+
+        <caption>Table Example</caption>
+
+<!--starting Table Heading -->
+        <thead>
+            <tr bgcolor="teal">
+                <th width="20%">Name</th>
+                <th>Class</th>
+                <th>Roll</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+<!--END Table Heading -->
+
+<!--Start Table Body-->
+        <tbody>
+        <tr bgcolor="yellow" align="center"> <!--align= left(default) / right / center-->
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td bgcolor="blue" height="200px" valign="top
+            "><font color="white">E</font></td> <!--valign= center / top / bottom-->
+            <td bgcolor="red" valign="bottom">F</td>
+            <td bgcolor="green" vlaingn="center">G</td>
+            <td bgcolor="orange">H</td>
+        </tr>
+        <tr>
+            <td bgcolor="cyan" colspan="2">I</td>
+            <td>j</td>
+            <td bgcolor="pink" rowspan="2">K</td>
+            
+        </tr>
+        <tr>
+            <td>M</td>
+            <td>N</td>
+            <td>O</td>
+        </tr>
+        </tbody>
+<!--END Table Body-->  
+
+<!--Start Table Footer-->
+        <tfoot>
+            <tr>
+                <td>total</td>
+                <td>Equal</td>
+                <td>total</td>
+                <td><img src="koala.jpg" width=50 height=50 border=3></td>
+            </tr>
+        </tfoot>
+<!--End Table Footer-->
+    </table>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tags</title>
+</head>
+
+<body>
+    <form actio="#" method="get"> <!--method="post/get"-->
+        <fieldset>
+            <legend align="center"><font size="4">Details</legend>
+            <!--NAME  -->
+            <label>FName</label> <input type="text" name="fname" placeholder="Enter First Name" size="20" required />
+
+            <label>LName</label> <input type="text" name="lname" Value="XYZ" size="20" required />
+            <!--END name  -->
+            <br />
+            <br />
+            <!--Password  -->
+            <label>Password</label> <input type="password" name="#" placeholder="Enter password" minlength="3" maxlength="8"/>
+            <!-- END Password -->
+            <br />
+            <br />
+            <!-- Gender -->
+            <label>Gender</label> <input type="radio" name="gender" id="male" value="male"><label
+                for="male">Male</label> <input type="radio" name="gender" id="female" vlaue="female"><label
+                for="female">Female</lable> <!--name should be same -->
+                <!-- END Gender -->
+                <br />
+                <br />
+                <!-- DOB -->
+                <label>Date</label> <input type="date" name="#">
+                <label>DateTime</label> <input type="datetime-local" name="#"><br /><br />
+                <label>Month</label> <input type="month" name="#">
+                <label>Week</label> <input type="week" name="#">
+                <label>Time</label> <input type="time" name="#">
+                <!-- END DOB -->
+                <br><br>
+
+                <!-- you cannot enter due to  following attributes-disabled and readonly -->
+                <label>Code</label> <input type="text" disabled value="DUCAT-1234 (disabled)"><br/></br>
+                <label>Confidential</label> <input type="text" readonly value="very Confidential (readonly)">
+                <br><br/>
+
+
+
+                <!-- Email -->
+                <label>Email</label> <input type="email" name="#"><br><br>
+                <!-- END email -->
+
+                <!-- URL -->
+                <label>URL</label> <input type="url" name=""><br><br>
+                <!-- END url -->
+
+                <!-- Search -->
+                <label>Search</label>&#128269; <input type="serach" name=""><br><br>
+                <!-- END search -->
+
+                <!-- Tel -->
+                <label>Phone No.</label>&#128222; <input type="tel" name="" pattern="[0-9]{10}"><br><br>
+
+                <label>Telephone: </label><input type="tel" name="phone" size=40
+pattern="[0-9]{3}-[0-5]{2}-[0-9]{4}" required placeholder="follow format eg. 132-43-9812">
+<br><br>
+                <!-- Hobby -->
+                <label>Hobbies</label> <input type="checkbox" name="#" id="cricket"><label
+                    for="cricket">Cricket</label>
+                <input type="checkbox" name="#" id="football"><label for="football">Football</label>
+                <input type="checkbox" name="hobby" id="hockey"><label for="hockey">Hockey</label>
+                <!-- END hobby -->
+                <br />
+                <br />
+                <!--Message  -->
+                <label>Message</label> <textarea rows="3" cols="20" spellcheck= true>Write Here</textarea><br /><br />
+                <!-- END Message -->
+
+                <!-- Country DROPDOWN-->
+                <label>Country</label> <select name="#">
+                    <option value="sri">SriLanka</option>
+                    <option value="in" selected>India</option> <!--use selected for preselected-->
+                    <option value="ne">Nepal</option>
+                    <option value="ch">China</option>
+                    <option value="bh">Bhutan</option>
+                </select>
+                <br /><br />
+                <!-- END Country -->
+
+                <!-- Games DROPDOWN Multiselect-->
+                <label>Games</label> <select name="#" size="3" multiple>
+                    <option value="cr">Cricket</option>
+                    <option value="ft">Football</option>
+                    <option value="hck">Hockey</option>
+                    <option value="ld">Ludo</option>
+                    <option value="pbg" selected>PUBG</option>
+                    <option value="ff">Free Fire</option>
+                </select>
+                <p>Press CTRL and click to choose multiple options in Games</p>
+                <!-- END Games -->
+
+                <!-- Cars Group DROPDOWN-->
+                <label>Cars Group</label> <select name="">
+                    <optgroup label="Toyota">
+                        <option>Innova</option>
+                        <option>Etios</option>
+                        <option>Fortuner</option>
+                    </optgroup>
+                    <optgroup label="Renault">
+                        <option>Kwid</option>
+                        <option>Duster</option>
+                        <option>Captur</option>
+                    </optgroup>
+                </select><br /><br>
+                <!-- END Car Group -->
+
+                <!-- Subjects DATALIST -->
+                <label>Subject</label> <input list="sub"/>
+                <datalist id="sub">
+                    <option value="HTML">
+                    <option value="CSS">
+                    <option value="Javascript">
+                    <option value="python">
+                    <option value="cloud computing">
+                    <option value="Java">
+                </datalist><br /><br />
+                <!-- END Subject -->
+
+                <!-- Upload File -->
+                <label>Upload File</label> <input type="file" accept="image/*" name="#" size="50" /><br /><br />
+                <!-- image/*    accept all image formats 
+             image/.png  accept particular format
+             audio/*    accept all audio format
+             audio/.mp3     accept particular format
+            video/*     accept all vidoe format
+             video/mp4   accept particulat format-->
+
+                <!-- END upload file -->
+
+
+                <!-- Color -->
+                <label>Select color</label> <input type="color" name=""><br /><br />
+                <!-- END color -->
+
+                <!-- Number -->
+                <label>Registration No.</label> <input type="number" name="#"><br /><br />
+                <label>Amount</label> <input type="number" name="#" min="0" max="100" step="5"><br /><br />
+                <!-- END number -->
+
+                <!-- Range -->
+                <label>Range</label> <input type="range" name="#" min="0" max="100" step="10">
+                <progress ></progress>
+
+                <progress value="60" min=1 max=100 value=60></progress>
+
+
+                <br /><br />
+                <!-- Button -->
+                <input type="submit" value="Save" name="btnsubmit">
+                <input type="reset" name="btnsubmit">
+                <input type="image" src="forlder/image.png" width="30px" height="20px" alt="submit button" name="btnsubmit">
+                <!-- END Button -->
+
+        </fieldset>
+    </form>
+</body>
+
+</html>
